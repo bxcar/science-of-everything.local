@@ -1,0 +1,9 @@
+wordpress:
+login - admin
+pas - wSnoO#3&yV0onsLj)d
+
+database:
+name - science-of-everything
+login - root
+pas - root
+server - 127.0.0.1
