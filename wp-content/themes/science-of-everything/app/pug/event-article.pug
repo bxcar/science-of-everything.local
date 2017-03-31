@@ -1,0 +1,40 @@
+extends template/base-layout.pug
+
+block prepend body
+  - var bodyClass = 'article-page event-article-page'
+  - var breadcrumbsPrev = {'События': 'events.html'}
+  - var breadcrumbsCurrent = 'Описание события'
+
+block content
+  - var middleLayout = true
+  - var tagsList = ['Лекция','Наука','Кризис реальности']
+  .mainWrap.mainWrap-medium.row
+    article.l-article.column.large-8.small-12
+      section.article-visualContent
+        img(src="img/article-visual-6.png")
+      section.article-content
+        .article-content-counters
+          .article-content-counters-date
+            i.icon-time
+            span 23.11.2016
+
+        .article-content-text
+          h1.title-0 Лекция «Кризис реальности и мифология массмедиа»
+          p.text-p
+            | тремительное развитие телекоммуникационных технологий во второй половине XX века превратило средства массовой информации в мощнейший проводник и даже источник властных отношений. К концу века СМИ стали играть в жизни общества примерно ту же роль, которую играет в становлении человека его способность к саморефлексии. Однако такое понимание СМИ предполагает вопрос: «Можно ли наблюдать за наблюдателем, или критиковать критика?» Именно эту функцию — роль наблюдателей второго порядка взяли на себя представители французского постструктурализма, развернув в своих работах масштабную философскую критику структуры, целей и методов средств массовой информации.
+          p.text-p
+            | Очередная встреча будет посвящена философской критике СМИ и анализу имманентной логики мифологем, создаваемых в недрах современными медиа. Слушатели обсудят критический взгляд на СМИ, предложенный Пьером Бурдье, рассмотрят роль телевидения в формировании общественной реальности, затронут теорию массмедиа Николаса Лумана.
+
+      include template/share-social.pug
+
+      .tags
+        p.text-sub Теги:
+        .tags-list
+          each tag in tagsList
+            button.tags-one= tag
+
+      include template/comments.pug
+
+    include template/events-sidebar.pug
+
+    include template/other-articles.pug

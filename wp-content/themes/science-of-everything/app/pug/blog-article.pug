@@ -1,0 +1,33 @@
+extends template/article-layout.pug
+
+block prepend body
+  - var breadcrumbsPrev = {'Блог': 'blog.html'}
+  - var breadcrumbsCurrent = 'Статья в блоге'
+
+block prepend content
+  - var blogArticle = true
+  - var fullLayout = true
+  - var tagsList = ['Наука','Кости','Останки','Доисторические существа']
+  - var links = "blog-article.html"
+
+block visual-content
+  img(src="img/article-visual-3.png")
+
+block prepend article-title
+  - var articleTitle = "Discovery Doesn't Know What a Dinosaur Is"
+
+block article-text
+  p.text-sub
+    | Despite promises to improve, the media company continues to peddle misinformation
+  p.text-p
+    | After a string of mind-numbing mockumentaries purporting to prove the existence of mermaids and the survival of the giant shark Carcharocles megalodon to the present day, Discovery changed their tune last year. The media company's new president, Rich Ross, promised that Discovery would stop peddling nonsense and sensationalist junk like Eaten Alive. But it's hard to trust Ross' insistence that Discovery will emphasize "authenticity" and a return to form when it's clear that the company doesn't even know what a dinosaur is. Yesterday evening paleontologist Scott Williams tweeted to a bunch of paleo folks about a clip Discovery was promoting on their news feed. "Watch this Huge Dino of the Deep Patrol Its Turf", it read, clearly showing a plesiosaur - a marine reptile that's definitely not a dinosaur. The clip itself wasn't new. It's been posted to Discovery's YouTube channel since 2013 carrying the title "Water Dinos", but it got a fresh tweet thanks to a copy/paste of the material by Seeker.
+  p.text-p
+    | Paleontologists and dinosaur fans jumped on the Discovery News tweet, but, as of this writing, the media company hasn't responded. And the old video isn't the only one on the official DiscoveryDinosaurs channel that makes the same error. "Dinos Underwater Battle", "Flying Dinos", and "The Grumpiest Dinosaur Cat" all promote the same mistake (although the last of these comes with the caption that "Inostrancevia is not a dinosaur nor a reptile," making the title all the more strange).#[br]Here's the thing. Dinosaur isn't a word fit for anything scaly, toothy, and extinct. It's a technical term that wound its way into popular usage - and is just fun to say! - but only applies to a particular group of animals. Words like mammal are the same. Everyone knows the word, but if someone pointed to a goldfish and called it a mammal you'd raise an eyebrow.
+  p.text-p
+    | Think of a raven and a Triceratops. These two animals represent the tips of the two major branches of the dinosaur family tree. Now follow those lines all the way back to the last common ancestor between the two - united by hinge-like ankles, legs held straight beneath their bodies, and other traits - and everything that falls within those brackets is a dinosaur. Everything else is not.
+  p.text-p
+    | The sail-backed Dimetrodon isn't a dinosaur. It's a synapsid, an animal more closely related to mammals than reptiles. Pteranodon isn't a dinosaur. It's a pterosaur, an animal that flew on wings of stretched skin rather than the dinosaurian complement of feathers. Elasmosaurus isn't a dinosaur, either. It's a plesiosaur, which is one lineage of many reptilian groups that independently evolved to live in the water. Given that the word dinosaur catches attention much better than sauropterygian or pelycosaur, though, it's not hard to figure out why Discovery decided to fudge the facts.
+  p.text-p
+    | This isn't the worst of Discovery's sins, of course. Just look at what went on behind the scenes with Animal Planet's Call of the Wildman andYankee Jungle. But it's frustrating when a company that prides itself for striving to create informative programming repeatedly makes a simple mistake that any 10-year-old dinosaur fanatic could probably correct. And while the videos are old, they've been viewed hundreds of thousands of times and occasionally bubble back up to the surface to misinform new viewers, as happened with the Elasmosaurus clip.
+  p.text-p
+    | So far, Discovery seems unconcerned with their mistakes. The videos have been wrong for three years at this point, and the media company is continuing the frustrating pop-science trend of entities with big platforms not correcting themselves when proven to be off-base. Mistakenly giving the name dinosaur to various prehistoric beasties isn't the worst problem, but it's a mistake easily remedied. That makes it all the more aggravating. The fact that Discovery seems to deny any error has even been made doesn't bode well for a company looking to re-enter science fans' good graces.

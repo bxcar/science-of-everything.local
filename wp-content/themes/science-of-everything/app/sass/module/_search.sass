@@ -1,0 +1,42 @@
+/* Module.Pages: Search */
+
+.l-search
+  .section-title-inner
+    margin-bottom: 15px
+
+    &::before
+      border-color: #595771
+
+.search-form
+  flex-grow: 1
+
+  input
+    width: 100%
+
+    font-size: 16px
+    font-weight: $bold
+    color: #595771
+
+.search-count
+  font-size: 14px
+  color: $dark-text
+
+  i
+    color: #595771
+    font-size: 12px
+    margin-right: em(5)
+
+  span:not(:last-child)
+    margin-right: em(5)
+
+.search-hint
+  margin-bottom: 30px
+  font-size: 16px
+  color: $light-text
+
+.l-search
+  .button-more-light
+    margin-top: 30px
+
+    @include media(639px)
+      font-size: 11px

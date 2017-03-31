@@ -1,0 +1,38 @@
+extends template/search-layout.pug
+
+block prepend content
+  - var searchNumber = '18'
+
+block search-result
+  ul.articlesList-compact.row
+    - var link = 'authors-article.html'
+    - var articleImg = "img/articles-list-item-img-4.png"
+    - var articleTitle = "Анизотропию реликтового излучения распечатали на 3D-принтере"
+    include template/articlesItem-compact-dark.pug
+
+    - var articleImg = "img/articles-list-item-img-6.png"
+    - var articleTitle = "Комплекс молекулярных облаков Ореол Цефея скрывает в себе туманность Призрак"
+    include template/articlesItem-compact-dark.pug
+
+    - var articleImg = "img/articles-list-item-img-7.png"
+    - var articleTitle = "Главное за неделю: о флирте и насилии, замедлении старения и «звезде инопланетян»"
+    include template/articlesItem-compact-dark.pug
+
+    - var articleImg = "img/articles-list-item-img-8.png"
+    - var articleTitle = "Футуристический Лотос C-01 мотоциклов продано на аукционе"
+    include template/articlesItem-compact-dark.pug
+
+    - var articleImg = "img/articles-list-item-img-9.png"
+    - var articleTitle = "Фантастические световые установки по шкале Collectif"
+    include template/articlesItem-compact-dark.pug
+
+    - var articleImg = "img/articles-list-item-img-10.png"
+    - var articleTitle = "Потрясающие Минималистский Градиент Часы"
+    include template/articlesItem-compact-dark.pug
+
+    - var articleImg = "img/articles-list-item-img-11.png"
+    - var articleTitle = "3D Печатный веб Установка игры со светом"
+    include template/articlesItem-compact-dark.pug
+
+  button.button-more-light
+    | Загрузить больше результатов поиска

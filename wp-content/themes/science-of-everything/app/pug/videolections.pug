@@ -1,0 +1,71 @@
+extends template/section-layout.pug
+
+block prepend body
+  - var bodyClass = 'video-page'
+  - var breadcrumbsCurrent = 'Видеолекции'
+
+block prepend content
+  - var sortSelect = true
+  //- - var sortOptionsGroup = [{label: 'Лекции в городе', items: ['Все лекции в городе', 'Дизайн', 'Город']}, {label: 'Онлайн-лекции', items: ['Все онлайн-лекции', 'Design', 'Дизайн', 'Город', 'Arkitektur', 'Наука']}, {label: 'Видео', items: ['Другие видеолекции']}]
+  - var sortOptions = ['Лекции в городе', 'Онлайн-лекции', 'Видео']
+  - var sectionTitle = 'видеолекции'
+
+block section-content
+  ul.articlesList.articlesList-detail.column.small-12.row
+    - var link = 'videolection-article.html'
+    - var detailItem = true
+    - var otherClasses = 'large-4'
+    - var figureClass = 'articlesList-item-video'
+    - var imgSrc = 'img/articles-list-item-img-27.png'
+    - var title = 'Как изменить Видеолекции, не изменяя при этом себе'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-28.png'
+    - title = 'Вычисли свои шансы получить Видеолекции'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-29.png'
+    - title = '10 фатальных ошибок с Видеолекции которые приведут вас к краху'
+    include template/articlesItem-text.pug
+
+    - otherClasses = 'large-4 show-for-medium-only'
+    - imgSrc = 'img/articles-list-item-img-32.png'
+    - title = 'Ложь о Видеолекции, которую любят 73% покупателей'
+    include template/articlesItem-text.pug
+
+  ul.articlesList-compact.column.small-12.row
+    - var bgSrc = 'img/articles-list-item-bg-17.png'
+    - var articleTitle = 'Ложь о Видеолекции, которую любят 73% покупателей'
+    include template/articlesItem-halfWidth.pug
+
+    - var bgSrc = 'img/articles-list-item-bg-18.png'
+    - var articleTitle = 'Проект пилотируемого облета Венеры и Марса'
+    include template/articlesItem-halfWidth.pug
+
+  ul.articlesList.articlesList-detail.column.small-12.row
+    - otherClasses = 'large-4'
+    - imgSrc = 'img/articles-list-item-img-30.png'
+    - title = 'Для кого-то Видеолекции — тяжкий труд, а для нас — ерунда!'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-31.png'
+    - title = 'Почему Видеолекции не оставит вас равнодушным'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-32.png'
+    - title = 'Ложь о Видеолекции, которую любят 73% покупателей'
+    include template/articlesItem-text.pug
+
+    - otherClasses = 'large-4 show-for-medium-only'
+    - imgSrc = 'img/articles-list-item-img-28.png'
+    - title = 'Вычисли свои шансы получить Видеолекции'
+    include template/articlesItem-text.pug
+
+  ul.articlesList-compact.column.small-12.row
+    - var bgSrc = 'img/articles-list-item-bg-19.png'
+    - var articleTitle = 'Делу время, а Видеолекции — час'
+    include template/articlesItem-halfWidth.pug
+
+    - var bgSrc = 'img/articles-list-item-bg-20.png'
+    - var articleTitle = 'Проект пилотируемого облета Венеры и Марса'
+    include template/articlesItem-halfWidth.pug

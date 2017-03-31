@@ -1,0 +1,24 @@
+li.articlesList-item-text.columns.column-block.medium-6.small-12(class=otherClasses)
+  if link
+    a.articlesList-item-img-wrap(class=figureClass href=link)
+      img.articlesList-item-img(src=imgSrc)
+  else
+    a.articlesList-item-img-wrap(class=figureClass href="#")
+      img.articlesList-item-img(src=imgSrc)
+  if !detailItem
+    p.category-text(class=category.class)= category.text
+  if link
+    a.title-3(href=link)= title
+  else
+    a.title-3(href="#")= title
+  if detailItem && !eventItem
+    include counters.pug
+  if eventItem
+    include date.pug
+  p.text-p
+    if mediumItem
+      | Инженеры из Технологического института Джорджии разработали методику пассивного освоения кода Морзе с помощью тактильных сигналов гарнитуры Google Glass. Обучение.
+    else if bigItem
+      | В конце июля в прокат вышел тринадцатый по счету научно-фантастический фильм о Вселенной «Звездный путь», получивший название «Стартрек: Бесконечность». Представители американского космического ведомства в доказательство своей многолетней связи с этой медиафраншизой...
+    else
+      | Инженеры из Технологического института Джорджии разработали методику пассивного освоения кода Морзе с помощью тактильных сигналов гарнитуры Google Glass. Обучение, которое длится около четырех часов, происходит в игровой форме.

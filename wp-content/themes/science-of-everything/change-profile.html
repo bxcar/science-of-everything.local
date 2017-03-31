@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <title>Наука всего</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/libs.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body class="account-page">
+    <div class="l-preloader"><img src="img/preloader.gif"></div>
+    <div class="l-header">
+      <div class="header-bg"></div>
+      <div class="header-menu">
+        <button class="header-hamburger"><i class="icon-menu"></i></button>
+        <ul class="header-navTop">
+          <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Технологии</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
+          <li><a class="header-link" href="books.html"><span>Книги</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Медтех</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Будущее</span></a></li>
+          <li><a class="header-link" href="events.html"><span>События</span></a></li>
+          <li><a class="header-link" href="blog.html"><span>Блог</span></a></li>
+          <li>
+            <div class="header-dropdown header-link"><span>Спецпроект</span></div>
+            <ul class="header-dropdown-list">
+              <li><a class="header-link" href="special.html">Классика в моде</a></li>
+              <li><a class="header-link" href="special.html">25 шедевров в украине</a></li>
+              <li><a class="header-link" href="special.html">Научный подход</a></li>
+              <li><a class="header-link" href="special.html">Culture matters</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="header-login"><i class="icon-user"></i>
+          <!-- Title when user is guest--><span>Войти  / Регистрация</span>
+          <!-- Title when user is login--><span class="is-hidden">Личный кабинет</span>
+        </div>
+        <button class="header-search button-round-outline"><i class="icon-search"></i></button>
+        <form class="header-searchForm is-hidden">
+          <input type="text" placeholder="Поиск">
+          <button class="header-searchForm-button" type="submit"><i class="icon-search"></i></button>
+        </form>
+      </div>
+      <div class="header-nav-wrap is-hidden">
+        <nav class="header-nav">
+          <button class="header-nav-close"><i class="icon-close"></i></button><a class="header-nav-logo" href="index.html"><img src="img/colored-logo.png"></a>
+          <ul class="header-nav-list">
+            <li><a class="header-link" href="index.html"><span>Главная</span></a></li>
+            <li><span class="header-nav-dropdown header-link">Темы</span>
+              <ul class="header-nav-dropdown-list">
+                <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Технологии</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Искусство</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Будущее</span></a></li>
+                <li><a class="header-link" href="books.html"><span>Книги</span></a></li>
+                <li><a class="header-link" href="special.html"><span>Спецпроект</span></a></li>
+              </ul>
+            </li>
+            <li><a class="header-link" href="events.html"><span>События</span></a></li>
+            <li><a class="header-link" href="photo.html"><span>Фотогалерея</span></a></li>
+            <li><a class="header-link" href="video.html"><span>Видео</span></a></li>
+            <li><a class="header-link" href="blog.html"><span>Блог</span></a></li>
+            <li><a class="header-link" href="videolections.html"><span>Видеолекции</span></a></li>
+          </ul>
+          <ul class="header-nav-list header-nav-list-secondary">
+            <li><a class="header-link" href="advertising.html"><span>Размещение рекламы</span></a></li>
+            <li><a class="header-link" href="therms-of-use.html"><span>Пользовательское соглашение</span></a></li>
+            <li><a class="header-link" href="partners.html"><span>Партнерам</span></a></li>
+            <li><a class="header-link" href="contacts.html"><span>Контакты</span></a></li>
+            <li><a class="header-link" href="about.html"><span>О проекте</span></a></li>
+          </ul>
+          <ul class="header-nav-list lang">
+            <li class="is-active"><a class="header-link" href="#"><span>Рус</span></a></li>
+            <li><a class="header-link" href="#"><span>Англ</span></a></li>
+          </ul>
+          <ul class="header-nav-list modile">
+            <li>
+              <button class="header-nav-login"><i class="icon-user"></i><span>Войти  / Регистрация</span></button>
+            </li>
+            <li>
+              <form class="header-nav-search">
+                <input type="text" name="search" placeholder="Поиск">
+                <button type="submit"><i class="icon-search"></i></button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-loginForm-wrap is-hidden">
+        <button class="header-loginForm-close button-round-outline"><i class="icon-close"></i></button>
+        <div class="header-loginForm">
+          <h2 class="header-loginForm-title">Форма входа</h2>
+          <ul class="header-loginForm-method">
+            <li><a href="#login-form">Войти</a></li>
+            <li><a href="#register-form">Регистрация</a></li>
+          </ul>
+          <div class="header-loginForm-form" id="login-form">
+            <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
+            <div class="header-loginForm-social">
+              <button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+              <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
+              <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
+              <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
+            </div>
+            <p class="header-loginForm-text decoration">или</p>
+            <form class="header-loginForm-email">
+              <p><i class="icon-mail"></i>
+                <input type="email" name="email" placeholder="Эл.почта">
+              </p>
+              <p><i class="icon-key"></i>
+                <input type="password" name="password" placeholder="Пароль">
+              </p>
+              <button class="button button-primary" type="submit">Войти</button>
+            </form>
+            <button class="header-loginForm-text header-loginForm-restorePassword">Восстановить пароль</button>
+          </div>
+          <div class="header-loginForm-form" id="register-form">
+            <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
+            <div class="header-loginForm-social">
+              <button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+              <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
+              <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
+              <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
+            </div>
+            <p class="header-loginForm-text decoration">или</p>
+            <form class="header-loginForm-email">
+              <p><i class="icon-user"></i>
+                <input type="text" name="name" placeholder="Имя">
+              </p>
+              <p><i class="icon-mail"></i>
+                <input type="email" name="email" placeholder="Эл.почта">
+              </p>
+              <p><i class="icon-key"></i>
+                <input type="password" name="password" placeholder="Пароль">
+              </p>
+              <button class="button button-primary" type="submit">Зарегистрироваться</button>
+              <p class="header-loginForm-text small">Нажимая на кнопку «Зарегистрироваться», вы подтверждаете свое согласие с условиями предоставления услуг (<a href="therms-of-use.html">пользовательское соглашение</a>)</p>
+            </form>
+          </div>
+        </div>
+        <div class="header-restorePassword">
+          <h2 class="header-loginForm-title">Забыли пароль?</h2>
+          <p class="header-loginForm-text">Введите свой E-mail, чтобы помочь нам идентифицировать вашу личность.</p>
+          <form class="header-loginForm-email">
+            <p><i class="icon-mail"></i>
+              <input type="email" name="email" placeholder="Адрес эл. почты для восстановления">
+            </p>
+            <button class="button button-primary" type="submit">Войти</button>
+          </form>
+          <button class="header-loginForm-text header-loginForm-restorePassword-back">Назад</button>
+        </div>
+      </div><a class="header-logo" href="index.html"><img src="img/white-logo.png"></a>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="user-account.html">Личный кабинет</a></li>
+        <li>Редактировать профайл</li>
+      </ul>
+    </div>
+    <section class="l-changeProfile">
+      <div class="mainWrap mainWrap-medium row">
+        <div class="changeProfile-portrait column small-12">
+          <button class="changeProfile-portrait-delete"><i class="icon-close3"></i></button>
+          <figure class="changeProfile-portrait-avatar"><img src="img/default-avatar.png"></figure>
+          <label class="changeProfile-portrait-upload"><span class="changeProfile-portrait-upload-button button button-primary">Загрузить фото</span>
+            <input type="file">
+          </label>
+        </div>
+        <form class="generalForm changeProfile-form column small-12 medium-9 row">
+          <label class="generalForm-sub column small-12 medium-6 column-block"><span class="generalForm-required">Имя</span>
+            <input type="text" required>
+          </label>
+          <label class="generalForm-sub column small-12 medium-6 column-block"><span class="generalForm-required">Фамилия</span>
+            <input type="text" required>
+          </label>
+          <label class="generalForm-sub column small-12 medium-6 large-8 column-block">Вид деятельности
+            <input type="text">
+          </label>
+          <label class="generalForm-sub column small-12 medium-6 large-4 column-block">Город
+            <input type="text">
+          </label>
+          <label class="generalForm-sub column small-12 column-block">Дополнительная информация
+            <textarea></textarea>
+          </label>
+          <p class="generalForm-sub column small-12">Дата рождения</p>
+          <div class="column small-12 medium-4 column-block">
+            <select class="generalForm-select">
+              <option selected disabled>День</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+            </select>
+          </div>
+          <div class="column small-12 medium-4 column-block">
+            <select class="generalForm-select">
+              <option selected disabled>Месяц</option>
+              <option>Январь</option>
+              <option>Февраль</option>
+              <option>Март</option>
+              <option>Апрель</option>
+              <option>Май</option>
+              <option>Июнь</option>
+              <option>Июль</option>
+              <option>Август</option>
+              <option>Сентябрь</option>
+              <option>Октябрь</option>
+              <option>Ноябрь</option>
+              <option>Декабрь</option>
+            </select>
+          </div>
+          <div class="column small-12 medium-4 column-block">
+            <select class="generalForm-select">
+              <option selected disabled>Год</option>
+              <option>1960</option>
+              <option>1961</option>
+              <option>1962</option>
+              <option>1963</option>
+              <option>1964</option>
+              <option>1965</option>
+              <option>1966</option>
+              <option>1967</option>
+              <option>1968</option>
+              <option>1969</option>
+              <option>1970</option>
+              <option>1971</option>
+              <option>1972</option>
+              <option>1973</option>
+              <option>1974</option>
+              <option>1975</option>
+              <option>1976</option>
+              <option>1977</option>
+              <option>1978</option>
+              <option>1979</option>
+              <option>1980</option>
+              <option>1981</option>
+              <option>1982</option>
+              <option>1983</option>
+              <option>1984</option>
+              <option>1985</option>
+              <option>1986</option>
+              <option>1987</option>
+              <option>1988</option>
+              <option>1989</option>
+              <option>1990</option>
+              <option>1991</option>
+              <option>1992</option>
+              <option>1993</option>
+              <option>1994</option>
+              <option>1995</option>
+              <option>1996</option>
+              <option>1997</option>
+              <option>1998</option>
+              <option>1999</option>
+              <option>2000</option>
+              <option>2001</option>
+              <option>2002</option>
+              <option>2003</option>
+              <option>2004</option>
+              <option>2005</option>
+              <option>2006</option>
+              <option>2007</option>
+              <option>2008</option>
+              <option>2009</option>
+              <option>2010</option>
+            </select>
+          </div>
+          <p class="generalForm-sub column small-12">Социальные сети</p>
+          <p class="generalForm-hint column small-12">Нажмите на соответствующую иконку соц. сети, чтобы связать ее с вашим аккаунтом</p>
+          <div class="changeProfile-form-social vk column small-12 medium-6 large-4 column-block">
+            <input type="text" placeholder="Вконтакте" readonly>
+            <button class="changeProfile-form-social-button"><i class="icon-vk"></i></button>
+          </div>
+          <div class="changeProfile-form-social fb column small-12 medium-6 large-4 column-block">
+            <input type="text" placeholder="Facebook" readonly>
+            <button class="changeProfile-form-social-button"><i class="icon-fb"></i></button>
+          </div>
+          <div class="changeProfile-form-social gp column small-12 medium-6 large-4 column-block">
+            <input type="text" placeholder="Google Plus" readonly>
+            <button class="changeProfile-form-social-button"><i class="icon-google-plus"></i></button>
+          </div>
+          <div class="changeProfile-form-social tw column small-12 medium-6 large-4 column-block">
+            <input type="text" placeholder="Twitter" readonly>
+            <button class="changeProfile-form-social-button"><i class="icon-twitter"></i></button>
+          </div>
+          <div class="changeProfile-form-social skype column small-12 medium-6 large-4 column-block">
+            <input type="text" placeholder="Skype" readonly>
+            <button class="changeProfile-form-social-button"><i class="icon-skype"></i></button>
+          </div>
+          <div class="changeProfile-form-social inst column small-12 medium-6 large-4 column-block">
+            <input type="text" placeholder="Instagram" readonly>
+            <button class="changeProfile-form-social-button"><i class="icon-instagram"></i></button>
+          </div>
+          <!-- Display when change profile was success-->
+          <div class="changeProfile-form-complete column small-12 large-5"><i class="icon-check"></i>
+            <p><b>Изменения сохранены</b>. <br> Ваш профиль был успешно обновлен.</p>
+          </div>
+          <!-- End of success message-->
+          <div class="changeProfile-form-buttons column small-12 large-7">
+            <button class="button button-primary">Сохранить изменения</button><a class="button button-alert" href="user-account.html">Отменить</a>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="l-footerSubscibe">
+      <h2 class="footerSubscribe-title">Подписаться на рассылку</h2>
+      <form class="footerSubscribe-form">
+        <input type="email" name="email" placeholder="Ваш Email">
+        <button type="submit"><i class="icon-angle-right"></i></button>
+      </form>
+    </div>
+    <footer class="l-footer"><a class="footer-logo" href="index.html"><img src="img/colored-logo.png"></a>
+      <ul class="footer-links">
+        <li><a class="header-link" href="about.html"><span>О проекте</span></a></li>
+        <li><a class="header-link" href="partners.html"><span>Партнерам</span></a></li>
+        <li><a class="header-link" href="advertising.html"><span>Реклама</span></a></li>
+        <li><a class="header-link" href="contacts.html"><span>Контакты</span></a></li>
+      </ul>
+      <ul class="footer-social">
+        <li><a href="#"><i class="icon-fb"></i></a></li>
+        <li><a href="#"><i class="icon-twitter"></i></a></li>
+        <li><a href="#"><i class="icon-vk"></i></a></li>
+        <li><a href="#"><i class="icon-google-plus"></i></a></li>
+      </ul>
+      <div class="footer-copyright">
+        <p class="nowrap">© 2016, Science of everything. 
+          <wbr>Все права защищены.
+        </p>
+        <p>Сделано в <a href="http://dizz.in.ua/ru">Dizz Agency</a></p>
+      </div>
+      <button class="up-button"><i class="icon-angle-up"></i></button>
+    </footer>
+  </body>
+</html>

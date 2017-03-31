@@ -1,0 +1,95 @@
+.l-preloader
+  img(src="img/preloader.gif")
+
+.l-header
+  .header-bg
+  .header-menu
+    button.header-hamburger
+      i.icon-menu
+    ul.header-navTop
+      li: a.header-link(href="rubric.html"): span Астрофизика
+      li: a.header-link(href="rubric.html"): span Технологии
+      li: a.header-link(href="rubric.html"): span Психология
+      li: a.header-link(href="books.html"): span Книги
+      li: a.header-link(href="rubric.html"): span Медтех
+      li: a.header-link(href="rubric.html"): span Будущее
+      li: a.header-link(href="events.html"): span События
+      li: a.header-link(href="blog.html"): span Блог
+      li
+        .header-dropdown.header-link: span Спецпроект
+        ul.header-dropdown-list
+          li: a.header-link(href="special.html") Классика в моде
+          li: a.header-link(href="special.html") 25 шедевров в украине
+          li: a.header-link(href="special.html") Научный подход
+          li: a.header-link(href="special.html") Culture matters
+    .header-login
+      i.icon-user
+      // Title when user is guest
+      span Войти  / Регистрация
+      // Title when user is login
+      span.is-hidden Личный кабинет
+    button.header-search.button-round-outline
+      i.icon-search
+    form.header-searchForm.is-hidden
+      input(type="text" placeholder="Поиск")
+      button.header-searchForm-button(type="submit")
+        i.icon-search
+
+  .header-nav-wrap.is-hidden
+    nav.header-nav
+      button.header-nav-close
+        i.icon-close
+      a.header-nav-logo(href="index.html")
+        img(src="img/colored-logo.png")
+      ul.header-nav-list
+        li: a.header-link(href="index.html"): span Главная
+        li
+          span.header-nav-dropdown.header-link Темы
+          ul.header-nav-dropdown-list
+            li: a.header-link(href="rubric.html"): span Астрофизика
+            li: a.header-link(href="rubric.html"): span Технологии
+            li: a.header-link(href="rubric.html"): span Психология
+            li: a.header-link(href="rubric.html"): span Искусство
+            li: a.header-link(href="rubric.html"): span Будущее
+            li: a.header-link(href="books.html"): span Книги
+            li: a.header-link(href="special.html"): span Спецпроект
+        li: a.header-link(href="events.html"): span События
+        li: a.header-link(href="photo.html"): span Фотогалерея
+        li: a.header-link(href="video.html"): span Видео
+        li: a.header-link(href="blog.html"): span Блог
+        li: a.header-link(href="videolections.html"): span Видеолекции
+      ul.header-nav-list.header-nav-list-secondary
+        li: a.header-link(href="advertising.html"): span Размещение рекламы
+        li: a.header-link(href="therms-of-use.html"): span Пользовательское соглашение
+        li: a.header-link(href="partners.html"): span Партнерам
+        li: a.header-link(href="contacts.html"): span Контакты
+        li: a.header-link(href="about.html"): span О проекте
+      ul.header-nav-list.lang
+        li.is-active: a.header-link(href="#"): span Рус
+        li: a.header-link(href="#"): span Англ
+      ul.header-nav-list.modile
+        li
+          button.header-nav-login
+            i.icon-user
+            span Войти  / Регистрация
+        li
+          form.header-nav-search
+            input(type="text" name="search" placeholder="Поиск")
+            button(type="submit")
+              i.icon-search
+
+  include log-in-form.pug
+
+  a.header-logo(href="index.html")
+    img(src="img/white-logo.png")
+
+  if !homePage && !noBreadcrumbs
+    ul.breadcrumbs
+      li: a(href="index.html") Главная
+      if breadcrumbsPrev
+        each link, title in breadcrumbsPrev
+          li: a(href=link)= title
+      li= breadcrumbsCurrent
+
+  if searchPage
+    p.breadcrumbs-serch Поиск

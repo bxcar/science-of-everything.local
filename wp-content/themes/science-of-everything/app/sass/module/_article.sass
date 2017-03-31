@@ -1,0 +1,428 @@
+/* Module.Pages: Article - Visual content */
+
+.article-visualContent
+  img
+    width: 100%
+
+  iframe
+    @include size(100% 410px)
+
+    @include media(639px)
+      height: 326px
+
+    @include media(500px)
+      height: 253px
+
+    @include media(385px)
+      height: 188px
+
+/* Module.Pages: Article - Main content */
+
+.article-content
+  display: flex
+  margin-top: 25px
+
+  @include media(550px)
+    flex-direction: column
+
+/* Module.Pages: Article - Main content.Counters */
+
+.article-content-counters
+  width: 95px
+  margin-right: 30px
+
+  @include media(639px)
+    margin-right: 20px
+    margin-bottom: 20px
+
+  @include media(550px)
+    display: flex
+
+  @include media(450px)
+    margin-bottom: 15px
+
+.article-content-counters-date
+  @include size(100% 66px)
+  margin-bottom: 1em
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  font-size: 12px
+  font-weight: $medium
+  color: $white
+
+  @include bg-gradient
+
+  @include media(550px)
+    display: inline-flex
+    flex-direction: row
+    margin-bottom: 0
+    margin-right: 1em
+    @include size(auto)
+    background-image: none
+    color: $light-text
+
+  i, span
+    display: block
+
+  i
+    font-size: 13px
+    margin-bottom: .6em
+
+    @include media(550px)
+      margin-right: .5em
+      margin-bottom: 0
+
+.article-content-counters
+  .counters
+    display: flex
+    justify-content: space-around
+
+  .counters-item
+    margin-right: 0
+
+    @include media(550px)
+      margin-right: 1em
+
+/* Module.Pages: Article - Main content.Content */
+
+.article-content-text
+  flex-shrink: 200
+  width: calc(100% - 125px)
+  margin-bottom: 30px
+
+  @include media(639px)
+    width: calc(100% - 115px)
+
+  @include media(550px)
+    width: 100%
+
+  @include media(450px)
+    margin-bottom: 20px
+
+  .category
+    margin-bottom: 20px
+
+  h1, h2, h3, h4, p, img, figure, ul, .article-quote
+    margin-bottom: 20px
+
+    @include media(450px)
+      margin-bottom: 10px
+
+  img
+    width: 100%
+
+  figure
+    width: 100%
+
+  figcaption
+    text-align: center
+    font-size: 11px
+    font-style: italic
+    color: #a1a1a1
+
+  .article-float-left
+    display: block
+    width: auto
+    max-width: 50%
+    float: left
+    margin-right: 7.4%
+
+    @include media(639px)
+      float: none
+      max-width: 100%
+
+.special-article-page
+  .article-content-text
+    width: 100%
+    @include margin(40px null)
+    @include padding(null 8.11%)
+
+    @include media(500px)
+      @include padding(null 0)
+      @include margin(30px null)
+
+    .title-0
+      @include media(639px)
+        font-size: 21px
+
+      @include media(380px)
+        font-size: 19px
+
+/* Module.Pages: Article - Main content.Book */
+
+.book-article-page
+  .article-content-text
+    width: 100%
+    margin-bottom: 55px
+
+  .article-float-left
+    margin-right: 20px
+    margin-bottom: 0
+
+    img
+      width: auto
+      max-width: 100%
+
+/* Module.Pages: Article - Main content.Elements */
+
+.article-quote
+  position: relative
+  padding-left: 2.5em
+
+  font-size: 14px
+  line-height: 1.64
+  font-weight: $medium
+  font-style: italic
+  color: $grey-text
+
+  @include media(450px)
+    font-size: 13px
+
+  &::before
+    content: "“"
+    font-size: 72px
+    font-weight: $extrabold
+    color: $light-colored-text
+    opacity: .4
+
+    @include position(absolute, -40px null null 0)
+    z-index: -10
+
+.article-inner-list
+  padding-left: 20px
+  list-style: disc
+  color: #5b50a6
+
+  li:not(:last-child)
+    margin-bottom: .4em
+
+  li
+    font-size: 16px
+
+  span
+    font-size: 13px
+    color: $grey-text
+
+.article-img-list
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+  figure
+    width: auto
+
+  figure:not(:last-child)
+    margin-right: 1%
+
+.l-article
+  .shareSocial
+    margin-bottom: 60px
+
+    @include media(450px)
+      margin-bottom: 40px
+
+.article-gallary-slider
+  figure
+    margin-bottom: 0
+
+.article-gallary-photo
+  cursor: zoom-in
+
+.article-gallary-nav
+  color: $white
+  font-size: 20px
+
+.article-gallary-prev, .article-gallary-next
+  @include position(absolute, 50% null null null)
+  transform: translateY(-50%)
+  z-index: 100
+
+  @include size(29px)
+  border-radius: 50%
+  display: flex
+  justify-content: center
+  align-items: center
+
+  box-shadow: inset 0 0 0 7px $white
+  opacity: .6
+  cursor: pointer
+  @include main-transition
+
+  &:hover
+    opacity: .8
+
+.article-gallary-prev
+  left: 3.4%
+
+.article-gallary-next
+  right: 3.4%
+
+.article-gallary-previews
+  display: flex
+  justify-content: space-between
+  margin-top: -10px
+
+  @include media(450px)
+    margin-top: 0
+
+.article-gallary-previews-one
+  margin-bottom: 20px
+  border: 2px solid transparent
+
+  img
+    width: 100%
+    height: auto
+    cursor: pointer
+    margin-bottom: 0
+
+  &.is-current
+    border-color: #5a4db2 !important
+
+.article-gallary-photo-big
+  &.mfp-bg
+    opacity: 0
+    @include main-transition
+
+    &.mfp-ready
+      opacity: 0.8
+
+    &.mfp-removing
+      opacity: 0
+
+  &.mfp-wrap
+    .mfp-content
+      opacity: 0
+      @include main-transition
+
+    &.mfp-ready .mfp-content
+      opacity: 1
+
+    &.mfp-removing .mfp-content
+      opacity: 0
+
+button.mfp-close
+  font-size: 50px
+
+  @include media(639px)
+    font-size: 40px
+
+.spinningCircle
+  @include size(40px)
+  @include margin(null auto)
+  border-radius: 50%
+  border: 6px solid transparent
+  @include border-color(shade($light-text, 20%) shade($light-text, 20%) shade($light-text, 20%) null)
+  animation: single2 4s infinite linear
+
+@keyframes single2
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(720deg)
+
+/* Module.Pages: Article - Author */
+
+.article-author
+  @include padding(60px null)
+  border-top: 1px solid $light-border
+
+  @include media(450px)
+    @include padding(40px null)
+
+  @include media(380px)
+    @include padding(30px null)
+
+  .title-4
+    margin-bottom: 15px
+    text-align: center
+
+.article-author-avatar
+  @include size(65px)
+  @include margin(null auto)
+  margin-bottom: 10px
+
+  img
+    border-radius: 100px
+
+.article-author-links
+  display: flex
+  justify-content: center
+
+  a
+    @include size(27px)
+    @include margin(null 4px)
+    display: flex
+    justify-content: center
+    align-items: center
+
+    font-size: 11px
+    color: $light-text
+
+    border: 1px solid $light-text
+    border-radius: 100px
+
+    @include main-transition
+
+    &:hover
+      background-color: $light-text
+      color: $white
+
+/* Module.Pages: Article - Footer */
+
+.l-siblingsArticle
+  a
+    display: block
+
+.siblingsArticle-one
+  height: 200px
+  @include padding(30px 50px)
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  transform: translateZ(-100px)
+  position: relative
+  overflow: hidden
+
+  background: no-repeat center
+  background-size: cover
+
+  @include media(1023px)
+    @include padding(20px 30px)
+
+  @include media(639px)
+    height: 150px
+
+  &.next
+    align-items: flex-end
+    text-align: right
+
+  &::before
+    content: ""
+    @include size(100%)
+    @include position(absolute, 0 null null 0)
+    z-index: -10
+    background-color: rgba($black, .4)
+
+  .title-4
+    max-width: 280px
+    line-height: 1.5
+
+.siblingsArticle-one-bg
+  @include position(absolute, 0 null null 0)
+  z-index: -50
+  min-width: 100%
+  min-height: 100%
+
+.l-siblingsArticle a
+  @include media(639px)
+    &:not(:last-child)
+      margin-bottom: 20px
+
+.siblingsArticle-one-move
+  margin-bottom: 1em
+  font-size: 12px
+  color: $light-text

@@ -1,0 +1,42 @@
+extends template/account-layout.pug
+
+block prepend body
+  - var breadcrumbsCurrent = 'Подать материал'
+
+block account-section
+  .mainWrap.mainWrap-medium.row
+    section.l-sendPost.column.small-12.large-10
+      form.sendPost-form.generalForm
+        .generalForm-title
+          p.generalForm-sub.sendPost-form-sub Загрузить изображения:
+          label.generalForm-upload
+            span.generalForm-upload-button
+              i.icon-image
+            input(type="file")
+        input(type="text" placeholder="Заголовок")
+        select.generalForm-select
+          option(selected disabled) Рубрика
+          option Астрофизика
+          option Технологии
+          option Психология
+          option Будущее
+          option МедТех
+        textarea.sendPost-form-textarea-short(placeholder="Краткая часть")
+        .generalForm-title.manyImg
+          p.generalForm-sub.sendPost-form-sub Загрузить изображения:
+          label.generalForm-upload
+            span.generalForm-upload-button
+              i.icon-image
+            input(type="file")
+          label.generalForm-upload
+            span.generalForm-upload-button
+              i.icon-image
+            input(type="file")
+          label.generalForm-upload
+            span.generalForm-upload-button
+              i.icon-image
+            input(type="file")
+        textarea.sendPost-form-textarea-long(placeholder="Подробная часть")
+        .generalForm-buttons
+          button.button.button-warning Просмотр
+          button.button.button-primary Опубликовать

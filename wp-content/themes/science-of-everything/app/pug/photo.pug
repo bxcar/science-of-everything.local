@@ -1,0 +1,53 @@
+extends template/section-layout.pug
+
+block prepend body
+  - var bodyClass = 'photo-page'
+  - var breadcrumbsCurrent = 'Фото'
+
+block prepend content
+  - var sectionTitle = 'фото'
+  - var sortSelect = true
+
+block section-content
+  ul.articlesList.articlesList-detail.column.small-12.row
+    - var link = 'photo-article.html'
+    - var bannerClasses = 'articlesList-medium'
+    - var bgSrc = 'img/articles-list-item-bg-10.png'
+    - var articleTitle = 'Эта большая галактика'
+    - var autorCounter = true
+    include template/articlesItem-twoThirds.pug
+
+    - autorCounter = false
+    - var otherClasses = 'large-4 articlesList-medium'
+    - var detailItem = true
+    - var mediumItem = true
+    - var imgSrc = 'img/articles-list-item-img-19.png'
+    - var title = 'Регион на вырост: мрачные пейзажи Ланьчжоу'
+    include template/articlesItem-text.pug
+
+    - otherClasses = 'large-4 articlesList-medium-plus'
+    - mediumItem = false
+    - imgSrc = 'img/articles-list-item-img-20.png'
+    - title = 'Рыбак'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-21.png'
+    - title = 'В полете. Мечта сбывается !'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-22.png'
+    - title = 'Ладожские шхеры'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-23.png'
+    - title = 'Осенние зарисовки'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-24.png'
+    - title = 'Галактика Андромеды'
+    include template/articlesItem-text.pug
+
+    - otherClasses = 'large-4 articlesList-medium-plus hide-for-small show-for-large'
+    - imgSrc = 'img/articles-list-item-img-25.png'
+    - title = 'Бледское озеро (Blejsko jezero)'
+    include template/articlesItem-text.pug

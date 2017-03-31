@@ -1,0 +1,647 @@
+/* Module.Pages: Articles list - list */
+
+.articlesList
+  list-style: none
+
+  .articlesList-item-banner, .articlesList-item-text
+    height: 500px
+    position: relative
+    overflow: hidden
+
+.articlesList-compact
+  list-style: none
+
+  .articlesList-item-banner, .articlesList-item-text
+    height: 330px
+    position: relative
+
+.articlesList-medium-plus
+  .articlesList-item-banner, .articlesList-item-text
+    height: 470px
+
+  &.articlesList-item-text
+    height: 470px
+
+.articlesList-medium
+  .articlesList-item-banner, .articlesList-item-text
+    height: 432px
+
+  &.articlesList-item-text
+    height: 432px
+
+/* Module.Pages: Articles list - Items */
+
+.articlesList-item-bg
+  @include position(absolute, 0 null null 0)
+  z-index: -10
+  @include size(100%)
+  overflow: hidden
+
+  img
+    @include position(absolute, 0 null null 50%)
+    transform: translateX(-50%)
+    z-index: -9
+    @include main-transition
+
+  &::before
+    content: ""
+    display: block
+    @include size(100%)
+    @include position(absolute, 0 null null 0)
+    z-index: -8
+    background-color: $black
+    opacity: 0
+    @include main-transition
+
+.articlesList-item-banner
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  align-items: center
+  text-align: center
+  padding-bottom: 30px
+
+  @include media(639px)
+    max-width: 330px
+    @include margin(null auto)
+
+  &:hover
+    .articlesList-item-bg
+      img
+        transform: translate(-50%) scale(1.1)
+
+      &::before
+        opacity: .2
+
+  &.center
+    justify-content: center
+    padding-bottom: 0
+
+  .category
+    margin-bottom: 20px
+
+  .title-3
+    margin-bottom: 25px
+    max-width: 300px
+
+  .counters
+    @include padding(20px 25px null 25px)
+    border-top: 1px solid rgba($white, .5)
+
+  &.twoThirds
+    align-items: flex-start
+
+    .title-1
+      margin-bottom: 15px
+      padding-left: 40px
+      max-width: 515px
+      text-align: left
+
+      @include media(450px)
+        padding-left: 30px
+
+      @include media(350px)
+        padding-left: 20px
+
+    .counters
+      border-top: none
+      @include padding(0 0 null 40px)
+
+      @include media(450px)
+        padding-left: 30px
+
+      @include media(350px)
+        padding-left: 20px
+
+.articlesList-item-img-wrap
+  display: block
+  width: 100%
+  overflow: hidden
+  position: relative
+  margin-bottom: 25px
+
+  @include media(639px)
+    img
+      width: 100%
+
+  &::before
+    content: ""
+    display: block
+    @include size(100%)
+    @include position(absolute, 0 null null 0)
+    z-index: 10
+    background-color: $black
+    opacity: 0
+    @include main-transition
+
+.articlesList-item-img
+  display: block
+  max-width: 100%
+
+.articlesList-item-video
+  position: relative
+  &::after
+    content: "\f04b"
+    font-family: $icon-font
+    font-size: 36px
+    color: $white
+    @include position(absolute, 50% null null 50%)
+    transform: translate(-50%, -50%)
+    z-index: 100
+
+.articlesList-item-text
+
+  @include media(1023px)
+    display: flex
+    flex-direction: column
+
+  @include media(639px)
+    max-width: 350px
+    height: auto !important
+    @include margin(null auto)
+
+  .category-text, .title-3
+    margin-bottom: 18px
+
+  &:hover
+    .articlesList-item-img-wrap
+      &::before
+        opacity: .2
+
+.articlesList-item-text.dark
+  display: flex
+  flex-direction: column
+
+  @include media(639px)
+    max-width: 330px
+
+  .articlesList-item-img-wrap
+    margin-bottom: 0
+
+  &:hover
+    .articlesList-item-text-content
+      background-color: #49485e
+
+  .articlesList-item-img
+    margin-bottom: 0
+
+  .counters
+    color: #a19fb2
+
+  .articlesList-item-text-content
+    background-color: #595771
+    @include main-transition
+    padding: 25px
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+
+    @include media(639px)
+      height: 158px
+
+    .title-5
+      flex-grow: 1
+      @include main-transition
+
+.articlesList-item-text-content
+  @include media(1023px)
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+
+    .title-4
+      flex-grow: 1
+
+.articlesList-compact
+  .title-4
+    margin-bottom: 25px
+
+  @include media(1023px)
+    .articlesList-item-banner
+      height: 444px
+
+    .articlesList-item-bg
+      height: 100%
+
+      img
+        height: 100%
+
+.articlesList-detail
+  .articlesList-item-img-wrap
+    margin-bottom: 20px
+
+  .counters
+    margin-bottom: 15px
+
+/* Module.Pages: Articles list - Astro list */
+
+// .l-sectionAstro
+//   .articlesList-item-text:hover
+//     .title-5
+//       color: $orange
+
+/* Module.Pages: Articles list - Techno list */
+
+.articlesList-techno
+  .articlesList-item-text
+    .title-3
+      @include main-transition
+
+    &:hover
+      .title-3
+        color: $light-blue
+
+/* Module.Pages: Articles list - Psycho list */
+
+.articlesList-psycho
+  .title-4
+    @include main-transition
+
+  .articlesList-item-text
+    &:hover
+      .title-4
+        color: $pink
+
+  .articlesList-item-text
+    @include media(1023px)
+      height: 310px
+
+    @include media(639px)
+      height: auto
+
+/* Module.Pages: Articles list - Books list */
+
+.articlesList-item-book
+  text-align: center
+
+  @include media(639px)
+    max-width: 350px
+    @include margin(null auto 30px auto)
+
+  .title-3
+    @include margin(null auto 20px auto)
+    max-width: 285px
+    @include main-transition
+
+  &:hover
+    .title-3
+      color: $green2
+
+.home-page
+  .articlesList-item-book
+    @include media(min-width 639px max-width 1023px)
+      &:last-child
+        display: none
+
+.books-page
+  .articlesList-item-book
+    margin-bottom: 50px
+
+.articlesList-item-book-img
+  display: block
+  border-bottom: 1px solid $purple2
+  margin-bottom: 25px
+  overflow: hidden
+
+  img
+    margin-left: 7%
+    box-shadow: -18px 20px 30px rgba($black, .25)
+
+.books-page
+  .articlesList-item-book-img
+
+    img
+      width: 84.5%
+      margin-left: 6%
+      // filter: drop-shadow(-15px 9px 8px rgba($black, .2))
+      box-shadow: -12px 20px 25px rgba($black, .2)
+
+/* Module.Pages: Articles list - Events list */
+
+.sectionEvents-item
+  @include media(1023px)
+    margin-bottom: 30px
+
+    &:last-child
+      margin-bottom: 0
+
+.articlesList-events
+  @include media(1023px)
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  li
+    display: flex
+    margin-bottom: 30px
+
+    @include media(1023px)
+      width: 49%
+
+    @include media(740px)
+      width: 100%
+
+    &:hover
+      .articlesList-events-img
+        &::before
+          opacity: .2
+
+      .title-4
+        color: $blue
+
+  img
+    @include size(100%)
+
+  .title-4
+    max-width: 305px
+    @include main-transition
+
+  .counters
+    @include margin(20px null)
+
+    @include media(1023px)
+      @include margin(15px 0 15px null)
+
+    @include media(450px)
+      @include margin(10px null 13px null)
+
+.articlesList-events-img
+  margin-right: 20px
+  position: relative
+
+  @include media(450px)
+    @include size(110px)
+    margin-right: 10px
+
+  &::before
+    content: ""
+    display: block
+    @include size(100%)
+    @include position(absolute, 0 null null 0)
+    z-index: 10
+    background-color: $black
+    opacity: 0
+    @include main-transition
+
+.articlesList-events-content
+  width: calc(100% - 180px)
+
+  @include media(450px)
+    width: calc(100% - 120px)
+
+.articlesList-events-time
+  @include media(450px)
+    display: none
+
+.events-page
+  .articlesList-item-text
+    .title-3, .title-4
+      @include main-transition
+
+    &:hover
+      .title-3, .title-4
+        color: $blue
+
+/* Module.Pages: Articles list - Inner pages */
+
+.l-articles
+  .button-more
+    margin-top: 30px
+
+    @include media(450px)
+      margin-top: 20px
+
+.books-page, .events-page
+  .l-articles
+    .button-more
+      margin-top: 0
+
+.articles-events-item:not(:last-child)
+  margin-bottom: 75px
+
+  @include media(639px)
+    margin-bottom: 50px
+
+  @include media(350px)
+    margin-bottom: 40px
+
+.photo-page
+  .articlesList-item-text
+    .title-3
+      @include main-transition
+
+    &:hover
+      .title-3
+        color: $orange2
+
+.video-page
+  .articlesList-item-text
+    .title-3
+      @include main-transition
+
+    &:hover
+      .title-3
+        color: $purple4
+
+/* Module.Pages: Articles list - Special page */
+
+.articlesList-special-item
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  margin-bottom: 30px
+  background-color: rgba($light-colored-text, .05)
+
+  @include media(1023px)
+    flex-direction: column
+
+  &:hover
+    .articlesList-special-item-img
+      &::before
+        opacity: .2
+
+    .title-3
+      color: $pink2
+
+.articlesList-special-item-img
+  display: block
+  margin-right: 3.4%
+  width: 350px
+  position: relative
+
+  @include media(1023px)
+    // @include margin(null auto 30px auto)
+    width: 100%
+    max-height: 400px
+
+    img
+      width: 100%
+      max-height: none
+
+  @include media(639px)
+    max-height: 300px
+
+  &::before
+    content: ""
+    display: block
+    @include size(100%)
+    @include position(absolute, 0 null null 0)
+    z-index: 100
+    background-color: $black
+    opacity: 0
+    @include main-transition
+
+.articlesList-special-item-text
+  width: calc(96.6% - 350px)
+  @include padding(30px 7.31% 30px null)
+
+  @include media(1023px)
+    width: 100%
+    @include padding(40px 30px 50px)
+
+  @include media(390px)
+    @include padding(30px 20px 40px)
+
+  .counters
+    margin-bottom: 25px
+
+  .title-3
+    margin-bottom: 20px
+    min-height: 120px
+    display: flex
+    align-items: flex-end
+    @include main-transition
+
+    @include media(1023px)
+      min-height: 80px
+
+    > *
+      display: block
+
+/* Module.Pages: Articles list - Account list */
+
+.articlesList-item-edit
+  @include position(absolute, 0 15px null null)
+  z-index: 1000
+  display: flex
+
+  opacity: 0
+  @include main-transition
+
+  @include media(1023px)
+    opacity: 1
+
+  @include media(640px)
+    right: 10px
+
+  i
+    font-size: 14px
+    color: $white
+
+  &:hover
+    opacity: 1
+
+.articlesList-item-edit-edit, .articlesList-item-edit-delete
+  @include size(40px 33px)
+  display: flex
+  justify-content: center
+  align-items: center
+
+  background-color: #49485e
+
+.articlesList-item-edit-edit
+  border-bottom-left-radius: 3px
+
+.articlesList-item-edit-delete
+  border-left: 1px solid #595771
+
+li.edit
+  position: relative
+
+  @include media(639px)
+    max-width: 350px
+    @include margin(null auto)
+
+  .articlesList-item-text
+    &:hover
+      + .articlesList-item-edit
+        opacity: 1
+
+li
+  &[class*="label-"]
+    &::before
+      @include position(absolute, 0 null null 15px)
+      z-index: 1000
+
+      @include size(40px 33px)
+      display: flex
+      justify-content: center
+      align-items: center
+      overflow: hidden
+
+      border-bottom-right-radius: 3px
+
+      white-space: nowrap
+      font-size: 14px
+      font-weight: $bold
+      text-transform: uppercase
+      color: $white
+
+      transition: width .5s $ease-in-out-sine
+
+      @include media(1023px)
+        width: auto
+        @include padding(null 10px)
+        font-size: 9px
+
+      @include media(639px)
+        left: 10px
+
+    &:hover
+      &::before
+        width: 130px
+        font-size: 11px
+
+        @include media(1150px)
+          width: 110px
+          font-size: 10px
+
+        @include media(1023px)
+          width: auto
+          font-size: 9px
+
+  &.label-on-moderate
+    &::before
+      content: "м"
+      background-color: $pink2
+
+      @include media(1023px)
+        content: "на модерации"
+
+    &:hover
+      &::before
+        content: "на модерации"
+
+  &.label-rejected
+    &::before
+      content: "о"
+      background-color: $red
+
+      @include media(1023px)
+        content: "отклонено"
+
+    &:hover
+      &::before
+        content: "отклонено"
+
+  &.label-posted
+    &::before
+      content: "о"
+      background-color: $green2
+
+      @include media(1023px)
+        content: "опубликовано"
+
+    &:hover
+      &::before
+        content: "опубликовано"

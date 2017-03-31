@@ -1,0 +1,209 @@
+/* Module.Elements: Buttons */
+
+.button
+  height: 40px
+  border-radius: 100px
+  @include padding(null 1.7em)
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 14px
+  font-weight: $medium
+  color: $white
+  text-align: center
+  @include main-transition
+
+.button-primary
+  background-color: $purple
+
+  &:hover
+    animation: btnPrimaryAnim 1s .5s linear infinite
+
+@keyframes btnPrimaryAnim
+  50%
+    background-color: rgba($purple, .8)
+
+.button-warning
+  background-color: $yellow
+
+  &:hover
+    animation: btnWarningAnim 1s .5s linear infinite
+
+@keyframes btnWarningAnim
+  50%
+    background-color: rgba($yellow, .55)
+
+.button-alert
+  background-color: $red
+
+  &:hover
+    animation: btnAlertAnim 1s .5s linear infinite
+
+@keyframes btnAlertAnim
+  50%
+    background-color: rgba($red, .6)
+
+.button-round-outline
+  position: relative
+  @include size(51px)
+  border-radius: 50%
+  border: 1.5px solid $purple-medium-border
+  color: $light-colored-text
+  @include slow-transition
+
+  &::before
+    content: ""
+    @include position(absolute, 0 null null 0)
+    z-index: -1
+    @include size(100%)
+    border-radius: 50%
+    box-shadow: inset 0 0 0 26px $light-colored-text
+    opacity: 0
+    @include slow-transition
+
+  .icon-search
+    font-size: 18px
+
+  .icon-close
+    font-size: 28px
+
+  &:hover
+    color: $white
+    border-color: $light-colored-text
+
+    &::before
+      opacity: 1
+      box-shadow: inset 0 0 0 0 $light-colored-text
+
+.button-more
+  @include size(100% 70px)
+  display: flex
+  justify-content: center
+  align-items: center
+
+  font-size: 12px
+  font-weight: $medium
+  color: $white
+  text-transform: uppercase
+
+  background-color: #484466
+  cursor: pointer
+
+  @include main-transition
+
+  @include media(639px)
+    max-width: 330px
+    @include margin(null auto)
+
+  i
+    margin-left: .5em
+    font-size: 14px
+
+  &:hover
+    background-color: tint(#484466, 10%)
+
+.button-more-light
+  @extend .button-more
+  height: 45px
+  color: $dark-text
+  background-color: #fbfbfb
+  border: 1px solid $light-border
+
+  i
+    transform: none
+
+  &:hover
+    background-color: $light-border
+
+.button-more-icon
+  @include size(100% 70px)
+  display: flex
+  justify-content: center
+  align-items: center
+
+  font-size: 30px
+  color: #484466
+
+  background-color: $white
+  border: 1px solid rgba(#484466, .1)
+
+  @include main-transition
+
+  &:hover
+    background-color: rgba(#484466, .1)
+
+.button-reply
+  @include padding(5px null)
+  font-size: 10px
+  text-transform: uppercase
+  color: $light-colored-text
+
+  i
+    margin-right: .7em
+    color: $light-text
+    @include main-transition
+
+  &:hover
+    i
+      color: $light-colored-text
+
+.up-button
+  @include size(46px)
+  border-radius: 100px
+  border: 1.5px solid $light-colored-text
+  color: #5a5671
+  @include slow-transition
+
+  &::before
+    content: ""
+    @include position(absolute, 0 null null 0)
+    z-index: -1
+    @include size(100%)
+    border-radius: 50%
+    box-shadow: inset 0 0 0 26px rgba($middle-colored-text, .5)
+    opacity: 0
+    @include slow-transition
+
+  i
+    display: block
+    font-size: 16px
+    transform: translateY(-2px)
+
+  &:hover
+    &::before
+      opacity: 1
+      box-shadow: inset 0 0 0 0 rgba($middle-colored-text, .5)
+
+.button-light-outline-big
+  background-color: #fbfbfb
+  border: 1px solid $light-border
+  @include size(100% 45px)
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 12px
+  font-weight: $medium
+  color: $dark-text
+  text-transform: uppercase
+  @include main-transition
+
+  &:hover
+    background-color: $light-border
+
+.button-dark-bg
+  display: inline-flex
+  text-align: center
+  justify-content: center
+  align-items: center
+  height: 44px
+  width: 210px
+  @include padding(null 20px)
+  background-color: #5e5c6c
+  font-size: 12px
+  font-weight: $medium
+  color: $white
+  text-transform: uppercase
+  @include main-transition
+
+  &:hover
+    background-color: rgba(#5e5c6c, .6)

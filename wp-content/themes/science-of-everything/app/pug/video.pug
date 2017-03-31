@@ -1,0 +1,47 @@
+extends template/section-layout.pug
+
+block prepend body
+  - var bodyClass = 'video-page'
+  - var breadcrumbsCurrent = 'Видео'
+
+block prepend content
+  - var sectionTitle = 'видео'
+  - var sortSelect = true
+
+block section-content
+  ul.articlesList-compact.articlesList-detail.column.small-12.row
+    - var link = 'video-article.html'
+    - var bgSrc = 'img/articles-list-item-bg-13.png'
+    - var articleTitle = 'Идентифицированы области мозга, связанны'
+    include template/articlesItem-halfWidth.pug
+
+    - var bgSrc = 'img/articles-list-item-bg-14.png'
+    include template/articlesItem-halfWidth.pug
+
+    - var detailItem = true
+    - var otherClasses = 'large-4 articlesList-medium-plus'
+    - var figureClass = 'articlesList-item-video'
+    - var imgSrc = 'img/articles-list-item-img-13.png'
+    - var title = 'Google Glass превратили в тренажер кода Морзе'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-17.png'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-22.png'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-19.png'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-23.png'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-25.png'
+    include template/articlesItem-text.pug
+
+    - bgSrc = 'img/articles-list-item-bg-15.png'
+    include template/articlesItem-halfWidth.pug
+
+    - bgSrc = 'img/articles-list-item-bg-16.png'
+    include template/articlesItem-halfWidth.pug

@@ -1,0 +1,67 @@
+/* Module.Pages: Contacts - Details */
+
+.contacts-details
+  text-align: center
+  font-style: normal
+  margin-bottom: 65px
+
+  @include media(700px)
+    margin-bottom: 30px
+
+  a:not(:last-child), p:not(:last-child)
+    display: block
+    margin-bottom: 20px
+
+.contacts-details-main
+  font-size: 48px
+  font-weight: $medium
+
+  @include media(450px)
+    font-size: 36px
+
+.contacts-details-second, .contacts-details-third
+  font-size: 20px
+  line-height: 1.5
+
+  @include media(450px)
+    font-size: 18px
+
+.contacts-details-second
+  font-weight: $medium
+
+/* Module.Pages: Contacts - Authors */
+
+.contacts-authors
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+  max-width: 840px
+  @include margin(null auto)
+
+  text-align: center
+
+  li
+    width: 33.33333%
+
+    @include media(700px)
+      width: 100%
+      margin-bottom: 20px
+
+  a:not(:last-child), p:not(:last-child)
+    margin-bottom: 15px
+
+.contacts-authors-photo
+  overflow: hidden
+  border-radius: 50%
+  margin-bottom: 25px
+
+.contacts-authors-name
+  font-size: 18px
+  font-weight: $medium
+
+.contacts-authors-status
+  font-size: 14px
+
+.contacts-authors-address
+  font-size: 15px
+  color: #837bbc

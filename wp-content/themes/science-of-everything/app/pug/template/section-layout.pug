@@ -1,0 +1,17 @@
+extends base-layout.pug
+
+block content
+  .mainWrap.mainWrap-medium
+    section.l-articles.row
+      .column.small-12
+        .section-title-inner
+          h2.title-4= sectionTitle
+          if sortSelect
+            include sort-select.pug
+          else
+            include sort-button.pug
+
+      block section-content
+
+      .column.small-12
+        include more-button.pug

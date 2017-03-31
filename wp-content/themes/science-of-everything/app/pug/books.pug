@@ -1,0 +1,73 @@
+extends template/section-layout.pug
+
+block prepend body
+  - var bodyClass = "books-page"
+  - var breadcrumbsCurrent = 'Книги'
+
+block prepend content
+  - var sectionTitle = 'книги'
+  - var sortSelect = true
+
+block section-content
+  ul.articlesList-books.column.small-12.row
+    - var link = 'book-article.html'
+    - var bookClasses = 'large-3'
+    - var bookImg = 'img/book-4.png'
+    - var bookTitle = 'Восходящая спираль'
+    - var bookDesctiption = 'Как нейрофизиология помогает справиться с негативом и депрессией — шаг за шагом'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-5.png'
+    - var bookTitle = 'Вилки вместо ножей на практике'
+    - var bookDesctiption = '4-недельный пошаговый план перехода на здоровое питание'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-6.png'
+    - var bookTitle = 'Как написать книгу за 30 дней'
+    - var bookDesctiption = 'Вы всегда мечтали писать, но никак не могли перейти к делу'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-7.png'
+    - var bookTitle = 'Система продаж через интернет'
+    - var bookDesctiption = 'Вы хотите зарабатывать много?'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-8.png'
+    - var bookTitle = 'Что, где и когда делать для получения максимального эффекта'
+    - var bookDesctiption = 'та книга содержит рекомендации и методы, основанные на научных ...'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-9.png'
+    - var bookTitle = 'Наука о том, почему мы покупаем'
+    - var bookDesctiption = 'Людям свойственно быть зависимыми от собственных покупок.'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-10.png'
+    - var bookTitle = 'Наука — как свеча во тьме'
+    - var bookDesctiption = 'Это последняя книга Карла Сагана, астронома, астрофизика и выдающегося популяризатора науки, вышедшая уже после его смерти.'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-11.png'
+    - var bookTitle = 'Наука о том, когда что произошло'
+    - var bookDesctiption = 'Каков возраст нашей планеты? Когда и зачем были построены египетские пирамиды? ...'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-12.png'
+    - var bookTitle = 'Секреты наблюдательности истинных лидеров'
+    - var bookDesctiption = 'Хотите научиться видеть больше остальных?'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-13.png'
+    - var bookTitle = 'Искусство проведения интервью'
+    - var bookDesctiption = 'Эта книга нацелена на развитие навыков проведения интервью, необходимых вам, если ваша ...'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-14.png'
+    - var bookTitle = 'Метод Сильвы. Искусство управления'
+    - var bookDesctiption = 'Менеджер, прошедший подготовку по методу Сильвы. - это человек с улучшенным восприятием, памятью ...'
+    include template/articlesItem-book.pug
+
+    - var bookImg = 'img/book-15.png'
+    - var bookTitle = 'Искусство креативного мышления'
+    - var bookDesctiption = 'Применение креативного мышления в «некреативных» областях может обеспечить огромное преимущество.'
+    include template/articlesItem-book.pug

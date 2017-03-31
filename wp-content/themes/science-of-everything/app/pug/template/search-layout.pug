@@ -1,0 +1,17 @@
+extends base-layout.pug
+
+block prepend body
+  - var noBreadcrumbs = true
+  - var searchPage = true
+
+block content
+  .mainWrap.mainWrap-medium.row
+    .l-search.column.small-12
+      .section-title-inner
+        form.search-form
+          input(type="text" value="Жизнь на марсе")
+        p.search-count
+          | #[i.icon-search] #[span= searchNumber] #[span.hide-for-small-only Результаты поиска]
+      p.search-hint Введите для повторного поиска
+
+      block search-result

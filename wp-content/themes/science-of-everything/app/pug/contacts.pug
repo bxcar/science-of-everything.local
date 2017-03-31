@@ -1,0 +1,22 @@
+extends template/base-layout.pug
+
+block prepend body
+  - var bodyClass = 'contact-page'
+  - var noBreadcrumbs = true
+
+block content
+  .mainWrap.mainWrap-medium.row
+    .l-contacts.column.small-12
+      address.contacts-details
+        a.contacts-details-main.white(href="#") infoua@.com.ua
+        p.contacts-details-second.white Украина, #[span.nowrap г.Киев,] #[span.nowrap ул. Корабельная, 5]
+        p.contacts-details-third.white Телефон: #[span.nowrap +38 044 425-04-93]
+      ul.contacts-authors
+        - var authorsDetails = [{name: 'Оксана Рыбина', status: 'Администратор', email: 'Oksaya.R.@gmail.com'}, {name: 'Миша Светраков', status: 'Редактор', email: 'Mihail.C.@gmail.com'}, {name: 'Оликсандор Дроздов', status: 'Журналист', email: 'Olikcandor.D.@gmail.com'}]
+        each author, index in authorsDetails
+          li
+            figure.contacts-authors-photo
+              img(src="img/contacts-author-" + index + ".png")
+            p.contacts-authors-name.white= author.name
+            p.contacts-authors-status.white= author.status
+            a.contacts-authors-address(href="#")= author.email

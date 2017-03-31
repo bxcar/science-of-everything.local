@@ -1,0 +1,63 @@
+section.comments
+  .section-title
+    h2.title-4
+      i.icon-comment
+      | комментарии
+  .comments-posts
+    .comments-posts-one
+      figure.comments-posts-avatar.google-plus
+        img(src="img/comments-avatar-1.png")
+      .comments-posts-content
+        p.title-4 Оликсандор Дроздов
+        .counters.counters-item
+          i.icon-time
+          span 5 ноября
+        p.text-p
+          | Есть специальные генераторы, создающие собственные варианты. Сайтах и смысловую нагрузку ему нести совсем необязательно распространенных.
+        include button-reply.pug
+    .comments-posts-one.reply
+      figure.comments-posts-avatar.twitter
+        img(src="img/comments-avatar-2.png")
+      .comments-posts-content
+        p.title-4 Никита Светлый
+        .counters.counters-item
+          i.icon-time
+          span 7 ноября
+        p.text-p
+          | Древнеримскому философу цицерону, ведь именно из его трактата о пределах.
+        include button-reply.pug
+    .comments-posts-one.reply
+      figure.comments-posts-avatar.fb
+        img(src="img/comments-avatar-3.png")
+      .comments-posts-content
+        p.title-4 Оксана Рыбина
+        .counters.counters-item
+          i.icon-time
+          span 8 ноября
+        p.text-p
+          | О пределах добра и смысловую нагрузку ему нести совсем. Отсюда напрашивается вывод, что все.
+        include button-reply.pug
+    .comments-posts-one
+      figure.comments-posts-avatar
+        img(src="img/comments-avatar-4.png")
+      .comments-posts-content
+        p.title-4 Миша Светраков
+        .counters.counters-item
+          i.icon-time
+          span 11 ноября
+        p.text-p
+          | Есть специальные генераторы, создающие собственные варианты. Сайтах и смысловую нагрузку ему нести совсем необязательно распространенных.
+        include button-reply.pug
+
+  if !noLogin
+    .comments-write
+      figure.comments-posts-avatar
+        img(src="img/comments-avatar-4.png")
+      form.comments-write-form
+        textarea(name="comment" placeholder="Комментарий" required)
+        button.button.button-primary(type="submit") Отправить
+  else
+    .comments-alert
+      span.comments-alert-icon !
+      span
+         | #[b Внимания!] #[br] Чтобы оставить комментарий #[button.comments-alert-login войдите] в систему или #[button.comments-alert-register зарегистрируйтесь].

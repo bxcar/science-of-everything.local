@@ -1,0 +1,19 @@
+li.columns.column-block.large-3.medium-4.small-12(class=compactClasses)
+  if link
+    a.articlesList-item-text(href=link)
+      figure.articlesList-item-img-wrap
+        img.articlesList-item-img(src=articleImg)
+      .articlesList-item-text-content
+        if rubricItem
+          p.category-text(class=category.class)= category.text
+        p.title-4(class=titleClasses)= articleTitle
+        include counters.pug
+  else
+    a.articlesList-item-text(href="#")
+      figure.articlesList-item-img-wrap
+        img.articlesList-item-img(src=articleImg)
+      .articlesList-item-text-content
+        if rubricItem
+          p.category-text(class=category.class)= category.text
+        p.title-4(class=titleClasses)= articleTitle
+        include counters.pug

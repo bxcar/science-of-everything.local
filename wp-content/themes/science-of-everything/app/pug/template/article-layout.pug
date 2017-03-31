@@ -1,0 +1,63 @@
+extends base-layout.pug
+
+block prepend body
+  - var bodyClass = 'article-page'
+
+block content
+  .mainWrap.mainWrap-medium.row
+    article.l-article.column.large-8.small-12
+      section.article-visualContent
+        block visual-content
+      section.article-content
+        .article-content-counters
+          .article-content-counters-date
+            i.icon-time
+            span 23.11.2016
+          .counters
+            .counters-item
+              i.icon-view
+              span 124
+            .counters-item
+              i.icon-comment
+              span 4
+
+        .article-content-text
+          if rubricArticle
+            .category.category-m.category-technology ТЕХНОЛОГИИ
+          block article-title
+            h1.title-0= articleTitle
+          block article-text
+
+      if blogArticle
+        .article-author
+          figure.article-author-avatar
+            img(src="img/author-avatar-1.png")
+          p.title-4 Brian Switek
+          .article-author-links
+            a.fb(href="#")
+              i.icon-fb
+            a.tw(href="#")
+              i.icon-twitter
+            a.in(href="#")
+              i.icon-linkedin
+
+      include share-social.pug
+
+      if fullLayout
+        .tags
+          p.text-sub Теги:
+          .tags-list
+            each tag in tagsList
+              button.tags-one= tag
+
+      include comments.pug
+
+    include sidebar.pug
+
+    if fullLayout
+      include siblings-article.pug
+
+      include other-articles.pug
+
+    if rubricArticle
+      include other-articles.pug

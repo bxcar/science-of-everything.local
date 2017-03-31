@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <title>Наука всего</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/libs.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body class="article-page book-article-page">
+    <div class="l-preloader"><img src="img/preloader.gif"></div>
+    <div class="l-header">
+      <div class="header-bg"></div>
+      <div class="header-menu">
+        <button class="header-hamburger"><i class="icon-menu"></i></button>
+        <ul class="header-navTop">
+          <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Технологии</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
+          <li><a class="header-link" href="books.html"><span>Книги</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Медтех</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Будущее</span></a></li>
+          <li><a class="header-link" href="events.html"><span>События</span></a></li>
+          <li><a class="header-link" href="blog.html"><span>Блог</span></a></li>
+          <li>
+            <div class="header-dropdown header-link"><span>Спецпроект</span></div>
+            <ul class="header-dropdown-list">
+              <li><a class="header-link" href="special.html">Классика в моде</a></li>
+              <li><a class="header-link" href="special.html">25 шедевров в украине</a></li>
+              <li><a class="header-link" href="special.html">Научный подход</a></li>
+              <li><a class="header-link" href="special.html">Culture matters</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="header-login"><i class="icon-user"></i>
+          <!-- Title when user is guest--><span>Войти  / Регистрация</span>
+          <!-- Title when user is login--><span class="is-hidden">Личный кабинет</span>
+        </div>
+        <button class="header-search button-round-outline"><i class="icon-search"></i></button>
+        <form class="header-searchForm is-hidden">
+          <input type="text" placeholder="Поиск">
+          <button class="header-searchForm-button" type="submit"><i class="icon-search"></i></button>
+        </form>
+      </div>
+      <div class="header-nav-wrap is-hidden">
+        <nav class="header-nav">
+          <button class="header-nav-close"><i class="icon-close"></i></button><a class="header-nav-logo" href="index.html"><img src="img/colored-logo.png"></a>
+          <ul class="header-nav-list">
+            <li><a class="header-link" href="index.html"><span>Главная</span></a></li>
+            <li><span class="header-nav-dropdown header-link">Темы</span>
+              <ul class="header-nav-dropdown-list">
+                <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Технологии</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Искусство</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Будущее</span></a></li>
+                <li><a class="header-link" href="books.html"><span>Книги</span></a></li>
+                <li><a class="header-link" href="special.html"><span>Спецпроект</span></a></li>
+              </ul>
+            </li>
+            <li><a class="header-link" href="events.html"><span>События</span></a></li>
+            <li><a class="header-link" href="photo.html"><span>Фотогалерея</span></a></li>
+            <li><a class="header-link" href="video.html"><span>Видео</span></a></li>
+            <li><a class="header-link" href="blog.html"><span>Блог</span></a></li>
+            <li><a class="header-link" href="videolections.html"><span>Видеолекции</span></a></li>
+          </ul>
+          <ul class="header-nav-list header-nav-list-secondary">
+            <li><a class="header-link" href="advertising.html"><span>Размещение рекламы</span></a></li>
+            <li><a class="header-link" href="therms-of-use.html"><span>Пользовательское соглашение</span></a></li>
+            <li><a class="header-link" href="partners.html"><span>Партнерам</span></a></li>
+            <li><a class="header-link" href="contacts.html"><span>Контакты</span></a></li>
+            <li><a class="header-link" href="about.html"><span>О проекте</span></a></li>
+          </ul>
+          <ul class="header-nav-list lang">
+            <li class="is-active"><a class="header-link" href="#"><span>Рус</span></a></li>
+            <li><a class="header-link" href="#"><span>Англ</span></a></li>
+          </ul>
+          <ul class="header-nav-list modile">
+            <li>
+              <button class="header-nav-login"><i class="icon-user"></i><span>Войти  / Регистрация</span></button>
+            </li>
+            <li>
+              <form class="header-nav-search">
+                <input type="text" name="search" placeholder="Поиск">
+                <button type="submit"><i class="icon-search"></i></button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-loginForm-wrap is-hidden">
+        <button class="header-loginForm-close button-round-outline"><i class="icon-close"></i></button>
+        <div class="header-loginForm">
+          <h2 class="header-loginForm-title">Форма входа</h2>
+          <ul class="header-loginForm-method">
+            <li><a href="#login-form">Войти</a></li>
+            <li><a href="#register-form">Регистрация</a></li>
+          </ul>
+          <div class="header-loginForm-form" id="login-form">
+            <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
+            <div class="header-loginForm-social">
+              <button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+              <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
+              <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
+              <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
+            </div>
+            <p class="header-loginForm-text decoration">или</p>
+            <form class="header-loginForm-email">
+              <p><i class="icon-mail"></i>
+                <input type="email" name="email" placeholder="Эл.почта">
+              </p>
+              <p><i class="icon-key"></i>
+                <input type="password" name="password" placeholder="Пароль">
+              </p>
+              <button class="button button-primary" type="submit">Войти</button>
+            </form>
+            <button class="header-loginForm-text header-loginForm-restorePassword">Восстановить пароль</button>
+          </div>
+          <div class="header-loginForm-form" id="register-form">
+            <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
+            <div class="header-loginForm-social">
+              <button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+              <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
+              <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
+              <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
+            </div>
+            <p class="header-loginForm-text decoration">или</p>
+            <form class="header-loginForm-email">
+              <p><i class="icon-user"></i>
+                <input type="text" name="name" placeholder="Имя">
+              </p>
+              <p><i class="icon-mail"></i>
+                <input type="email" name="email" placeholder="Эл.почта">
+              </p>
+              <p><i class="icon-key"></i>
+                <input type="password" name="password" placeholder="Пароль">
+              </p>
+              <button class="button button-primary" type="submit">Зарегистрироваться</button>
+              <p class="header-loginForm-text small">Нажимая на кнопку «Зарегистрироваться», вы подтверждаете свое согласие с условиями предоставления услуг (<a href="therms-of-use.html">пользовательское соглашение</a>)</p>
+            </form>
+          </div>
+        </div>
+        <div class="header-restorePassword">
+          <h2 class="header-loginForm-title">Забыли пароль?</h2>
+          <p class="header-loginForm-text">Введите свой E-mail, чтобы помочь нам идентифицировать вашу личность.</p>
+          <form class="header-loginForm-email">
+            <p><i class="icon-mail"></i>
+              <input type="email" name="email" placeholder="Адрес эл. почты для восстановления">
+            </p>
+            <button class="button button-primary" type="submit">Войти</button>
+          </form>
+          <button class="header-loginForm-text header-loginForm-restorePassword-back">Назад</button>
+        </div>
+      </div><a class="header-logo" href="index.html"><img src="img/white-logo.png"></a>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="books.html">Книги</a></li>
+        <li>Описание книги</li>
+      </ul>
+    </div>
+    <div class="mainWrap mainWrap-medium row">
+      <article class="l-article column large-8 small-12">
+        <section class="article-content-text">
+          <figure class="article-float-left"><img src="img/article-visual-7.png"></figure>
+          <h1 class="title-0">Вилки вместо ножей на практике</h1>
+          <p class="text-sub">О книге</p>
+          <p class="text-p">Пошаговый план по культовому фильму «Вилки вместо ножей» для перехода на здоровое питание за 28 дней.</p>
+          <p class="text-p">Фильм «Вилки вместо ножей» ознаменовал революцию в питании и медицине. Доктора и исследователи выяснили, что многие современные болезни могут быть предотвращены — и излечены — за счет изменения рациона и отказа от мяса, молока, переработанной пищи, и включению в рацион растительной еды.</p>
+          <p class="text-p">Эта книга — первое практическое пособие в серии «Вилки вместо ножей», пошаговый план для перехода на полезную (и вкусную) диету. Преимущества этого плана в том, что:</p>
+          <ul class="article-inner-list">
+            <li><span>Он простой и понятный;</span></li>
+            <li><span>Он опробован на практике авторами — докторами медицины;</span></li>
+            <li><span>Он расписан по неделям;</span></li>
+            <li><span>Вам не придется беспокоиться по поводу нехватки кальция или белка в рационе</span></li>
+          </ul>
+          <p class="text-p">За первую неделю вы начнете с завтрака и научитесь правильно запасаться продуктами, чтобы поддерживать ваш новый образ жизни.</p>
+          <p class="text-p">На второй неделе вы приступите к обеду и узнаете об основах планирования рациона.</p>
+          <p class="text-p">Третья неделя будет посвящена ужину и борьбе с пищевыми соблазнами.</p>
+          <p class="text-p">За четвертую неделю вы узнаете все трюки и нюансы, которые помогут сохранить позитивные изменения в рационе на всю жизнь, даже если вам придется иногда есть и перекусывать на бегу.</p>
+          <p class="text-p">В книге есть 100 простых и вкусных рецептов, фотографии и советы от таких же людей, как вы, которые помогут вам совершить переход к новому здоровому питанию.</p>
+          <p class="article-section-subtitle">Из предисловия Дина Орниша</p>
+          <p class="text-p">Доктора Алона Пульде и Мэтью Ледерман — выдающиеся пионеры, вожди, целители, демонстрирующие будущее медицины. Они представляют новое поколение врачей, которые при работе с пациентами сочетают самое мощное лечение — хорошее растительное питание — с лучшими общепринятыми медицинскими методиками.</p>
+          <p class="text-p">Эта практика помогла тысячам пациентов. В этой книге они помогут и многим другим понять, что ключом к оздоровлению организма служит пища, которую они принимают. В книге красноречиво рассказывается о том, что наши организмы продемонстрируют замечательные способности к исцелению, если сосредоточиться на устранении причин заболеваний, а не пытаться бороться лишь с их симптомами.</p>
+        </section>
+        <div class="shareSocial">
+          <button class="shareSocial-bookmark"><i class="icon-bookmark"></i><span>Довавить в закладку</span></button>
+          <button class="shareSocial-social fb"><i class="icon-fb"></i><span>35</span></button>
+          <button class="shareSocial-social tw"><i class="icon-twitter"></i><span>35</span></button>
+          <button class="shareSocial-social vk"><i class="icon-vk"></i><span>18</span></button>
+          <button class="shareSocial-social gp"><i class="icon-google-plus"></i><span>25</span></button>
+          <button class="shareSocial-more"><i class="icon-plus"></i></button>
+          <div class="shareSocial-counters"><i class="icon-view"></i><span>124</span></div>
+        </div>
+        <section class="comments">
+          <div class="section-title">
+            <h2 class="title-4"><i class="icon-comment"></i>комментарии</h2>
+          </div>
+          <div class="comments-posts">
+            <div class="comments-posts-one">
+              <figure class="comments-posts-avatar google-plus"><img src="img/comments-avatar-1.png"></figure>
+              <div class="comments-posts-content">
+                <p class="title-4">Оликсандор Дроздов</p>
+                <div class="counters counters-item"><i class="icon-time"></i><span>5 ноября</span></div>
+                <p class="text-p">Есть специальные генераторы, создающие собственные варианты. Сайтах и смысловую нагрузку ему нести совсем необязательно распространенных.</p>
+                <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
+              </div>
+            </div>
+            <div class="comments-posts-one reply">
+              <figure class="comments-posts-avatar twitter"><img src="img/comments-avatar-2.png"></figure>
+              <div class="comments-posts-content">
+                <p class="title-4">Никита Светлый</p>
+                <div class="counters counters-item"><i class="icon-time"></i><span>7 ноября</span></div>
+                <p class="text-p">Древнеримскому философу цицерону, ведь именно из его трактата о пределах.</p>
+                <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
+              </div>
+            </div>
+            <div class="comments-posts-one reply">
+              <figure class="comments-posts-avatar fb"><img src="img/comments-avatar-3.png"></figure>
+              <div class="comments-posts-content">
+                <p class="title-4">Оксана Рыбина</p>
+                <div class="counters counters-item"><i class="icon-time"></i><span>8 ноября</span></div>
+                <p class="text-p">О пределах добра и смысловую нагрузку ему нести совсем. Отсюда напрашивается вывод, что все.</p>
+                <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
+              </div>
+            </div>
+            <div class="comments-posts-one">
+              <figure class="comments-posts-avatar"><img src="img/comments-avatar-4.png"></figure>
+              <div class="comments-posts-content">
+                <p class="title-4">Миша Светраков</p>
+                <div class="counters counters-item"><i class="icon-time"></i><span>11 ноября</span></div>
+                <p class="text-p">Есть специальные генераторы, создающие собственные варианты. Сайтах и смысловую нагрузку ему нести совсем необязательно распространенных.</p>
+                <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
+              </div>
+            </div>
+          </div>
+          <div class="comments-write">
+            <figure class="comments-posts-avatar"><img src="img/comments-avatar-4.png"></figure>
+            <form class="comments-write-form">
+              <textarea name="comment" placeholder="Комментарий" required></textarea>
+              <button class="button button-primary" type="submit">Отправить</button>
+            </form>
+          </div>
+        </section>
+      </article>
+      <aside class="sidebar-wrap columns large-4">
+        <div class="section-title section-title-books">
+          <h2 class="title-2"><img src="img/icon-book.png">КНИГИ</h2>
+        </div>
+        <ul class="sidebar-list">
+          <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-0.png"></a>
+            <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Восходящая спираль</a>
+              <div class="counters">
+                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
+                <div class="counters-item"><i class="icon-comment"></i>113</div>
+              </div>
+            </div>
+          </li>
+          <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-1.png"></a>
+            <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Вилки вместо ножей на практике</a>
+              <div class="counters">
+                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
+                <div class="counters-item"><i class="icon-comment"></i>113</div>
+              </div>
+            </div>
+          </li>
+          <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-2.png"></a>
+            <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Как написать книгу за 30 дней</a>
+              <div class="counters">
+                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
+                <div class="counters-item"><i class="icon-comment"></i>113</div>
+              </div>
+            </div>
+          </li>
+          <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-3.png"></a>
+            <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Система продаж через интернет</a>
+              <div class="counters">
+                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
+                <div class="counters-item"><i class="icon-comment"></i>113</div>
+              </div>
+            </div>
+          </li>
+          <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-4.png"></a>
+            <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Наука о том, почему мы покупаем</a>
+              <div class="counters">
+                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
+                <div class="counters-item"><i class="icon-comment"></i>113</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="sidebar-advertising"><img src="img/special-banner-2.png"></div>
+      </aside>
+    </div>
+    <div class="l-footerSubscibe">
+      <h2 class="footerSubscribe-title">Подписаться на рассылку</h2>
+      <form class="footerSubscribe-form">
+        <input type="email" name="email" placeholder="Ваш Email">
+        <button type="submit"><i class="icon-angle-right"></i></button>
+      </form>
+    </div>
+    <footer class="l-footer"><a class="footer-logo" href="index.html"><img src="img/colored-logo.png"></a>
+      <ul class="footer-links">
+        <li><a class="header-link" href="about.html"><span>О проекте</span></a></li>
+        <li><a class="header-link" href="partners.html"><span>Партнерам</span></a></li>
+        <li><a class="header-link" href="advertising.html"><span>Реклама</span></a></li>
+        <li><a class="header-link" href="contacts.html"><span>Контакты</span></a></li>
+      </ul>
+      <ul class="footer-social">
+        <li><a href="#"><i class="icon-fb"></i></a></li>
+        <li><a href="#"><i class="icon-twitter"></i></a></li>
+        <li><a href="#"><i class="icon-vk"></i></a></li>
+        <li><a href="#"><i class="icon-google-plus"></i></a></li>
+      </ul>
+      <div class="footer-copyright">
+        <p class="nowrap">© 2016, Science of everything. 
+          <wbr>Все права защищены.
+        </p>
+        <p>Сделано в <a href="http://dizz.in.ua/ru">Dizz Agency</a></p>
+      </div>
+      <button class="up-button"><i class="icon-angle-up"></i></button>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+extends template/base-layout.pug
+
+block prepend body
+  - var bodyClass = "home-page"
+  - var homePage = true
+
+block content
+  - var link = 'rubric-article.html'
+  .mainWrap.mainWrap-medium
+    .l-banners.row
+      include template/home-banners.pug
+
+    section.l-mainArticles.row
+      .articlesList-wrap.columns.large-8
+        .section-title.section-title-news
+          h2.title-2
+            img(src="img/icon-book-open.png")
+            | ПОСЛЕДНИЕ НОВОСТИ
+        include template/articles-list-news.pug
+
+      include template/sidebar.pug
+
+  section.l-sectionAstro.dark-section-bg
+    .mainWrap.mainWrap-medium.row
+      .articlesList-wrap.columns.large-12
+        .section-title.section-title-astro
+          h2.title-2.white
+            img(src="img/icon-planet.png")
+            | АСТРОФИЗИКА
+          - var sortTitle = 'Последнии статьи'
+          - var sortClasses = "white"
+          - var sortLink = 'rubric.html'
+          include template/sort-button.pug
+
+        include template/articles-list-astro.pug
+
+  .grey-section-bg2
+    .mainWrap
+      .sectionPsycho-banner.row
+        .columns
+          img(src="img/special-banner-3.png")
+      .mainWrap-medium
+        section.l-sectionTechno.row
+          .columns.large-12
+            .section-title.section-title-technology
+              h2.title-2
+                img(src="img/icon-techno.png")
+                | технологии
+              - var sortClasses = false
+              include template/sort-button.pug
+
+            include template/articles-list-techno.pug
+
+  section.l-sectionPsycho.dark-section-bg2
+    .mainWrap.mainWrap-medium.row
+      .columns.large-12
+        .section-title.section-title-psycho
+          h2.title-2.white
+            img(src="img/icon-brain.png")
+            | ПСИХОЛОГИЯ
+          - var sortClasses = "white"
+          include template/sort-button.pug
+
+        include template/articles-list-psycho.pug
+
+  section.l-sectionBooks.grey-section-bg
+    .mainWrap.mainWrap-medium.row
+      .columns.large-12
+        .section-title.section-title-books
+          h2.title-2
+            img(src="img/icon-book.png")
+            | КНИГИ
+          .sortArticles
+            a(href="books.html") Все книги
+
+        - var link = 'book-article.html'
+        - var bookClasses = 'large-4'
+        include template\articles-list-books.pug
+
+  .mainWrap.mainWrap-medium
+    section.l-sectionEvents.row
+      .sectionEvents-item.column.large-6.small-12
+        .section-title.section-title-events
+          h2.title-2
+            img(src="img/icon-calendar-blue.png")
+            | АНОНС СОБЫТИЙ
+
+        - var eventsImg = ["img/events-img-1.png", "img/events-img-2.png", "img/events-img-3.png"]
+        - var lastButton = "СМОТРЕТЬ БОЛЬШЕ"
+        include template/articles-list-events.pug
+
+      .sectionEvents-item.column.large-6.small-12
+        .section-title.section-title-past
+          h2.title-2
+            img(src="img/icon-calendar-grey.png")
+            | ПРОШЕДШИЕ СОБЫТИЯ
+
+        - var eventsImg = ["img/events-img-4.png", "img/events-img-5.png", "img/events-img-6.png"]
+        - var lastButton = "ПОКАЗАТЬ АРХИВ"
+        include template/articles-list-events.pug
+
+  section.l-sectionPhoto.dark-section-bg3
+    .mainWrap.sliderWrap-small
+      .section-title-photo
+        h2.title-2.white
+          img(src="img/icon-photo.png")
+          | ФОТО
+
+      .row
+        .column.large-3.photo-small-wrap
+          a.photo-small(href="photo-article.html")
+            figure
+              img(src="img/photo-1.png")
+              figcaption Куб цвета: суровые пейзажи французских пригородов
+          a.photo-small(href="photo-article.html")
+            figure
+              img(src="img/photo-2.png")
+              figcaption Винтажная Америка
+
+        .column.large-6.photo-big-wrap
+          a.photo-big(href="photo-article.html")
+            figure
+              img(src="img/photo-3.png")
+              figcaption.title-1.white Регион на вырост: мрачные пейзажи Ланьчжоу
+
+        .column.large-3.photo-small-wrap
+          a.photo-small(href="photo-article.html")
+            figure
+              img(src="img/photo-4.png")
+              figcaption Салонные фильтры
+          a.photo-small(href="photo-article.html")
+            figure
+              img(src="img/photo-5.png")
+              figcaption Куда смотрит Статуя Свободы: окрестности глазами
+
+      .sectionPhoto-footer
+        a.button-dark-bg(href="photo.html") ПОСМОТРЕТЬ БОЛЬШЕ
+
+  .subscribePopUp-bg
+    .subscribePopUp-wrap
+      .subscribePopUp-content
+        button.subscribePopUp-close
+          i.icon-close
+        img.subscribePopUp-img(src='img/colored-logo.png')
+        p.subscribePopUp-description
+          | Science of everything - Используется он веб-дизайнерами для вставки на руку при запуске проекта кириллице.
+        .subscribePopUp-social
+          button.subscribePopUp-social-button.fb
+            i.icon-fb
+          button.subscribePopUp-social-button.tw
+            i.icon-twitter
+          button.subscribePopUp-social-button.vk
+            i.icon-vk
+          button.subscribePopUp-social-button.gp
+            i.icon-google-plus
+        p.subscribePopUp-otherInfo
+          | Вход через Соц. сети вы принимаете #[a(href="therm-of-use.html") Пользовательское Соглашения].

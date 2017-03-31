@@ -1,0 +1,502 @@
+/* Module.Blocks: Header - Top bar */
+
+.header-bg
+  @include position(absolute, 0 null null 0)
+  z-index: -100
+  width: 100%
+  height: 350px
+
+  background: url(../img/header-bg.png) no-repeat center top
+  background-size: cover
+
+  @include media(450px)
+    height: 180px
+
+.home-page
+  .header-bg
+    height: 566px
+    background-image: url(../img/header-bg-home.png)
+
+    @include media(450px)
+      height: 400px
+
+.contact-page
+  .header-bg
+    height: 1007px
+    background-image: url(../img/header-bg-contacts.png)
+
+    @include media(700px)
+      height: 1230px
+
+.header-menu
+  display: flex
+  height: 100px
+  justify-content: space-between
+  align-items: center
+
+  color: $light-colored-text
+  font-size: 16px
+  font-weight: $regular
+  border-bottom: 1px solid $purple-light-border
+
+  @include media(450px)
+    margin-bottom: 30px
+
+.home-page
+  .header-menu
+    @include media(450px)
+      margin-bottom: 55px
+
+.header-hamburger
+  align-self: flex-start
+  width: 105px
+  height: 100%
+  display: flex
+  justify-content: center
+  // align-items: center
+  text-align: center
+
+  color: $white
+  border-right: 1px solid $purple-light-border
+  font-size: 30px
+
+.header-navTop
+  height: 100%
+  display: flex
+  flex-grow: 1
+  justify-content: flex-end
+
+  @include media(1380px)
+    display: none
+
+  li
+    height: 100%
+    position: relative
+
+  a, .header-dropdown
+    display: flex
+    align-items: center
+    padding: 0 33px
+    height: 100%
+
+    @include media(1760px)
+      @include padding(null 22px)
+
+    @include media(1550px)
+      @include padding(null 17px)
+
+.header-link
+  @include main-transition
+  cursor: pointer
+
+  @include media(380px)
+    line-height: 1.3
+
+  span
+    position: relative
+
+    &::before
+      content: ""
+      width: 16px
+      @include position(absolute, -.7em null null 0)
+      border: 1px solid $purple-elements
+      opacity: 0
+      transform: translateY(10px)
+      @include main-transition
+
+  &:hover
+    color: $white
+
+    span::before
+      opacity: 1
+      transform: none
+
+.header-dropdown-list
+  display: none
+  min-width: 300px
+  @include position(absolute, 85px null null -20px)
+  @include padding(25px null)
+  background-color: $menu-dark-bg
+
+  a
+    padding: 13px 50px
+
+.header-login
+  margin-left: 3%
+  display: flex
+  align-items: center
+  height: 100%
+  width: 11%
+  white-space: nowrap
+  @include main-transition
+  cursor: pointer
+
+  @include media(1790px)
+    width: 13%
+
+  @include media(1550px)
+    width: 15%
+    margin-left: 1%
+
+  @include media(1380px)
+    width: auto
+    margin-left: auto
+
+  @include media(450px)
+    display: none
+
+  i
+    display: inline-block
+    margin-right: .7em
+    font-size: 16px
+
+  &:hover
+    color: $white
+
+.header-search
+  display: flex
+  justify-content: center
+  // align-items: center
+  text-align: center
+  margin-left: 1.5%
+  margin-right: 2%
+
+  @include media(1550px)
+    margin-right: 1%
+
+  @include media(1380px)
+    margin-right: 40px
+    margin-left: 30px
+
+  @include media(450px)
+    display: none
+
+  i
+    transform: translateY(-2px)
+
+.header-searchForm
+  margin-right: 2%
+  margin-left: 2%
+  @include size(calc(13.5% + 51px) 51px)
+  position: relative
+  text-align: right
+
+  @include media(1790px)
+    width: calc(15.5% + 51px)
+
+  @include media(1550px)
+    margin-right: 1%
+    margin-left: 1%
+    width: calc(16.5% + 51px)
+
+  @include media(1380px)
+    margin-right: 40px
+    margin-left: auto
+    width: 325px
+
+  input
+    @include size(51px 100%)
+    @include padding(em(15) em(30) em(17) em(30))
+    border-radius: 100px
+
+    font-size: 14px
+    color: $white
+
+    @include placeholder
+      font-size: 14px
+      color: $white
+
+    background-color: #221c4d
+    border: 1px solid rgba($white, .1)
+
+.header-searchForm-button
+  @include position(absolute, 0 0 null null)
+  z-index: 1000
+  height: 100%
+  @include padding(em(10) em(25))
+  font-size: 18px
+  color: $white
+
+/* Module.Blocks: Header - Inner menu */
+
+.header-nav-wrap
+  @include position(fixed, 0 null null 0)
+  z-index: 1000
+  @include size(100% 100vh)
+  overflow: auto
+  background-color: rgba(#0e0d17, .7)
+
+.header-nav
+  display: none
+  max-width: 333px
+  min-height: 100%
+  // padding-left: 120px
+  // width: 555px
+
+  // new
+  @include media(380px)
+    max-width: 300px
+
+  background-color: $menu-dark-bg
+  color: $light-colored-text
+  font-size: 16px
+  font-weight: $regular
+
+  // @include media(1023px)
+  //   width: 475px
+  //   padding-left: 70px
+  //
+  // @include media(690px)
+  //   width: 440px
+  //   padding-left: 40px
+  //
+  // @include media(550px)
+  //   width: 370px
+  //   padding-left: 20px
+  //
+  // @include media(380px)
+  //   width: 280px
+  //   @include padding(null 15px)
+
+.header-nav-close
+  display: block
+  // margin-left: auto
+  // margin-bottom: 50px
+  padding: 30px
+  font-size: 30px
+  @include main-transition
+
+  // @include media(639px)
+  //   margin-bottom: 10px
+  //
+  // @include media(380px)
+  //   transform: translateX(15px)
+  //   margin-bottom: 0
+
+  &:hover
+    color: $white
+
+.header-nav-logo
+  display: block
+  // new
+  max-width: 140px
+  // new
+  @include margin(-30px auto 30px auto)
+  // margin-bottom: 70px
+
+  // @include media(639px)
+  //   margin-bottom: 50px
+  //
+  // @include media(380px)
+  //   margin-bottom: 30px
+
+  img
+    max-width: 100%
+
+.header-nav-list
+  // margin-left: 1.25em
+  padding: 45px 0
+
+  &:first-of-type
+    padding-top: 0
+
+    &::after
+      content: ""
+      display: block
+      width: 100%
+      // max-width: 300px
+      max-width: 250px
+      // new
+      margin-left: 35px
+      transform: translateY(45px)
+      border-bottom: 1px solid $purple-elements
+
+      // new
+      @include media(380px)
+        margin-left: 20px
+
+  a, .header-nav-dropdown
+    display: block
+    // padding: 1em 0
+    padding: 1em 35px
+
+    @include media(380px)
+      // padding: .7em 0
+      padding: .7em 20px
+
+  li
+    position: relative
+
+.header-nav-list-secondary
+  opacity: .5
+
+.header-nav-dropdown
+  position: relative
+
+  // &::after
+  //   content: ""
+  //   width: 335px
+  //   @include position(absolute, 50% 0 null null)
+  //   border: 1px solid transparent
+  //   @include main-transition
+
+  //   @include media(1023px)
+  //     width: 280px
+
+  //   @include media(690px)
+  //     width: 280px
+
+  //   @include media(550px)
+  //     width: 240px
+
+  //   @include media(380px)
+  //     width: 160px
+  //     right: -15px
+
+  // &:hover
+  //   &::after
+  //     border-color: #595771
+
+.header-nav-dropdown-list
+  display: none
+  // @include position(absolute, 50% null null 415px)
+  // z-index: 2000
+  // @include padding(30px null)
+  // background-color: #2e2c3b
+  //
+  // @include media(1023px)
+  //   left: 385px
+  //
+  // @include media(690px)
+  //   position: static
+  //   padding-top: 0
+  //   background: transparent
+
+  a
+    @include padding(null 50px)
+
+    @include media(690px)
+      @include padding(null 10%)
+
+    &:hover
+      // new
+      background-color: #2e2c3b
+
+      span
+        &::before
+          // new
+          display: none
+
+.header-nav-login
+  display: block
+  width: 100%
+  padding: 1em 0
+  text-align: left
+
+  i
+    margin-right: 1em
+
+.header-nav-list.lang
+  padding-top: 0
+  padding-left: 27px
+  display: flex
+
+  @include media(450px)
+    padding-bottom: 20px
+
+  @include media(380px)
+    padding-left: 12px
+
+  li
+    opacity: .5
+
+    a
+      @include padding(null .5rem)
+
+  .is-active
+    opacity: 1 !important
+
+    span::before
+      opacity: 1
+      transform: none
+
+.header-nav-list.modile
+  // new
+  @include padding(0 35px null)
+
+  @include media(min-width 451px)
+    display: none
+
+  @include media(380px)
+    @include padding(null 20px)
+
+.header-nav-search
+  margin-top: 1em
+
+  input
+    width: 100%
+    padding: 1em 0
+    border-bottom: 1px solid $purple-light-border
+    font-size: 12px
+    color: $light-colored-text
+
+    @include placeholder
+      font-size: 12px
+      color: $light-colored-text
+
+  button
+    @include position(absolute, .5em 1em null null)
+    font-size: 16px
+
+/* Module.Blocks: Header - Logo */
+
+.header-logo
+  display: block
+  @include size(280px 80px)
+  margin: 65px auto 30px auto
+
+  @include media(1023px)
+    margin-top: 60px
+
+  @include media(450px)
+    @include size(140px 40px)
+    margin: auto
+
+  img
+    @include size(100%)
+
+.home-page
+  .header-logo
+    margin-bottom: 75px
+
+    @include media(1023px)
+      margin-bottom: 70px
+
+    @include media(450px)
+      margin: auto
+
+.breadcrumbs
+  display: flex
+  justify-content: center
+
+  @include media(450px)
+    margin-bottom: 30px
+
+  li:not(:last-child)
+    &::after
+      color: $light-colored-text
+
+  a
+    @include padding(5px null)
+
+    &:hover
+      text-decoration: none
+
+.breadcrumbs-serch
+  margin-bottom: 65px
+  text-align: center
+  font-size: 11px
+  color: $light-colored-text
+
+  @include media(450px)
+    margin-bottom: 30px

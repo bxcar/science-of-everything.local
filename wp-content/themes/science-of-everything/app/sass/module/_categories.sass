@@ -1,0 +1,169 @@
+/* Module.Elements: Categories */
+
+.category-text
+  font-size: 12px
+  font-weight: $bold
+  text-transform: uppercase
+
+  + .title-3, + .title-4, + .title-sm
+    @include main-transition
+
+.category
+  @extend .category-text
+  display: block
+  color: $white
+  height: 35px
+  min-width: 125px
+  max-width: 135px
+  @include padding(null 20px)
+  display: flex
+  justify-content: center
+  align-items: center
+  align-self: center
+
+.category-text-technology
+  color: $light-blue
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-technology
+      + .title-3, + .title-4, + .title-sm
+        color: $light-blue
+
+.category-text-news
+  color: $purple2
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-news
+      + .title-3, + .title-4, + .title-sm
+        color: $purple2
+
+.category-text-popular
+  color: $red
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-popular
+      + .title-3, + .title-4, + .title-sm
+        color: $red
+
+.category-text-astro
+  color: $orange
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-astro
+      + .title-3, + .title-4, + .title-sm
+        color: $orange
+
+.category-text-psycho
+  color: $pink
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-psycho
+      + .title-3, + .title-4, + .title-sm
+        color: $pink
+
+.category-text-books
+  color: $green2
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-books
+      + .title-3, + .title-4, + .title-sm
+        color: $green2
+
+.category-text-events
+  color: $blue
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-events
+      + .title-3, + .title-4, + .title-sm
+        color: $blue
+
+.category-text-future
+  color: $yellow
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-future
+      + .title-3, + .title-4, + .title-sm
+        color: $yellow
+
+.category-text-medtech
+  color: $green
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-medtech
+      + .title-3, + .title-4, + .title-sm
+        color: $green
+
+.category-text-video
+  color: $purple4
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-video
+      + .title-3, + .title-4, + .title-sm
+        color: $purple4
+
+.categry-text-photo
+  color: $orange2
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-photo
+      + .title-3, + .title-4, + .title-sm
+        color: $orange2
+
+.category-text-special
+  color: $pink2
+
+.articlesList-item-text, .sidebar-list li
+  &:hover
+    .category-text-special
+      + .title-3, + .title-4, + .title-sm
+        color: $pink2
+
+.category-text-sm
+  font-size: 10px
+
+.category-technology
+  background-color: $light-blue
+
+.category-news
+  background-color: $purple2
+
+.category-popular
+  background-color: $red
+
+.category-astro
+  background-color: $orange
+
+.category-psycho
+  background-color: $pink
+
+.category-books
+  background-color: $green2
+
+.category-events
+  background-color: $blue
+
+.category-future
+  background-color: $yellow
+
+.category-medtech
+  background-color: $green
+
+.category-video
+  background-color: $purple4
+
+.category-photo
+  background-color: $orange2
+
+.categroy-special
+  background-color: $pink2

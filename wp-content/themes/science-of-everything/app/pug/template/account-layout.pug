@@ -1,0 +1,45 @@
+extends base-layout.pug
+
+block prepend body
+  - var bodyClass = "account-page"
+  - var breadcrumbsPrev = {'Личный кабинет': 'user-account.html'}
+
+block content
+  section.l-aboutAuthor.grey-section-bg
+    .mainWrap.mainWrap-medium.row
+      .column.small-12
+        if !blogAuthorPage
+          .aboutAuthor-detail
+            .aboutAuthor-detail-innerWrap.left
+              .aboutAuthor-detail-item #[span.medium Город:] #[span Москва]
+              .aboutAuthor-detail-item #[span.medium Пол:] #[span Женский]
+              .aboutAuthor-detail-item #[span.medium Возраст:] #[span 23 года]
+            .aboutAuthor-detail-innerWrap.right
+              a.aboutAuthor-detail-item(href="user-account.html") История публикаций
+              a.aboutAuthor-detail-item(href="send-post.html") Подать материал
+        .aboutAuthor-person
+          .aboutAuthor-person-photo
+            figure
+              img(src="img/author-avatar-2.png")
+            if !blogAuthorPage
+              a.aboutAuthor-person-photo-link.settings(href="change-profile.html" title="Редактировать профайл")
+                i.icon-settings
+            a.aboutAuthor-person-photo-link.social.fb(href="#")
+              i.icon-fb
+          p.aboutAuthor-person-name Оксана Рыбина
+          p.aboutAuthor-person-status Администратор
+        .aboutAuthor-counters
+          a.aboutAuthor-counters-one.purple(href="blog-author.html#author-share")
+            i.aboutAuthor-counters-one-icon.icon-earth
+            span.aboutAuthor-counters-one-number 147
+            p.text-p Поделились
+          a.aboutAuthor-counters-one.blue(href="blog-author.html#author-bookmarks")
+            i.aboutAuthor-counters-one-icon.icon-bookmark-o
+            span.aboutAuthor-counters-one-number 41
+            p.text-p Закладок
+          a.aboutAuthor-counters-one.red(href="blog-author.html#author-articles")
+            i.aboutAuthor-counters-one-icon.icon-newspaper
+            span.aboutAuthor-counters-one-number 241
+            p.text-p Статьи
+
+  block account-section

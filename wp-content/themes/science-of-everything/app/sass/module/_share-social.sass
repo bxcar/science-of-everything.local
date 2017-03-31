@@ -1,0 +1,145 @@
+/* Module.Blocks: Share social */
+
+.shareSocial
+  @include padding(15px 20px)
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  border: 1px solid $light-border
+
+  @include media(680px)
+    @include padding(null 10px)
+
+  @include media(639px)
+    flex-wrap: wrap
+    align-content: space-between
+    height: 125px
+    @include padding(null 20px)
+    margin-left: auto
+    margin-right: auto
+
+  @include media(375px)
+    @include padding(12px 10px)
+    height: 115px
+
+.special-article-page
+  .shareSocial
+    max-width: 730px
+    @include margin(30px 8.11% null 8.11%)
+
+    @include media(1023px)
+      @include margin(null 0)
+
+.shareSocial-bookmark
+  width: 13.82%
+
+  font-size: 12px
+  color: $grey-text
+
+  @include media(639px)
+    width: 30%
+    height: 40px
+    display: flex
+    align-items: center
+    order: 1
+
+  i
+    margin-right: .7em
+    color: $purple3
+
+  span
+    text-align: left
+
+.shareSocial-social
+  @include size(14.55% 40px)
+  line-height: 40px
+
+  font-size: 14px
+  color: $white
+
+  @include fast-transition
+
+  @include media(639px)
+    width: 30%
+
+    &:nth-child(2)
+      order: 2
+
+    &:nth-child(3)
+      order: 3
+
+    &:nth-child(4)
+      order: 5
+
+    &:nth-child(5)
+      order: 6
+
+  i
+    margin-right: .8em
+    font-size: 16px
+
+.shareSocial-social.fb
+  background-color: $fb-bg
+
+  &:hover
+    background-color: $fb-hvr
+
+.shareSocial-social.tw
+  background-color: $twitter-bg
+
+  &:hover
+    background-color: $tw-hvr
+
+.shareSocial-social.vk
+  background-color: $vk-bg
+
+  &:hover
+    background-color: $vk-hvr
+
+.shareSocial-social.gp
+  background-color: $gp-bg
+
+  &:hover
+    background-color: $gp-hvr
+
+.shareSocial-more
+  @include size(8.75% 40px)
+  display: flex
+  justify-content: center
+  align-items: center
+
+  font-size: 18px
+  color: $white
+
+  @include bg-gradient
+
+  @include fast-transition
+
+  @include media(639px)
+    display: none
+
+  &:hover
+    background-image: linear-gradient(127deg, #5b529c 0%, #5b529c 100%)
+
+.shareSocial-counters
+  width: 8.75%
+  text-align: right
+  font-size: 14px
+  color: $light-text
+
+  @include media(680px)
+    width: 9%
+
+  @include media(639px)
+    width: 30%
+    order: 4
+    text-align: left
+
+  i
+    font-size: 18px
+    margin-right: .5em
+
+  span
+    display: inline-block
+    transform: translateY(-2px)

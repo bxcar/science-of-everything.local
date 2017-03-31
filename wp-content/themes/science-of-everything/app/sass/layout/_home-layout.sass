@@ -1,0 +1,112 @@
+/* Layout: Home layout - Preloader */
+
+.l-preloader
+  @include position(fixed, 0 null null 0)
+  z-index: 50000
+  @include size(100%)
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: rgba(#050318, .9)
+
+  img
+    display: block
+    max-width: 100%
+    max-height: 100%
+
+/* Layout: Home layout - Wrap */
+
+.mainWrap
+  max-width: 1170px
+  @include padding(null 15px)
+  @include margin(null auto)
+
+  @include media(350px)
+    @include padding(null 0)
+
+.mainWrap-medium
+  @include media(1023px)
+    max-width: 790px
+    @include margin(null auto)
+
+.sliderWrap-small
+  @include media(639px)
+    padding: 0
+
+/* Layout: Home layout - Banners */
+
+.l-banners
+  margin-bottom: 50px
+
+/* Layout: Home layout - Sections */
+
+.home-page
+  .grey-section-bg2
+    transform: translateZ(-100px)
+
+.l-mainArticles
+  margin-bottom: 80px
+
+  @include media(639px)
+    margin-bottom: 30px
+
+.l-sectionAstro
+  @include padding(50px null 75px null)
+  transform: translateZ(-100px)
+
+  @include media(639px)
+    padding-bottom: 35px
+
+.l-sectionTechno
+  padding-top: 75px
+  padding-bottom: 80px
+
+  @include media(1023px)
+    padding-top: 60px
+    padding-bottom: 40px
+
+.l-sectionPsycho
+  padding-top: 50px
+  padding-bottom: 80px
+  transform: translateZ(-100px)
+
+  @include media(639px)
+    padding-bottom: 30px
+
+.l-sectionBooks
+  @include padding(50px null 80px null)
+
+  @include media(639px)
+    padding-bottom: 30px
+
+.l-sectionEvents
+  margin-top: 50px
+  margin-bottom: 80px
+
+  @include media(639px)
+    margin-bottom: 60px
+
+.l-sectionPhoto
+  @include padding(50px null 60px null)
+
+  @include media(639px)
+    padding-bottom: 50px
+
+/* Layout: Home layout - Footer */
+
+.l-footerSubscibe
+  text-align: center
+  @include bg-gradient
+  @include padding(35px null)
+
+  @include media(450px)
+    padding-bottom: 40px
+
+.l-footer
+  text-align: center
+  background-color: $menu-dark-bg
+  color: $light-colored-text
+  @include padding(60px null 75px null)
+
+  @include media(639px)
+    padding-bottom: 60px

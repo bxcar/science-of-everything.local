@@ -1,0 +1,206 @@
+/* Module.Blocks: Log in Form */
+
+.header-loginForm-wrap
+  @include position(fixed, 0 null null 0)
+  z-index: 3000
+  @include size(100% 100vh)
+  overflow: auto
+  overflow-y: scroll
+  display: flex
+  background-color: rgba(#050318, .95)
+
+.header-loginForm-close
+  @include position(absolute, 30px 30px null null)
+  z-index: 1000
+
+  @include media(450px)
+    top: 20px
+    right: 20px
+    @include size(40px)
+
+    .icon-close
+      font-size: 24px
+
+  @include media(350px)
+    top: 10px
+    right: 10px
+
+.header-loginForm
+  margin: 5% auto 0 auto
+  padding: 45px 30px
+  width: 410px
+  animation-duration: .5s
+
+  @include media(350px)
+    padding: 35px 20px
+
+.header-loginForm-title
+  margin-bottom: 55px
+
+  color: $white
+  font-size: 24px
+  font-weight: $medium
+  text-align: center
+
+  @include media(350px)
+    margin-bottom: 40px
+
+.header-loginForm
+  .header-loginForm-method
+    display: flex
+
+    color: $middle-colored-text
+    font-size: 16px
+    font-weight: $regular
+    text-align: center
+
+    li
+      width: 50%
+      margin: 0
+
+      border-bottom: 1px solid $middle-colored-text
+      cursor: pointer
+
+      a
+        @include size(100%)
+        padding-bottom: 1em
+        padding-top: 1em
+
+    .ui-tabs-active
+      color: $white !important
+      border-color: white !important
+      margin: 0 !important
+      padding: 0 !important
+
+.header-loginForm-form
+  margin-top: 25px
+
+  &.ui-tabs-panel
+    @include padding(null 0)
+
+.header-loginForm-text
+  display: block
+  @include margin(null auto 30px auto)
+
+  color: rgba(#e1e1e1, .5)
+  font-size: 14px
+  font-weight: $regular
+  text-align: center
+
+  &.small
+    font-size: 12px
+
+a.header-loginForm-text
+  &:hover
+    text-decoration: underline
+
+.header-loginForm-text
+  a
+    text-decoration: underline
+
+    &:hover
+      text-decoration: none
+
+.header-loginForm-text.decoration
+  position: relative
+
+  &::before, &::after
+    content: ""
+    display: block
+    width: 42%
+    @include position(absolute, 50% null null null)
+    border-top: 1px solid rgba(#e1e1e1, .3)
+
+  &::before
+    left: 0
+
+  &::after
+    right: 0
+
+.header-loginForm-social
+  display: flex
+  justify-content: space-between
+  @include margin(null 25px)
+  margin-bottom: 30px
+
+  @include media(380px)
+    @include margin(null 0)
+
+.header-loginForm-social-button
+  @include size(65px 40px)
+  display: flex
+  justify-content: center
+  // align-items: center
+  text-align: center
+  @include main-transition
+  color: $white
+  border-bottom: 1px solid
+
+.header-loginForm-social-button.fb
+  border-color: $fb-bg
+
+  &:hover
+    background-color: rgba($fb-bg, .35)
+
+.header-loginForm-social-button.twitter
+  border-color: $twitter-bg
+
+  &:hover
+    background-color: rgba($twitter-bg, .35)
+
+.header-loginForm-social-button.vk
+  border-color: $vk-bg
+
+  &:hover
+    background-color: rgba($vk-bg, .35)
+
+.header-loginForm-social-button.gp
+  border-color: $gp-bg
+
+  &:hover
+    background-color: rgba($gp-bg, .35)
+
+.header-loginForm-email
+  input
+    display: block
+    width: 100%
+    margin-bottom: 12px
+    padding: 1em 1em 1em 55px
+
+    background-color: rgba($middle-colored-text, .2)
+    border: 1px solid $purple-medium-border
+    font-size: 14px
+    font-weight: $regular
+    color: $middle-colored-text
+
+    @include placeholder
+      font-size: 14px
+      font-weight: $regular
+      color: $middle-colored-text
+
+  p
+    position: relative
+
+    i
+      @include position(absolute, 13px null null 25px)
+      font-size: 18px
+      color: $middle-colored-text
+
+  .button
+    width: 100%
+    margin-top: 25px
+    margin-bottom: 30px
+
+.header-restorePassword
+  @extend .header-loginForm
+  display: none
+
+  .header-loginForm-title
+    margin-bottom: 70px
+
+  .header-loginForm-text
+    line-height: 1.8
+
+.header-loginForm-restorePassword, .header-loginForm-restorePassword-back
+  @include padding(15px 20px)
+  margin-top: -15px

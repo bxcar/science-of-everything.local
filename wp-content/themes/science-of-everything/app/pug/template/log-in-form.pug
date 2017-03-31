@@ -1,0 +1,67 @@
+.header-loginForm-wrap.is-hidden
+  button.header-loginForm-close.button-round-outline
+    i.icon-close
+  .header-loginForm
+    h2.header-loginForm-title Форма входа
+    ul.header-loginForm-method
+      li: a(href="#login-form") Войти
+      li: a(href="#register-form") Регистрация
+    #login-form.header-loginForm-form
+      p.header-loginForm-text
+        | с помощью аккаунта в соц. сетях
+      .header-loginForm-social
+        button.header-loginForm-social-button.fb
+          i.icon-fb
+        button.header-loginForm-social-button.twitter
+          i.icon-twitter
+        button.header-loginForm-social-button.vk
+          i.icon-vk
+        button.header-loginForm-social-button.gp
+          i.icon-google-plus
+      p.header-loginForm-text.decoration или
+      form.header-loginForm-email
+        p
+          i.icon-mail
+          input(type="email" name="email" placeholder="Эл.почта")
+        p
+          i.icon-key
+          input(type="password" name="password" placeholder="Пароль")
+        button.button.button-primary(type="submit") Войти
+      button.header-loginForm-text.header-loginForm-restorePassword Восстановить пароль
+
+    #register-form.header-loginForm-form
+      p.header-loginForm-text
+        | с помощью аккаунта в соц. сетях
+      .header-loginForm-social
+        button.header-loginForm-social-button.fb
+          i.icon-fb
+        button.header-loginForm-social-button.twitter
+          i.icon-twitter
+        button.header-loginForm-social-button.vk
+          i.icon-vk
+        button.header-loginForm-social-button.gp
+          i.icon-google-plus
+      p.header-loginForm-text.decoration или
+      form.header-loginForm-email
+        p
+          i.icon-user
+          input(type="text" name="name" placeholder="Имя")
+        p
+          i.icon-mail
+          input(type="email" name="email" placeholder="Эл.почта")
+        p
+          i.icon-key
+          input(type="password" name="password" placeholder="Пароль")
+        button.button.button-primary(type="submit") Зарегистрироваться
+        p.header-loginForm-text.small Нажимая на кнопку «Зарегистрироваться», вы подтверждаете свое согласие с условиями предоставления услуг (#[a(href="therms-of-use.html") пользовательское соглашение])
+
+  .header-restorePassword
+    h2.header-loginForm-title Забыли пароль?
+    p.header-loginForm-text
+      | Введите свой E-mail, чтобы помочь нам идентифицировать вашу личность.
+    form.header-loginForm-email
+      p
+        i.icon-mail
+        input(type="email" name="email" placeholder="Адрес эл. почты для восстановления")
+      button.button.button-primary(type="submit") Войти
+    button.header-loginForm-text.header-loginForm-restorePassword-back Назад

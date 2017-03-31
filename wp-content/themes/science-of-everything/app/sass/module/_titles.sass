@@ -1,0 +1,151 @@
+/* Module.Elements: Titles - Main styles */
+
+.title-0
+  display: block
+  font-size: 24px
+  font-weight: $bold
+  line-height: 1
+  color: $dark-text
+
+.title-1
+  display: block
+  font-size: 21px
+  font-weight: $bold
+  line-height: 1.35
+  color: $dark-text
+
+.title-2
+  display: block
+  font-size: 19px
+  font-weight: $bold
+  line-height: 1.3684
+  color: $dark-text
+  text-transform: uppercase
+
+  @include media(450px)
+    font-size: 18px
+
+.title-3
+  display: block
+  font-size: 18px
+  font-weight: $bold
+  color: $dark-text
+  line-height: 1.3333
+
+.title-4
+  display: block
+  font-size: 16px
+  font-weight: $bold
+  color: $dark-text
+  line-height: 1.375
+
+  @include media(450px)
+    font-size: 14px
+
+.title-5
+  display: block
+  font-size: 14px
+  font-weight: $bold
+  color: $dark-text
+  line-height: 1.5
+
+/* Module.Elements: Titles -  Section titles */
+
+.section-title
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-bottom: 20px
+  margin-bottom: 30px
+  border-bottom: 1px solid $light-border
+  position: relative
+
+  &::before
+    content: ""
+    width: 100px
+    border-top: 1px solid
+    @include position(absolute, null null -1px 0)
+
+  img, i
+    margin-right: 13px
+
+  .title-2, .title-4
+    margin-right: auto
+
+.section-title-inner
+  @extend .section-title
+  padding-bottom: 25px
+  margin-bottom: 60px
+
+  @include media(450px)
+    padding-bottom: 15px
+    margin-bottom: 40px
+
+  .title-4
+    text-transform: uppercase
+
+  .title-2
+    text-transform: none
+
+  &::before
+    border-color: #6689bf
+
+.special-page, .events-page
+  .section-title-inner
+    margin-bottom: 30px
+
+.dark-section-bg, .dark-section-bg2
+  .section-title
+    border-color: #6a6781
+
+.section-title-technology
+  &::before
+    border-color: $light-blue
+
+.section-title-news
+  &::before
+    border-color: $purple2
+
+.section-title-popular
+  &::before
+    border-color: $red
+
+.section-title-astro
+  &::before
+    border-color: $orange
+
+.section-title-psycho
+  &::before
+    border-color: $pink
+
+.section-title-books
+  &::before
+    border-color: $green2
+
+.section-title-events
+  &::before
+    border-color: $blue
+
+.section-title-future
+  &::before
+    border-color: $yellow
+
+.section-title-medtech
+  &::before
+    border-color: $green
+
+.section-title-past
+  &::before
+    border-color: $grey
+
+.section-title-video
+  &::before
+    border-color: $purple4
+
+.section-title-photo
+  &::before
+    border-color: $orange2
+
+.section-title-special
+  &::before
+    border-color: $pink2

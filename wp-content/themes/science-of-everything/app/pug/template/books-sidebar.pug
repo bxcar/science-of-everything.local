@@ -1,0 +1,17 @@
+aside.sidebar-wrap.columns.large-4
+  .section-title.section-title-books
+    h2.title-2
+      img(src="img/icon-book.png")
+      | КНИГИ
+
+  ul.sidebar-list
+    each title, index in ['Восходящая спираль', 'Вилки вместо ножей на практике', 'Как написать книгу за 30 дней', 'Система продаж через интернет', 'Наука о том, почему мы покупаем']
+      li
+        a(href="books-article.html").sidebar-img-books
+          img(src="img/sidebar-books-img-" + index + ".png")
+        .sidebar-item-content.books
+          a.title-sm(href="books-article.html")= title
+          include counters.pug
+
+  .sidebar-advertising
+    img(src="img/special-banner-2.png")

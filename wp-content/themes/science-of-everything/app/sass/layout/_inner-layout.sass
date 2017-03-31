@@ -1,0 +1,122 @@
+/* Layout: Inner layout - Articles list */
+
+.l-articles
+  @include padding(55px null 80px null)
+
+  @include media(450px)
+    padding-bottom: 50px
+
+.l-specialTitle
+  @include padding(50px null)
+  background: url(../img/special-title-bg.png) no-repeat center
+  background-size: cover
+  text-align: center
+  font-size: 32px
+  font-weight: $bold
+
+  @include media(450px)
+    @include padding(30px null)
+
+.special-page
+  .mainWrap
+    max-width: 950px
+
+  .mainWrap-medium
+    @include media(1023px)
+      max-width: 790px
+
+/* Layout: Inner layout - Article content */
+
+.l-article
+  @include padding(60px null 80px null)
+
+  @include media(450px)
+    padding-bottom: 50px
+
+.event-article-page
+  .l-article
+    padding-bottom: 20px
+
+/* Layout: Inner layout - Article footer */
+
+.l-siblingsArticle
+  @include margin(-30px null 80px null)
+
+  @include media(450px)
+    margin-top: 0
+    margin-bottom: 50px
+
+.l-otherArticles
+  @include margin(-20px null 80px null)
+
+  @include media(450px)
+    margin-top: 0
+    margin-bottom: 50px
+
+/* Layout: Inner layout - Info pages */
+
+.l-info
+  @include margin(null auto)
+  @include padding(60px null)
+
+  @include media(450px)
+    padding-bottom: 40px
+
+.l-contacts
+  height: 730px
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  @include media(950px)
+    height: 670px
+
+  @include media(700px)
+    height: 960px
+
+.l-lastDescription
+  @include padding(55px null 50px null)
+  background-color: rgba($light-border, .3)
+
+/* Layout: Inner layout - Account pages */
+
+.l-aboutAuthor
+  @include padding(50px null 55px null)
+  border-bottom: 1px solid $light-border
+
+.l-sendPost
+  @include margin(null auto)
+  @include padding(60px null 80px null)
+
+  @include media(450px)
+    padding-bottom: 50px
+
+.l-changeProfile
+  @include padding(70px null 80px null)
+  background-color: #fbfbfb
+
+  @include media(450px)
+    @include padding(50px null)
+
+/* Layout: Inner layout - 404 page */
+
+.l-errorContent
+  @include size(100%)
+  display: flex
+  justify-content: flex-end
+  align-items: flex-end
+  background: url(../img/404-bg.png) no-repeat center
+  background-size: cover
+
+  @include media(1023px)
+    justify-content: center
+    background-position: 30% center
+
+/* Layout: Inner Layout - Serch pages */
+
+.l-search
+  @include padding(50px null 80px null)
+  min-height: 575px
+
+  @include media(450px)
+    padding-bottom: 50px

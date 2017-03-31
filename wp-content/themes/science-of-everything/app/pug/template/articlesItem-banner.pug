@@ -1,0 +1,17 @@
+li.columns.column-block.medium-6.small-12(class=otherClasses)
+  if link
+    a.articlesList-item-banner(href=link)
+      .articlesList-item-bg
+        img(src=bgSrc)
+      if !innerBanner
+        .category(class=category.class)= category.text
+      p.title-3.white= title
+      include counters.pug
+  else
+    a.articlesList-item-banner(href="#")
+      .articlesList-item-bg
+        img(src=bgSrc)
+      if !innerBanner
+        .category(class=category.class)= category.text
+      p.title-3.white= title
+      include counters.pug

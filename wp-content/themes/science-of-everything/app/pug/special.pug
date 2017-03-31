@@ -1,0 +1,32 @@
+extends template/base-layout.pug
+
+block prepend body
+  - var bodyClass = 'special-page'
+  - var breadcrumbsCurrent = 'Спецпроект'
+
+block content
+  .l-specialTitle
+    h2 Спецпроект
+
+  .mainWrap.mainWrap-medium
+    section.l-articles.row
+      ul.articlesList-special.column.small-12
+        -
+          var articleTitles = [ 'Распространенных слов проектах, ориентированных на кириллице значительно различается рыбным текстом является знаменитый.',
+          'Возможность получить более длинный неповторяющийся набор слов. что такое текст-рыба интернет-страницы. Обязан древнеримскому философу цицерону, ведь именно.',
+          'Самым известным рыбным текстом является знаменитый lorem ipsum на основе оригинального. Каждый веб-разработчик знает, что такое текст-рыба использующими латинский алфавит, могут возникнуть небольшие.',
+          'Распространенных слов проектах, ориентированных на кириллице значительно различается рыбным текстом является знаменитый.' ]
+
+        each title, index in articleTitles
+          li.articlesList-special-item
+            a.articlesList-special-item-img(href="special-article.html")
+              img(src="img/special-" + index + ".png")
+            .articlesList-special-item-text
+              include template/date.pug
+              h3.title-3: a(href="special-article.html")= title
+              p.text-p
+                | В конце июля в прокат вышел тринадцатый по счету научно-фантастический фильм о Вселенной «Звездный путь», получивший название «Стартрек: Бесконечность». Представители американского космического ведомства в доказательство своей многолетней связи с этой медиафраншизой...
+
+      .column.small-12
+        button.button-more-icon
+          i.icon-squares

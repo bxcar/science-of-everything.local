@@ -1,0 +1,75 @@
+/* Module.Elements: Other elements */
+
+.counters
+  font-size: 12px
+  font-weight: $regular
+  color: $light-text
+  display: flex
+
+.counters-item
+  margin-right: 20px
+  display: flex
+  align-items: center
+
+  &:last-child
+    margin-right: 0
+
+  i
+    display: block
+    margin-right: 7px
+    font-size: 14px
+
+  .icon-view
+    transform: translateY(-1px)
+
+.sortArticles
+  color: $dark-text
+  font-size: 14px
+  font-weight: $regular
+
+  i
+    display: inline-block
+    color: $light-border
+    font-size: 10px
+    margin-right: 1em
+
+  .sortArticles-text
+    @include media(450px)
+      display: none
+
+.sortArticles-select-button.ui-button
+  padding-right: 0
+  width: auto !important
+
+.sortArticles-select-text
+  margin-right: 0
+  text-align: right
+  color: $dark-text
+  font-size: 14px
+  font-weight: $regular
+
+  &::before
+    content: "\e904"
+    font-family: $icon-font
+    display: inline-block
+    font-size: 10px
+    color: $light-border
+    margin-right: 1em
+
+.sortArticles-select-menu
+  background-color: #1e1d28
+  color: $light-colored-text
+  font-size: 14px
+
+  .ui-menu-item
+    @include padding(15px 30px)
+    min-width: 185px
+
+    @include main-transition
+
+    &:hover
+      background-color: #070609
+      color: $white
+
+  .ui-menu-item-wrapper
+    margin: 0

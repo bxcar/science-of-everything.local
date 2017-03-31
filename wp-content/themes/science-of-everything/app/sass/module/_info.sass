@@ -1,0 +1,300 @@
+/* Module.Pages: Info - General */
+
+.l-info
+  .title-0, .text-sub
+    margin-bottom: 40px
+
+    @include media(450px)
+      margin-bottom: 30px
+
+  .title-3, .text-p:not(:last-child)
+    margin-bottom: 30px
+
+    @include media(450px)
+      margin-bottom: 20px
+
+  a
+    font-weight: $medium
+    text-decoration: underline
+    color: #5b529c
+
+    &:hover
+      text-decoration: none
+
+.about-page
+  .title-0
+    margin-bottom: 25px
+
+.info-section:not(:last-child)
+  margin-bottom: 50px
+
+  @include media(450px)
+    margin-bottom: 40px
+
+  @include media(380px)
+    margin-bottom: 30px
+
+/* Module.Pages: Info - Elements */
+
+.info-quote
+  @extend .article-quote
+  @include margin(50px null)
+  padding-left: 2em
+  font-size: 16px
+  line-height: 1.5
+
+  @include media(450px)
+    @include margin(40px null)
+
+  @include media(380px)
+    @include margin(30px null)
+
+  &::before
+    top: -33px
+
+.l-info
+  counter-reset: numericTitle
+
+.info-title-numeric
+  &::before
+    counter-increment: numericTitle
+    content: counter(numericTitle) ". "
+
+.info-list-numeric
+  counter-reset: numericList
+
+.info-list-numeric >  li
+  &::before
+    counter-increment: numericList
+    content: counter(numericTitle) "." counter(numericList) " "
+    font-weight: $bold
+
+.info-list-numeric-second
+  counter-reset: numericListSecond
+
+.info-list-numeric-second > li
+  &::before
+    counter-increment: numericListSecond
+    content: counter(numericTitle) "." counter(numericList) "." counter(numericListSecond) " "
+    font-weight: $bold
+
+.info-list-marker
+  @extend .article-inner-list
+
+  li:not(:last-child)
+    margin-bottom: 0
+
+  li
+    font-size: 13px
+
+/* Module.Pages: Info - About.Authors */
+
+.info-authors-list >  li
+  display: flex
+  justify-content: space-between
+
+  @include media(500px)
+    flex-direction: column
+
+.info-authors-list >  li:not(:last-child)
+  margin-bottom: 35px
+
+  @include media(500px)
+    margin-bottom: 15px
+
+.info-authors-list-photo
+  @include size(110px)
+  overflow: hidden
+  border-radius: 50%
+
+  @include media(500px)
+    margin-bottom: 20px
+
+.info-authors-list-description
+  width: calc(100% - 155px)
+
+  @include media(639px)
+    width: calc(100% - 135px)
+
+  @include media(500px)
+    width: 100%
+
+  .title-4:not(:last-child)
+    margin-bottom: 15px
+
+  .text-p:not(:last-child)
+    margin-bottom: 20px
+
+.info-authors-list-description-links
+  display: flex
+  flex-wrap: wrap
+
+  li
+    margin-bottom: 15px
+
+    &:not(:last-child)
+    margin-right: 30px
+
+  i
+    margin-right: 8px
+
+  span
+    text-decoration: underline
+
+  a
+    text-decoration: none
+    font-size: 13px
+    color: inherit
+
+    &:hover
+      span
+        text-decoration: none
+
+.info-authors-links-mail
+  color: $middle-darken-colored-text
+
+.info-authors-links-fb
+  color: $fb-bg
+
+.info-authors-links-tw
+  color: $twitter-bg
+
+.info-authors-links-vk
+  color: $vk-bg
+
+.info-authors-links-gp
+  color: $gp-bg
+
+/* Module.Pages: Info - About.Categories */
+
+.info-categories
+  margin-bottom: 20px
+
+  li
+    padding-bottom: 25px
+    position: relative
+
+    font-size: 48px
+    font-weight: $bold
+    text-align: center
+
+    @include media(1023px)
+      font-size: 40px
+
+    @include media(639px)
+      font-size: 32px
+      padding-bottom: 15px
+
+    &:first-child
+      margin-top: 75px
+
+      @include media(1023px)
+        margin-top: 45px
+
+      @include media(639px)
+        margin-top: 25px
+
+    &:not(:first-child)
+      margin-top: 85px
+
+      @include media(1023px)
+        margin-top: 55px
+
+      @include media(639px)
+        margin-top: 35px
+
+    &::after
+      content: ""
+      border-top-width: 3px
+      border-top-style: solid
+      width: 100px
+      @include position(absolute, null null 0 50%)
+      transform: translateX(-50%)
+
+      @include media(1023px)
+        width: 80px
+
+      @include media(640px)
+        width: 60px
+
+.info-categories-techno
+  &::after
+    border-color: $light-blue
+
+.info-categories-news
+  &::after
+    border-color: $purple2
+
+.info-categories-popular
+  &::after
+    border-color: $red
+
+.info-categories-astro
+  &::after
+    border-color: $orange
+
+.info-categories-psycho
+  &::after
+    border-color: $pink
+
+.info-categories-books
+  &::after
+    border-color: $green2
+
+.info-categories-events
+  &::after
+    border-color: $blue
+
+.info-categories-future
+  &::after
+    border-color: $yellow
+
+.info-categories-medtech
+  &::after
+    border-color: $green
+
+.info-categories-video
+  &::after
+    border-color: $purple4
+
+.info-categories-photo
+  &::after
+    border-color: $orange2
+
+.info-categories-special
+  &::after
+    border-color: $pink2
+
+/* Module.Pages: Info - About.Last desctiption */
+
+.lastDescription-content
+  display: flex
+  justify-content: space-between
+  @include margin(null auto)
+
+  @include media(768px)
+    flex-direction: column
+
+.lastDescription-content-logo
+  align-self: center
+
+  @include media(768px)
+    margin-bottom: 50px
+
+  img
+    max-width: 307px
+
+.lastDescription-content-text
+  width: calc(84% - 307px)
+  font-size: 16px
+  line-height: 1.5
+  color: $dark-text
+
+  @include media(1023px)
+    width: calc(93% - 307px)
+
+  @include media(768px)
+    width: 100%
+
+  p:not(:last-child)
+    margin-bottom: 30px

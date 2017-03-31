@@ -1,0 +1,34 @@
+section.l-otherArticles.column.small-12.row
+  .column.small-12
+    .section-title-inner
+      if !middleLayout
+        .title-4 Лучшие материалы
+      else
+        .title-4 Похожие новости
+  ul.articlesList-compact.column.small-12.row
+    - var link = 'rubric-article.html'
+    - var rubricItem = true
+    - var articleImg = 'img/articles-list-item-img-33.png'
+    - var category = {class: 'category-text-technology', text: 'ТЕХНОЛОГИИ'}
+    - var articleTitle = 'Хакерам потребовалось менее минуты, чтобы взломать флагман Google'
+    include articlesItem-compact.pug
+
+    - articleImg = 'img/articles-list-item-img-5.png'
+    - category = {class: 'category-text-astro', text: 'АСТРОФИЗИКА'}
+    - articleTitle = 'Глобальное потепление'
+    include articlesItem-compact.pug
+
+    - articleImg = 'img/articles-list-item-img-11.png'
+    - category = {class: 'category-text-psycho', text: 'ПСИХОЛОГИЯ'}
+    - articleTitle = 'Поверхностную оценку сексуальности связали с одобрением насилия'
+    include articlesItem-compact.pug
+
+    - var compactClasses = 'hide-for-medium-only'
+    - articleImg = 'img/articles-list-item-img-34.png'
+    - category = {class: 'category-text-medtech', text: 'МедТех'}
+    - articleTitle = 'Апофения: увидеть незримое и поверить в заговор'
+    include articlesItem-compact.pug
+
+  if !middleLayout
+    .column.small-12
+      include more-button-light.pug

@@ -1,0 +1,12 @@
+li.articlesList-item-book.columns.medium-6.small-12(class=bookClasses)
+  if link
+    a.articlesList-item-book-img(href=link)
+      img(src=bookImg)
+  else
+    a.articlesList-item-book-img(href="#")
+      img(src=bookImg)
+  if link
+    a.title-3(href=link)= bookTitle
+  else
+    a.title-3(href="#")= bookTitle
+  p.text-p= bookDesctiption

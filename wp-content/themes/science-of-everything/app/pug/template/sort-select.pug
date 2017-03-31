@@ -1,0 +1,15 @@
+select.sortArticles-select(class=sortClasses)
+  if !sortOptions && !sortOptionsGroup
+    option(selected) По последним
+    option По популярным
+  else if sortOptions
+    each optionItem, index in sortOptions
+      if index == 0
+        option(selected)= optionItem
+      else
+        option= optionItem
+  else
+    each sortGroup in sortOptionsGroup
+      optgroup(label=sortGroup.label)
+        each item in sortGroup.items
+          option= item

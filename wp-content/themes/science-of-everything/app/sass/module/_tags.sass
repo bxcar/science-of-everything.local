@@ -1,0 +1,28 @@
+/* Module.Blocks: Tags */
+
+.tags
+  display: flex
+  // align-items: flex-start
+  @include margin(-30px null 30px null)
+
+  .text-sub
+    line-height: 1.7
+    text-transform: uppercase
+    margin-right: 1em
+
+.tags-list
+  display: flex
+  flex-wrap: wrap
+
+.tags-one
+  @include padding(.5em 1.7em)
+  margin-bottom: .8em
+
+  font-size: 12px
+  color: $grey-text
+  text-align: center
+
+  border: 1px solid $light-border
+
+  &:not(:last-child)
+    margin-right: .8em

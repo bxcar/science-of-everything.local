@@ -1,0 +1,84 @@
+extends template/base-layout.pug
+
+block prepend body
+  - var bodyClass = "account-page"
+  - var breadcrumbsPrev = {'Личный кабинет': 'user-account.html'}
+  - var breadcrumbsCurrent = 'Редактировать профайл'
+
+block content
+  section.l-changeProfile
+    .mainWrap.mainWrap-medium.row
+      .changeProfile-portrait.column.small-12
+        button.changeProfile-portrait-delete
+          i.icon-close3
+        figure.changeProfile-portrait-avatar
+          img(src="img/default-avatar.png")
+        label.changeProfile-portrait-upload
+          span.changeProfile-portrait-upload-button.button.button-primary Загрузить фото
+          input(type="file")
+
+      form.generalForm.changeProfile-form.column.small-12.medium-9.row
+        label.generalForm-sub.column.small-12.medium-6.column-block
+          span.generalForm-required Имя
+          input(type="text" required)
+        label.generalForm-sub.column.small-12.medium-6.column-block
+          span.generalForm-required Фамилия
+          input(type="text" required)
+        label.generalForm-sub.column.small-12.medium-6.large-8.column-block Вид деятельности
+          input(type="text")
+        label.generalForm-sub.column.small-12.medium-6.large-4.column-block Город
+          input(type="text")
+        label.generalForm-sub.column.small-12.column-block Дополнительная информация
+          textarea
+        p.generalForm-sub.column.small-12 Дата рождения
+        .column.small-12.medium-4.column-block
+          select.generalForm-select
+            option(selected disabled) День
+            - var i = 1
+            while i < 32
+              option= i++
+        .column.small-12.medium-4.column-block
+          select.generalForm-select
+            option(selected disabled) Месяц
+            each item in ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+              option= item
+        .column.small-12.medium-4.column-block
+          select.generalForm-select
+            option(selected disabled) Год
+            - var j = 1960
+            while j < 2011
+              option= j++
+        p.generalForm-sub.column.small-12 Социальные сети
+        p.generalForm-hint.column.small-12 Нажмите на соответствующую иконку соц. сети, чтобы связать ее с вашим аккаунтом
+        .changeProfile-form-social.vk.column.small-12.medium-6.large-4.column-block
+          input(type="text" placeholder="Вконтакте" readonly)
+          button.changeProfile-form-social-button
+            i.icon-vk
+        .changeProfile-form-social.fb.column.small-12.medium-6.large-4.column-block
+          input(type="text" placeholder="Facebook" readonly)
+          button.changeProfile-form-social-button
+            i.icon-fb
+        .changeProfile-form-social.gp.column.small-12.medium-6.large-4.column-block
+          input(type="text" placeholder="Google Plus" readonly)
+          button.changeProfile-form-social-button
+            i.icon-google-plus
+        .changeProfile-form-social.tw.column.small-12.medium-6.large-4.column-block
+          input(type="text" placeholder="Twitter" readonly)
+          button.changeProfile-form-social-button
+            i.icon-twitter
+        .changeProfile-form-social.skype.column.small-12.medium-6.large-4.column-block
+          input(type="text" placeholder="Skype" readonly)
+          button.changeProfile-form-social-button
+            i.icon-skype
+        .changeProfile-form-social.inst.column.small-12.medium-6.large-4.column-block
+          input(type="text" placeholder="Instagram" readonly)
+          button.changeProfile-form-social-button
+            i.icon-instagram
+        // Display when change profile was success
+        .changeProfile-form-complete.column.small-12.large-5
+          i.icon-check
+          p #[b Изменения сохранены]. #[br] Ваш профиль был успешно обновлен.
+        // End of success message
+        .changeProfile-form-buttons.column.small-12.large-7
+          button.button.button-primary Сохранить изменения
+          a.button.button-alert(href="user-account.html") Отменить

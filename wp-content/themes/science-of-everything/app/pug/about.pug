@@ -1,0 +1,65 @@
+extends template/base-layout.pug
+
+block prepend body
+  - var bodyClass = "about-page"
+  - var breadcrumbsCurrent = 'О проекте'
+
+block content
+  .mainWrap.mainWrap-medium.row
+    article.l-info.column.small-12.large-10
+      h1.title-0 О компании
+      p.text-sub На страницах нашего проекта Вы найдете  интересные научно-популярные статьи о науке и технике. Структура проекта позволяет пользоваться тематическими  категориями, такими как:
+      ul.info-authors-list
+        - var authorsInfo = [{name: 'Оликсандор Дроздов', description: 'И даже с языками, использующими латинский алфавит, могут возникнуть небольшие проблемы: в различных языках те или иные буквы встречаются с разной частотой, имеется разница в длине наиболее распространенных слов.', links: {mail: 'Oliksandor. Д.', vk: 'Oliksandor. Д.', tw: 'Oliksandor. Д.'}}, {name: 'Никита Светлый', description: 'Отдельные фразы и демонстрации внешнего вида контента, просмотра шрифтов. Использовать в качестве рыбы текст этот несмотря. Впервые его трактата о пределах добра и даже с использованием lorem. Благодаря чему появляется возможность получить более длинный неповторяющийся набор. Ipsum, кроме того, нечитабельность текста на сайтах.', links: {mail: 'Nikita. C.', tw: 'Nikita. C.', vk: 'Nikita. C.', gp: 'Nikita. C.'}}, {name: 'Оксана Рыбина', description: 'О пределах добра и смысловую нагрузку ему нести совсем. Отсюда напрашивается вывод, что все.', links: {mail: 'Oksana. R.', tw: 'Oksana. R.', vk: 'Oksana. R.', gp: 'Oksana. R.', fb: 'Oksana. R.'}}, {name: 'Миша Светраков', description: 'Используется он веб-дизайнерами для вставки на руку при запуске проекта кириллице. Кириллице значительно различается цицерону, ведь именно. О пределах добра и смысловую нагрузку ему нести совсем необязательно буквы.', links: {mail: 'Miha. C.', tw: 'Miha. C.', vk: 'Miha. C.', fb: 'Miha. C.'}}]
+        each author, index in authorsInfo
+          li
+            figure.info-authors-list-photo
+              img(src="img/info-author-" + index + ".png")
+            .info-authors-list-description
+              p.title-4= author.name
+              p.text-p= author.description
+              if author.links
+                ul.info-authors-list-description-links
+                  each link, index in author.links
+                    if index == 'mail'
+                      li.info-authors-links-mail
+                        a(href="#")
+                          i.icon-mail
+                          span= author.links.mail
+                    if index == 'fb'
+                      li.info-authors-links-fb
+                        a(href="#")
+                          i.icon-fb
+                          span= author.links.fb
+                    if index == 'tw'
+                      li.info-authors-links-tw
+                        a(href="#")
+                          i.icon-twitter
+                          span= author.links.tw
+                    if index == 'vk'
+                      li.info-authors-links-vk
+                        a(href="#")
+                          i.icon-vk
+                          span= author.links.vk
+                    if index == 'gp'
+                      li.info-authors-links-gp
+                        a(href="#")
+                          i.icon-google-plus
+                          span= author.links.gp
+
+      ul.info-categories
+        - var categories = {astro: 'Астрофизика', techno: 'Технологии', psycho: 'Психология', books: 'Книги', future: 'Будущее'}
+        each categoryTitle, category in categories
+          li(class="info-categories-" + category)= categoryTitle
+
+  .l-lastDescription
+    .mainWrap.mainWrap-medium.row
+      .lastDescription-content.column.small-12.large-10
+        a.lastDescription-content-logo(href="index.html")
+          img(src="img/colored-logo.png")
+        .lastDescription-content-text
+          h2.title-0 Для общения с читателями на проекте существует блог.
+          p
+            | Проект создан и поддерживается с целью популяризации научного подхода к окружающей действительности, распространения научных знаний в современной, доступной и популярной форме, расширения кругозора читателей по различным научно-популярным и техническим областям, привлечения молодого поколения к занятию научными исследованиями.
+          p
+            | #[span.medium Основные задачи проекта:] всестороннее обсуждение научной гипотезы, теории, природного явления.

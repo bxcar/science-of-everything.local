@@ -1,0 +1,59 @@
+extends template/section-layout.pug
+
+block prepend body
+  - var bodyClass = 'events-page'
+  - var breadcrumbsCurrent = 'События'
+
+block content
+  .mainWrap.mainWrap-medium.row
+    .l-articles.column.large-8
+      section.articles-events-item
+        .section-title-inner
+          h2.title-2 Анонс событий
+
+        ul.articlesList.articlesList-detail.row
+          li.articlesList-medium.columns.column-block.small-12
+            a.articlesList-item-banner.twoThirds(href="event-article.html")
+              .articlesList-item-bg
+                img(src="img/articles-list-item-bg-10.png")
+              p.title-1.white Future Foundation Technology Ethics Conference
+              include template/date.pug
+
+          - var link = 'event-article.html'
+          - var detailItem = true
+          - var eventItem = true
+          - var mediumItem = true
+          - var otherClasses = 'articlesList-medium'
+          - var imgSrc = "img/articles-list-item-img-13.png"
+          - var title = 'Future Foundation Technology Ethics Conference'
+          include template/articlesItem-text.pug
+
+          - var imgSrc = "img/articles-list-item-img-14.png"
+          - var title = 'Future Foundation'
+          include template/articlesItem-text.pug
+
+        include template/more-button.pug
+
+      section.articles-events-item
+        .section-title-inner
+          h2.title-2 Прошедшие события
+
+        ul.articlesList.articlesList-detail.row
+          li.articlesList-medium.columns.column-block.small-12
+            a.articlesList-item-banner.twoThirds(href="event-article.html")
+              .articlesList-item-bg
+                img(src="img/slider-img-1.png")
+              p.title-1.white Ученые объяснили причины похолоданий, наступающих раз в 100 000 лет
+              include template/date.pug
+
+          - var imgSrc = "img/articles-list-item-img-1.png"
+          - var title = 'Google Glass превратили в тренажер кода Морзе'
+          include template/articlesItem-text.pug
+
+          - var imgSrc = "img/articles-list-item-img-2.png"
+          - var title = '«Стартест» от NASA'
+          include template/articlesItem-text.pug
+
+        include template/more-button.pug
+
+    include template/events-sidebar.pug

@@ -1,0 +1,135 @@
+/* Module.Blocks: Pop-up */
+
+.subscribePopUp-bg
+  display: none
+  @include size(100vw 100vh)
+  @include position(fixed, 0 null null 0)
+  z-index: 5000
+
+.subscribePopUp-wrap
+  position: relative
+  @include margin(7.7vh auto null auto)
+  width: calc(100% - 60px)
+  @include padding(80px 20px 70px 20px)
+  max-width: 600px
+  min-height: 604px
+
+  @include media(500px)
+    width: calc(100% - 40px)
+    min-height: 0
+
+  @include media(350px)
+    width: calc(100% - 20px)
+    @include padding(50px null)
+
+  display: flex
+  justify-content: center
+  align-items: center
+
+  background-color: $white
+  box-shadow: 0 0 111px 0 rgba($black, .45)
+
+  animation-duration: .6s
+
+.subscribePopUp-content
+  @include margin(auto null)
+  width: 100%
+
+.subscribePopUp-close
+  @include position(absolute, 25px 30px null null)
+  padding: 10px
+  font-size: 30px
+
+  @include media(500px)
+    top: 15px
+    right: 15px
+
+  @include media(380px)
+    right: 0
+    top: 0
+
+.subscribePopUp-img
+  display: block
+  @include margin(null auto 50px auto)
+  width: 307px
+  max-width: 100%
+
+  @include media(500px)
+    margin-bottom: 30px
+
+.subscribePopUp-description
+  max-width: 325px
+  @include margin(null auto 50px auto)
+  text-align: center
+  font-size: 14px
+  line-height: 1.7
+  color: #312d5a
+
+  @include media(500px)
+    margin-bottom: 20px
+
+  @include media(360px)
+    font-size: 13px
+
+.subscribePopUp-social
+  @include margin(null auto 50px auto)
+  max-width: 460px
+  display: flex
+  justify-content: space-around
+
+  @include media(500px)
+    margin-bottom: 30px
+
+.subscribePopUp-social-button
+  @include size(90px 55px)
+  @include margin(null 10px)
+  display: flex
+  justify-content: center
+  // align-items: center
+  text-align: center
+  font-size: 22px
+  border-bottom: 1px solid
+  @include main-transition
+
+.subscribePopUp-social-button.fb
+  color: $fb-bg
+  border-color: $fb-bg
+
+  &:hover
+    color: $white
+    background-color: $fb-bg
+
+.subscribePopUp-social-button.tw
+  color: $twitter-bg
+  border-color: $twitter-bg
+
+  &:hover
+    color: $white
+    background-color: $twitter-bg
+
+.subscribePopUp-social-button.vk
+  color: $vk-bg
+  border-color: $vk-bg
+
+  &:hover
+    color: $white
+    background-color: $vk-bg
+
+.subscribePopUp-social-button.gp
+  color: $gp-bg
+  border-color: $gp-bg
+
+  &:hover
+    color: $white
+    background-color: $gp-bg
+
+.subscribePopUp-otherInfo
+  @include margin(null auto)
+  max-width: 235px
+  text-align: center
+  font-size: 12px
+  line-height: 1.75
+  color: rgba($grey-text, .5)
+
+  @include media(350px)
+    font-size: 11px

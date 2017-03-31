@@ -1,0 +1,137 @@
+/* Module.Elements: Forms */
+
+.generalForm
+  textarea
+    width: 100%
+
+  #{$all-text-inputs}, .generalForm-select-button
+    display: inline-block
+    padding: em(17) em(30)
+    font-size: 14px
+    color: $grey-text
+    border: 1px solid rgba(#312d5a, .2)
+
+    @include media(1023px)
+      @include padding(null em(20))
+
+    @include placeholder
+      font-size: 14px
+      color: $grey-text
+
+  #{$all-text-inputs}
+    @include fast-transition
+
+.generalForm-sub
+  display: inline-block
+  font-size: 14px
+  font-weight: $bold
+  color: $grey-text
+
+  #{$all-text-inputs}
+    display: block
+    width: 100%
+    margin-top: 20px
+
+.generalForm-upload
+  display: inline-block
+  vertical-align: middle
+  margin-right: em(20)
+  position: relative
+  overflow: hidden
+
+  input[type="file"]
+    @include position(absolute, 0)
+    @include size(100%)
+    opacity: 0
+    cursor: pointer
+
+.generalForm-upload-button
+  display: flex
+  justify-content: center
+  align-items: center
+  @include size(47px)
+  border-radius: 50%
+
+  color: $light-colored-text
+  font-size: 18px
+
+  border: 2px solid rgba($light-colored-text, .5)
+
+  .icon-close2
+    font-size: 26px
+
+  &.done
+    border-color: #5a4db4
+    font-size: 24px
+    color: #5a4db4
+
+  &.uploadAnimation
+    position: relative
+
+    &::before
+      content: ""
+      @include position(absolute, -2px null null -2px)
+      z-index: 1000
+      @include size( calc(100% + 4px) )
+      border-radius: 50%
+      border: 2px solid
+      @include border-color(#5a4db4 #5a4db4 #5a4db4 transparent)
+      animation: uploadAnimation 4s linear infinite
+
+@keyframes uploadAnimation
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(720deg)
+
+.generalForm-select-button-open
+  border-color: #070609 !important
+  background-color: #070609 !important
+  color: $white !important
+
+.generalForm-select-icon
+  text-indent: 0
+  transform: translateY(1px)
+  &::before
+    content: "\f0d7"
+    font-family: $icon-font
+
+.generalForm-select-menu
+  background-color: #1e1d28
+  color: $light-colored-text
+
+  .ui-menu
+    @include padding(em(10) null)
+    max-height: 21em
+    overflow: auto
+
+  .ui-state-disabled
+    display: none
+
+  .ui-menu-item
+    padding: em(10) em(30)
+
+    @include media(1023px)
+      @include padding(null em(20))
+
+    &:hover
+      background-color: #070609
+
+  .ui-state-active
+    margin: 0
+
+.generalForm-hint
+  font-size: 13px
+  color: #c2c2c2
+  line-height: 1.5
+
+.generalForm-buttons
+  display: flex
+  justify-content: flex-end
+
+.generalForm-required
+  &::after
+    content: " *"
+    font-size: 16px
+    color: $red

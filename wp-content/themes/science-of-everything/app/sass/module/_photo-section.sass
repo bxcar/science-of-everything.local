@@ -1,0 +1,178 @@
+/* Module.Pages: Photo Section */
+
+.photo-big-wrap
+  @include media(1023px)
+    max-width: 57.9%
+
+.photo-big
+  display: block
+  position: relative
+
+  img
+    @include main-transition
+
+    @include media(639px)
+      margin-bottom: 25px
+
+  figcaption
+    @include position(absolute, 50% null null 50%)
+    transform: translate(-50%, -50%)
+    z-index: 100
+    text-align: center
+    width: 70%
+
+    @include media(900px)
+      width: 90%
+
+    @include media(639px)
+      position: static
+      transform: none
+      width: auto
+      color: #d0d0d0
+      font-size: 12px
+      font-weight: $medium
+      line-height: 1.75
+
+  &::before
+    content: ""
+    display: block
+    @include size(100%)
+    @include position(absolute, 0 null null 0)
+    z-index: 50
+    background-color: $black
+    opacity: 0
+    @include main-transition
+
+  &:hover
+    img
+      transform: scale(1.1)
+
+    &::before
+      opacity: .2
+
+.photo-small-wrap
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+  @include media(1023px)
+    max-width: 20.2%
+    @include padding(40px null 20px null)
+
+  @include media(710px)
+    @include padding(20px null 10px null)
+
+.photo-small
+  img
+    margin-bottom: 20px
+    @include main-transition
+
+    @include media(900px)
+      margin-bottom: 10px
+
+    @include media(639px)
+      margin-bottom: 25px
+
+  figcaption
+    text-align: center
+    color: #d0d0d0
+    font-size: 12px
+    font-weight: $medium
+    line-height: 1.75
+    @include main-transition
+
+    @include media(900px)
+      font-size: 11px
+      line-height: 1.5
+
+    @include media(639px)
+      font-size: 12px
+      line-height: 1.75
+
+  &:hover
+    img
+      filter: brightness(.8)
+
+    figcaption
+      color: $orange2
+
+%section-photo-decoration
+  content: ""
+  display: inline-block
+  height: 40px
+  border: 1px solid transparent
+
+  @include media(639px)
+    display: none
+
+.section-title-photo
+  margin-bottom: 40px
+  text-align: center
+
+  @include media(1023px)
+    height: 40px
+
+  @include media(639px)
+    height: auto
+    margin-bottom: 50px
+
+  &::before, &::after
+    @extend %section-photo-decoration
+    width: 355px
+    vertical-align: top
+    transform: translateY(30%)
+
+    @include media(1023px)
+      @include size(32.4% 85px)
+      transform: translateY(15%)
+
+    @include media(710px)
+      height: 65px
+
+  &::before
+    @include border-color(#5a5868 null null #5a5868)
+
+  &::after
+    @include border-color(#5a5868 #5a5868 null null)
+
+  .title-2
+    @include margin(null 22px)
+    display: inline-block
+
+  img
+    margin-right: 10px
+
+.sectionPhoto-footer
+  margin-top: 45px
+  text-align: center
+
+  @include media(1023px)
+    margin-top: 25px
+
+  @include media(639px)
+    margin-top: 45px
+
+  &::before, &::after
+    @extend %section-photo-decoration
+    width: 300px
+    vertical-align: bottom
+    transform: translateY(-50%)
+
+    @include media(1023px)
+      @include size(28.9% 65px)
+      transform: translateY(-35%)
+
+    @include media(710px)
+      height: 45px
+
+  &::before
+    @include border-color(null null #5a5868 #5a5868)
+
+  &::after
+    @include border-color(null #5a5868 #5a5868 null)
+
+  .button-dark-bg
+    @include margin(null 25px)
+
+    @include media(1023px)
+      @include margin(null 0)

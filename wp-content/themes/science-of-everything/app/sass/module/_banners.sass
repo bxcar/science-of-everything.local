@@ -1,0 +1,116 @@
+/* Module.Pages: Banners - Slider */
+
+.banners-slideOne
+  position: relative
+  overflow: hidden
+
+  img
+    @include media(639px)
+      height: 432px
+      width: auto !important
+
+.banners-slideOne-content
+  @include position(absolute, null null 0 0)
+  padding: 35px
+
+  @include media(450px)
+    @include padding(null 10px)
+
+  .category, .title-1
+    margin-bottom: 25px
+
+  .title-1
+    max-width: 550px
+
+    @include media(639px)
+      font-size: 16px
+
+.slider-dots
+  @include position(absolute, 35px null null 45px)
+  display: flex
+
+  @include media(450px)
+    left: 25px
+
+.slider-dots-one
+  width: 20px
+  height: 10px
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+
+  span
+    display: block
+    @include size(7px)
+    border-radius: 100px
+    background-color: rgba($white, .5)
+    @include fast-transition
+
+  &:hover
+    span
+      @include size(10px)
+      background-color: $white
+
+.slider-dots-one.active
+  span
+    @include size(10px)
+    background-color: $white
+
+.slider-nav-next
+  @include position(absolute, 35px null null 135px)
+  z-index: 100
+  font-size: 12px
+  color: $white
+  cursor: pointer
+
+  @include media(450px)
+    left: 115px
+
+/* Module.Pages: Banners - Aside */
+.banners-aside
+  @include media(1023px)
+    display: none
+
+.banners-aside-advertising
+  margin-bottom: 30px
+
+  img
+    max-width: 100%
+
+.banners-aside-social
+  display: flex
+  justify-content: space-between
+
+.banners-aside-social-button
+  @include size(45.74% 72px)
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $white
+  font-size: 20px
+
+  @include fast-transition
+
+.banners-aside-social-button.fb
+  background-color: #3b5998
+
+  &:hover
+    background-color: $fb-hvr
+
+.banners-aside-social-button.vk
+  background-color: #597da3
+
+  &:hover
+    background-color: $vk-hvr
+
+/* Module.Pages: Banners - Section psycho */
+
+.sectionPsycho-banner
+  padding-top: 60px
+
+  @include media(639px)
+    display: none
+
+  img
+    max-width: 100%

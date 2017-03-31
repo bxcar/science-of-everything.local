@@ -1,0 +1,99 @@
+extends template/account-layout.pug
+
+block prepend body
+  - var blogAuthorPage = true
+  - var bodyClass = "account-page"
+  - var breadcrumbsPrev = {'Личный кабинет': 'user-account.html'}
+  - var breadcrumbsCurrent = 'Закладки'
+
+block account-section
+  .mainWrap.mainWrap-medium.row
+    section.l-articles.column.small-12
+      #author-articles
+        .section-title-inner.articles
+          img(src="img/icon-newspaper.png")
+          h2.title-4 Статьи
+        ul.articlesList.row
+          - var link = 'authors-article.html'
+          - var otherClasses = 'large-4'
+          - var category = {class: 'category-text-technology', text: 'ТЕХНОЛОГИИ'}
+          - var imgSrc = 'img/articles-list-item-img-26.png'
+          - var title = 'Google Glass превратили в тренажер кода Морзе'
+          include template/articlesItem-text.pug
+
+          - var category = {class: 'category-text-astro', text: 'АСТРОФИЗИКА'}
+          - var imgSrc = 'img/articles-list-item-img-27.png'
+          - var title = '«Стартест» от NASA'
+          include template/articlesItem-text.pug
+
+          - var category = {class: 'category-text-technology', text: 'ТЕХНОЛОГИИ'}
+          - var imgSrc = 'img/articles-list-item-img-28.png'
+          - var title = 'Google Glass превратили в тренажер кода Морзе'
+          include template/articlesItem-text.pug
+
+          - var otherClasses = 'large-4 show-for-medium-only'
+          - var category = {class: 'category-text-technology', text: 'ТЕХНОЛОГИИ'}
+          - var imgSrc = 'img/articles-list-item-img-24.png'
+          - var title = 'Google Glass превратили в тренажер кода Морзе'
+          include template/articlesItem-text.pug
+
+        include template/more-button-light.pug
+
+      #author-share
+        .section-title-inner.share
+          img(src="img/icon-earth.png")
+          h2.title-4 Поделились в соцсетях
+        ul.articlesList.row
+          - var link = 'blog-article.html'
+          - var otherClasses = 'large-4'
+          - var bgSrc = 'img/articles-list-item-bg-11.png'
+          - var category = {class: 'category-medtech', text: 'Медтех'}
+          - var title = 'Апофения: увидеть незримое и поверить в заговор'
+          include template/articlesItem-banner.pug
+
+          - var category = {class: 'category-text-astro', text: 'АСТРОФИЗИКА'}
+          - var imgSrc = 'img/articles-list-item-img-25.png'
+          - var title = '«Стартест» от NASA'
+          include template/articlesItem-text.pug
+
+          - var category = {class: 'category-text-technology', text: 'ТЕХНОЛОГИИ'}
+          - var imgSrc = 'img/articles-list-item-img-24.png'
+          - var title = 'Google Glass превратили в тренажер кода Морзе'
+          include template/articlesItem-text.pug
+
+          - var otherClasses = 'large-4 show-for-medium-only'
+          - var category = {class: 'category-text-technology', text: 'ТЕХНОЛОГИИ'}
+          - var imgSrc = 'img/articles-list-item-img-28.png'
+          - var title = 'Google Glass превратили в тренажер кода Морзе'
+          include template/articlesItem-text.pug
+
+        include template/more-button-light.pug
+
+      #author-bookmarks
+        .section-title-inner.bookmarks
+          i.icon-bookmark-o
+          h2.title-4 Закладки
+        ul.articlesList.row
+          - var otherClasses = 'large-4'
+          - var bgSrc = 'img/articles-list-item-bg-9.png'
+          - var category = {class: 'category-technology', text: 'ТЕХНОЛОГИИ'}
+          - var title = 'Илон Маск представил новые разработки'
+          include template/articlesItem-banner.pug
+
+          - var bgSrc = 'img/articles-list-item-bg-8.png'
+          - var category = {class: 'category-medtech', text: 'Медтех'}
+          - var title = 'Апофения: увидеть незримое и поверить в заговор'
+          include template/articlesItem-banner.pug
+
+          - var bgSrc = 'img/articles-list-item-bg-3.png'
+          - var category = {class: 'category-psycho', text: 'ПСИХОЛОГИЯ'}
+          - var title = 'Апофения: увидеть незримое и поверить в заговор'
+          include template/articlesItem-banner.pug
+
+          - var otherClasses = 'large-4 show-for-medium-only'
+          - var bgSrc = 'img/articles-list-item-bg-8.png'
+          - var category = {class: 'category-medtech', text: 'Медтех'}
+          - var title = 'Апофения: увидеть незримое и поверить в заговор'
+          include template/articlesItem-banner.pug
+
+        include template/more-button-light.pug

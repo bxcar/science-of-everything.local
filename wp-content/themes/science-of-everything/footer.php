@@ -11,18 +11,34 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'science-of-everything' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'science-of-everything' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'science-of-everything' ), 'science-of-everything', '<a href="https://automattic.com/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
+<div class="l-footerSubscibe">
+    <h2 class="footerSubscribe-title">Подписаться на рассылку</h2>
+    <form class="footerSubscribe-form">
+        <input type="email" name="email" placeholder="Ваш Email">
+        <button type="submit"><i class="icon-angle-right"></i></button>
+    </form>
+</div>
+<footer class="l-footer"><a class="footer-logo" href="index.html"><img src="<?php bloginfo('template_url'); ?>/app/img/colored-logo.png"></a>
+    <ul class="footer-links">
+        <li><a class="header-link" href="about.html"><span>О проекте</span></a></li>
+        <li><a class="header-link" href="partners.html"><span>Партнерам</span></a></li>
+        <li><a class="header-link" href="advertising.html"><span>Реклама</span></a></li>
+        <li><a class="header-link" href="contacts.html"><span>Контакты</span></a></li>
+    </ul>
+    <ul class="footer-social">
+        <li><a href="#"><i class="icon-fb"></i></a></li>
+        <li><a href="#"><i class="icon-twitter"></i></a></li>
+        <li><a href="#"><i class="icon-vk"></i></a></li>
+        <li><a href="#"><i class="icon-google-plus"></i></a></li>
+    </ul>
+    <div class="footer-copyright">
+        <p class="nowrap">© 2016, Science of everything.
+            <wbr>Все права защищены.
+        </p>
+        <p>Сделано в <a href="http://dizz.in.ua/ru">Dizz Agency</a></p>
+    </div>
+    <button class="up-button"><i class="icon-angle-up"></i></button>
+</footer>
 <?php wp_footer(); ?>
-
 </body>
 </html>

@@ -1,0 +1,13 @@
+li.columns.column-block.large-8.small-12(class=bannerClasses)
+  if link
+    a.articlesList-item-banner.twoThirds(href=link)
+      .articlesList-item-bg
+        img(src=bgSrc)
+      p.title-1.white= articleTitle
+      include counters.pug
+  else
+    a.articlesList-item-banner.twoThirds(href="#")
+      .articlesList-item-bg
+        img(src=bgSrc)
+      p.title-1.white= articleTitle
+      include counters.pug

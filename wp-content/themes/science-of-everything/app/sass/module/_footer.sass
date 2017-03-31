@@ -1,0 +1,120 @@
+/* Module.Blocks: Footer - Subscibe */
+
+.footerSubscribe-title
+  margin-bottom: 20px
+  font-size: 16px
+  font-weight: $medium
+  color: #fbfbfb
+
+  @include media(450px)
+    font-size: 14px
+
+.footerSubscribe-form
+  width: 320px
+  @include margin(null auto)
+  position: relative
+
+  @include media(350px)
+    width: 280px
+
+  input
+    padding: 1.3em 55px 1.3em 2.1em
+    width: 100%
+    font-size: 14px
+    font-weight: $regular
+    color: #333333
+    background-color: $white
+    border-radius: 100px
+
+    @include placeholder
+      font-size: 14px
+      font-weight: $regular
+      color: #333333
+
+  button
+    @include position(absolute, 0 0 null null)
+    height: 100%
+    width: 55px
+    font-size: 19px
+    color: #727272
+
+/* Module.Blocks: Footer - Footer */
+
+.footer-logo
+  display: block
+  width: 307px
+  @include margin(null auto 45px auto)
+
+  @include media(450px)
+    width: 180px
+
+  img
+    max-width: 100%
+
+.footer-links
+  margin-bottom: 45px
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+  @include media(639px)
+    @include padding(null 20%)
+
+  @include media(400px)
+    @include padding(null 15%)
+
+  @include media(350px)
+    @include padding(null 10%)
+
+  li
+    @include media(639px)
+      width: 50%
+
+    a
+      display: block
+      @include padding(10px 32px)
+      white-space: nowrap
+
+      @include media(639px)
+        @include padding(7px 20px)
+
+.footer-social
+  margin-bottom: 45px
+  display: flex
+  justify-content: center
+  font-size: 21px
+
+  @include media(1023px)
+    display: none
+
+  @include media(639px)
+    display: flex
+
+  li a
+    display: block
+    @include padding(10px 23px)
+    @include main-transition
+
+    &:hover
+      color: white
+
+.footer-copyright
+  @include padding(null 30px)
+  color: $middle-darken-colored-text
+  font-size: 14px
+  font-weight: $regular
+  line-height: 1.9
+
+  a
+    &:hover
+      text-decoration: underline
+
+.l-footer
+  .up-button
+    display: none
+    @include position(fixed, null 4.7% 150px null)
+
+    @include media(639px)
+      display: block
+      position: static
+      @include margin(60px auto null auto)

@@ -1,0 +1,27 @@
+li.columns.column-block.large-3.medium-4.small-12(class=compactClasses)
+  if link
+    a.articlesList-item-text.dark(href=link)
+      figure.articlesList-item-img-wrap
+        img.articlesList-item-img(src=articleImg)
+      .articlesList-item-text-content
+        p.title-5.white= articleTitle
+        include counters.pug
+    if editArticle
+      .articlesList-item-edit
+        a.articlesList-item-edit-edit(href="#")
+          i.icon-pencil
+        button.articlesList-item-edit-delete
+          i.icon-close2
+  else
+    a.articlesList-item-text.dark(href="#")
+      figure.articlesList-item-img-wrap
+        img.articlesList-item-img(src=articleImg)
+      .articlesList-item-text-content
+        p.title-5.white= articleTitle
+        include counters.pug
+    if editArticle
+      .articlesList-item-edit
+        a.articlesList-item-edit-edit(href="#")
+          i.icon-pencil
+        button.articlesList-item-edit-delete
+          i.icon-close2

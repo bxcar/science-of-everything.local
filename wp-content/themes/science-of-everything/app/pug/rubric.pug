@@ -1,0 +1,53 @@
+extends template/section-layout.pug
+
+block prepend body
+  - var breadcrumbsCurrent = 'Рубрики'
+
+block prepend content
+  - var sectionTitle = 'технологии'
+  - var sortSelect = true
+
+block section-content
+  ul.articlesList.column.small-12.row
+    - var link = 'rubric-article.html'
+    - var otherClasses = 'large-4'
+    - var imgSrc = 'img/articles-list-item-img-12.png'
+    - var category = {class: 'category-text-technology', text: 'технологии'}
+    - var title = 'Концептуальная High Standard Watch'
+    include template/articlesItem-text.pug
+
+    - var bgSrc = 'img/articles-list-item-bg-8.png'
+    - category.class = 'category-technology'
+    - title = 'Органические цифровые Скульптуры Jon Noorlander'
+    include template/articlesItem-banner.pug
+
+    - imgSrc = 'img/articles-list-item-img-13.png'
+    - category.class = 'category-text-technology'
+    - title = 'На солнечных батареях Концепция Труба опресняет соленой воды в чистую питьевую воду'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-14.png'
+    - title = 'Футуристический Лотос C-01 мотоциклов продано на аукционе'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-15.png'
+    - title = 'Фантастические световые установки по шкале Collectif'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-16.png'
+    - title = 'Brand New BMW Concept Titan Мотоциклетн'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-17.png'
+    - title = 'Потрясающие Минималистский Градиент Часы'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-18.png'
+    - title = 'Невероятный Eco Resort в Объединенные Арабские Эмираты'
+    include template/articlesItem-text.pug
+
+    - var otherClasses = 'large-4 hide-for-small show-for-large'
+    - var bgSrc = 'img/articles-list-item-bg-9.png'
+    - category.class = 'category-technology'
+    - title = '3D Печатный веб Установка игры со светом'
+    include template/articlesItem-banner.pug
