@@ -19,6 +19,11 @@
     <title>Наука всего</title>
     <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/app/img/favicon.png" type="image/png">
     <?php wp_head(); ?>
+    <style>
+        .home-page .header-bg {
+            background-image: url('<?php the_field('header_background_image', 'option'); ?>');
+        }
+    </style>
 </head>
 <body class="home-page">
 <div class="l-preloader"><img src="<?php bloginfo('template_url'); ?>/app/img/preloader.gif"></div>
@@ -46,8 +51,8 @@
             </li>
         </ul>
         <div class="header-login"><i class="icon-user"></i>
-            <!-- Title when user is guest--><span>Войти  / Регистрация</span>
-            <!-- Title when user is login--><span class="is-hidden">Личный кабинет</span>
+            <!-- Title when user is guest--><span><?php the_field('signature_unauthorized_user', 'option'); ?></span>
+            <!-- Title when user is login--><span class="is-hidden"><?php the_field('signature_authorized_user', 'option'); ?></span>
         </div>
         <button class="header-search button-round-outline"><i class="icon-search"></i></button>
         <form class="header-searchForm is-hidden">
@@ -58,10 +63,10 @@
     <div class="header-nav-wrap is-hidden">
         <nav class="header-nav">
             <button class="header-nav-close"><i class="icon-close"></i></button>
-            <a class="header-nav-logo" href="index.html"><img
-                        src="<?php bloginfo('template_url'); ?>/app/img/colored-logo.png"></a>
+            <a class="header-nav-logo" href="<?php echo home_url(); ?>"><img
+                        src="<?php the_field('header_menu_logo', 'option'); ?>"></a>
             <ul class="header-nav-list">
-                <li><a class="header-link" href="index.html"><span>Главная</span></a></li>
+                <li><a class="header-link" href="<?php echo home_url(); ?>"><span>Главная</span></a></li>
                 <li><span class="header-nav-dropdown header-link">Темы</span>
                     <ul class="header-nav-dropdown-list">
                         <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
@@ -93,7 +98,7 @@
             </ul>
             <ul class="header-nav-list modile">
                 <li>
-                    <button class="header-nav-login"><i class="icon-user"></i><span>Войти  / Регистрация</span>
+                    <button class="header-nav-login"><i class="icon-user"></i><span><?php the_field('signature_unauthorized_user', 'option'); ?></span>
                     </button>
                 </li>
                 <li>
@@ -108,7 +113,7 @@
     <div class="header-loginForm-wrap is-hidden">
         <button class="header-loginForm-close button-round-outline"><i class="icon-close"></i></button>
         <div class="header-loginForm">
-            <h2 class="header-loginForm-title">Форма входа</h2>
+            <h2 class="header-loginForm-title"><?php the_field('registration_form_title', 'option'); ?></h2>
             <ul class="header-loginForm-method">
                 <li><a href="#login-form">Войти</a></li>
                 <li><a href="#register-form">Регистрация</a></li>
@@ -153,8 +158,7 @@
                         <input type="password" name="password" placeholder="Пароль">
                     </p>
                     <button class="button button-primary" type="submit">Зарегистрироваться</button>
-                    <p class="header-loginForm-text small">Нажимая на кнопку «Зарегистрироваться», вы подтверждаете
-                        свое согласие с условиями предоставления услуг (<a href="therms-of-use.html">пользовательское
+                    <p class="header-loginForm-text small"><?php the_field('signature_terms_of_use', 'option'); ?> (<a href="therms-of-use.html">пользовательское
                             соглашение</a>)</p>
                 </form>
             </div>
@@ -172,5 +176,5 @@
             <button class="header-loginForm-text header-loginForm-restorePassword-back">Назад</button>
         </div>
     </div>
-    <a class="header-logo" href="index.html"><img src="<?php bloginfo('template_url'); ?>/app/img/white-logo.png"></a>
+    <a class="header-logo" href="<?php echo home_url(); ?>"><img src="<?php the_field('header_logo', 'option'); ?>"></a>
 </div>

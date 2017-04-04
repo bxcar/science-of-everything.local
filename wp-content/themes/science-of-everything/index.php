@@ -11,7 +11,6 @@
  *
  * @package science-of-everything
  */
-
 get_header(); ?>
     <div class="mainWrap mainWrap-medium">
         <div class="l-banners row">
@@ -62,19 +61,30 @@ get_header(); ?>
                 </div>
             </div>
             <div class="banners-aside columns large-4">
-                <div class="banners-aside-advertising"><img
-                            src="<?php bloginfo('template_url'); ?>/app/img/special-banner-1.png"></div>
+                <div class="banners-aside-advertising">
+                    <a target="_blank" href="<?php the_field('ads1_link'); ?>">
+                        <img src="<?php the_field('ads1_image'); ?>">
+                    </a>
+                </div>
                 <div class="banners-aside-social">
-                    <button class="banners-aside-social-button fb"><i class="icon-fb"></i></button>
-                    <button class="banners-aside-social-button vk"><i class="icon-vk"></i></button>
+                    <a class="banners-aside-social-button fb" target="_blank"
+                       href="<?php the_field('ads1_soclial1_link'); ?>">
+                        <i class="fa <?php the_field('ads1_soclial1_image'); ?>" aria-hidden="true"></i>
+                    </a>
+                    <a class="banners-aside-social-button vk" target="_blank"
+                       href="<?php the_field('ads1_soclial2_link'); ?>">
+                        <i class="fa <?php the_field('ads1_soclial2_image'); ?>" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </div>
         <section class="l-mainArticles row">
             <div class="articlesList-wrap columns large-8">
                 <div class="section-title section-title-news">
-                    <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-book-open.png">ПОСЛЕДНИЕ
-                        НОВОСТИ</h2>
+                    <h2 class="title-2">
+                        <img src="<?php bloginfo('template_url'); ?>/app/img/icon-book-open.png">
+                        <?php the_field('section_header_1'); ?>
+                    </h2>
                 </div>
                 <ul class="articlesList row">
                     <li class="columns column-block medium-6 small-12"><a class="articlesList-item-banner"
@@ -156,8 +166,10 @@ get_header(); ?>
             </div>
             <aside class="sidebar-wrap columns large-4">
                 <div class="section-title section-title-popular">
-                    <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-newspaper.png">ПОПУЛЯРНЫЕ
-                        СТАТЬИ</h2>
+                    <h2 class="title-2">
+                        <img src="<?php bloginfo('template_url'); ?>/app/img/icon-newspaper.png">
+                        <?php the_field('section_header_2'); ?>
+                    </h2>
                 </div>
                 <ul class="sidebar-list">
                     <li><a class="sidebar-list-img" href="rubric-article.html"><img
@@ -221,8 +233,11 @@ get_header(); ?>
                         </div>
                     </li>
                 </ul>
-                <div class="sidebar-advertising"><img
-                            src="<?php bloginfo('template_url'); ?>/app/img/special-banner-2.png"></div>
+                <div class="sidebar-advertising">
+                    <a target="_blank" href="<?php the_field('ads2_link'); ?>">
+                        <img src="<?php the_field('ads2_image'); ?>">
+                    </a>
+                </div>
             </aside>
         </section>
     </div>
@@ -327,7 +342,11 @@ get_header(); ?>
     <div class="grey-section-bg2">
         <div class="mainWrap">
             <div class="sectionPsycho-banner row">
-                <div class="columns"><img src="<?php bloginfo('template_url'); ?>/app/img/special-banner-3.png"></div>
+                <div class="columns">
+                    <a target="_blank" href="<?php the_field('ads3_link'); ?>">
+                        <img src="<?php the_field('ads3_image'); ?>">
+                    </a>
+                </div>
             </div>
             <div class="mainWrap-medium">
                 <section class="l-sectionTechno row">
@@ -538,7 +557,10 @@ get_header(); ?>
         <div class="mainWrap mainWrap-medium row">
             <div class="columns large-12">
                 <div class="section-title section-title-books">
-                    <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-book.png">КНИГИ</h2>
+                    <h2 class="title-2">
+                        <img src="<?php bloginfo('template_url'); ?>/app/img/icon-book.png">
+                        <?php the_field('section_header_3'); ?>
+                    </h2>
                     <div class="sortArticles"><a href="books.html">Все книги</a></div>
                 </div>
                 <ul class="articlesList-books row">
@@ -573,8 +595,9 @@ get_header(); ?>
         <section class="l-sectionEvents row">
             <div class="sectionEvents-item column large-6 small-12">
                 <div class="section-title section-title-events">
-                    <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-calendar-blue.png">АНОНС
-                        СОБЫТИЙ</h2>
+                    <h2 class="title-2">
+                        <img src="<?php bloginfo('template_url'); ?>/app/img/icon-calendar-blue.png">
+                        <?php the_field('section_header_4'); ?></h2>
                 </div>
                 <ul class="articlesList-events">
                     <li><a class="articlesList-events-img" href="event-article.html"><img
@@ -615,8 +638,10 @@ get_header(); ?>
             </div>
             <div class="sectionEvents-item column large-6 small-12">
                 <div class="section-title section-title-past">
-                    <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-calendar-grey.png">ПРОШЕДШИЕ
-                        СОБЫТИЯ</h2>
+                    <h2 class="title-2">
+                        <img src="<?php bloginfo('template_url'); ?>/app/img/icon-calendar-grey.png">
+                        <?php the_field('section_header_5'); ?>
+                    </h2>
                 </div>
                 <ul class="articlesList-events">
                     <li><a class="articlesList-events-img" href="event-article.html"><img
@@ -660,7 +685,10 @@ get_header(); ?>
     <section class="l-sectionPhoto dark-section-bg3">
         <div class="mainWrap sliderWrap-small">
             <div class="section-title-photo">
-                <h2 class="title-2 white"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-photo.png">ФОТО</h2>
+                <h2 class="title-2 white">
+                    <img src="<?php bloginfo('template_url'); ?>/app/img/icon-photo.png">
+                    <?php the_field('section_header_6'); ?>
+                </h2>
             </div>
             <div class="row">
                 <div class="column large-3 photo-small-wrap"><a class="photo-small" href="photo-article.html">
