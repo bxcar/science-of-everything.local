@@ -20,12 +20,15 @@
     <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/app/img/favicon.png" type="image/png">
     <?php wp_head(); ?>
     <style>
+        .header-bg {
+            background-image: url('<?php the_field('header_background2_image', 'option'); ?>');
+        }
         .home-page .header-bg {
             background-image: url('<?php the_field('header_background_image', 'option'); ?>');
         }
     </style>
 </head>
-<body class="home-page">
+<body class="<?php if (is_front_page()) { ?>home-page<?php } ?>">
 <div class="l-preloader"><img src="<?php bloginfo('template_url'); ?>/app/img/preloader.gif"></div>
 <div class="l-header">
     <div class="header-bg"></div>
@@ -52,7 +55,8 @@
         </ul>
         <div class="header-login"><i class="icon-user"></i>
             <!-- Title when user is guest--><span><?php the_field('signature_unauthorized_user', 'option'); ?></span>
-            <!-- Title when user is login--><span class="is-hidden"><?php the_field('signature_authorized_user', 'option'); ?></span>
+            <!-- Title when user is login--><span
+                    class="is-hidden"><?php the_field('signature_authorized_user', 'option'); ?></span>
         </div>
         <button class="header-search button-round-outline"><i class="icon-search"></i></button>
         <form class="header-searchForm is-hidden">
@@ -98,7 +102,8 @@
             </ul>
             <ul class="header-nav-list modile">
                 <li>
-                    <button class="header-nav-login"><i class="icon-user"></i><span><?php the_field('signature_unauthorized_user', 'option'); ?></span>
+                    <button class="header-nav-login"><i
+                                class="icon-user"></i><span><?php the_field('signature_unauthorized_user', 'option'); ?></span>
                     </button>
                 </li>
                 <li>
@@ -158,7 +163,8 @@
                         <input type="password" name="password" placeholder="Пароль">
                     </p>
                     <button class="button button-primary" type="submit">Зарегистрироваться</button>
-                    <p class="header-loginForm-text small"><?php the_field('signature_terms_of_use', 'option'); ?> (<a href="therms-of-use.html">пользовательское
+                    <p class="header-loginForm-text small"><?php the_field('signature_terms_of_use', 'option'); ?> (<a
+                                href="therms-of-use.html">пользовательское
                             соглашение</a>)</p>
                 </form>
             </div>
@@ -177,4 +183,12 @@
         </div>
     </div>
     <a class="header-logo" href="<?php echo home_url(); ?>"><img src="<?php the_field('header_logo', 'option'); ?>"></a>
+    <?php
+    if (!is_front_page()) { //&& is_paged()?>
+        <ul class="breadcrumbs">
+            <li><a href="<?= home_url(); ?>">Главная</a></li>
+            <li>Размещение рекламы</li>
+        </ul>
+        <?php
+    } ?>
 </div>
