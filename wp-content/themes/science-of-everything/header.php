@@ -23,12 +23,19 @@
         .header-bg {
             background-image: url('<?php the_field('header_background2_image', 'option'); ?>');
         }
+
         .home-page .header-bg {
             background-image: url('<?php the_field('header_background_image', 'option'); ?>');
         }
+
+        .contact-page .header-bg {
+            background-image: url('<?php the_field('header_background3_image', 'option'); ?>');
+        }
     </style>
 </head>
-<body class="<?php if (is_front_page()) { ?>home-page<?php } ?>">
+<body class="<?php if (is_front_page()) { ?>home-page<?php }
+if (get_the_ID() == '123') { ?>contact-page<?php }
+if (get_the_ID() == '141') { ?>about-page<?php } ?>">
 <div class="l-preloader"><img src="<?php bloginfo('template_url'); ?>/app/img/preloader.gif"></div>
 <div class="l-header">
     <div class="header-bg"></div>
@@ -184,7 +191,7 @@
     </div>
     <a class="header-logo" href="<?php echo home_url(); ?>"><img src="<?php the_field('header_logo', 'option'); ?>"></a>
     <?php
-    if (!is_front_page()) { //&& is_paged()?>
+    if (!is_front_page() && get_the_ID() != '123') { //&& is_paged()?>
         <ul class="breadcrumbs">
             <li><a href="<?= home_url(); ?>">Главная</a></li>
             <li>Размещение рекламы</li>
