@@ -23,7 +23,7 @@ get_header(); ?>
                                     <li class="info-authors-links-mail">
                                         <a>
                                             <i class="icon-mail"></i><span
-                                                    style="text-decoration: none;"><?= $admin['admins_item_email'] ?></span>
+                                                style="text-decoration: none;"><?= $admin['admins_item_email'] ?></span>
                                         </a>
                                     </li>
                                     <?php
