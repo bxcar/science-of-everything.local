@@ -1,58 +1,38 @@
 <?php get_header(); ?>
 <div class="mainWrap mainWrap-medium row">
     <article class="l-article column large-8 small-12">
-        <section class="article-visualContent"><img src="img/article-visual-2.png">
+        <section class="article-visualContent"><img src="<?php the_field('post_image')?>">
         </section>
         <section class="article-content">
             <div class="article-content-counters">
-                <div class="article-content-counters-date"><i class="icon-time"></i><span>23.11.2016</span></div>
+                <div class="article-content-counters-date"><i class="icon-time"></i><span><?= get_the_date();?></span></div>
                 <div class="counters">
-                    <div class="counters-item"><i class="icon-view"></i><span>124</span></div>
+                    <div class="counters-item"><i class="icon-view"></i><span><?php the_views() ?></span></div>
                     <div class="counters-item"><i class="icon-comment"></i><span>4</span></div>
                 </div>
             </div>
             <div class="article-content-text">
-                <h1 class="title-0">Осенние зарисовки</h1>
-                <p class="text-p">Появлением lorem ipsum на кириллический. Вида контента, просмотра шрифтов, абзацев,
-                    отступов. Даже с разной частотой, имеется разница в книгопечатании. Является знаменитый lorem –
-                    написание символов на том языке. В различных языках те или иные. Абзацев, отступов и проектах,
-                    ориентированных на сайтах и смысловую нагрузку. Есть специальные генераторы, создающие собственные
-                    варианты текста. Несколько вариантов lorem латыни и даже с разной частотой имеется.</p>
-                <p class="text-p">И даже с языками, использующими латинский алфавит, могут возникнуть небольшие
-                    проблемы: в различных языках те или иные буквы встречаются с разной частотой, имеется разница в
-                    длине наиболее распространенных слов. Отсюда напрашивается вывод, что все же лучше использовать в
-                    качестве «рыбы» текст на том языке, который планируется использовать при запуске проекта. Сегодня
-                    существует несколько вариантов Lorem ipsum, кроме того, есть специальные генераторы, создающие
-                    собственные варианты текста на основе оригинального трактата, благодаря чему появляется возможность
-                    получить более длинный неповторяющийся набор слов.</p>
+                <h1 class="title-0"><?php the_field('post_title')?></h1>
+                <?php the_field('post_description')?>
+                <script>
+                    jQuery('.mainWrap.mainWrap-medium.row .l-article.column.large-8.small-12 .article-content .article-content-text p').addClass("text-p");
+                </script>
                 <div class="article-gallary">
                     <div class="article-gallary-slider owl-carousel">
-                        <figure class="article-gallary-photo" data-mfp-src="img/article-gallary-photo-1.png"><img
-                                    src="img/article-gallary-slider-1.png"></figure>
-                        <figure class="article-gallary-photo" data-mfp-src="img/article-gallary-photo-2.png"><img
-                                    src="img/article-gallary-slider-2.png"></figure>
-                        <figure class="article-gallary-photo" data-mfp-src="img/article-gallary-photo-3.png"><img
-                                    src="img/article-gallary-slider-3.png"></figure>
-                        <figure class="article-gallary-photo" data-mfp-src="img/article-gallary-photo-4.png"><img
-                                    src="img/article-gallary-slider-4.png"></figure>
-                        <figure class="article-gallary-photo" data-mfp-src="img/article-gallary-photo-5.png"><img
-                                    src="img/article-gallary-slider-5.png"></figure>
-                        <figure class="article-gallary-photo" data-mfp-src="img/article-gallary-photo-6.png"><img
-                                    src="img/article-gallary-slider-6.png"></figure>
+                        <?php
+                        $gallery = get_field('post_photo_gallery');
+                        foreach ($gallery as $photo) { ?>
+                            <figure class="article-gallary-photo" data-mfp-src="<?= $photo['url']; ?>"><img
+                                        src="<?= $photo['sizes']['thumb-gallery-slider']; ?>" alt="<?= $photo['alt']; ?>"></figure>
+                        <?php } ?>
                     </div>
                     <div class="article-gallary-previews owl-carousel">
-                        <figure class="article-gallary-previews-one is-current"><img
-                                    src="img/article-gallary-preview-1.png"></figure>
-                        <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-2.png">
-                        </figure>
-                        <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-3.png">
-                        </figure>
-                        <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-4.png">
-                        </figure>
-                        <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-5.png">
-                        </figure>
-                        <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-6.png">
-                        </figure>
+                        <?php
+                        $gallery = get_field('post_photo_gallery');
+                        foreach ($gallery as $photo) { ?>
+                            <figure class="article-gallary-previews-one is-current"><img
+                                        src="<?= $photo['sizes']['thumb-gallery']; ?>" alt="<?= $photo['alt']; ?>"></figure>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -64,7 +44,7 @@
             <button class="shareSocial-social vk"><i class="icon-vk"></i><span>18</span></button>
             <button class="shareSocial-social gp"><i class="icon-google-plus"></i><span>25</span></button>
             <button class="shareSocial-more"><i class="icon-plus"></i></button>
-            <div class="shareSocial-counters"><i class="icon-view"></i><span>124</span></div>
+            <div class="shareSocial-counters"><i class="icon-view"></i><span><?php the_views() ?></span></div>
         </div>
         <section class="comments">
             <div class="section-title">
@@ -177,7 +157,7 @@
                 </div>
             </li>
         </ul>
-        <div class="sidebar-advertising"><img src="img/special-banner-2.png"></div>
+        <div class="sidebar-advertising"><a target="_blank" href="<?php the_field('adv_link'); ?>"><img src="<?php the_field('adv_image'); ?>"></a></div>
     </aside>
 </div>
 

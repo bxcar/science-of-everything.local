@@ -186,3 +186,9 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+add_action( 'after_setup_theme', 'mytheme_custom_thumbnail_size' );
+function mytheme_custom_thumbnail_size(){
+    add_image_size( 'thumb-gallery', 111, 62, true ); // Hard crop to exact dimensions (crops sides or top and bottom)
+    add_image_size( 'thumb-gallery-slider', 605, 335, true ); // Hard crop to exact dimensions (crops sides or top and bottom)
+}
