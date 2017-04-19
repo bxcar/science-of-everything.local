@@ -192,3 +192,22 @@ function mytheme_custom_thumbnail_size(){
     add_image_size( 'thumb-gallery', 111, 62, true ); // Hard crop to exact dimensions (crops sides or top and bottom)
     add_image_size( 'thumb-gallery-slider', 605, 335, true ); // Hard crop to exact dimensions (crops sides or top and bottom)
 }
+
+/**
+ * Обрезает строку до определённого количества символов не разбивая слова.
+ * Поддерживает многобайтовые кодировки.
+ * @param string $str строка
+ * @param int $length длина, до скольки символов обрезать
+ * @param string $postfix постфикс, который добавляется к строке
+ * @param string $encoding кодировка, по-умолчанию 'UTF-8'
+ * @return string обрезанная строка
+ */
+function mbCutString($str, $length, $postfix='...', $encoding='UTF-8')
+{
+    if (mb_strlen($str, $encoding) <= $length) {
+        return $str;
+    }
+
+    $tmp = mb_substr($str, 0, $length, $encoding);
+    return mb_substr($tmp, 0, mb_strripos($tmp, ' ', 0, $encoding), $encoding) . $postfix;
+}
