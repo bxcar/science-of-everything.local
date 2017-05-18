@@ -153,6 +153,8 @@ function register_my_custom_menu_page()
     );
     // Add a second submenu to the custom top-level menu:
     add_submenu_page('custompage', 'Фотогалерея', 'Фотогалерея', 8, '/edit.php?post_type=photos');
+    add_submenu_page('custompage', 'Видео', 'Видео', 8, '/edit.php?post_type=videos');
+    add_submenu_page('custompage', 'Видеоколлекции', 'Видеоколлекции', 8, '/edit.php?post_type=video-collections');
     remove_submenu_page('custompage', 'custompage');
 }
 

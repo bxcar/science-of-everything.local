@@ -7,7 +7,7 @@
             <div class="article-content-counters">
                 <div class="article-content-counters-date"><i class="icon-time"></i><span><?= get_the_date();?></span></div>
                 <div class="counters">
-                    <div class="counters-item"><i class="icon-view"></i><span><?php the_views() ?></span></div>
+                    <div class="counters-item"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
                     <div class="counters-item"><i class="icon-comment"></i><span>4</span></div>
                 </div>
             </div>
