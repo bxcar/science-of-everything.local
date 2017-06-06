@@ -32,10 +32,13 @@
             background-image: url('<?php the_field('header_background3_image', 'option'); ?>');
         }
     </style>
+    <?php include_once "app/js/register-ajax.php" ?>
+    <?php include_once "app/js/sign-in-ajax.php" ?>
 </head>
 <body class="<?php if (is_front_page()) { ?>home-page<?php }
 if (get_the_ID() == '123') { ?>contact-page<?php }
-if (get_the_ID() == '141') { ?>about-page<?php } ?>">
+if (get_the_ID() == '141') { ?>about-page<?php }
+if (get_the_ID() == '379') { ?>books-page<?php } ?>">
 <div class="l-preloader"><img src="<?php bloginfo('template_url'); ?>/app/img/preloader.gif"></div>
 <div class="l-header">
     <div class="header-bg"></div>
@@ -43,9 +46,9 @@ if (get_the_ID() == '141') { ?>about-page<?php } ?>">
         <button class="header-hamburger"><i class="icon-menu"></i></button>
         <ul class="header-navTop">
             <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
-            <li><a class="header-link" href="rubric.html"><span>Технологии</span></a></li>
+            <li><a class="header-link" href="rubrbooksic.html"><span>Технологии</span></a></li>
             <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
-            <li><a class="header-link" href="books.html"><span>Книги</span></a></li>
+            <li><a class="header-link" href=".html"><span>Книги</span></a></li>
             <li><a class="header-link" href="rubric.html"><span>Медтех</span></a></li>
             <li><a class="header-link" href="rubric.html"><span>Будущее</span></a></li>
             <li><a class="header-link" href="events.html"><span>События</span></a></li>
@@ -61,9 +64,10 @@ if (get_the_ID() == '141') { ?>about-page<?php } ?>">
             </li>
         </ul>
         <div class="header-login"><i class="icon-user"></i>
-            <!-- Title when user is guest--><span><?php the_field('signature_unauthorized_user', 'option'); ?></span>
-            <!-- Title when user is login--><span
-                    class="is-hidden"><?php the_field('signature_authorized_user', 'option'); ?></span>
+            <!-- Title when user is guest-->
+            <span class="<?php if(is_user_logged_in()) { ?>is-hidden<?php } ?>"><?php the_field('signature_unauthorized_user', 'option'); ?></span>
+            <!-- Title when user is login-->
+            <a href="<?= get_permalink(icl_object_id(429, 'page', true, ICL_LANGUAGE_CODE)); ?>" class="<?php if(!is_user_logged_in()) { ?>is-hidden<?php } ?>"><?php the_field('signature_authorized_user', 'option'); ?></a>
         </div>
         <button class="header-search button-round-outline"><i class="icon-search"></i></button>
         <form class="header-searchForm is-hidden">
@@ -139,14 +143,14 @@ if (get_the_ID() == '141') { ?>about-page<?php } ?>">
                     <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
                 </div>
                 <p class="header-loginForm-text decoration">или</p>
-                <form class="header-loginForm-email">
-                    <p><i class="icon-mail"></i>
-                        <input type="email" name="email" placeholder="Эл.почта">
+                <form class="header-loginForm-email" method="post" id="sign-in-popup-form">
+                    <p><i class="icon-user"></i>
+                        <input type="text" name="login" placeholder="Логин">
                     </p>
                     <p><i class="icon-key"></i>
                         <input type="password" name="password" placeholder="Пароль">
                     </p>
-                    <button class="button button-primary" type="submit">Войти</button>
+                    <button id="submit-sign-in-popup-form" class="button button-primary" type="submit">Войти</button>
                 </form>
                 <button class="header-loginForm-text header-loginForm-restorePassword">Восстановить пароль</button>
             </div>
@@ -159,17 +163,18 @@ if (get_the_ID() == '141') { ?>about-page<?php } ?>">
                     <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
                 </div>
                 <p class="header-loginForm-text decoration">или</p>
-                <form class="header-loginForm-email">
+                <form class="header-loginForm-email" id="register-popup-form"  method="post"> <!--action="<?/*= get_template_directory_uri()*/?>/user-ajax-register.php"-->
                     <p><i class="icon-user"></i>
-                        <input type="text" name="name" placeholder="Имя">
+                        <input type="text" name="login" placeholder="Логин" required>
                     </p>
                     <p><i class="icon-mail"></i>
-                        <input type="email" name="email" placeholder="Эл.почта">
+                        <input type="email" name="email" placeholder="Эл.почта" required>
                     </p>
                     <p><i class="icon-key"></i>
-                        <input type="password" name="password" placeholder="Пароль">
+                        <input type="password" name="password" placeholder="Пароль" required>
                     </p>
-                    <button class="button button-primary" type="submit">Зарегистрироваться</button>
+<!--                    <input value="Зарегистрироваться" id="submit-register-popup-form" class="button button-primary" type="submit">-->
+                    <button id="submit-register-popup-form" class="button button-primary" type="submit">Зарегистрироваться</button>
                     <p class="header-loginForm-text small"><?php the_field('signature_terms_of_use', 'option'); ?> (<a
                                 href="therms-of-use.html">пользовательское
                             соглашение</a>)</p>

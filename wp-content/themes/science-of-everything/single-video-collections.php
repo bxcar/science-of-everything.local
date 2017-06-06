@@ -41,7 +41,7 @@
                 <button class="shareSocial-social vk"><i class="icon-vk"></i><span>18</span></button>
                 <button class="shareSocial-social gp"><i class="icon-google-plus"></i><span>25</span></button>
                 <button class="shareSocial-more"><i class="icon-plus"></i></button>
-                <div class="shareSocial-counters"><i class="icon-view"></i><span>124</span></div>
+                <div class="shareSocial-counters"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
             </div>
             <div class="tags">
                 <p class="text-sub">Теги:</p>

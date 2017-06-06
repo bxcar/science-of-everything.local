@@ -87,13 +87,30 @@ get_header(); ?>
             <style>
                 .articlesList-item-text.columns.column-block.medium-6.small-12.large-4.articlesList-medium {
                     display: inline-block;
+                    float: left;
                 }
 
                 .ajax-load-more-wrap {
                     width: 100%;
-                    padding-right: 0.9375rem;
-                    padding-left: 0.9375rem;
+                    /*padding-right: 0.9375rem;*/
+                    /*padding-left: 0.9375rem;*/
                 }
+
+               /* @media print, screen and (min-width: 64em) {
+                    .large-4 {
+                        max-width: 33%;
+                        flex: 0 0 33%;
+                    }
+                }
+
+                @media print, screen and (min-width: 40em) {
+                    .medium-6 {
+                        flex: 0 0 49%;
+                        max-width: 49%;
+                    }
+                }*/
+
+
 
                 .button-more .button-more {
                     margin-top: 0;

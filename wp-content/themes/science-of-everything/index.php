@@ -12,53 +12,42 @@
  * @package science-of-everything
  */
 get_header(); ?>
+<?php //the_field('top_slider_category');?>
     <div class="mainWrap mainWrap-medium">
         <div class="l-banners row">
             <div class="banners-slider columns large-8 owl-carousel">
-                <div class="banners-slideOne"><img src="<?php bloginfo('template_url'); ?>/app/img/slider-img-1.png">
-                    <div class="banners-slideOne-content">
-                        <div class="category category-technology">ТЕХНОЛОГИИ</div>
-                        <h1 class="title-1 white">Ученые объяснили причины похолоданий, наступающих раз в 100 000
-                            лет</h1>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="banners-slideOne"><img src="<?php bloginfo('template_url'); ?>/app/img/slider-img-1.png">
-                    <div class="banners-slideOne-content">
-                        <div class="category category-technology">ТЕХНОЛОГИИ</div>
-                        <h1 class="title-1 white">Ученые объяснили причины похолоданий, наступающих раз в 100 000
-                            лет</h1>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="banners-slideOne"><img src="<?php bloginfo('template_url'); ?>/app/img/slider-img-1.png">
-                    <div class="banners-slideOne-content">
-                        <div class="category category-technology">ТЕХНОЛОГИИ</div>
-                        <h1 class="title-1 white">Ученые объяснили причины похолоданий, наступающих раз в 100 000
-                            лет</h1>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="banners-slideOne"><img src="<?php bloginfo('template_url'); ?>/app/img/slider-img-1.png">
-                    <div class="banners-slideOne-content">
-                        <div class="category category-technology">ТЕХНОЛОГИИ</div>
-                        <h1 class="title-1 white">Ученые объяснили причины похолоданий, наступающих раз в 100 000
-                            лет</h1>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                $top_slider_cats_args = array(
+                    'cat' => get_field('top_slider_category'),
+                    'post_type' => 'topics',
+                    'posts_per_page' => 4,
+                );
+
+                $top_slider_cats = new WP_Query($top_slider_cats_args);
+                $cat_name = get_cat_name(get_field('top_slider_category'));
+                if ($top_slider_cats->have_posts()) {
+                    while ($top_slider_cats->have_posts()) {
+                        $top_slider_cats->the_post(); ?>
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="banners-slideOne">
+                                <img width="730" height="432" src="<?php the_field('730x432_image'); ?>">
+                                <div class="banners-slideOne-content">
+                                    <div class="category category-technology"><?= $cat_name ?></div>
+                                    <h1 class="title-1 white"><?php the_title(); ?></h1>
+                                    <div class="counters">
+                                        <div class="counters-item">
+                                            <i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?>
+                                        </div>
+                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </div>
             <div class="banners-aside columns large-4">
                 <div class="banners-aside-advertising">
@@ -87,81 +76,63 @@ get_header(); ?>
                     </h2>
                 </div>
                 <ul class="articlesList row">
-                    <li class="columns column-block medium-6 small-12"><a class="articlesList-item-banner"
-                                                                          href="rubric-article.html">
-                            <div class="articlesList-item-bg"><img
-                                        src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-bg-1.png">
-                            </div>
-                            <div class="category category-technology">ТЕХНОЛОГИИ</div>
-                            <p class="title-3 white">Илон Маск представил новые разработки</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="articlesList-item-text columns column-block medium-6 small-12"><a
-                                class="articlesList-item-img-wrap" href="rubric-article.html"><img
-                                    class="articlesList-item-img"
-                                    src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-1.png"></a>
-                        <p class="category-text category-text-technology">ТЕХНОЛОГИИ</p><a class="title-3"
-                                                                                           href="rubric-article.html">Google
-                            Glass превратили в тренажер кода Морзе</a>
-                        <p class="text-p">Инженеры из Технологического института Джорджии разработали методику
-                            пассивного освоения кода Морзе с помощью тактильных сигналов гарнитуры Google Glass.
-                            Обучение, которое длится около четырех часов, происходит в игровой форме.
-                        </p>
-                    </li>
-                    <li class="articlesList-item-text columns column-block medium-6 small-12"><a
-                                class="articlesList-item-img-wrap" href="rubric-article.html"><img
-                                    class="articlesList-item-img"
-                                    src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-2.png"></a>
-                        <p class="category-text category-text-astro">АСТРОФИЗИКА</p><a class="title-3"
-                                                                                       href="rubric-article.html">«Стартест»
-                            от NASA</a>
-                        <p class="text-p">Инженеры из Технологического института Джорджии разработали методику
-                            пассивного освоения кода Морзе с помощью тактильных сигналов гарнитуры Google Glass.
-                            Обучение, которое длится около четырех часов, происходит в игровой форме.
-                        </p>
-                    </li>
-                    <li class="columns column-block medium-6 small-12"><a class="articlesList-item-banner"
-                                                                          href="rubric-article.html">
-                            <div class="articlesList-item-bg"><img
-                                        src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-bg-2.png">
-                            </div>
-                            <div class="category category-psycho">Психология</div>
-                            <p class="title-3 white">Апофения: увидеть незримое и поверить в заговор</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block medium-6 small-12"><a class="articlesList-item-banner"
-                                                                          href="rubric-article.html">
-                            <div class="articlesList-item-bg"><img
-                                        src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-bg-3.png">
-                            </div>
-                            <div class="category category-medtech">Медтех</div>
-                            <p class="title-3 white">Апофения: увидеть незримое и поверить в заговор</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="articlesList-item-text columns column-block medium-6 small-12"><a
-                                class="articlesList-item-img-wrap" href="rubric-article.html"><img
-                                    class="articlesList-item-img"
-                                    src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-3.png"></a>
-                        <p class="category-text category-text-technology">ТЕХНОЛОГИИ</p><a class="title-3"
-                                                                                           href="rubric-article.html">Google
-                            Glass превратили в тренажер кода Морзе</a>
-                        <p class="text-p">Инженеры из Технологического института Джорджии разработали методику
-                            пассивного освоения кода Морзе с помощью тактильных сигналов гарнитуры Google Glass.
-                            Обучение, которое длится около четырех часов, происходит в игровой форме.
-                        </p>
-                    </li>
+                    <?php
+                    $mainArticles_args = array(
+                        'post_type' => 'topics',
+                        'posts_per_page' => 6,
+                    );
+
+                    $mainArticles = new WP_Query($mainArticles_args);
+                    $mainArticles_counter = 1;
+                    if ($mainArticles->have_posts()) {
+                        while ($mainArticles->have_posts()) {
+                            $mainArticles->the_post();
+                            if (($mainArticles_counter == 1) || ($mainArticles_counter == 4) || ($mainArticles_counter == 5)) { ?>
+                                <li class="columns column-block medium-6 small-12">
+                                    <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
+                                        <div class="articlesList-item-bg">
+                                            <img src="<?= get_the_post_thumbnail_url(); ?>">
+                                        </div>
+                                        <?php
+                                        $categories = get_the_category();
+                                        if ($categories) {
+                                            foreach ($categories as $category) {
+                                                echo '<div class="category category-technology">' . $category->name . '</div>';
+                                            }
+                                        }
+                                        ?>
+                                        <p class="title-3 white"><?php the_title(); ?></p>
+                                        <div class="counters">
+                                            <div class="counters-item">
+                                                <i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?>
+                                            </div>
+                                            <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php } else { ?>
+                                <li class="articlesList-item-text columns column-block medium-6 small-12">
+                                    <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
+                                        <img width="350" height="230" class="articlesList-item-img"
+                                             src="<?= get_the_post_thumbnail_url(); ?>">
+                                    </a>
+                                    <?php
+                                    $categories = get_the_category();
+                                    if ($categories) {
+                                        foreach ($categories as $category) {
+                                            echo '<p class="category-text category-text-technology">' . $category->name . '</p>';
+                                        }
+                                    }
+                                    ?>
+                                    <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    <p class="text-p"><?= get_the_excerpt(); ?></p>
+                                </li>
+                            <?php }
+                            $mainArticles_counter++;
+                        }
+                    }
+                    wp_reset_postdata();
+                    ?>
                 </ul>
             </div>
             <aside class="sidebar-wrap columns large-4">
@@ -172,66 +143,43 @@ get_header(); ?>
                     </h2>
                 </div>
                 <ul class="sidebar-list">
-                    <li><a class="sidebar-list-img" href="rubric-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/sidebar-img-1.png"></a>
-                        <div class="sidebar-item-content">
-                            <p class="category-text category-text-sm category-text-technology">ТЕХНОЛОГИИ</p><a
-                                    class="title-sm" href="rubric-article.html">«Легкие-на-чипе» научили курению в
-                                затяг</a>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a class="sidebar-list-img" href="rubric-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/sidebar-img-2.png"></a>
-                        <div class="sidebar-item-content">
-                            <p class="category-text category-text-sm category-text-astro">АСТРОФИЗИКА</p><a
-                                    class="title-sm" href="rubric-article.html">Идентифицированы области мозга,
-                                связанны...</a>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a class="sidebar-list-img" href="rubric-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/sidebar-img-3.png"></a>
-                        <div class="sidebar-item-content">
-                            <p class="category-text category-text-sm category-text-psycho">ПСИХОЛОГИЯ</p><a
-                                    class="title-sm" href="rubric-article.html">Идентифицированы области мозга,
-                                связанны...</a>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a class="sidebar-list-img" href="rubric-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/sidebar-img-4.png"></a>
-                        <div class="sidebar-item-content">
-                            <p class="category-text category-text-sm category-text-medtech">МедТех</p><a
-                                    class="title-sm" href="rubric-article.html">Идентифицированы области мозга,
-                                связанны...</a>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a class="sidebar-list-img" href="rubric-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/sidebar-img-5.png"></a>
-                        <div class="sidebar-item-content">
-                            <p class="category-text category-text-sm category-text-future">БУДУЩЕЕ</p><a
-                                    class="title-sm" href="rubric-article.html">Идентифицированы области мозга,
-                                связанны...</a>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </li>
+                    <?php
+                    $sidebar_populars_args = array(
+                        'post_type' => 'topics',
+                        'posts_per_page' => 5,
+                        'orderby' => 'meta_value_num',
+                        'meta_key' => 'views',
+                        'order' => 'DESC'
+                    );
+
+                    $sidebar_populars = new WP_Query($sidebar_populars_args);
+                    if ($sidebar_populars->have_posts()) {
+                        while ($sidebar_populars->have_posts()) {
+                            $sidebar_populars->the_post(); ?>
+                            <li><a class="sidebar-list-img" href="<?php the_permalink(); ?>">
+                                    <img width="130" height="100" src="<?= get_the_post_thumbnail_url(); ?>"></a>
+                                <div class="sidebar-item-content">
+                                    <?php
+                                    $categories = get_the_category();
+                                    if ($categories) {
+                                        foreach ($categories as $category) {
+                                            echo '<p class="category-text category-text-sm category-text-technology">' . $category->name . '</p>';
+                                        }
+                                    }
+                                    ?>
+                                    <a class="title-sm"
+                                       href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), 4); ?></a>
+                                    <div class="counters">
+                                        <div class="counters-item"><i
+                                                    class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
+                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php }
+                    }
+                    wp_reset_postdata();
+                    ?>
                 </ul>
                 <div class="sidebar-advertising">
                     <a target="_blank" href="<?php the_field('ads2_link'); ?>">
@@ -245,96 +193,66 @@ get_header(); ?>
         <div class="mainWrap mainWrap-medium row">
             <div class="articlesList-wrap columns large-12">
                 <div class="section-title section-title-astro">
-                    <h2 class="title-2 white"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-planet.png">АСТРОФИЗИКА
-                    </h2><a
-                            class="sortArticles white" href="rubric.html"><i class="icon-sort"></i><span
-                                class="sortArticles-text">Последнии статьи</span></a>
+                    <h2 class="title-2 white"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-planet.png">
+                        <?= get_cat_name(get_field('taxonomy_1')); ?>
+                    </h2>
+                    <a class="sortArticles white" href="<?= get_category_link(get_field('taxonomy_1')); ?>"><i
+                                class="icon-sort"></i>
+                        <span class="sortArticles-text">Последние статьи</span>
+                    </a>
                 </div>
                 <ul class="articlesList-compact row">
-                    <li class="columns column-block large-6 medium-12 small-12"><a
-                                class="articlesList-item-banner center" href="rubric-article.html">
-                            <div class="articlesList-item-bg"><img
-                                        src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-bg-4.png">
-                            </div>
-                            <p class="title-3 white">Астрофизика мироздания. Цепочки шаров</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-6 medium-12 small-12 hide-for-medium-only hide-for-small-only">
-                        <a class="articlesList-item-banner center" href="rubric-article.html">
-                            <div class="articlesList-item-bg"><img
-                                        src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-bg-5.png">
-                            </div>
-                            <p class="title-3 white">Американцы показали уникальное складное крыло</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                                  href="rubric-article.html">
-                            <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-4.png">
-                            </figure>
-                            <div class="articlesList-item-text-content">
-                                <p class="title-5 white">Анизотропию реликтового излучения распечатали на 3D-принтере
-                                    Анизотропию реликтового излучения распечатали на 3D-принтере</p>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                                  href="rubric-article.html">
-                            <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-5.png">
-                            </figure>
-                            <div class="articlesList-item-text-content">
-                                <p class="title-5 white">Глобальное потепление превратит Испанию и Португалию в пустыню
-                                    Глобальное потепление превратит Испанию и Португалию в пустыню</p>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                                  href="rubric-article.html">
-                            <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-6.png">
-                            </figure>
-                            <div class="articlesList-item-text-content">
-                                <p class="title-5 white">Комплекс молекулярных облаков Ореол Цефея скрывает в себе
-                                    туманность Призрак</p>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-3 medium-4 small-12 hide-for-medium-only hide-for-small-only">
-                        <a class="articlesList-item-text dark" href="rubric-article.html">
-                            <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-7.png">
-                            </figure>
-                            <div class="articlesList-item-text-content">
-                                <p class="title-5 white">Главное за неделю: о флирте и насилии, замедлении старения и
-                                    «звезде инопланетян»</p>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                    <?php
+                    $first_cat_args = array(
+                        'post_type' => 'topics',
+                        'cat' => get_field('taxonomy_1'),
+                        'posts_per_page' => 6,
+                    );
+
+                    $first_cat = new WP_Query($first_cat_args);
+                    $first_cat_counter = 1;
+                    if ($first_cat->have_posts()) {
+                        while ($first_cat->have_posts()) {
+                            $first_cat->the_post();
+                            if (($first_cat_counter == 1) || ($first_cat_counter == 2)) { ?>
+                                <li class="columns column-block large-6 medium-12 small-12">
+                                    <a class="articlesList-item-banner center" href="<?php the_permalink(); ?>">
+                                        <div class="articlesList-item-bg">
+                                            <img src="<?= get_the_post_thumbnail_url(); ?>">
+                                        </div>
+                                        <p class="title-3 white"><?php the_title(); ?></p>
+                                        <div class="counters">
+                                            <div class="counters-item"><i
+                                                        class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?>
+                                            </div>
+                                            <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php } else { ?>
+                                <li class="columns column-block large-3 medium-4 small-12">
+                                    <a class="articlesList-item-text dark" href="<?php the_permalink(); ?>">
+                                        <figure class="articlesList-item-img-wrap">
+                                            <img class="articlesList-item-img"
+                                                 src="<?= get_the_post_thumbnail_url(); ?>">
+                                        </figure>
+                                        <div class="articlesList-item-text-content">
+                                            <p class="title-5 white"><?php the_title(); ?></p>
+                                            <div class="counters">
+                                                <div class="counters-item"><i
+                                                            class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?>
+                                                </div>
+                                                <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php }
+                            $first_cat_counter++;
+                        }
+                    }
+                    wp_reset_postdata();
+                    ?>
                 </ul>
             </div>
         </div>
@@ -352,105 +270,64 @@ get_header(); ?>
                 <section class="l-sectionTechno row">
                     <div class="columns large-12">
                         <div class="section-title section-title-technology">
-                            <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-techno.png">технологии
-                            </h2><a class="sortArticles"
-                                    href="rubric.html"><i
-                                        class="icon-sort"></i><span
-                                        class="sortArticles-text">Последнии статьи</span></a>
+                            <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-techno.png">
+                                <?= get_cat_name(get_field('taxonomy_2')); ?>
+                            </h2>
+                            <a class="sortArticles" href="<?= get_category_link(get_field('taxonomy_2')); ?>">
+                                <i class="icon-sort"></i>
+                                <span class="sortArticles-text">Последние статьи</span>
+                            </a>
                         </div>
                         <ul class="articlesList articlesList-detail articlesList-techno row">
-                            <li class="articlesList-item-text columns column-block medium-6 small-12 large-4"><a
-                                        class="articlesList-item-img-wrap" href="rubric-article.html"><img
-                                            class="articlesList-item-img"
-                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-12.png"></a><a
-                                        class="title-3" href="rubric-article.html">Концептуальная High Standard
-                                    Watch</a>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                                <p class="text-p">В конце июля в прокат вышел тринадцатый по счету научно-фантастический
-                                    фильм о Вселенной «Звездный путь», получивший название «Стартрек: Бесконечность».
-                                    Представители американского космического ведомства в доказательство своей
-                                    многолетней связи с этой медиафраншизой...
-                                </p>
-                            </li>
-                            <li class="columns column-block medium-6 small-12 large-4"><a
-                                        class="articlesList-item-banner" href="rubric-article.html">
-                                    <div class="articlesList-item-bg"><img
-                                                src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-bg-8.png">
-                                    </div>
-                                    <p class="title-3 white">Органические цифровые Скульптуры Jon Noorlander</p>
-                                    <div class="counters">
-                                        <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="articlesList-item-text columns column-block medium-6 small-12 large-4"><a
-                                        class="articlesList-item-img-wrap" href="rubric-article.html"><img
-                                            class="articlesList-item-img"
-                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-13.png"></a><a
-                                        class="title-3" href="rubric-article.html">На солнечных батареях Концепция Труба
-                                    опресняет соленой воды в чистую питьевую воду</a>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                                <p class="text-p">В конце июля в прокат вышел тринадцатый по счету научно-фантастический
-                                    фильм о Вселенной «Звездный путь», получивший название «Стартрек: Бесконечность».
-                                    Представители американского космического ведомства в доказательство своей
-                                    многолетней связи с этой медиафраншизой...
-                                </p>
-                            </li>
-                            <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 show-for-medium">
-                                <a class="articlesList-item-img-wrap" href="rubric-article.html"><img
-                                            class="articlesList-item-img"
-                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-14.png"></a><a
-                                        class="title-3" href="rubric-article.html">Футуристический Лотос C-01 мотоциклов
-                                    продано на аукционе</a>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                                <p class="text-p">В конце июля в прокат вышел тринадцатый по счету научно-фантастический
-                                    фильм о Вселенной «Звездный путь», получивший название «Стартрек: Бесконечность».
-                                    Представители американского космического ведомства в доказательство своей
-                                    многолетней связи с этой медиафраншизой...
-                                </p>
-                            </li>
-                            <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 show-for-large">
-                                <a class="articlesList-item-img-wrap" href="rubric-article.html"><img
-                                            class="articlesList-item-img"
-                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-15.png"></a><a
-                                        class="title-3" href="rubric-article.html">Фантастические световые установки по
-                                    шкале Collectif</a>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                                <p class="text-p">В конце июля в прокат вышел тринадцатый по счету научно-фантастический
-                                    фильм о Вселенной «Звездный путь», получивший название «Стартрек: Бесконечность».
-                                    Представители американского космического ведомства в доказательство своей
-                                    многолетней связи с этой медиафраншизой...
-                                </p>
-                            </li>
-                            <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 show-for-large">
-                                <a class="articlesList-item-img-wrap" href="rubric-article.html"><img
-                                            class="articlesList-item-img"
-                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-16.png"></a><a
-                                        class="title-3" href="rubric-article.html">Brand New BMW Concept Titan
-                                    Мотоциклетн</a>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                                <p class="text-p">В конце июля в прокат вышел тринадцатый по счету научно-фантастический
-                                    фильм о Вселенной «Звездный путь», получивший название «Стартрек: Бесконечность».
-                                    Представители американского космического ведомства в доказательство своей
-                                    многолетней связи с этой медиафраншизой...
-                                </p>
-                            </li>
+                            <?php
+                            $second_cat_args = array(
+                                'post_type' => 'topics',
+                                'cat' => get_field('taxonomy_2'),
+                                'posts_per_page' => 6,
+                            );
+
+                            $second_cat = new WP_Query($second_cat_args);
+                            $second_cat_counter = 1;
+                            if ($second_cat->have_posts()) {
+                                while ($second_cat->have_posts()) {
+                                    $second_cat->the_post();
+                                    if ($second_cat_counter == 2) { ?>
+                                        <li class="columns column-block medium-6 small-12 large-4">
+                                            <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
+                                                <div class="articlesList-item-bg">
+                                                    <img src="<?= get_the_post_thumbnail_url(); ?>">
+                                                </div>
+                                                <p class="title-3 white"><?php the_title(); ?></p>
+                                                <div class="counters">
+                                                    <div class="counters-item"><i
+                                                                class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?>
+                                                    </div>
+                                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    <?php } else { ?>
+                                        <li class="articlesList-item-text columns column-block medium-6 small-12 large-4">
+                                            <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
+                                                <img width="350" height="230" class="articlesList-item-img"
+                                                     src="<?= get_the_post_thumbnail_url(); ?>">
+                                            </a>
+                                            <a class="title-3"
+                                               href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                            <div class="counters">
+                                                <div class="counters-item"><i
+                                                            class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?>
+                                                </div>
+                                                <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                            </div>
+                                            <p class="text-p"><?= get_the_excerpt(); ?></p>
+                                        </li>
+                                    <?php }
+                                    $second_cat_counter++;
+                                }
+                            }
+                            wp_reset_postdata();
+                            ?>
                         </ul>
                     </div>
                 </section>
@@ -461,94 +338,65 @@ get_header(); ?>
         <div class="mainWrap mainWrap-medium row">
             <div class="columns large-12">
                 <div class="section-title section-title-psycho">
-                    <h2 class="title-2 white"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-brain.png">ПСИХОЛОГИЯ
-                    </h2><a class="sortArticles white"
-                            href="rubric.html"><i
-                                class="icon-sort"></i><span class="sortArticles-text">Последнии статьи</span></a>
+                    <h2 class="title-2 white"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-brain.png">
+                        <?= get_cat_name(get_field('taxonomy_3')); ?>
+                    </h2>
+                    <a class="sortArticles white" href="<?= get_category_link(get_field('taxonomy_3')); ?>">
+                        <i class="icon-sort"></i><span class="sortArticles-text">Последние статьи</span>
+                    </a>
                 </div>
                 <ul class="articlesList-compact articlesList-psycho row">
-                    <li class="columns column-block large-6 medium-12 small-12"><a
-                                class="articlesList-item-banner center" href="rubric-article.html">
-                            <div class="articlesList-item-bg"><img
-                                        src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-bg-6.png">
-                            </div>
-                            <p class="title-3 white">Американцы показали уникальное складное крыло</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text"
-                                                                                  href="rubric-article.html">
-                            <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-8.png">
-                            </figure>
-                            <div class="articlesList-item-text-content">
-                                <p class="title-4 white">Антропоморфизм связали с «тревожным» бегством от близости</p>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text"
-                                                                                  href="rubric-article.html">
-                            <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-9.png">
-                            </figure>
-                            <div class="articlesList-item-text-content">
-                                <p class="title-4 white">Ученые объяснили, почему человек испытывает дежавю</p>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text"
-                                                                                  href="rubric-article.html">
-                            <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-10.png">
-                            </figure>
-                            <div class="articlesList-item-text-content">
-                                <p class="title-4 white">Компетентность футбольных рефери связали с ориентацией
-                                    внимания</p>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-3 medium-4 small-12 hide-for-medium-only"><a
-                                class="articlesList-item-text" href="rubric-article.html">
-                            <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                            src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-img-11.png">
-                            </figure>
-                            <div class="articlesList-item-text-content">
-                                <p class="title-4 white">Поверхностную оценку сексуальности связали с одобрением
-                                    насилия</p>
-                                <div class="counters">
-                                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="columns column-block large-6 medium-12 small-12 hide-for-medium-only"><a
-                                class="articlesList-item-banner center" href="rubric-article.html">
-                            <div class="articlesList-item-bg"><img
-                                        src="<?php bloginfo('template_url'); ?>/app/img/articles-list-item-bg-7.png">
-                            </div>
-                            <p class="title-3 white">Американцы показали уникальное складное крыло</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </a>
-                    </li>
+                    <?php
+                    $third_cat_args = array(
+                        'post_type' => 'topics',
+                        'cat' => get_field('taxonomy_3'),
+                        'posts_per_page' => 6,
+                    );
+
+                    $third_cat = new WP_Query($third_cat_args);
+                    $third_cat_counter = 1;
+                    if ($third_cat->have_posts()) {
+                        while ($third_cat->have_posts()) {
+                            $third_cat->the_post();
+                            if (($third_cat_counter == 1) || ($third_cat_counter == 6)) { ?>
+                                <li class="columns column-block large-6 medium-12 small-12">
+                                    <a class="articlesList-item-banner center" href="<?php the_permalink(); ?>">
+                                        <div class="articlesList-item-bg">
+                                            <img src="<?= get_the_post_thumbnail_url(); ?>">
+                                        </div>
+                                        <p class="title-3 white"><?php the_title(); ?></p>
+                                        <div class="counters">
+                                            <div class="counters-item"><i
+                                                        class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?>
+                                            </div>
+                                            <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php } else { ?>
+                                <li class="columns column-block large-3 medium-4 small-12">
+                                    <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
+                                        <figure class="articlesList-item-img-wrap">
+                                            <img class="articlesList-item-img"
+                                                 src="<?= get_the_post_thumbnail_url(); ?>">
+                                        </figure>
+                                        <div class="articlesList-item-text-content">
+                                            <p class="title-4 white"><?php the_title(); ?></p>
+                                            <div class="counters">
+                                                <div class="counters-item"><i
+                                                            class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?>
+                                                </div>
+                                                <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php }
+                            $third_cat_counter++;
+                        }
+                    }
+                    wp_reset_postdata();
+                    ?>
                 </ul>
             </div>
         </div>
@@ -561,32 +409,30 @@ get_header(); ?>
                         <img src="<?php bloginfo('template_url'); ?>/app/img/icon-book.png">
                         <?php the_field('section_header_3'); ?>
                     </h2>
-                    <div class="sortArticles"><a href="books.html">Все книги</a></div>
+                    <div class="sortArticles"><?php icl_link_to_element(379, 'page', 'Все книги'); ?></div>
                 </div>
                 <ul class="articlesList-books row">
-                    <li class="articlesList-item-book columns medium-6 small-12 large-4"><a
-                                class="articlesList-item-book-img" href="book-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/book-1.png"></a><a class="title-3"
-                                                                                                       href="book-article.html">Под
-                            давлением</a>
-                        <p class="text-p">Как добиваться результатов в условиях жестких дедлайнов и неопределенности</p>
-                    </li>
-                    <li class="articlesList-item-book columns medium-6 small-12 large-4"><a
-                                class="articlesList-item-book-img" href="book-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/book-2.png"></a><a class="title-3"
-                                                                                                       href="book-article.html">Вилки
-                            вместо
-                            ножей на практике</a>
-                        <p class="text-p">4-недельный пошаговый план перехода на здоровое питание</p>
-                    </li>
-                    <li class="articlesList-item-book columns medium-6 small-12 large-4"><a
-                                class="articlesList-item-book-img" href="book-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/book-3.png"></a><a class="title-3"
-                                                                                                       href="book-article.html">Восходящая
-                            спираль</a>
-                        <p class="text-p">Как нейрофизиология помогает справиться с негативом и депрессией — шаг за
-                            шагом</p>
-                    </li>
+                    <?php
+                    $books_args = array(
+                        'post_type' => 'book',
+                        'posts_per_page' => 3,
+                    );
+
+                    $books = new WP_Query($books_args);
+                    if ($books->have_posts()) {
+                        while ($books->have_posts()) {
+                            $books->the_post(); ?>
+                            <li class="articlesList-item-book columns medium-6 small-12 large-4">
+                                <a class="articlesList-item-book-img" href="<?php the_permalink(); ?>">
+                                    <img src="<?php the_field('book_mini') ?>">
+                                </a>
+                                <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 10); ?></p>
+                            </li>
+                        <?php }
+                    }
+                    wp_reset_postdata();
+                    ?>
                 </ul>
             </div>
         </div>
@@ -600,39 +446,62 @@ get_header(); ?>
                         <?php the_field('section_header_4'); ?></h2>
                 </div>
                 <ul class="articlesList-events">
-                    <li><a class="articlesList-events-img" href="event-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/events-img-1.png"></a>
-                        <div class="articlesList-events-content">
-                            <div class="counters counters-item"><i class="icon-date"></i><span class="nowrap">5 ноября
-                    <wbr><span class="articlesList-events-time">с 11:00 до 16:30</span></span></div>
-                            <a class="title-4" href="event-article.html">Основы продуктовой аналитики для дизайнера</a>
-                        </div>
-                    </li>
-                    <li><a class="articlesList-events-img" href="event-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/events-img-2.png"></a>
-                        <div class="articlesList-events-content">
-                            <div class="counters counters-item"><i class="icon-date"></i><span class="nowrap">5 ноября
-                    <wbr><span class="articlesList-events-time">с 11:00 до 16:30</span></span></div>
-                            <a class="title-4" href="event-article.html">Основы продуктовой аналитики для дизайнера</a>
-                        </div>
-                    </li>
-                    <li><a class="articlesList-events-img" href="event-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/events-img-3.png"></a>
-                        <div class="articlesList-events-content">
-                            <div class="counters counters-item"><i class="icon-date"></i><span class="nowrap">5 ноября
-                    <wbr><span class="articlesList-events-time">с 11:00 до 16:30</span></span></div>
-                            <a class="title-4" href="event-article.html">Основы продуктовой аналитики для дизайнера</a>
-                        </div>
-                    </li>
-                    <li class="show-for-medium-only"><a class="articlesList-events-img" href="event-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/events-img-7.png"></a>
-                        <div class="articlesList-events-content">
-                            <div class="counters counters-item"><i class="icon-date"></i><span class="nowrap">29 отября
-                    <wbr>с 11:00 до 16:30</span></div>
-                            <a class="title-4" href="event-article.html">Алгоритмическое программирование на
-                                практике</a>
-                        </div>
-                    </li>
+                    <?php
+                    $today = getdate();
+                    $events_args = array(
+                        'post_type' => 'event',
+                        'tax_query' => array(
+                            array(
+                                'posts_per_page' => -1,
+                                'meta_key' => '_event_start_date',
+                                'meta_query' => array(array('meta_key' => '_event_start_date', 'meta_value' => $today, 'compare' => '>=', 'type' => 'date')),
+                                'orderby' => 'meta_value',
+                            ),
+                        ),
+                        'meta_key' => '_event_start_date',
+                        'orderby' => 'meta_value',
+                        'order' => 'ASC'
+                    );
+
+                    $events = new WP_Query($events_args);
+                    $event_counter = 0;
+                    if ($events->have_posts()) {
+                        while ($events->have_posts()) {
+                            $events->the_post();
+                            if (strtotime(get_post_meta($id, '_event_start_date', true)) > time() && $event_counter < 3) { ?>
+                                <li><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
+                                        <img style="width: 160px; height: 160px;"
+                                             src="<?= get_the_post_thumbnail_url(); ?>"></a>
+                                    <div class="articlesList-events-content">
+                                        <div class="counters counters-item"><i class="icon-date"></i>
+                                            <span class="nowrap">
+                                                <?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]'); ?>
+                                            </span>
+                                        </div>
+                                        <a class="title-4" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </div>
+                                </li>
+                                <?php $event_counter++;
+                            } elseif (strtotime(get_post_meta($id, '_event_start_date', true)) > time() && $event_counter == 3) { ?>
+                                <li class="show-for-medium-only"><a class="articlesList-events-img"
+                                                                    href="<?php the_permalink(); ?>">
+                                        <img style="width: 160px; height: 160px;"
+                                             src="<?= get_the_post_thumbnail_url(); ?>"></a>
+                                    <div class="articlesList-events-content">
+                                        <div class="counters counters-item"><i class="icon-date"></i>
+                                            <span class="nowrap">
+                                                <?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]'); ?>
+                                            </span>
+                                        </div>
+                                        <a class="title-4" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </div>
+                                </li>
+                                <?php $event_counter++;
+                            }
+                        }
+                    }
+                    wp_reset_postdata();
+                    ?>
                 </ul>
                 <a class="button-light-outline-big" href="events.html">СМОТРЕТЬ БОЛЬШЕ</a>
             </div>
@@ -644,39 +513,46 @@ get_header(); ?>
                     </h2>
                 </div>
                 <ul class="articlesList-events">
-                    <li><a class="articlesList-events-img" href="event-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/events-img-4.png"></a>
-                        <div class="articlesList-events-content">
-                            <div class="counters counters-item"><i class="icon-date"></i><span class="nowrap">5 ноября
-                    <wbr><span class="articlesList-events-time">с 11:00 до 16:30</span></span></div>
-                            <a class="title-4" href="event-article.html">Основы продуктовой аналитики для дизайнера</a>
-                        </div>
-                    </li>
-                    <li><a class="articlesList-events-img" href="event-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/events-img-5.png"></a>
-                        <div class="articlesList-events-content">
-                            <div class="counters counters-item"><i class="icon-date"></i><span class="nowrap">5 ноября
-                    <wbr><span class="articlesList-events-time">с 11:00 до 16:30</span></span></div>
-                            <a class="title-4" href="event-article.html">Основы продуктовой аналитики для дизайнера</a>
-                        </div>
-                    </li>
-                    <li><a class="articlesList-events-img" href="event-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/events-img-6.png"></a>
-                        <div class="articlesList-events-content">
-                            <div class="counters counters-item"><i class="icon-date"></i><span class="nowrap">5 ноября
-                    <wbr><span class="articlesList-events-time">с 11:00 до 16:30</span></span></div>
-                            <a class="title-4" href="event-article.html">Основы продуктовой аналитики для дизайнера</a>
-                        </div>
-                    </li>
-                    <li class="show-for-medium-only"><a class="articlesList-events-img" href="event-article.html"><img
-                                    src="<?php bloginfo('template_url'); ?>/app/img/events-img-7.png"></a>
-                        <div class="articlesList-events-content">
-                            <div class="counters counters-item"><i class="icon-date"></i><span class="nowrap">29 отября
-                    <wbr>с 11:00 до 16:30</span></div>
-                            <a class="title-4" href="event-article.html">Алгоритмическое программирование на
-                                практике</a>
-                        </div>
-                    </li>
+                    <?php
+                    $events = new WP_Query($events_args);
+                    $event_counter = 0;
+                    if ($events->have_posts()) {
+                        while ($events->have_posts()) {
+                            $events->the_post();
+                            if (!(strtotime(get_post_meta($id, '_event_start_date', true)) > time()) && $event_counter < 3) { ?>
+                                <li><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
+                                        <img style="width: 160px; height: 160px;"
+                                             src="<?= get_the_post_thumbnail_url(); ?>"></a>
+                                    <div class="articlesList-events-content">
+                                        <div class="counters counters-item"><i class="icon-date"></i>
+                                            <span class="nowrap">
+                                                <?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]'); ?>
+                                            </span>
+                                        </div>
+                                        <a class="title-4" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </div>
+                                </li>
+                                <?php $event_counter++;
+                            } elseif (!(strtotime(get_post_meta($id, '_event_start_date', true)) > time()) && $event_counter == 3) { ?>
+                                <li class="show-for-medium-only"><a class="articlesList-events-img"
+                                                                    href="<?php the_permalink(); ?>">
+                                        <img style="width: 160px; height: 160px;"
+                                             src="<?= get_the_post_thumbnail_url(); ?>"></a>
+                                    <div class="articlesList-events-content">
+                                        <div class="counters counters-item"><i class="icon-date"></i>
+                                            <span class="nowrap">
+                                                <?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]'); ?>
+                                            </span>
+                                        </div>
+                                        <a class="title-4" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </div>
+                                </li>
+                                <?php $event_counter++;
+                            }
+                        }
+                    }
+                    wp_reset_postdata();
+                    ?>
                 </ul>
                 <a class="button-light-outline-big" href="events.html">ПОКАЗАТЬ АРХИВ</a>
             </div>
@@ -691,34 +567,55 @@ get_header(); ?>
                 </h2>
             </div>
             <div class="row">
-                <div class="column large-3 photo-small-wrap"><a class="photo-small" href="photo-article.html">
-                        <figure><img src="<?php bloginfo('template_url'); ?>/app/img/photo-1.png">
-                            <figcaption>Куб цвета: суровые пейзажи французских пригородов</figcaption>
-                        </figure>
-                    </a><a class="photo-small" href="photo-article.html">
-                        <figure><img src="<?php bloginfo('template_url'); ?>/app/img/photo-2.png">
-                            <figcaption>Винтажная Америка</figcaption>
-                        </figure>
-                    </a></div>
-                <div class="column large-6 photo-big-wrap"><a class="photo-big" href="photo-article.html">
-                        <figure><img src="<?php bloginfo('template_url'); ?>/app/img/photo-3.png">
-                            <figcaption class="title-1 white">Регион на вырост: мрачные пейзажи Ланьчжоу</figcaption>
-                        </figure>
-                    </a></div>
-                <div class="column large-3 photo-small-wrap"><a class="photo-small" href="photo-article.html">
-                        <figure><img src="<?php bloginfo('template_url'); ?>/app/img/photo-4.png">
-                            <figcaption>Салонные фильтры</figcaption>
-                        </figure>
-                    </a><a class="photo-small" href="photo-article.html">
-                        <figure><img src="<?php bloginfo('template_url'); ?>/app/img/photo-5.png">
-                            <figcaption>Куда смотрит Статуя Свободы: окрестности глазами</figcaption>
-                        </figure>
-                    </a></div>
+                <?php
+                $photos_args = array(
+                    'post_type' => 'photos',
+                    'posts_per_page' => 5,
+                );
+
+
+                $photos = new WP_Query($photos_args);
+                $photos_counter = 0;
+                if ($photos->have_posts()) {
+                    while ($photos->have_posts()) {
+                        $photos->the_post();
+                        if ($photos_counter != 2) {
+                            if (($photos_counter == 0) || $photos_counter == 3) { ?>
+                                <div class="column large-3 photo-small-wrap">
+                                <a class="photo-small" href="<?php the_permalink(); ?>">
+                                    <figure><img style="width: 255px; height: 165px;" src="<?php the_field('post_image'); ?>">
+                                        <figcaption><?php the_title(); ?></figcaption>
+                                    </figure>
+                                </a>
+                            <?php } else { ?>
+                                <a class="photo-small" href="<?php the_permalink(); ?>">
+                                    <figure><img style="width: 255px; height: 165px;" src="<?php the_field('post_image'); ?>">
+                                        <figcaption><?php the_title(); ?></figcaption>
+                                    </figure>
+                                </a>
+                                </div>
+                            <?php }
+                            $photos_counter++;
+                        } else { ?>
+                            <div class="column large-6 photo-big-wrap">
+                                <a class="photo-big" href="<?php the_permalink(); ?>">
+                                    <figure>
+                                        <img style="width: 540px; height: 490px;" src="<?php the_field('post_image'); ?>">
+                                        <figcaption class="title-1 white"><?php the_title(); ?></figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            <?php $photos_counter++;
+                        }
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </div>
             <div class="sectionPhoto-footer"><a class="button-dark-bg" href="photo.html">ПОСМОТРЕТЬ БОЛЬШЕ</a></div>
         </div>
     </section>
-    <div class="subscribePopUp-bg">
+    <div class="subscribePopUp-bg" style="display: none !important;">
         <div class="subscribePopUp-wrap">
             <div class="subscribePopUp-content">
                 <button class="subscribePopUp-close"><i class="icon-close"></i></button>
