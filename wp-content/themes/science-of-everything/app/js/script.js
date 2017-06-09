@@ -505,9 +505,9 @@ function Calendar2(id, year, month) {
     }
     for (var i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
     document.querySelector('#' + id + ' tbody').innerHTML = calendar;
-    document.querySelector('#' + id + ' .calendar-content-title').innerHTML = month[D.getMonth()] + ' ' + D.getFullYear();
-    document.querySelector('#' + id + ' .calendar-content-title').dataset.month = D.getMonth();
-    document.querySelector('#' + id + ' .calendar-content-title').dataset.year = D.getFullYear();
+    // document.querySelector('#' + id + ' .calendar-content-title').innerHTML = month[D.getMonth()] + ' ' + D.getFullYear();
+    // document.querySelector('#' + id + ' .calendar-content-title').dataset.month = D.getMonth();
+    // document.querySelector('#' + id + ' .calendar-content-title').dataset.year = D.getFullYear();
     document.querySelector('#' + id + ' .calendar-prev-date').innerHTML = month[D.getMonth() - 1] + ' ' + D.getFullYear();
     document.querySelector('#' + id + ' .calendar-next-date').innerHTML = month[D.getMonth() + 1] + ' ' + D.getFullYear();
     if (document.querySelectorAll('#' + id + ' tbody tr').length < 6) {

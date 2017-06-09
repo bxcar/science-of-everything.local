@@ -4,7 +4,7 @@ Donate link: https://www.heateor.com/donate?action=Super+Socializer
 Tags: social login, social share, social commenting, social comments, social plugin, profile data, social analytics, online identity, social profile storage, single sign-on, social media, facebook login
 Requires at least: 2.5.0
 Tested up to: 4.7.5
-Stable tag: 7.8.23
+Stable tag: 7.8.24
 License: GPLv2 or later
 
 The unique Social Plugin to let you integrate Social Login, Social Share and Social Comments at your website
@@ -14,7 +14,7 @@ Integrate Social Login, Social Share and Social Comments at your website easiest
 
 **Note:** Plugin will not work on local server. You should have an online website for the plugin to function properly.
 
-**Available in English, <a target="_blank" href="https://ja.wordpress.org/plugins/super-socializer/">Japanese</a>, Spanish, Hungarian, Portuguese, Chinese, Italian, Arabic, <a target="_blank" href="https://ru.wordpress.org/plugins/super-socializer/">Russian</a> and Ukrainian languages**
+**Available in English, <a target="_blank" href="https://en-ca.wordpress.org/plugins/super-socializer/">English (Canada)</a>, <a target="_blank" href="https://ja.wordpress.org/plugins/super-socializer/">Japanese</a>, Spanish, Hungarian, Portuguese, Chinese, Italian, Arabic, <a target="_blank" href="https://ru.wordpress.org/plugins/super-socializer/">Russian</a> and Ukrainian languages**
 
 = Feature list =
 * Social Share from around 100 social networks
@@ -204,6 +204,9 @@ Yes, we can help you with it. Just drop an email at support[ at ]heateor[ dot ]c
 8. **Social Commenting**: Disqus Commenting selected
 
 == Changelog ==
+= 7.8.24 =
+* [Improvement] Webpage urls with "?SuperSocializerAuth=LiveJournal" appended were appearing in "Google webmaster tools errors" in some cases
+
 = 7.8.23 =
 * [Improvement] Performance improvement for the mobile responsiveness feature added in previous version
 
@@ -1247,3 +1250,6 @@ Yes, we can help you with it. Just drop an email at support[ at ]heateor[ dot ]c
 
 = 7.8.23 =
 * [Improvement] Performance improvement for the mobile responsiveness feature added in previous version
+
+= 7.8.24 =
+* [Improvement] Webpage urls with "?SuperSocializerAuth=LiveJournal" appended were appearing in "Google webmaster tools errors" in some cases

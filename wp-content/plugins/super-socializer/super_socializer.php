@@ -3,7 +3,7 @@
 Plugin Name: Super Socializer
 Plugin URI: http://super-socializer-wordpress.heateor.com
 Description: A complete 360 degree solution to provide all the social features like Social Login, Social Commenting, Social Sharing and more.
-Version: 7.8.23
+Version: 7.8.24
 Author: Team Heateor
 Author URI: https://www.heateor.com
 Text Domain: Super-Socializer
@@ -11,7 +11,7 @@ Domain Path: /languages
 License: GPL2+
 */
 defined('ABSPATH') or die("Cheating........Uh!!");
-define('THE_CHAMP_SS_VERSION', '7.8.23');
+define('THE_CHAMP_SS_VERSION', '7.8.24');
 
 require 'helper.php';
 
@@ -419,10 +419,7 @@ function the_champ_connect(){
 function the_champ_livejournal_auth(){
 	require('library/LiveJournalLogin/class.openid.v3.php');
 	$currentPageUrl = the_champ_get_valid_url(html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"])));
-	if(isset($_GET['action']) && $_GET['action'] == 'auth'){
-		wp_redirect(remove_query_arg(array('SuperSocializerAuth', 'action'), html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]))), 301);
-    	exit;
-	}elseif(isset($_POST['openid_action']) && $_POST['openid_action'] == "SuperSocializerLogin"){ // Get identity from user and redirect browser to OpenID Server
+	if(isset($_POST['openid_action']) && $_POST['openid_action'] == "SuperSocializerLogin"){ // Get identity from user and redirect browser to OpenID Server
 		$theChampOpenId = new SimpleOpenID;
 		$theChampOpenId->SetIdentity(sanitize_text_field($_POST['openid_url']).'.livejournal.com');
 		$theChampOpenId->SetTrustRoot($currentPageUrl);
@@ -489,6 +486,9 @@ function the_champ_livejournal_auth(){
 		}
 	}elseif(isset($_GET['openid_mode']) && $_GET['openid_mode'] == 'cancel'){ // User Canceled the Request
 		the_champ_close_login_popup($currentPageUrl);
+	}else{
+		wp_redirect(remove_query_arg(array('SuperSocializerAuth', 'action'), html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]))), 301);
+    	exit;
 	}
 	die;
 }

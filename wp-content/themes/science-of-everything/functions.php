@@ -248,22 +248,44 @@ function themes_post_gallery()
     $return .= '</div>';
     return $return;
 }
+
 add_shortcode('th_gallery', 'themes_post_gallery');
 
 
-function login_wordpress($username, $password) {
+function login_wordpress($username, $password)
+{
     $creds = array();
     $creds['user_login'] = $username;
     $creds['user_password'] = $password;
     $creds['remember'] = true;
-    $user = wp_signon( $creds, false );
-    if ( is_wp_error($user) ) {
+    $user = wp_signon($creds, false);
+    if (is_wp_error($user)) {
 //        echo $user->get_error_message();
 //        die();
         return 0;
-    }
-    else {
+    } else {
         wp_set_auth_cookie($user->ID, 0, 0);
         return 1;
     }
 }
+
+
+/*function past_events_list($args)
+{
+
+    // ALM Shortcode
+    // [ajax_load_more id="popular_photos" posts_per_page="6" button_label="More Photos"]
+    // 'popular_photos' is the value of the 'id' parameter in the shortcode.
+
+    $args['post_type'] = 'event';
+//    $args['meta_key'] = strtotime('_event_start_date');
+//    $args['meta_value'] =  time();
+//    $args['meta_compare'] = '<=';
+    $args['orderby'] = 'meta_value';
+    $args['order'] = 'ASC';
+
+    return $args;
+
+}
+
+add_filter('alm_query_args_past_events', 'past_events_list');*/

@@ -86,7 +86,11 @@ get_header(); ?>
                 ?>
             </ul>
             <div class="column small-12">
-                <?php echo do_shortcode('[ajax_load_more post_type="videos" posts_per_page="10" offset="10" pause="true" scroll="false" button_label="' . get_field('load_more_posts') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]'); ?>
+                <?php if ($_GET['sort'] == 'popular') {
+                    echo do_shortcode('[ajax_load_more post_type="videos" meta_key="views" orderby="meta_value_num" order="DESC" posts_per_page="10" offset="10" pause="true" scroll="false" button_label="' . get_field('load_more_posts') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]');
+                } else {
+                    echo do_shortcode('[ajax_load_more post_type="videos" posts_per_page="10" offset="10" pause="true" scroll="false" button_label="' . get_field('load_more_posts') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]');
+                } ?>
             </div>
         </section>
     </div>
@@ -116,6 +120,7 @@ get_header(); ?>
                 margin-left: auto;
                 margin-right: auto;
             }
+
             .alm-reveal .large-4 {
                 max-width: 33.3333333333333%;
             }

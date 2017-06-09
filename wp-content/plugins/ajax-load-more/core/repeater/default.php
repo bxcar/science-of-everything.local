@@ -1,4 +1,6 @@
-<?php if(get_post_type() == 'photos') {?>
+<?php
+session_start();
+if(get_post_type() == 'photos') {?>
 <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 articlesList-medium">
         <a
                 class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>"><img
@@ -27,53 +29,64 @@
                                 <p class="text-p"><?= strip_tags(get_field('description')); ?>
                                 </p>
                             </li>
-<?php } elseif ((get_post_type() == 'event')) {
-//wp_reset_postdata();
-$today = getdate();
-$args = array(
-    'post_type' => 'event',
-    'tax_query' => array(
-        array(
-            'posts_per_page' => -1,
-            'meta_key' => '_event_start_date',
-            'meta_query' => array(array('meta_key' => '_event_start_date', 'meta_value' => $today, 'compare' => '>=', 'type' => 'date')),
-            'orderby' => 'meta_value',
-        ),
-    ),
-    'meta_key' => '_event_start_date',
-    'orderby' => 'meta_value',
-    'order' => 'ASC'
-);
+                                <?php } elseif (get_post_type() == 'book') { ?>
+  <li class="articlesList-item-book columns medium-6 small-12 large-3">
+                            <a class="articlesList-item-book-img" href="<?php the_permalink(); ?>">
+                                <img src="<?php the_field('book_mini'); ?>"></a>
+                            <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            <p class="text-p"><?php the_field('short description'); ?></p>
+                        </li>
+                                <?php } elseif ((get_post_type() == 'event') &&  ($_SESSION['upcoming_ev'] == true) && ($_SESSION['past_ev'] == false)) {
+    if (($alm_item == 1) && !$_SESSION['ix_upcoming']) {
+        $_SESSION['ix_upcoming'] = 0;
+    }
 
-$photos = new WP_Query($args);
-$ix = 0;
-if ($photos->have_posts()) {
-    while ($photos->have_posts()) {
-        $photos->the_post(); ?>
-        <?php
-        if ((strtotime(get_post_meta($id, '_event_start_date', true)) > time())) {
-            if ($ix >= 3) {
-                // upcoming event ?>
-                <li class="articlesList-item-text columns column-block medium-6 small-12 articlesList-medium"><!--
-                          --><a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>"><!--
-                            --><img class="articlesList-item-img" src="<?php the_post_thumbnail_url(); ?>"><!--
-                          --></a><!--
-                          --><a class="title-3" href="event-article.html"><?php the_title(); ?></a>
-                    <div class="counters counters-item"><i class="icon-date"></i><!--
-                              --><span
-                                class="nowrap"><?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]'); ?></span>
-                    </div>
-                    <p class="text-p"><?php the_excerpt(); ?></p>
-                    <script>
-                        jQuery('.articlesList-item-text.columns.column-block.medium-6.small-12.articlesList-medium p').addClass('text-p');
-                    </script>
-                </li>
-            <?php }
-            else {
-                $ix++;
-            }
+    if ((strtotime(get_post_meta(get_the_ID(), '_event_start_date', true)) > time())) {
+        if ($_SESSION['ix_upcoming'] >= 3) { ?>
+            <li class="articlesList-item-text columns column-block medium-6 small-12 articlesList-medium">
+                <a class="articlesList-item-img-wrap" href="<?= get_the_permalink() ?>">
+                    <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url() ?>">
+                </a>
+                <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                <div class="counters counters-item"><i class="icon-date"></i>
+                    <span class="nowrap"><?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]') ?></span>
+                </div>
+                <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 18) ?></p>
+                <script>
+                    jQuery('.articlesList-item-text.columns.column-block.medium-6.small-12.articlesList-medium p').addClass('text-p');
+                    console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
+                    console.log("past: <?= $_SESSION['past_ev'] ?>");
+                </script>
+            </li>
+        <?php 
+        } else {
+        $_SESSION['ix_upcoming']++;
         }
     }
-}
-//wp_reset_postdata(); 
+} elseif ((get_post_type() == 'event') &&  ($_SESSION['upcoming_ev'] == false) && ($_SESSION['past_ev'] == true)) {
+    if (($alm_item == 1) && !$_SESSION['ix_past']) {
+        $_SESSION['ix_past'] = 0;
+    }
+
+    if (!(strtotime(get_post_meta(get_the_ID(), '_event_start_date', true)) > time())) {
+        if ($_SESSION['ix_past'] >= 3) { ?>
+                                <li class="articlesList-item-text columns column-block medium-6 small-12 articlesList-medium">
+                <a class="articlesList-item-img-wrap" href="<?= get_the_permalink() ?>">
+                    <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url() ?>">
+                </a>
+                <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                <div class="counters counters-item"><i class="icon-date"></i>
+                    <span class="nowrap"><?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]') ?></span>
+                </div>
+                <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 18) ?></p>
+                <script>
+                    jQuery('.articlesList-item-text.columns.column-block.medium-6.small-12.articlesList-medium p').addClass('text-p');
+                    console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
+                    console.log("past: <?= $_SESSION['past_ev'] ?>");
+                </script>
+            </li>
+        <?php } else {
+            $_SESSION['ix_past']++;
+        }
+    }
 } ?>

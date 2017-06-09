@@ -54,8 +54,12 @@ get_header(); ?>
                 wp_reset_postdata();
                 ?>
             </ul>
-            <div class="column small-12">
-                <div class="button-more"><span>СМОТРЕТЬ БОЛЬШЕ</span><i class="icon-squares"></i></div>
+            <div class="column small-12" style="padding: 0;">
+                <?php if($_GET['sort'] == 'popular') {
+                    echo do_shortcode('[ajax_load_more post_type="book" meta_key="views" orderby="meta_value_num" order="DESC" posts_per_page="12" offset="12" pause="true" scroll="false" button_label="' . get_field('load_more_posts') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]');
+                } else {
+                    echo do_shortcode('[ajax_load_more post_type="book" posts_per_page="12" offset="12" pause="true" scroll="false" button_label="' . get_field('load_more_posts') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]');
+                }?>
             </div>
         </section>
     </div>
@@ -71,4 +75,20 @@ get_header(); ?>
             jQuery('.ui-selectmenu-menu.sortArticles-select-menu').html('<ul aria-hidden="false" aria-labelledby="ui-id-3-button" id="ui-id-3-menu" role="listbox" tabindex="0" class="ui-menu ui-corner-bottom ui-widget ui-widget-content" aria-activedescendant="ui-id-4" aria-disabled="false" style="width: 194px;"><a href="<?= get_permalink(); ?>?sort=date"><li class="ui-menu-item"><div id="ui-id-4" tabindex="-1" role="option" class="ui-menu-item-wrapper ui-state-active"><?php the_field('sort_last'); ?></div></li></a><a href="<?= get_permalink(); ?>?sort=popular"><li class="ui-menu-item"><div id="ui-id-5" tabindex="-1" role="option" class="ui-menu-item-wrapper"><?php the_field('sort_popular'); ?></div></li></a></ul>');
         }
     </script>
+<style>
+    .books-page .articlesList-item-book {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    @media print, screen and (min-width: 64em) {
+        .large-3 {
+            -webkit-flex: 0 0 24.6%;
+            -ms-flex: 0 0 24.6%;
+            flex: 0 0 24.6%;
+            max-width: 24.6%;
+        }
+    }
+
+</style>
 <?php get_footer(); ?>

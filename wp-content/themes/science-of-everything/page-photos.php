@@ -83,7 +83,11 @@ get_header(); ?>
                 <div class="button-more"><span><?php /*the_field('load_more_posts'); */ ?></span><i class="icon-squares"></i>
                 </div>
             </div>-->
-            <?php echo do_shortcode('[ajax_load_more post_type="photos" posts_per_page="6" offset="8" pause="true" scroll="false" button_label="' . get_field('load_more_posts') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]'); ?>
+            <?php if($_GET['sort'] == 'popular') {
+                echo do_shortcode('[ajax_load_more post_type="photos" meta_key="views" orderby="meta_value_num" order="DESC" posts_per_page="6" offset="8" pause="true" scroll="false" button_label="' . get_field('load_more_posts') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]');
+            } else {
+                echo do_shortcode('[ajax_load_more post_type="photos" posts_per_page="6" offset="8" pause="true" scroll="false" button_label="' . get_field('load_more_posts') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]');
+            }?>
             <style>
                 .articlesList-item-text.columns.column-block.medium-6.small-12.large-4.articlesList-medium {
                     display: inline-block;

@@ -2,10 +2,17 @@
 /**
  * Template Name: events
  */
-get_header(); ?>
+session_start();
+$_SESSION['ix_past'] = false;
+$_SESSION['ix_upcoming'] = false;
+$_SESSION['upcoming_ev'] = false;
+$_SESSION['past_ev'] = false;
+?>
+<?php get_header(); ?>
+
 <div class="mainWrap mainWrap-medium row">
     <div class="l-articles column large-8">
-        <section class="articles-events-item">
+        <section class="articles-events-item upcoming-events">
             <div class="section-title-inner">
                 <h2 class="title-2"><?php the_field('upcoming_events'); ?></h2>
             </div>
@@ -17,14 +24,14 @@ get_header(); ?>
                 $today = getdate();
                 $args = array(
                     'post_type' => 'event',
-                    'tax_query' => array(
+                    /*'meta_query' => array(
                         array(
                             'posts_per_page' => -1,
                             'meta_key' => '_event_start_date',
                             'meta_query' => array(array('meta_key' => '_event_start_date', 'meta_value' => $today, 'compare' => '>=', 'type' => 'date')),
                             'orderby' => 'meta_value',
                         ),
-                    ),
+                    ),*/
                     'meta_key' => '_event_start_date',
                     'orderby' => 'meta_value',
                     'order' => 'ASC'
@@ -58,7 +65,7 @@ get_header(); ?>
                           --><a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>"><!--
                             --><img class="articlesList-item-img" src="<?php the_post_thumbnail_url(); ?>"><!--
                           --></a><!--
-                          --><a class="title-3" href="event-article.html"><?php the_title(); ?></a>
+                          --><a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     <div class="counters counters-item"><i class="icon-date"></i><!--
                               --><span class="nowrap"><?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]'); ?></span>
                                     </div>
@@ -78,11 +85,9 @@ get_header(); ?>
                 wp_reset_postdata();
                 ?>
             </ul>
-            <!--<div class="button-more"><span><?php /*the_field('load_more_posts_button_title'); */?></span><i
-                        class="icon-squares"></i></div>-->
-            <?php echo do_shortcode('[ajax_load_more post_type="event" posts_per_page="-1" offset="1" pause="true" scroll="false" button_label="' . get_field('load_more_posts_button_title') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]'); ?>
+            <?php echo do_shortcode('[ajax_load_more post_type="event" meta_key="_event_start_date" orderby="meta_value" order="ASC" posts_per_page="-1" pause="true" scroll="false" button_label="' . get_field('load_more_posts_button_title') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]'); ?>
         </section>
-        <section class="articles-events-item">
+        <section class="articles-events-item past-events">
             <div class="section-title-inner">
                 <h2 class="title-2"><?php the_field('past_events'); ?></h2>
             </div>
@@ -92,14 +97,14 @@ get_header(); ?>
                 $today = getdate();
                 $args = array(
                     'post_type' => 'event',
-                    'tax_query' => array(
+                    /*'tax_query' => array(
                         array(
                             'posts_per_page' => -1,
                             'meta_key' => '_event_start_date',
                             'meta_query' => array(array('meta_key' => '_event_start_date', 'meta_value' => $today, 'compare' => '>=', 'type' => 'date')),
                             'orderby' => 'meta_value',
                         ),
-                    ),
+                    ),*/
                     'meta_key' => '_event_start_date',
                     'orderby' => 'meta_value',
                     'order' => 'DESC'
@@ -131,7 +136,7 @@ get_header(); ?>
                           --><a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>"><!--
                             --><img class="articlesList-item-img" src="<?php the_post_thumbnail_url(); ?>"><!--
                           --></a><!--
-                          --><a class="title-3" href="event-article.html"><?php the_title(); ?></a>
+                          --><a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     <div class="counters counters-item"><i class="icon-date"></i><!--
                               --><span class="nowrap"><?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]'); ?></span>
                                     </div>
@@ -148,8 +153,7 @@ get_header(); ?>
                 wp_reset_postdata();
                 ?>
             </ul>
-            <div class="button-more"><span><?php the_field('load_more_posts_button_title'); ?></span><i
-                        class="icon-squares"></i></div>
+            <?php echo do_shortcode('[ajax_load_more post_type="event" meta_key="_event_start_date" orderby="meta_value" order="DESC" posts_per_page="-1" pause="true" scroll="false" button_label="' . get_field('load_more_posts_button_title') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]'); ?>
         </section>
     </div>
     <aside class="sidebar-wrap inner column large-4">
@@ -184,13 +188,34 @@ get_header(); ?>
             </div>
         </div>
         <div class="sidebar-advertising">
-            <a href="<?php the_field('adv_link'); ?>" target="_blank"><img src="<?php the_field('adv_image'); ?>"></a>
+            <a href="<?php the_field('adv_link'); ?>" target="_blank"><img
+                        src="<?php the_field('adv_image'); ?>"></a>
         </div>
     </aside>
 </div>
 <script>
     jQuery(document).ready(function () {
         jQuery('table.em-calendar tbody').append('<tr> <th>Пн</th> <th>Вт</th> <th>Ср</th> <th>Чт</th> <th>Пт</th> <th>Сб</th> <th>Вс</th> </tr>');
+    });
+    jQuery("#ajax-load-more").click(function (e) {
+        var jqxhr = jQuery.get('<?= get_template_directory_uri(); ?>/event-set-session-vars.php?data=upcoming');
+        jqxhr.success(function (data) {
+            console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
+            console.log("past: <?= $_SESSION['past_ev'] ?>");
+        });
+        jqxhr.error(function () {
+            console.log("Ошибка выполнения");
+        })
+    });
+    jQuery("#ajax-load-more-2").click(function (e) {
+        var jqxhr_2 = jQuery.get('<?= get_template_directory_uri(); ?>/event-set-session-vars.php?data=past');
+        jqxhr_2.success(function (data) {
+            console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
+            console.log("past: <?= $_SESSION['past_ev'] ?>");
+        });
+        jqxhr_2.error(function () {
+            console.log("Ошибка выполнения");
+        })
     });
 </script>
 <style>
@@ -229,6 +254,10 @@ get_header(); ?>
 
     tr.days-names td {
         font-weight: 700;
+    }
+
+    .alm-reveal .articlesList-medium.articlesList-item-text {
+        float: left;
     }
 </style>
 <?php get_footer(); ?>

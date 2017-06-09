@@ -7,7 +7,7 @@ Domain Path: /embedded/locale
 License: GPLv2
 Requires at least: 3.7
 Tested up to: 4.7.3
-Stable tag: 2.2.9
+Stable tag: 2.2.11
 
 The complete and reliable plugin for managing custom post types, custom taxonomies and custom fields.
 
@@ -157,6 +157,16 @@ Additionally, Types is the only plugin that lets you define parent/child relatio
 10. Bulk editing child content using Field Tables
 
 == Changelog ==
+
+= 2.2.11 =
+* Removed notices, to push users to activate Layouts theme integration plugins based on the current theme
+* Added filter to remove/add automatic notices on demand
+
+= 2.2.10 =
+* Compatibility changes for CRED 1.9
+* Updated Font Awesome to version 4.7.0
+* Fixed broken link in parent relationship table on unpublished posts
+* Fixed a compatibility issue with Soliloquy Slider
 
 = 2.2.9 =
 * Added the feature to display posts and pages in Toolset dashboard by default.
