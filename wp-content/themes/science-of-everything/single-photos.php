@@ -98,64 +98,48 @@
     </article>
     <aside class="sidebar-wrap columns large-4">
         <div class="section-title section-title-popular">
-            <h2 class="title-2"><img src="img/icon-newspaper.png">ПОПУЛЯРНЫЕ СТАТЬИ</h2>
+            <h2 class="title-2"><img src="<?= get_template_directory_uri();  ?>/app/img/icon-newspaper.png"><?php _e('Популярные статьи', 'science-of-everything'); ?></h2>
         </div>
         <ul class="sidebar-list">
-            <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-1.png"></a>
-                <div class="sidebar-item-content">
-                    <p class="category-text category-text-sm category-text-technology">ТЕХНОЛОГИИ</p><a class="title-sm"
-                                                                                                        href="rubric-article.html">«Легкие-на-чипе»
-                        научили курению в затяг</a>
-                    <div class="counters">
-                        <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                        <div class="counters-item"><i class="icon-comment"></i>113</div>
-                    </div>
-                </div>
-            </li>
-            <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-2.png"></a>
-                <div class="sidebar-item-content">
-                    <p class="category-text category-text-sm category-text-astro">АСТРОФИЗИКА</p><a class="title-sm"
-                                                                                                    href="rubric-article.html">Идентифицированы
-                        области мозга, связанны...</a>
-                    <div class="counters">
-                        <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                        <div class="counters-item"><i class="icon-comment"></i>113</div>
-                    </div>
-                </div>
-            </li>
-            <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-3.png"></a>
-                <div class="sidebar-item-content">
-                    <p class="category-text category-text-sm category-text-psycho">ПСИХОЛОГИЯ</p><a class="title-sm"
-                                                                                                    href="rubric-article.html">Идентифицированы
-                        области мозга, связанны...</a>
-                    <div class="counters">
-                        <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                        <div class="counters-item"><i class="icon-comment"></i>113</div>
-                    </div>
-                </div>
-            </li>
-            <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-4.png"></a>
-                <div class="sidebar-item-content">
-                    <p class="category-text category-text-sm category-text-medtech">МедТех</p><a class="title-sm"
-                                                                                                 href="rubric-article.html">Идентифицированы
-                        области мозга, связанны...</a>
-                    <div class="counters">
-                        <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                        <div class="counters-item"><i class="icon-comment"></i>113</div>
-                    </div>
-                </div>
-            </li>
-            <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-5.png"></a>
-                <div class="sidebar-item-content">
-                    <p class="category-text category-text-sm category-text-future">БУДУЩЕЕ</p><a class="title-sm"
-                                                                                                 href="rubric-article.html">Идентифицированы
-                        области мозга, связанны...</a>
-                    <div class="counters">
-                        <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                        <div class="counters-item"><i class="icon-comment"></i>113</div>
-                    </div>
-                </div>
-            </li>
+            <?php
+            $popular_posts_args = array(
+                'post_type' => 'topics',
+                'posts_per_page' => 5,
+                'orderby' => 'meta_value_num',
+                'meta_key' => 'views',
+                'order' => 'DESC',
+            );
+
+            $popular_posts = new WP_Query($popular_posts_args);
+            if ($popular_posts->have_posts()) {
+                while ($popular_posts->have_posts()) {
+                    $popular_posts->the_post(); ?>
+                    <li>
+                        <a class="sidebar-list-img" href="<?php the_permalink(); ?>">
+                            <img style="width: 130px; height: 100px;" src="<?= get_the_post_thumbnail_url(); ?>">
+                        </a>
+                        <div class="sidebar-item-content">
+                            <?php
+                            $categories = get_the_category();
+                            if ($categories) {
+                                foreach ($categories as $category) {
+                                    echo '<p class="category-text category-text-sm category-text-technology">' . $category->name . '</p>';
+                                }
+                            }
+                            ?>
+                            <a class="title-sm" href="<?php the_permalink(); ?>"><?= wp_trim_words(get_the_title(), 4); ?></a>
+                            <div class="counters">
+                                <div class="counters-item">
+                                    <i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
+                                <div class="counters-item"><i class="icon-comment"></i>113</div>
+                            </div>
+                        </div>
+                    </li>
+                    <?php $i++;
+                }
+            }
+            wp_reset_postdata();
+            ?>
         </ul>
         <div class="sidebar-advertising"><a target="_blank" href="<?php the_field('adv_link'); ?>"><img src="<?php the_field('adv_image'); ?>"></a></div>
     </aside>

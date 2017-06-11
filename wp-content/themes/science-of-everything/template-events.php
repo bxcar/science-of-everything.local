@@ -7,8 +7,8 @@ $_SESSION['ix_past'] = false;
 $_SESSION['ix_upcoming'] = false;
 $_SESSION['upcoming_ev'] = false;
 $_SESSION['past_ev'] = false;
-?>
-<?php get_header(); ?>
+$_SESSION['is_front_page'] = false;
+get_header(); ?>
 
 <div class="mainWrap mainWrap-medium row">
     <div class="l-articles column large-8">

@@ -73,54 +73,33 @@
         </article>
         <aside class="sidebar-wrap columns large-4">
             <div class="section-title section-title-books">
-                <h2 class="title-2"><img src="img/icon-book.png">КНИГИ</h2>
+                <h2 class="title-2"><img src="<?= get_template_directory_uri(); ?>/app/img/icon-book.png"><?php _e('Книги', 'science-of-everything'); ?></h2>
             </div>
             <ul class="sidebar-list">
-                <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-0.png"></a>
-                    <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Восходящая
-                            спираль</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
-                <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-1.png"></a>
-                    <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Вилки вместо
-                            ножей на практике</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
-                <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-2.png"></a>
-                    <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Как написать
-                            книгу за 30 дней</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
-                <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-3.png"></a>
-                    <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Система продаж
-                            через интернет</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
-                <li><a class="sidebar-img-books" href="books-article.html"><img src="img/sidebar-books-img-4.png"></a>
-                    <div class="sidebar-item-content books"><a class="title-sm" href="books-article.html">Наука о том,
-                            почему мы покупаем</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
+                <?php
+                $books_args = array(
+                    'post_type' => 'book',
+                    'posts_per_page' => 5
+                );
+
+                $books = new WP_Query($books_args);
+                if ($books->have_posts()) {
+                    while ($books->have_posts()) {
+                        $books->the_post(); ?>
+                        <li><a class="sidebar-img-books" href="<?php the_permalink(); ?>"><img style="width: 77px; height: 100px;" src="<?php the_field('book_mini'); ?>"></a>
+                            <div class="sidebar-item-content books">
+                                <a class="title-sm" href="<?php the_permalink(); ?>"><?= wp_trim_words(get_the_title(), 8); ?></a>
+                                <div class="counters">
+                                    <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
+                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                </div>
+                            </div>
+                        </li>
+                        <?php
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </ul>
             <a href="<?php the_field('adv_link'); ?>" target="_blank" class="sidebar-advertising"><img src="<?php the_field('adv_image'); ?>"></a>
         </aside>

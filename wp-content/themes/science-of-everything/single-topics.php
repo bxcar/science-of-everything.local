@@ -91,63 +91,48 @@
         </article>
         <aside class="sidebar-wrap columns large-4">
             <div class="section-title section-title-popular">
-                <h2 class="title-2"><img src="img/icon-newspaper.png">ПОПУЛЯРНЫЕ СТАТЬИ</h2>
+                <h2 class="title-2"><img src="<?= get_template_directory_uri(); ?>/app/img/icon-newspaper.png"><?php _e('Популярные статьи', 'science-of-everything'); ?></h2>
             </div>
             <ul class="sidebar-list">
-                <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-1.png"></a>
-                    <div class="sidebar-item-content">
-                        <p class="category-text category-text-sm category-text-technology">ТЕХНОЛОГИИ</p><a
-                                class="title-sm" href="rubric-article.html">«Легкие-на-чипе» научили курению в затяг</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
-                <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-2.png"></a>
-                    <div class="sidebar-item-content">
-                        <p class="category-text category-text-sm category-text-astro">АСТРОФИЗИКА</p><a class="title-sm"
-                                                                                                        href="rubric-article.html">Идентифицированы
-                            области мозга, связанны...</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
-                <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-3.png"></a>
-                    <div class="sidebar-item-content">
-                        <p class="category-text category-text-sm category-text-psycho">ПСИХОЛОГИЯ</p><a class="title-sm"
-                                                                                                        href="rubric-article.html">Идентифицированы
-                            области мозга, связанны...</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
-                <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-4.png"></a>
-                    <div class="sidebar-item-content">
-                        <p class="category-text category-text-sm category-text-medtech">МедТех</p><a class="title-sm"
-                                                                                                     href="rubric-article.html">Идентифицированы
-                            области мозга, связанны...</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
-                <li><a class="sidebar-list-img" href="rubric-article.html"><img src="img/sidebar-img-5.png"></a>
-                    <div class="sidebar-item-content">
-                        <p class="category-text category-text-sm category-text-future">БУДУЩЕЕ</p><a class="title-sm"
-                                                                                                     href="rubric-article.html">Идентифицированы
-                            области мозга, связанны...</a>
-                        <div class="counters">
-                            <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                            <div class="counters-item"><i class="icon-comment"></i>113</div>
-                        </div>
-                    </div>
-                </li>
+                <?php
+                $popular_posts_args = array(
+                    'post_type' => 'topics',
+                    'posts_per_page' => 5,
+                    'orderby' => 'meta_value_num',
+                    'meta_key' => 'views',
+                    'order' => 'DESC',
+                );
+
+                $popular_posts = new WP_Query($popular_posts_args);
+                if ($popular_posts->have_posts()) {
+                    while ($popular_posts->have_posts()) {
+                        $popular_posts->the_post(); ?>
+                        <li>
+                            <a class="sidebar-list-img" href="<?php the_permalink(); ?>">
+                                <img style="width: 130px; height: 100px;" src="<?= get_the_post_thumbnail_url(); ?>">
+                            </a>
+                            <div class="sidebar-item-content">
+                                <?php
+                                $categories = get_the_category();
+                                if ($categories) {
+                                    foreach ($categories as $category) {
+                                        echo '<p class="category-text category-text-sm category-text-technology">' . $category->name . '</p>';
+                                    }
+                                }
+                                ?>
+                                <a class="title-sm" href="<?php the_permalink(); ?>"><?= wp_trim_words(get_the_title(), 4); ?></a>
+                                <div class="counters">
+                                    <div class="counters-item">
+                                        <i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
+                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                </div>
+                            </div>
+                        </li>
+                        <?php $i++;
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </ul>
             <a href="<?php the_field('adv_link'); ?>" target="_blank" class="sidebar-advertising">
                 <img src="<?php the_field('adv_image'); ?>">
@@ -156,69 +141,60 @@
         <section class="l-otherArticles column small-12 row">
             <div class="column small-12">
                 <div class="section-title-inner">
-                    <div class="title-4">Похожие новости</div>
+                    <div class="title-4"><?php _e('Похожие новости', 'science-of-everything'); ?></div>
                 </div>
             </div>
             <ul class="articlesList-compact column small-12 row">
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text"
-                                                                              href="rubric-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-33.png">
-                        </figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="category-text category-text-technology">ТЕХНОЛОГИИ</p>
-                            <p class="title-4">Хакерам потребовалось менее минуты, чтобы взломать флагман Google</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text"
-                                                                              href="rubric-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-5.png"></figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="category-text category-text-astro">АСТРОФИЗИКА</p>
-                            <p class="title-4">Глобальное потепление</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text"
-                                                                              href="rubric-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-11.png">
-                        </figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="category-text category-text-psycho">ПСИХОЛОГИЯ</p>
-                            <p class="title-4">Поверхностную оценку сексуальности связали с одобрением насилия</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12 hide-for-medium-only"><a
-                            class="articlesList-item-text" href="rubric-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-34.png">
-                        </figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="category-text category-text-medtech">МедТех</p>
-                            <p class="title-4">Апофения: увидеть незримое и поверить в заговор</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+                <?php
+                $categories = get_the_category();
+                $cat_arr = array();
+                $i = 0;
+                if ($categories) {
+                    foreach ($categories as $category) {
+                        $cat_arr[$i] = $category->cat_ID;
+                        $i++;
+                    }
+                }
+                $popular_posts_args = array(
+                    'post_type' => 'topics',
+                    'posts_per_page' => 4,
+                    'orderby' => 'meta_value_num',
+                    'meta_key' => 'views',
+                    'order' => 'DESC',
+                    'category__in' => $cat_arr
+                );
+
+                $popular_posts = new WP_Query($popular_posts_args);
+                if ($popular_posts->have_posts()) {
+                    while ($popular_posts->have_posts()) {
+                        $popular_posts->the_post(); ?>
+                        <li class="columns column-block large-3 medium-4 small-12">
+                            <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
+                                <figure class="articlesList-item-img-wrap">
+                                    <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+                                </figure>
+                                <div class="articlesList-item-text-content">
+                                    <?php
+                                    $categories = get_the_category();
+                                    if ($categories) {
+                                        foreach ($categories as $category) {
+                                            echo '<p class="category-text category-text-technology">' . $category->name . '</p>';
+                                        }
+                                    }
+                                    ?>
+                                    <p class="title-4"><?php the_title(); ?></p>
+                                    <div class="counters">
+                                        <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
+                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <?php $i++;
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </ul>
         </section>
     </div>

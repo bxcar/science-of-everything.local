@@ -36,57 +36,121 @@ if(get_post_type() == 'photos') {?>
                             <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             <p class="text-p"><?php the_field('short description'); ?></p>
                         </li>
-                                <?php } elseif ((get_post_type() == 'event') &&  ($_SESSION['upcoming_ev'] == true) && ($_SESSION['past_ev'] == false)) {
+                                <?php } elseif ((get_post_type() == 'event') && ($_SESSION['upcoming_ev'] == true) && ($_SESSION['past_ev'] == false)) {
     if (($alm_item == 1) && !$_SESSION['ix_upcoming']) {
         $_SESSION['ix_upcoming'] = 0;
     }
 
     if ((strtotime(get_post_meta(get_the_ID(), '_event_start_date', true)) > time())) {
-        if ($_SESSION['ix_upcoming'] >= 3) { ?>
-            <li class="articlesList-item-text columns column-block medium-6 small-12 articlesList-medium">
-                <a class="articlesList-item-img-wrap" href="<?= get_the_permalink() ?>">
-                    <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url() ?>">
-                </a>
-                <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                <div class="counters counters-item"><i class="icon-date"></i>
-                    <span class="nowrap"><?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]') ?></span>
-                </div>
-                <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 18) ?></p>
-                <script>
-                    jQuery('.articlesList-item-text.columns.column-block.medium-6.small-12.articlesList-medium p').addClass('text-p');
-                    console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
-                    console.log("past: <?= $_SESSION['past_ev'] ?>");
-                </script>
-            </li>
-        <?php 
+        if ($_SESSION['ix_upcoming'] >= 3) {
+            if (!$_SESSION['is_front_page']) { ?>
+                <li class="articlesList-item-text columns column-block medium-6 small-12 articlesList-medium">
+                    <a class="articlesList-item-img-wrap" href="<?= get_the_permalink() ?>">
+                        <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url() ?>">
+                    </a>
+                    <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <div class="counters counters-item"><i class="icon-date"></i>
+                        <span class="nowrap"><?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]') ?></span>
+                    </div>
+                    <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 18) ?></p>
+                    <script>
+                        jQuery('.articlesList-item-text.columns.column-block.medium-6.small-12.articlesList-medium p').addClass('text-p');
+                        console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
+                        console.log("past: <?= $_SESSION['past_ev'] ?>");
+                    </script>
+                </li>
+                <?php
+            } else { ?>
+                <li><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
+                        <img style="width: 160px; height: 160px;"
+                             src="<?= get_the_post_thumbnail_url(); ?>"></a>
+                    <div class="articlesList-events-content">
+                        <div class="counters counters-item"><i class="icon-date"></i>
+                            <span class="nowrap">
+                                                <?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]'); ?>
+                                            </span>
+                        </div>
+                        <a class="title-4" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </div>
+                    <script>
+                        jQuery('.articlesList-item-text.columns.column-block.medium-6.small-12.articlesList-medium p').addClass('text-p');
+                        console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
+                        console.log("past: <?= $_SESSION['past_ev'] ?>");
+                    </script>
+                </li>
+            <?php }
         } else {
-        $_SESSION['ix_upcoming']++;
+            $_SESSION['ix_upcoming']++;
         }
     }
-} elseif ((get_post_type() == 'event') &&  ($_SESSION['upcoming_ev'] == false) && ($_SESSION['past_ev'] == true)) {
+} elseif ((get_post_type() == 'event') && ($_SESSION['upcoming_ev'] == false) && ($_SESSION['past_ev'] == true)) {
     if (($alm_item == 1) && !$_SESSION['ix_past']) {
         $_SESSION['ix_past'] = 0;
     }
 
     if (!(strtotime(get_post_meta(get_the_ID(), '_event_start_date', true)) > time())) {
-        if ($_SESSION['ix_past'] >= 3) { ?>
-                                <li class="articlesList-item-text columns column-block medium-6 small-12 articlesList-medium">
-                <a class="articlesList-item-img-wrap" href="<?= get_the_permalink() ?>">
-                    <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url() ?>">
-                </a>
-                <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                <div class="counters counters-item"><i class="icon-date"></i>
-                    <span class="nowrap"><?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]') ?></span>
-                </div>
-                <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 18) ?></p>
-                <script>
-                    jQuery('.articlesList-item-text.columns.column-block.medium-6.small-12.articlesList-medium p').addClass('text-p');
-                    console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
-                    console.log("past: <?= $_SESSION['past_ev'] ?>");
-                </script>
-            </li>
-        <?php } else {
+        if ($_SESSION['ix_past'] >= 3) {
+            if (!$_SESSION['is_front_page']) { ?>
+                <li class="articlesList-item-text columns column-block medium-6 small-12 articlesList-medium">
+                    <a class="articlesList-item-img-wrap" href="<?= get_the_permalink() ?>">
+                        <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url() ?>">
+                    </a>
+                    <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    <div class="counters counters-item"><i class="icon-date"></i>
+                        <span class="nowrap"><?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]') ?></span>
+                    </div>
+                    <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 18) ?></p>
+                    <script>
+                        jQuery('.articlesList-item-text.columns.column-block.medium-6.small-12.articlesList-medium p').addClass('text-p');
+                        console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
+                        console.log("past: <?= $_SESSION['past_ev'] ?>");
+                    </script>
+                </li>
+                <?php
+            } else { ?>
+                <li><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
+                        <img style="width: 160px; height: 160px;"
+                             src="<?= get_the_post_thumbnail_url(); ?>"></a>
+                    <div class="articlesList-events-content">
+                        <div class="counters counters-item"><i class="icon-date"></i>
+                            <span class="nowrap">
+                                                <?= do_shortcode('[event]#_EVENTDATES @ #_EVENTTIMES[/event]'); ?>
+                                            </span>
+                        </div>
+                        <a class="title-4" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </div>
+                    <script>
+                        jQuery('.articlesList-item-text.columns.column-block.medium-6.small-12.articlesList-medium p').addClass('text-p');
+                        console.log("upcoming: <?= $_SESSION['upcoming_ev'] ?>");
+                        console.log("past: <?= $_SESSION['past_ev'] ?>");
+                    </script>
+                </li>
+            <?php }
+        } else {
             $_SESSION['ix_past']++;
         }
     }
-} ?>
+} elseif (get_post_type() == 'topics') { ?>
+  <li class="columns column-block large-3 medium-4 small-12">
+                            <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
+                                <figure class="articlesList-item-img-wrap">
+                                    <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+                                </figure>
+                                <div class="articlesList-item-text-content">
+                                    <?php
+                                    $categories = get_the_category();
+                                    if ($categories) {
+                                        foreach ($categories as $category) {
+                                            echo '<p class="category-text category-text-technology">' . $category->name . '</p>';
+                                        }
+                                    }
+                                    ?>
+                                    <p class="title-4"><?php the_title(); ?></p>
+                                    <div class="counters">
+                                        <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
+                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                                <?php } ?>
