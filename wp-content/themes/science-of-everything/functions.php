@@ -289,3 +289,11 @@ function login_wordpress($username, $password)
 }
 
 add_filter('alm_query_args_past_events', 'past_events_list');*/
+
+function change_wp_search_size($query) {
+    if ( $query->is_search ) // Make sure it is a search page
+        $query->query_vars['posts_per_page'] = -1; // Change 10 to the number of posts you would like to show
+
+    return $query; // Return our modified query variables
+}
+add_filter('pre_get_posts', 'change_wp_search_size'); // Hook our custom function onto the request filter

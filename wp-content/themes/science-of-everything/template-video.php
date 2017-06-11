@@ -54,7 +54,7 @@ get_header(); ?>
                                 <a class="articlesList-item-img-wrap articlesList-item-video"
                                    href="<?php the_permalink(); ?>"><!--
                                 --><img class="articlesList-item-img" src="https://img.youtube.com/vi/<?php
-                                    the_field('video_id'); ?>/0.jpg""></a><!--
+                                    the_field('video_id'); ?>/0.jpg"></a><!--
                                     --><a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 <div class="counters">
                                     <div class="counters-item"><i

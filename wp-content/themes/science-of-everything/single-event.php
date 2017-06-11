@@ -119,70 +119,54 @@
         <section class="l-otherArticles column small-12 row">
             <div class="column small-12">
                 <div class="section-title-inner">
-                    <div class="title-4">Похожие новости</div>
+                    <div class="title-4"><?php _e('Лучшие материалы', 'science-of-everything'); ?></div>
                 </div>
             </div>
             <ul class="articlesList-compact column small-12 row">
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text"
-                                                                              href="rubric-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-33.png">
-                        </figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="category-text category-text-technology">ТЕХНОЛОГИИ</p>
-                            <p class="title-4">Хакерам потребовалось менее минуты, чтобы взломать флагман Google</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text"
-                                                                              href="rubric-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-5.png"></figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="category-text category-text-astro">АСТРОФИЗИКА</p>
-                            <p class="title-4">Глобальное потепление</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text"
-                                                                              href="rubric-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-11.png">
-                        </figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="category-text category-text-psycho">ПСИХОЛОГИЯ</p>
-                            <p class="title-4">Поверхностную оценку сексуальности связали с одобрением насилия</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12 hide-for-medium-only"><a
-                            class="articlesList-item-text" href="rubric-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-34.png">
-                        </figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="category-text category-text-medtech">МедТех</p>
-                            <p class="title-4">Апофения: увидеть незримое и поверить в заговор</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+                <?php
+                $popular_posts_args = array(
+                    'post_type' => 'topics',
+                    'posts_per_page' => 4,
+                    'orderby' => 'meta_value_num',
+                    'meta_key' => 'views',
+                    'order' => 'DESC',
+                );
+
+                $popular_posts = new WP_Query($popular_posts_args);
+                if ($popular_posts->have_posts()) {
+                    while ($popular_posts->have_posts()) {
+                        $popular_posts->the_post(); ?>
+                        <li class="columns column-block large-3 medium-4 small-12">
+                            <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
+                                <figure class="articlesList-item-img-wrap">
+                                    <img style="width: 255px; height: 165px;" class="articlesList-item-img"
+                                         src="<?= get_the_post_thumbnail_url(); ?>">
+                                </figure>
+                                <div class="articlesList-item-text-content">
+                                    <?php
+                                    $categories = get_the_category();
+                                    if ($categories) {
+                                        foreach ($categories as $category) {
+                                            echo '<p class="category-text category-text-technology">' . $category->name . '</p>';
+                                        }
+                                    }
+                                    ?>
+                                    <p class="title-4"><?php the_title(); ?></p>
+                                    <div class="counters">
+                                        <div class="counters-item"><i
+                                                    class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
+                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <?php $i++;
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </ul>
+            <?php echo do_shortcode('[ajax_load_more post_type="topics" meta_key="views" orderby="meta_value_num" order="DESC" offset="4" posts_per_page="16" pause="true" scroll="false" button_label="' . __('Смотреть больше', 'science-of-everything') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]'); ?>
         </section>
     </div>
 
@@ -190,7 +174,14 @@
         jQuery('.tags-list a').addClass('tags-one');
         jQuery('.article-content-text p').addClass('text-p');
         jQuery(document).ready(function () {
-            jQuery('table.em-calendar tbody').append('<tr> <th>Пн</th> <th>Вт</th> <th>Ср</th> <th>Чт</th> <th>Пт</th> <th>Сб</th> <th>Вс</th> </tr>');
+            jQuery('table.em-calendar tbody').prepend('<tr class="calendar-days"> <th>П</th> <th>В</th> <th>С</th> <th>Ч</th> <th>П</th> <th>С</th> <th>В</th> </tr>');
+        });
+        jQuery('.ajax-load-more-wrap').bind("DOMNodeInserted", function (e) {
+            jQuery('div.alm-reveal').addClass("articlesList-compact column small-12 row");
+        });
+        jQuery( document ).ready(function() {
+            jQuery('div.alm-btn-wrap button').addClass("button-more-light").wrap("<div class='column small-12'></div>");
+            jQuery('div.alm-btn-wrap button.button-more-light').append("<i class='icon-squares'></i>");
         });
     </script>
 
@@ -239,6 +230,14 @@
         tr.days-names td {
             font-weight: 700;
         }
-    </style>
 
+        #ajax-load-more {
+            width: 100%;
+        }
+
+        table.em-calendar .calendar-days th {
+            text-align: center;
+            font-weight: 700;
+        }
+    </style>
 <?php get_footer(); ?>

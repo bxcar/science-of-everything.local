@@ -70,9 +70,9 @@ if (get_the_ID() == '379') { ?>books-page<?php } ?>">
             <a href="<?= get_permalink(icl_object_id(429, 'page', true, ICL_LANGUAGE_CODE)); ?>" class="<?php if(!is_user_logged_in()) { ?>is-hidden<?php } ?>"><?php the_field('signature_authorized_user', 'option'); ?></a>
         </div>
         <button class="header-search button-round-outline"><i class="icon-search"></i></button>
-        <form class="header-searchForm is-hidden">
-            <input type="text" placeholder="Поиск">
-            <button class="header-searchForm-button" type="submit"><i class="icon-search"></i></button>
+        <form class="header-searchForm is-hidden searchform" name="searchform" role="search" method="get" id="searchform" action="<?php echo home_url('/') ?>">
+            <input name="s" id="s" type="text" placeholder="Поиск">
+            <button class="header-searchForm-button" id="searchsubmit" type="submit"><i class="icon-search"></i></button>
         </form>
     </div>
     <div class="header-nav-wrap is-hidden">
@@ -118,9 +118,9 @@ if (get_the_ID() == '379') { ?>books-page<?php } ?>">
                     </button>
                 </li>
                 <li>
-                    <form class="header-nav-search">
-                        <input type="text" name="search" placeholder="Поиск">
-                        <button type="submit"><i class="icon-search"></i></button>
+                    <form class="header-nav-search searchform"  name="searchform" role="search" method="get" id="searchform" action="<?php echo home_url('/') ?>">
+                        <input name="s" id="s" type="text" placeholder="Поиск">
+                        <button id="searchsubmit" type="submit"><i class="icon-search"></i></button>
                     </form>
                 </li>
             </ul>
