@@ -45,7 +45,10 @@ if (!function_exists('science_of_everything_setup')) :
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
-            'menu-1' => esc_html__('Primary', 'science-of-everything'),
+            'menu-1' => esc_html__('Primary-sidebar', 'science-of-everything'),
+            'menu-2-sidebar' => esc_html__('sidebar-2', 'science-of-everything'),
+            'menu-3-footer' => esc_html__('footer', 'science-of-everything'),
+            'menu-4-top' => esc_html__('top', 'science-of-everything'),
         ));
 
         /*
@@ -155,6 +158,13 @@ if (function_exists('acf_add_options_page')) {
         'page_title' => 'Темы',
         'menu_title' => 'Темы',
         'menu_slug' => 'categories',
+        'parent_slug' => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => 'Страница 404_',
+        'menu_title' => 'Страница 404',
+        'menu_slug' => 'page_404',
         'parent_slug' => 'theme-general-settings',
     ));
 }
@@ -294,6 +304,38 @@ function change_wp_search_size($query) {
     if ( $query->is_search ) // Make sure it is a search page
         $query->query_vars['posts_per_page'] = -1; // Change 10 to the number of posts you would like to show
 
+    if ( $query->is_category && !is_front_page()) {
+        $query->query_vars['posts_per_page'] = 9;
+        if (($_GET['sort'] == 'popular')) {
+            $query-> set('meta_key' ,'views');
+            $query-> set('orderby' ,'meta_value_num');
+            $query-> set('order' ,'DESC');
+        }
+    }
+
+
     return $query; // Return our modified query variables
 }
 add_filter('pre_get_posts', 'change_wp_search_size'); // Hook our custom function onto the request filter
+
+/*
+   functions.php
+   Use alm_query_args filter to pass data to relevanssi_do_query() then back to ALM.
+   https://connekthq.com/plugins/ajax-load-more/docs/filter-hooks/#alm_query_args
+*/
+/*function my_alm_query_args_relevanssi($args) {
+    $args = apply_filters('alm_relevanssi', $args);
+    return $args;
+}
+add_filter( 'alm_query_args_relevanssi', 'my_alm_query_args_relevanssi');*/
+
+function get_cat_slug($cat_id) {
+    $cat_id = (int) $cat_id;
+    $category = &get_category($cat_id);
+    return $category->slug;
+}
+
+/* Отключаем админ панель для всех, кроме администраторов. */
+if (!current_user_can('administrator')):
+    show_admin_bar(false);
+endif;

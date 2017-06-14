@@ -8,15 +8,16 @@
                     <button style="display: none;" id="searchsubmit" type="submit"><i class="icon-search"></i></button>
                 </form>
                 <p class="search-count"><i class="icon-search"></i>
-                    <span><?php global $wp_query; echo $wp_query->found_posts; ?></span>
+                    <span><?php global $wp_query;
+                        echo $wp_query->found_posts; ?></span>
                     <span class="hide-for-small-only">Результаты поиска</span>
                 </p>
             </div>
             <p class="search-hint">Введите для повторного поиска</p>
-            <ul class="articlesList-compact row">
-                <?php
-                if (have_posts()) {
-                    while (have_posts()) {
+            <?php
+            if (have_posts()) { ?>
+                <ul class="articlesList-compact row">
+                    <?php while (have_posts()) {
                         the_post(); ?>
                         <li class="columns column-block large-3 medium-4 small-12">
                             <a class="articlesList-item-text dark" href="<?php the_permalink(); ?>">
@@ -47,111 +48,18 @@
                                 </div>
                             </a>
                         </li>
-                        <?php
-                    }
-                } else {
-                    ?>
-                    <div>По вашему запросу ничего не найдено, попробуйте сформулировать ваш вопрос иначе</div>
-                    <?php
-                }
+                    <?php } ?>
+                </ul>
+            <?php } else {
                 ?>
-                <!--<li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                              href="authors-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-4.png"></figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="title-5 white">Анизотропию реликтового излучения распечатали на 3D-принтере</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                              href="authors-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-6.png"></figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="title-5 white">Комплекс молекулярных облаков Ореол Цефея скрывает в себе
-                                туманность Призрак</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                              href="authors-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-7.png"></figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="title-5 white">Главное за неделю: о флирте и насилии, замедлении старения и
-                                «звезде инопланетян»</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                              href="authors-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-8.png"></figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="title-5 white">Футуристический Лотос C-01 мотоциклов продано на аукционе</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                              href="authors-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-9.png"></figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="title-5 white">Фантастические световые установки по шкале Collectif</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                              href="authors-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-10.png">
-                        </figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="title-5 white">Потрясающие Минималистский Градиент Часы</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text dark"
-                                                                              href="authors-article.html">
-                        <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img"
-                                                                        src="img/articles-list-item-img-11.png">
-                        </figure>
-                        <div class="articlesList-item-text-content">
-                            <p class="title-5 white">3D Печатный веб Установка игры со светом</p>
-                            <div class="counters">
-                                <div class="counters-item"><i class="icon-time"></i>2 часа</div>
-                                <div class="counters-item"><i class="icon-comment"></i>113</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>-->
-            </ul>
-            <button class="button-more-light">Загрузить больше результатов поиска</button>
+                <p class="title-2">Извините, результатов не найдено.</p>
+                <?php
+            } ?>
+            <?php
+            //                $term = (isset($_GET['s'])) ? $_GET['s'] : '';
+            //                echo do_shortcode('[ajax_load_more id="relevanssi" search="'. $term .'" post_type="post, page, book, event, photos, topics, video-collections, videos" posts_per_page="-1" offset="10" pause="true" scroll="false" button_label="' . __('Загрузить больше результатов поиска','science-of-everything') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]');
+            ?>
+            <!--            <button class="button-more-light">Загрузить больше результатов поиска</button>-->
         </div>
     </div>
 <?php get_footer(); ?>

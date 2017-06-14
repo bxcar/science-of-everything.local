@@ -130,8 +130,17 @@ if(get_post_type() == 'photos') {?>
             $_SESSION['ix_past']++;
         }
     }
-} elseif (get_post_type() == 'topics') { ?>
-  <li class="columns column-block large-3 medium-4 small-12">
+} elseif ((get_post_type() == 'topics') && $_SESSION['category']) { ?>
+ <li class="articlesList-item-text columns column-block medium-6 small-12 large-4">
+                                <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
+                                    <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+                                </a>
+                                <p class="category-text category-text-technology"><?php single_cat_title(); ?></p>
+                                <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 35); ?></p>
+                            </li> 
+                                <?php } elseif(get_post_type() == 'topics') { ?>
+                                <li class="columns column-block large-3 medium-4 small-12">
                             <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
                                 <figure class="articlesList-item-img-wrap">
                                     <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
@@ -153,4 +162,4 @@ if(get_post_type() == 'photos') {?>
                                 </div>
                             </a>
                         </li>
-                                <?php } ?>
+<?php } ?>

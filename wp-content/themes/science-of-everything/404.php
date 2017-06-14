@@ -7,58 +7,30 @@
  * @package science-of-everything
  */
 
-get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'science-of-everything' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'science-of-everything' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( science_of_everything_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'science-of-everything' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'science-of-everything' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_footer();
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <title>Наука всего</title>
+    <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/app/img/favicon.png" type="image/png">
+    <?php wp_head(); ?>
+    <style>
+        .l-errorContent {
+            background: url("<?php the_field('background_image', 'option'); ?>") no-repeat center;
+        }
+    </style>
+</head>
+<body>
+<div class="l-errorContent">
+    <div class="errorContent-titleComplete">
+        <h1 class="errorContent-title"><?php the_field('large_text', 'option'); ?></h1>
+        <p class="errorContent-description"><?php the_field('small_text', 'option'); ?></p>
+    </div>
+</div>
+<?php wp_footer(); ?>
+</body>
+</html>

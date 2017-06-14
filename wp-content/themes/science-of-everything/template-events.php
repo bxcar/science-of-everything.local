@@ -8,6 +8,7 @@ $_SESSION['ix_upcoming'] = false;
 $_SESSION['upcoming_ev'] = false;
 $_SESSION['past_ev'] = false;
 $_SESSION['is_front_page'] = false;
+$_SESSION['category'] = false;
 get_header(); ?>
 
 <div class="mainWrap mainWrap-medium row">
