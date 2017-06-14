@@ -300,22 +300,24 @@ function login_wordpress($username, $password)
 
 add_filter('alm_query_args_past_events', 'past_events_list');*/
 
-function change_wp_search_size($query) {
-    if ( $query->is_search ) // Make sure it is a search page
+function change_wp_search_size($query)
+{
+    if ($query->is_search) // Make sure it is a search page
         $query->query_vars['posts_per_page'] = -1; // Change 10 to the number of posts you would like to show
 
-    if ( $query->is_category && !is_front_page()) {
+    if ($query->is_category && !is_front_page()) {
         $query->query_vars['posts_per_page'] = 9;
         if (($_GET['sort'] == 'popular')) {
-            $query-> set('meta_key' ,'views');
-            $query-> set('orderby' ,'meta_value_num');
-            $query-> set('order' ,'DESC');
+            $query->set('meta_key', 'views');
+            $query->set('orderby', 'meta_value_num');
+            $query->set('order', 'DESC');
         }
     }
 
 
     return $query; // Return our modified query variables
 }
+
 add_filter('pre_get_posts', 'change_wp_search_size'); // Hook our custom function onto the request filter
 
 /*
@@ -329,8 +331,9 @@ add_filter('pre_get_posts', 'change_wp_search_size'); // Hook our custom functio
 }
 add_filter( 'alm_query_args_relevanssi', 'my_alm_query_args_relevanssi');*/
 
-function get_cat_slug($cat_id) {
-    $cat_id = (int) $cat_id;
+function get_cat_slug($cat_id)
+{
+    $cat_id = (int)$cat_id;
     $category = &get_category($cat_id);
     return $category->slug;
 }
@@ -339,3 +342,98 @@ function get_cat_slug($cat_id) {
 if (!current_user_can('administrator')):
     show_admin_bar(false);
 endif;
+
+//extra user info in wp-admin
+add_action('show_user_profile', 'yoursite_extra_user_profile_fields');
+add_action('edit_user_profile', 'yoursite_extra_user_profile_fields');
+function yoursite_extra_user_profile_fields($user)
+{
+    ?>
+    <label class="generalForm-sub column small-12 medium-6 column-block"><span
+                class="generalForm-required"><?php _e('Имя', 'profile'); ?></span>
+        <input name="first-name" id="first-name" type="text" required
+               value="<?php the_author_meta('first_name', $current_user->ID); ?>">
+    </label>
+    <label class="generalForm-sub column small-12 medium-6 column-block">
+        <span class="generalForm-required"><?php _e('Фамилия', 'profile'); ?></span>
+        <input name="last-name" id="last-name" type="text" required
+               value="<?php the_author_meta('last_name', $current_user->ID); ?>">
+    </label>
+    <label class="generalForm-sub column small-12 medium-6 large-8 column-block">Вид деятельности
+        <input name="activity" id="activity" type="text" value="<?php echo esc_attr(get_the_author_meta('activity', $user->ID)); ?>">
+    </label>
+    <label class="generalForm-sub column small-12 medium-6 large-4 column-block">Город
+        <input name="city" id="city" type="text" value="<?php echo esc_attr(get_the_author_meta('city', $user->ID)); ?>">
+    </label>
+    <label class="generalForm-sub column small-12 column-block"><?php _e('Дополнительная информация', 'profile') ?>
+        <textarea name="description"
+                  id="description"><?php the_author_meta('description', $current_user->ID); ?></textarea>
+    </label>
+    <p class="generalForm-sub column small-12">Дата рождения</p>
+    <div class="column small-12 medium-4 column-block">
+        <select class="generalForm-select" name="birthday-day" id="birthday-day">
+            <?php if(empty(get_the_author_meta('birthday-day', $user->ID))) { ?>
+                <option selected="selected" disabled>День</option>
+                <?php for($iday = 1; $iday <= 31; $iday++) { ?>
+                    <option><?= $iday ?></option>
+                <?php } ?>
+            <?php } else {
+                for($iday = 1; $iday <= 31; $iday++) { ?>
+                    <option <?= get_the_author_meta('birthday-day', $user->ID) == $iday ? ' selected="selected"' : '';?>><?= $iday ?></option>
+                <?php }
+            } ?>
+        </select>
+    </div>
+    <div class="column small-12 medium-4 column-block">
+        <select class="generalForm-select" name="birthday-month" id="birthday-month">
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == '' ? ' selected="selected"' : '';?> disabled>Месяц</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Январь' ? ' selected="selected"' : '';?>>Январь</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Февраль' ? ' selected="selected"' : '';?>>Февраль</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Март' ? ' selected="selected"' : '';?>>Март</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Апрель' ? ' selected="selected"' : '';?>>Апрель</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Май' ? ' selected="selected"' : '';?>>Май</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Июнь' ? ' selected="selected"' : '';?>>Июнь</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Июль' ? ' selected="selected"' : '';?>>Июль</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Август' ? ' selected="selected"' : '';?>>Август</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Сентябрь' ? ' selected="selected"' : '';?>>Сентябрь</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Октябрь' ? ' selected="selected"' : '';?>>Октябрь</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Ноябрь' ? ' selected="selected"' : '';?>>Ноябрь</option>
+            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Декабрь' ? ' selected="selected"' : '';?>>Декабрь</option>
+        </select>
+    </div>
+    <div class="column small-12 medium-4 column-block">
+        <select class="generalForm-select" name="birthday-year" id="birthday-year">
+            <?php if(empty(get_the_author_meta('birthday-year', $user->ID))) { ?>
+                    <option selected="selected" disabled>Год</option>
+                <?php for($iy = 1960; $iy <= 2010; $iy++) { ?>
+                    <option><?= $iy ?></option>
+                <?php } ?>
+            <?php } else {
+                for($iy = 1960; $iy <= 2010; $iy++) { ?>
+                    <option <?= get_the_author_meta('birthday-year', $user->ID) == $iy ? ' selected="selected"' : '';?>><?= $iy ?></option>
+                <?php }
+            } ?>
+        </select>
+    </div>
+    <?php
+}
+
+//Save our extra registration user meta.
+add_action('profile_update', 'my_profile_update', 10, 2);
+function my_profile_update($user_id, $old_user_data)
+{
+    if (isset($_POST['activity']))
+        update_user_meta($user_id, 'activity', $_POST['activity']);
+
+    if (isset($_POST['city']))
+        update_user_meta($user_id, 'city', $_POST['city']);
+
+    if (isset($_POST['birthday-day']))
+        update_user_meta($user_id, 'birthday-day', $_POST['birthday-day']);
+
+    if (isset($_POST['birthday-month']))
+        update_user_meta($user_id, 'birthday-month', $_POST['birthday-month']);
+
+    if (isset($_POST['birthday-year']))
+        update_user_meta($user_id, 'birthday-year', $_POST['birthday-year']);
+}
