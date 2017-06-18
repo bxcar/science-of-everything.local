@@ -8,10 +8,13 @@ get_header(); ?>
             <div class="column small-12">
                 <div class="aboutAuthor-detail">
                     <div class="aboutAuthor-detail-innerWrap left">
-                        <div class="aboutAuthor-detail-item"><span class="medium">Город:</span> <span>Москва</span>
+                        <div class="aboutAuthor-detail-item"><span class="medium">Город:</span>
+                            <span><?php the_author_meta('city', get_current_user_id()); ?></span>
                         </div>
-                        <div class="aboutAuthor-detail-item"><span class="medium">Пол:</span> <span>Женский</span></div>
-                        <div class="aboutAuthor-detail-item"><span class="medium">Возраст:</span> <span>23 года</span>
+                        <!--                        <div class="aboutAuthor-detail-item"><span class="medium">Пол:</span> <span>Женский</span></div>-->
+                        <div class="aboutAuthor-detail-item"><span class="medium">Возраст:</span> <span><?=
+                                calculateAge(get_the_author_meta('birthday-day', get_current_user_id()), get_the_author_meta('birthday-month', get_current_user_id()), get_the_author_meta('birthday-year', get_current_user_id()));
+                                ?></span>
                         </div>
                     </div>
                     <div class="aboutAuthor-detail-innerWrap right">
@@ -22,13 +25,24 @@ get_header(); ?>
                 </div>
                 <div class="aboutAuthor-person">
                     <div class="aboutAuthor-person-photo">
-                        <figure><img src="img/author-avatar-2.png"></figure>
-                        <a class="aboutAuthor-person-photo-link settings" href="change-profile.html"
-                           title="Редактировать профайл"><i class="icon-settings"></i></a><a
-                                class="aboutAuthor-person-photo-link social fb" href="#"><i class="icon-fb"></i></a>
+                        <figure><?= get_wp_user_avatar(get_current_user_id()); ?></figure>
+                        <a class="aboutAuthor-person-photo-link settings"
+                           href="<?= get_permalink(icl_object_id(470, 'page', true, ICL_LANGUAGE_CODE)); ?>"
+                           title="Редактировать профайл"><i class="icon-settings"></i></a>
+                        <!--                        <a class="aboutAuthor-person-photo-link social fb" href="#"><i class="icon-fb"></i></a>-->
                     </div>
-                    <p class="aboutAuthor-person-name">Оксана Рыбина</p>
-                    <p class="aboutAuthor-person-status">Администратор</p>
+                    <p class="aboutAuthor-person-name"><?php the_author_meta('first_name', get_current_user_id()); echo ' '; the_author_meta('last_name', get_current_user_id()); ?></p>
+                    <p class="aboutAuthor-person-status"><?php
+                        $user_meta = get_userdata(get_current_user_id());
+                        if ($user_roles = $user_meta->roles[0] == 'administrator') {
+                            echo 'Администратор';
+                        } elseif ($user_roles = $user_meta->roles[0] == 'subscriber') {
+                            echo 'Пользователь';
+                        } elseif ($user_roles = $user_meta->roles[0] == 'author') {
+                            echo 'Автор';
+                        } else {
+                            echo $user_roles = $user_meta->roles[0];
+                        }//array of roles the user is part of.?></p>
                 </div>
                 <div class="aboutAuthor-counters"><a class="aboutAuthor-counters-one purple"
                                                      href="blog-author.html#author-share"><i
@@ -226,4 +240,10 @@ get_header(); ?>
             </div>
         </section>
     </div>
+<style>
+    .aboutAuthor-person-photo .avatar-default {
+        width: 100%;
+        height: 100%;
+    }
+</style>
 <?php get_footer(); ?>

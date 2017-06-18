@@ -75,6 +75,18 @@
         bottom: 0;
         z-index: 9999;
     }*/
+    .the_champ_sharing_container ul.the_champ_sharing_ul li:last-child i {
+        width: 60px !important;
+        background-image: linear-gradient(127deg, #5b529c 0%, #5b529c 100%);
+    }
+
+    .the_champ_square_count {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 40px;
+        font-family: "Gotham Pro", sans-serif;
+        outline: none;
+    }
 </style>
 <?php wp_footer(); ?>
 </body>

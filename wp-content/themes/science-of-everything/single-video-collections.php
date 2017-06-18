@@ -24,11 +24,7 @@
             <div class="shareSocial">
                 <button class="shareSocial-bookmark"><i class="icon-bookmark"></i><span>Довавить в закладку</span>
                 </button>
-                <button class="shareSocial-social fb"><i class="icon-fb"></i><span>35</span></button>
-                <button class="shareSocial-social tw"><i class="icon-twitter"></i><span>35</span></button>
-                <button class="shareSocial-social vk"><i class="icon-vk"></i><span>18</span></button>
-                <button class="shareSocial-social gp"><i class="icon-google-plus"></i><span>25</span></button>
-                <button class="shareSocial-more"><i class="icon-plus"></i></button>
+                <?php echo do_shortcode('[TheChamp-Sharing count="1"]') ?>
                 <div class="shareSocial-counters"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
             </div>
             <div class="tags">

@@ -352,65 +352,93 @@ function yoursite_extra_user_profile_fields($user)
     <label class="generalForm-sub column small-12 medium-6 column-block"><span
                 class="generalForm-required"><?php _e('Имя', 'profile'); ?></span>
         <input name="first-name" id="first-name" type="text" required
-               value="<?php the_author_meta('first_name', $current_user->ID); ?>">
+               value="<?php the_author_meta('first_name', get_current_user_id()); ?>">
     </label>
     <label class="generalForm-sub column small-12 medium-6 column-block">
         <span class="generalForm-required"><?php _e('Фамилия', 'profile'); ?></span>
         <input name="last-name" id="last-name" type="text" required
-               value="<?php the_author_meta('last_name', $current_user->ID); ?>">
+               value="<?php the_author_meta('last_name', get_current_user_id()); ?>">
     </label>
     <label class="generalForm-sub column small-12 medium-6 large-8 column-block">Вид деятельности
-        <input name="activity" id="activity" type="text" value="<?php echo esc_attr(get_the_author_meta('activity', $user->ID)); ?>">
+        <input name="activity" id="activity" type="text"
+               value="<?php echo esc_attr(get_the_author_meta('activity', get_current_user_id())); ?>">
     </label>
     <label class="generalForm-sub column small-12 medium-6 large-4 column-block">Город
-        <input name="city" id="city" type="text" value="<?php echo esc_attr(get_the_author_meta('city', $user->ID)); ?>">
+        <input name="city" id="city" type="text"
+               value="<?php echo esc_attr(get_the_author_meta('city', get_current_user_id())); ?>">
     </label>
     <label class="generalForm-sub column small-12 column-block"><?php _e('Дополнительная информация', 'profile') ?>
         <textarea name="description"
-                  id="description"><?php the_author_meta('description', $current_user->ID); ?></textarea>
+                  id="description"><?php the_author_meta('description', get_current_user_id()); ?></textarea>
     </label>
     <p class="generalForm-sub column small-12">Дата рождения</p>
     <div class="column small-12 medium-4 column-block">
         <select class="generalForm-select" name="birthday-day" id="birthday-day">
-            <?php if(empty(get_the_author_meta('birthday-day', $user->ID))) { ?>
+            <?php if (empty(get_the_author_meta('birthday-day', get_current_user_id()))) { ?>
                 <option selected="selected" disabled>День</option>
-                <?php for($iday = 1; $iday <= 31; $iday++) { ?>
+                <?php for ($iday = 1; $iday <= 31; $iday++) { ?>
                     <option><?= $iday ?></option>
                 <?php } ?>
             <?php } else {
-                for($iday = 1; $iday <= 31; $iday++) { ?>
-                    <option <?= get_the_author_meta('birthday-day', $user->ID) == $iday ? ' selected="selected"' : '';?>><?= $iday ?></option>
+                for ($iday = 1; $iday <= 31; $iday++) { ?>
+                    <option <?= get_the_author_meta('birthday-day', get_current_user_id()) == $iday ? ' selected="selected"' : ''; ?>><?= $iday ?></option>
                 <?php }
             } ?>
         </select>
     </div>
     <div class="column small-12 medium-4 column-block">
         <select class="generalForm-select" name="birthday-month" id="birthday-month">
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == '' ? ' selected="selected"' : '';?> disabled>Месяц</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Январь' ? ' selected="selected"' : '';?>>Январь</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Февраль' ? ' selected="selected"' : '';?>>Февраль</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Март' ? ' selected="selected"' : '';?>>Март</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Апрель' ? ' selected="selected"' : '';?>>Апрель</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Май' ? ' selected="selected"' : '';?>>Май</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Июнь' ? ' selected="selected"' : '';?>>Июнь</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Июль' ? ' selected="selected"' : '';?>>Июль</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Август' ? ' selected="selected"' : '';?>>Август</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Сентябрь' ? ' selected="selected"' : '';?>>Сентябрь</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Октябрь' ? ' selected="selected"' : '';?>>Октябрь</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Ноябрь' ? ' selected="selected"' : '';?>>Ноябрь</option>
-            <option <?= get_the_author_meta('birthday-month', $user->ID) == 'Декабрь' ? ' selected="selected"' : '';?>>Декабрь</option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == '' ? ' selected="selected"' : ''; ?>
+                    disabled>Месяц
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Январь' ? ' selected="selected"' : ''; ?>>
+                Январь
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Февраль' ? ' selected="selected"' : ''; ?>>
+                Февраль
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Март' ? ' selected="selected"' : ''; ?>>
+                Март
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Апрель' ? ' selected="selected"' : ''; ?>>
+                Апрель
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Май' ? ' selected="selected"' : ''; ?>>
+                Май
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Июнь' ? ' selected="selected"' : ''; ?>>
+                Июнь
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Июль' ? ' selected="selected"' : ''; ?>>
+                Июль
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Август' ? ' selected="selected"' : ''; ?>>
+                Август
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Сентябрь' ? ' selected="selected"' : ''; ?>>
+                Сентябрь
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Октябрь' ? ' selected="selected"' : ''; ?>>
+                Октябрь
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Ноябрь' ? ' selected="selected"' : ''; ?>>
+                Ноябрь
+            </option>
+            <option <?= get_the_author_meta('birthday-month', get_current_user_id()) == 'Декабрь' ? ' selected="selected"' : ''; ?>>
+                Декабрь
+            </option>
         </select>
     </div>
     <div class="column small-12 medium-4 column-block">
         <select class="generalForm-select" name="birthday-year" id="birthday-year">
-            <?php if(empty(get_the_author_meta('birthday-year', $user->ID))) { ?>
-                    <option selected="selected" disabled>Год</option>
-                <?php for($iy = 1960; $iy <= 2010; $iy++) { ?>
+            <?php if (empty(get_the_author_meta('birthday-year', get_current_user_id()))) { ?>
+                <option selected="selected" disabled>Год</option>
+                <?php for ($iy = 1960; $iy <= 2010; $iy++) { ?>
                     <option><?= $iy ?></option>
                 <?php } ?>
             <?php } else {
-                for($iy = 1960; $iy <= 2010; $iy++) { ?>
-                    <option <?= get_the_author_meta('birthday-year', $user->ID) == $iy ? ' selected="selected"' : '';?>><?= $iy ?></option>
+                for ($iy = 1960; $iy <= 2010; $iy++) { ?>
+                    <option <?= get_the_author_meta('birthday-year', get_current_user_id()) == $iy ? ' selected="selected"' : ''; ?>><?= $iy ?></option>
                 <?php }
             } ?>
         </select>
@@ -437,3 +465,91 @@ function my_profile_update($user_id, $old_user_data)
     if (isset($_POST['birthday-year']))
         update_user_meta($user_id, 'birthday-year', $_POST['birthday-year']);
 }
+
+/*function my_before_avatar() {
+  echo '<div id="my-avatar">';
+}
+add_action('wpua_before_avatar', 'my_before_avatar');
+
+function my_after_avatar() {
+    echo '</div>';
+}
+add_action('wpua_after_avatar', 'my_after_avatar');*/
+
+
+//date in mm/dd/yyyy format; or it can be in other formats as well
+function calculateAge($day, $month, $year)
+{
+    if($month == 'Январь') {
+        $month = 1;
+    } elseif($month == 'Февраль') {
+        $month = 2;
+    } elseif($month == 'Март') {
+        $month = 3;
+    } elseif($month == 'Апрель') {
+        $month = 4;
+    } elseif($month == 'Май') {
+        $month = 5;
+    } elseif($month == 'Июнь') {
+        $month = 6;
+    } elseif($month == 'Июль') {
+        $month = 7;
+    } elseif($month == 'Август') {
+        $month = 8;
+    } elseif($month == 'Сентябрь') {
+        $month = 9;
+    } elseif($month == 'Октябрь') {
+        $month = 10;
+    } elseif($month == 'Ноябрь') {
+        $month = 11;
+    } elseif($month == 'Декабрь') {
+        $month = 12;
+    } else {
+        $month = '';
+    }
+
+    if(($day == '') || ($month == '') || ($year == '')) {
+        return 'Не указан';
+    }
+
+    $birthDate = "$month/$day/$year";
+//explode the date to get month, day and year
+    $birthDate = explode("/", $birthDate);
+//get age from date or birthdate
+    $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+        ? ((date("Y") - $birthDate[2]) - 1)
+        : (date("Y") - $birthDate[2]));
+    return $age . ' ' . get_num_ending($age, array('год', 'года', 'лет'));
+}
+
+/**
+ * Функция возвращает окончание для множественного числа слова на основании числа и массива окончаний
+ * @param  $number int Число на основе которого нужно сформировать окончание
+ * @param  $ending_arr  array Массив слов с правильными окончаниями для чисел (1, 2, 5),
+ *         например array('комментарий', 'комментария', 'комментариев')
+ * @return string
+ */
+function get_num_ending($number, $ending_arr)
+{
+    $number = $number % 100;
+    if ($number >= 11 && $number <= 19) {
+        $ending = $ending_arr[2];
+    }
+    else {
+        $i = $number % 10;
+        switch ($i) {
+            case (1):
+                $ending = $ending_arr[0];
+                break;
+            case (2):
+            case (3):
+            case (4):
+                $ending = $ending_arr[1];
+                break;
+            default:
+                $ending = $ending_arr[2];
+        }
+    }
+    return $ending;
+}
+

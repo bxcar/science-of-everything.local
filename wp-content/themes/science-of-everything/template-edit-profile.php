@@ -65,11 +65,12 @@ get_header(); ?>
     <section class="l-changeProfile">
         <div class="mainWrap mainWrap-medium row">
             <div class="changeProfile-portrait column small-12">
-                <button class="changeProfile-portrait-delete"><i class="icon-close3"></i></button>
-                <figure class="changeProfile-portrait-avatar"><img src="img/default-avatar.png"></figure>
+<!--                <button class="changeProfile-portrait-delete"><i class="icon-close3"></i></button>-->
+                <figure class="changeProfile-portrait-avatar"><?= get_wp_user_avatar($current_user->ID) ?></figure>
                 <label class="changeProfile-portrait-upload"><span
                             class="changeProfile-portrait-upload-button button button-primary">Загрузить фото</span>
-                    <input type="file">
+<!--                    <input type="file">-->
+                    <?= do_shortcode('[avatar_upload] '); ?>
                 </label>
             </div>
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -79,13 +80,15 @@ get_header(); ?>
                     </p><!-- .warning -->
                 <?php else : ?>
                     <?php if (count($error) > 0) echo '<p class="error">' . implode("<br />", $error) . '</p>'; ?>
-                    <form method="post" id="adduser" class="generalForm changeProfile-form column small-12 medium-9 row" action="<?php the_permalink(); ?>">
+                    <form method="post" id="adduser" class="generalForm changeProfile-form column small-12 medium-9 row"
+                          action="<?php the_permalink(); ?>">
                         <?php
                         //action hook for plugin and extra fields
                         do_action('edit_user_profile', $current_user);
                         ?>
                         <p class="generalForm-sub column small-12">Социальные сети</p>
-                        <p class="generalForm-hint column small-12">Нажмите на соответствующую иконку соц. сети, чтобы связать
+                        <p class="generalForm-hint column small-12">Нажмите на соответствующую иконку соц. сети, чтобы
+                            связать
                             ее с
                             вашим аккаунтом</p>
                         <div class="changeProfile-form-social vk column small-12 medium-6 large-4 column-block">
@@ -124,7 +127,7 @@ get_header(); ?>
                                     class="submit button button button-primary">
                                 <?php _e('Обновить', 'profile'); ?>
                             </button>
-                            <a class="button button-alert" href="user-account.html">Отменить</a>
+<!--                            <a class="button button-alert" href="user-account.html">Отменить</a>-->
                             <?php wp_nonce_field('update-user') ?>
                             <input name="action" type="hidden" id="action" value="update-user"/>
                         </div><!-- .form-submit -->
@@ -138,5 +141,23 @@ get_header(); ?>
             <?php endif; ?>
         </div>
     </section>
+    <style>
+        .changeProfile-portrait-avatar img {
+            width: 100% !important;
+            height: auto !important;
+        }
 
+        .wpua-edit-container,
+        div.updated {
+            display: none;
+        }
+
+        span.changeProfile-portrait-upload-button {
+            cursor: pointer;
+        }
+    </style>
+<script>
+    jQuery('.wpua-edit p.submit').addClass('changeProfile-portrait-upload-button button button-primary').css('margin-top', '10px');
+    jQuery('.wpua-edit p.submit input').val('Обновить фото');
+</script>
 <?php get_footer(); ?>
