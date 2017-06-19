@@ -280,25 +280,25 @@ function login_wordpress($username, $password)
 }
 
 
-/*function past_events_list($args)
+function author_posts_list($args)
 {
 
     // ALM Shortcode
     // [ajax_load_more id="popular_photos" posts_per_page="6" button_label="More Photos"]
     // 'popular_photos' is the value of the 'id' parameter in the shortcode.
 
-    $args['post_type'] = 'event';
-//    $args['meta_key'] = strtotime('_event_start_date');
+//    $args['post_type'] = 'post';
 //    $args['meta_value'] =  time();
 //    $args['meta_compare'] = '<=';
-    $args['orderby'] = 'meta_value';
-    $args['order'] = 'ASC';
+//    $args['orderby'] = 'meta_value';
+//    $args['order'] = 'ASC';
+    $args['post_status'] = array('publish', 'pending', 'trash');
 
     return $args;
 
 }
 
-add_filter('alm_query_args_past_events', 'past_events_list');*/
+add_filter('alm_query_args_author_posts', 'author_posts_list');
 
 function change_wp_search_size($query)
 {
@@ -480,35 +480,35 @@ add_action('wpua_after_avatar', 'my_after_avatar');*/
 //date in mm/dd/yyyy format; or it can be in other formats as well
 function calculateAge($day, $month, $year)
 {
-    if($month == 'Январь') {
+    if ($month == 'Январь') {
         $month = 1;
-    } elseif($month == 'Февраль') {
+    } elseif ($month == 'Февраль') {
         $month = 2;
-    } elseif($month == 'Март') {
+    } elseif ($month == 'Март') {
         $month = 3;
-    } elseif($month == 'Апрель') {
+    } elseif ($month == 'Апрель') {
         $month = 4;
-    } elseif($month == 'Май') {
+    } elseif ($month == 'Май') {
         $month = 5;
-    } elseif($month == 'Июнь') {
+    } elseif ($month == 'Июнь') {
         $month = 6;
-    } elseif($month == 'Июль') {
+    } elseif ($month == 'Июль') {
         $month = 7;
-    } elseif($month == 'Август') {
+    } elseif ($month == 'Август') {
         $month = 8;
-    } elseif($month == 'Сентябрь') {
+    } elseif ($month == 'Сентябрь') {
         $month = 9;
-    } elseif($month == 'Октябрь') {
+    } elseif ($month == 'Октябрь') {
         $month = 10;
-    } elseif($month == 'Ноябрь') {
+    } elseif ($month == 'Ноябрь') {
         $month = 11;
-    } elseif($month == 'Декабрь') {
+    } elseif ($month == 'Декабрь') {
         $month = 12;
     } else {
         $month = '';
     }
 
-    if(($day == '') || ($month == '') || ($year == '')) {
+    if (($day == '') || ($month == '') || ($year == '')) {
         return 'Не указан';
     }
 
@@ -534,8 +534,7 @@ function get_num_ending($number, $ending_arr)
     $number = $number % 100;
     if ($number >= 11 && $number <= 19) {
         $ending = $ending_arr[2];
-    }
-    else {
+    } else {
         $i = $number % 10;
         switch ($i) {
             case (1):
@@ -553,3 +552,44 @@ function get_num_ending($number, $ending_arr)
     return $ending;
 }
 
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts()
+{
+    $user = wp_get_current_user();
+    if (in_array('contributor', (array)$user->roles)) {
+        echo '<style>
+                #wpadminbar #wp-admin-bar-root-default li:nth-child(2), 
+                #wpadminbar #wp-admin-bar-root-default li:nth-child(4), 
+                #wpadminbar #wp-admin-bar-root-default li:nth-child(5), 
+                #wpadminbar #wp-admin-bar-root-default li:nth-child(6), 
+                #wpadminbar #wp-admin-bar-root-default li:nth-child(7),
+                #wp-admin-bar-edit-profile,
+                #wp-admin-bar-user-info,
+                #dashboard_right_now .main .comment-count,
+                #dashboard_right_now .main .page-count,
+                #wp-version-message,
+                #advanced-sortables,
+                #postbox-container-2,
+                #content-score,
+                #keyword-score,
+                #mceu_14,
+                #mceu_15 {
+                  display: none !important;
+                } 
+                
+                #wp-admin-bar-logout {
+                    width: 50px !important;
+                    margin-left: 0 !important;
+                }
+              </style>';
+    }
+}
+
+function allow_contributor_uploads() {
+    $contributor = get_role('contributor');
+    $contributor->add_cap('upload_files');
+}
+if ( current_user_can('contributor') && !current_user_can('upload_files') ) {
+    add_action('admin_init', 'allow_contributor_uploads');
+}

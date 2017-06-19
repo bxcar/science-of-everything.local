@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(get_post_type() == 'photos') {?>
-<li class="articlesList-item-text columns column-block medium-6 small-12 large-4 articlesList-medium">
+    <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 articlesList-medium">
         <a
                 class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>"><img
                     class="articlesList-item-img" src="<?php the_field('post_image'); ?>"></a><a
@@ -15,28 +15,28 @@ if(get_post_type() == 'photos') {?>
         </p>
     </li>
 <?php } elseif ((get_post_type() == 'videos') || (get_post_type() == 'video-collections')) { ?>
-   <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 articlesList-medium-plus">
-                                <a class="articlesList-item-img-wrap articlesList-item-video"
-                                   href="<?php the_permalink(); ?>"><!--
+    <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 articlesList-medium-plus">
+        <a class="articlesList-item-img-wrap articlesList-item-video"
+           href="<?php the_permalink(); ?>"><!--
                                 --><img class="articlesList-item-img" src="https://img.youtube.com/vi/<?php
-                                    the_field('video_id'); ?>/0.jpg""></a><!--
+            the_field('video_id'); ?>/0.jpg""></a><!--
                                     --><a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                <div class="counters">
-                                    <div class="counters-item"><i
-                                                class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                </div>
-                                <p class="text-p"><?= strip_tags(get_field('description')); ?>
-                                </p>
-                            </li>
-                                <?php } elseif (get_post_type() == 'book') { ?>
-  <li class="articlesList-item-book columns medium-6 small-12 large-3">
-                            <a class="articlesList-item-book-img" href="<?php the_permalink(); ?>">
-                                <img src="<?php the_field('book_mini'); ?>"></a>
-                            <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            <p class="text-p"><?php the_field('short description'); ?></p>
-                        </li>
-                                <?php } elseif ((get_post_type() == 'event') && ($_SESSION['upcoming_ev'] == true) && ($_SESSION['past_ev'] == false)) {
+        <div class="counters">
+            <div class="counters-item"><i
+                        class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
+            <div class="counters-item"><i class="icon-comment"></i>113</div>
+        </div>
+        <p class="text-p"><?= strip_tags(get_field('description')); ?>
+        </p>
+    </li>
+<?php } elseif (get_post_type() == 'book') { ?>
+    <li class="articlesList-item-book columns medium-6 small-12 large-3">
+        <a class="articlesList-item-book-img" href="<?php the_permalink(); ?>">
+            <img src="<?php the_field('book_mini'); ?>"></a>
+        <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <p class="text-p"><?php the_field('short description'); ?></p>
+    </li>
+<?php } elseif ((get_post_type() == 'event') && ($_SESSION['upcoming_ev'] == true) && ($_SESSION['past_ev'] == false)) {
     if (($alm_item == 1) && !$_SESSION['ix_upcoming']) {
         $_SESSION['ix_upcoming'] = 0;
     }
@@ -131,35 +131,72 @@ if(get_post_type() == 'photos') {?>
         }
     }
 } elseif ((get_post_type() == 'topics') && $_SESSION['category']) { ?>
- <li class="articlesList-item-text columns column-block medium-6 small-12 large-4">
-                                <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
-                                    <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
-                                </a>
-                                <p class="category-text category-text-technology"><?php single_cat_title(); ?></p>
-                                <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 35); ?></p>
-                            </li> 
-                                <?php } elseif(get_post_type() == 'topics') { ?>
-                                <li class="columns column-block large-3 medium-4 small-12">
-                            <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
-                                <figure class="articlesList-item-img-wrap">
-                                    <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
-                                </figure>
-                                <div class="articlesList-item-text-content">
-                                    <?php
-                                    $categories = get_the_category();
-                                    if ($categories) {
-                                        foreach ($categories as $category) {
-                                            echo '<p class="category-text category-text-technology">' . $category->name . '</p>';
-                                        }
-                                    }
-                                    ?>
-                                    <p class="title-4"><?php the_title(); ?></p>
-                                    <div class="counters">
-                                        <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
+    <li class="articlesList-item-text columns column-block medium-6 small-12 large-4">
+        <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
+            <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+        </a>
+        <p class="category-text category-text-technology"><?php single_cat_title(); ?></p>
+        <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 35); ?></p>
+    </li>
+<?php } elseif(get_post_type() == 'topics') { ?>
+    <li class="columns column-block large-3 medium-4 small-12">
+        <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
+            <figure class="articlesList-item-img-wrap">
+                <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+            </figure>
+            <div class="articlesList-item-text-content">
+                <?php
+                $categories = get_the_category();
+                if ($categories) {
+                    foreach ($categories as $category) {
+                        echo '<p class="category-text category-text-technology">' . $category->name . '</p>';
+                    }
+                }
+                ?>
+                <p class="title-4"><?php the_title(); ?></p>
+                <div class="counters">
+                    <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
+                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                </div>
+            </div>
+        </a>
+    </li>
+<?php } elseif(get_post_type() == 'post') { ?>
+    <li class="columns column-block large-3 medium-4 small-12 edit <?php if (get_post_status() == 'pending') { ?>
+                                label-on-moderate
+                            <?php } elseif (get_post_status() == 'trash') { ?>
+                                label-rejected
+                            <?php } else { ?>
+                                label-posted
+                            <?php } ?>">
+        <a class="<?php if(get_post_status() == 'trash') { echo 'trash '; }?>articlesList-item-text dark" href="<?php the_permalink(); ?>">
+            <figure class="articlesList-item-img-wrap">
+                <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+            </figure>
+            <div class="articlesList-item-text-content">
+                <p class="title-5 white"><?php the_title(); ?></p>
+                <div class="counters">
+                    <div class="counters-item"><i
+                                class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
+                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                </div>
+            </div>
+        </a>
+                                <?php if (get_post_status() == 'trash') { ?>
+                                    <script>
+                                        jQuery("a.articlesList-item-text.dark.trash").click(function( event ) {
+                                            event.preventDefault();
+                                        }).css('cursor', 'default');
+                                    </script>
+                                <?php } ?>
+        <div class="articlesList-item-edit">
+            <?php if (get_post_status() == 'pending') { ?>
+                <a class="articlesList-item-edit-edit" href="<?= get_edit_post_link(); ?>">
+                    <i class="icon-pencil"></i>
+                </a>
+            <?php } ?>
+            <!--                                    <button class="articlesList-item-edit-delete"><i class="icon-close2"></i></button>-->
+        </div>
+    </li>
 <?php } ?>
