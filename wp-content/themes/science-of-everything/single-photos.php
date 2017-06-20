@@ -38,7 +38,7 @@
             </div>
         </section>
         <div class="shareSocial">
-            <button class="shareSocial-bookmark"><i class="icon-bookmark"></i><span>Довавить в закладку</span></button>
+            <?php the_favorites_button(); ?>
             <?php echo do_shortcode('[TheChamp-Sharing count="1"]') ?>
             <!--<button class="shareSocial-social fb"><i class="icon-fb"></i><span>35</span></button>
             <button class="shareSocial-social tw"><i class="icon-twitter"></i><span>35</span></button>

@@ -56,12 +56,13 @@ get_header(); ?>
                         <p class="text-p">Поделились</p></a><a class="aboutAuthor-counters-one blue"
                                                                href="blog-author.html#author-bookmarks"><i
                                 class="aboutAuthor-counters-one-icon icon-bookmark-o"></i><span
-                                class="aboutAuthor-counters-one-number">41</span>
+                                class="aboutAuthor-counters-one-number"><?php the_user_favorites_count(); ?></span>
                         <p class="text-p">Закладок</p></a><a class="aboutAuthor-counters-one red"
                                                              href="<?= get_site_url(); ?>/wp-admin/edit.php"><i
                                 class="aboutAuthor-counters-one-icon icon-newspaper"></i><span
                                 class="aboutAuthor-counters-one-number"><?= count_user_posts(get_current_user_id(), 'post'); ?></span>
-                        <p class="text-p">Статьи</p></a></div>
+                        <p class="text-p">Статьи</p></a>
+                </div>
             </div>
         </div>
     </section>

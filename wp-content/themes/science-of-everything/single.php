@@ -38,7 +38,8 @@ query_posts($query_string. '&post_status=trash');?>
                             class="icon-twitter"></i></a><a class="in" href="#"><i class="icon-linkedin"></i></a></div>
         </div>
         <div class="shareSocial">
-            <button class="shareSocial-bookmark"><i class="icon-bookmark"></i><span>Довавить в закладку</span></button>
+            <?php the_favorites_button(); ?>
+<!--            <button class="shareSocial-bookmark"><i class="icon-bookmark"></i><span>Довавить в закладку</span></button>-->
             <?php echo do_shortcode('[TheChamp-Sharing count="1"]') ?>
             <div class="shareSocial-counters"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
         </div>

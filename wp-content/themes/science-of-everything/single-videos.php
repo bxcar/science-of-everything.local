@@ -22,8 +22,7 @@
                 </div>
             </section>
             <div class="shareSocial">
-                <button class="shareSocial-bookmark"><i class="icon-bookmark"></i><span>Довавить в закладку</span>
-                </button>
+                <?php the_favorites_button(); ?>
                 <?php echo do_shortcode('[TheChamp-Sharing count="1"]') ?>
                 <div class="shareSocial-counters"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
             </div>
