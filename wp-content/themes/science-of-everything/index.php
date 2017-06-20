@@ -18,6 +18,7 @@ $_SESSION['upcoming_ev'] = false;
 $_SESSION['past_ev'] = false;
 $_SESSION['is_front_page'] = true;
 $_SESSION['category'] = false;
+$_SESSION['blog'] = false;
 get_header(); ?>
 <?php //the_field('top_slider_category');?>
 <div class="mainWrap mainWrap-medium">

@@ -225,9 +225,9 @@
         </section>
     </div>
 <style>
-    .mainWrap-medium > .l-article:first-child {
+    /*.mainWrap-medium > .l-article:first-child {
         padding-top: 0;
-    }
+    }*/
 
     .siblingsArticle-one-bg {
         top: -85px;

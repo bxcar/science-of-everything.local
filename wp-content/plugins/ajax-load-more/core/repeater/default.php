@@ -162,6 +162,21 @@ if(get_post_type() == 'photos') {?>
             </div>
         </a>
     </li>
+<?php } elseif((get_post_type() == 'post') && ($_SESSION['blog'] == true)) { ?>
+    <li class="articlesList-item-text columns column-block medium-6 small-12 large-4<?php if ($i == 1) {
+        echo ' articlesList-medium';
+    } ?>">
+        <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
+            <img class="articlesList-item-img" style="width: 350px; height: 230px;" src="<?php the_post_thumbnail_url(); ?>"></a><a
+                class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <div class="counters">
+            <div class="counters-item"><i class="icon-user"></i><?php the_author(); ?></div>
+            <div class="counters-item"><i
+                        class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
+            <div class="counters-item"><i class="icon-comment"></i>113</div>
+        </div>
+        <p class="text-p"><?= get_the_excerpt(); ?></p>
+    </li>
 <?php } elseif(get_post_type() == 'post') { ?>
     <li class="columns column-block large-3 medium-4 small-12 edit <?php if (get_post_status() == 'pending') { ?>
                                 label-on-moderate
@@ -183,13 +198,13 @@ if(get_post_type() == 'photos') {?>
                 </div>
             </div>
         </a>
-                                <?php if (get_post_status() == 'trash') { ?>
-                                    <script>
-                                        jQuery("a.articlesList-item-text.dark.trash").click(function( event ) {
-                                            event.preventDefault();
-                                        }).css('cursor', 'default');
-                                    </script>
-                                <?php } ?>
+        <?php if (get_post_status() == 'trash') { ?>
+            <script>
+                jQuery("a.articlesList-item-text.dark.trash").click(function( event ) {
+                    event.preventDefault();
+                }).css('cursor', 'default');
+            </script>
+        <?php } ?>
         <div class="articlesList-item-edit">
             <?php if (get_post_status() == 'pending') { ?>
                 <a class="articlesList-item-edit-edit" href="<?= get_edit_post_link(); ?>">

@@ -6,6 +6,7 @@ $_SESSION['upcoming_ev'] = false;
 $_SESSION['past_ev'] = false;
 $_SESSION['is_front_page'] = false;
 $_SESSION['category'] = true;
+$_SESSION['blog'] = false;
 get_header(); ?>
     <div class="mainWrap mainWrap-medium">
         <section class="l-articles row">

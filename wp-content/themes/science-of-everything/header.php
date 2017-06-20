@@ -39,7 +39,8 @@
 <body class="<?php if (is_front_page()) { ?>home-page<?php }
 if (get_the_ID() == '123') { ?>contact-page<?php }
 if (get_the_ID() == '141') { ?>about-page<?php }
-if (get_the_ID() == '379') { ?>books-page<?php } ?>">
+if (get_the_ID() == '379') { ?>books-page<?php }
+if (is_single()) { ?>article-page<?php } ?>">
 
 <script>
     window.fbAsyncInit = function () {

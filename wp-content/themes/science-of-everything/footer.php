@@ -18,6 +18,7 @@
         jQuery('form.footerSubscribe-form input[type="submit"]').replaceWith('<button type="submit"><i class="icon-angle-right"></i></button>');
         jQuery('<span class="ajax-loader"></span>').insertAfter('button[type="submit"]');
     </script>
+    <span class="close"></span>
 </div>
 <footer class="l-footer"><a class="footer-logo" href="<?php echo home_url(); ?>"><img
                 src="<?php the_field('footer_logo', 'option'); ?>"></a>
@@ -38,7 +39,7 @@
         }
 
         span.wpcf7-not-valid-tip,
-        div.wpcf7-mail-sent-ok{
+        div.wpcf7-mail-sent-ok {
             margin-top: 10px;
         }
 
@@ -69,12 +70,13 @@
     <button class="up-button"><i class="icon-angle-up"></i></button>
 </footer>
 <style>
-    /*div.l-footerSubscibe {
+    div.l-footerSubscibe {
         position: fixed;
         width: 100%;
         bottom: 0;
         z-index: 9999;
-    }*/
+    }
+
     .the_champ_sharing_container ul.the_champ_sharing_ul li:last-child i {
         width: 60px !important;
         background-image: linear-gradient(127deg, #5b529c 0%, #5b529c 100%);
@@ -87,7 +89,69 @@
         font-family: "Gotham Pro", sans-serif;
         outline: none;
     }
+
+    <?php
+    $user = wp_get_current_user();
+    if ( in_array( 'administrator', (array) $user->roles ) ) { ?>
+    .mainWrap {
+        margin-top: -32px;
+    }
+    <?php } ?>
+
+    .l-footerSubscibe .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 32px;
+        height: 32px;
+        opacity: 0.3;
+    }
+    .l-footerSubscibe .close:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    .l-footerSubscibe .close:before, .l-footerSubscibe .close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 23px;
+        width: 2px;
+        background-color: #fff;
+    }
+    .l-footerSubscibe .close:before {
+        transform: rotate(45deg);
+    }
+    .l-footerSubscibe .close:after {
+        transform: rotate(-45deg);
+    }
 </style>
+<script>
+    if (document.cookie.indexOf("subscribe=") >= 0) {
+        jQuery(".l-footerSubscibe").css({"display": "none"});
+    }
+    function subscribeCloseCF7() {
+        setTimeout(subscribeClose, 12000);
+    }
+    function subscribeClose() {
+        jQuery(".l-footerSubscibe").css({
+            "-webkit-transition": "opacity 3s ease-in-out",
+            "-moz-transition": "opacity 3s ease-in-out",
+            "-ms-transition": "opacity 3s ease-in-out",
+            "-o-transition": "opacity 3s ease-in-out",
+            "opacity": "0"
+        });
+    }
+    function subscribeDisplayNoneCF7() {
+        setTimeout(subscribeDisplayNone, 15000);
+    }
+    function subscribeDisplayNone() {
+        jQuery(".l-footerSubscibe").css({"display": "none"});
+    }
+
+    jQuery( ".l-footerSubscibe .close" ).click(function() {
+        subscribeDisplayNone();
+    });
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>
