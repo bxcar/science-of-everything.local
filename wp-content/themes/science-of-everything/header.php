@@ -34,13 +34,14 @@
     </style>
     <?php include_once "app/js/register-ajax.php" ?>
     <?php include_once "app/js/sign-in-ajax.php" ?>
-<!--    --><?php //include_once "app/js/pass-recover-ajax.php" ?>
+    <!--    --><?php //include_once "app/js/pass-recover-ajax.php" ?>
 </head>
 <body class="<?php if (is_front_page()) { ?>home-page<?php }
 if (get_the_ID() == '123') { ?>contact-page<?php }
 if (get_the_ID() == '141') { ?>about-page<?php }
-if (get_the_ID() == '379') { ?>books-page<?php }
-if (is_single()) { ?>article-page<?php } ?>">
+if ((get_the_ID() == '379')  || is_post_type_archive('book')) { ?>books-page<?php }
+if (is_single()) { ?>article-page<?php }
+if ((get_post_type() == 'special') || is_post_type_archive('special')) { ?> special-article-page<?php } ?>">
 
 <script>
     window.fbAsyncInit = function () {
@@ -70,7 +71,16 @@ if (is_single()) { ?>article-page<?php } ?>">
     <div class="header-bg"></div>
     <div class="header-menu">
         <button class="header-hamburger"><i class="icon-menu"></i></button>
-        <ul class="header-navTop">
+        <?php
+        echo str_replace('sub-menu', 'header-nav-dropdown-list', wp_nav_menu(array(
+                'echo' => false,
+                'theme_location' => 'menu-4-top',
+                'items_wrap' => '<ul class="header-navTop">%3$s</ul>',
+                'container' => 'false'
+            ))
+        );
+        ?>
+        <!--<ul class="header-navTop">
             <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
             <li><a class="header-link" href="rubrbooksic.html"><span>Технологии</span></a></li>
             <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
@@ -88,7 +98,7 @@ if (is_single()) { ?>article-page<?php } ?>">
                     <li><a class="header-link" href="special.html">Culture matters</a></li>
                 </ul>
             </li>
-        </ul>
+        </ul>-->
         <div class="header-login"><i class="icon-user"></i>
             <!-- Title when user is guest-->
             <span class="<?php if (is_user_logged_in()) { ?>is-hidden<?php } ?>"><?php the_field('signature_unauthorized_user', 'option'); ?></span>
@@ -130,6 +140,7 @@ if (is_single()) { ?>article-page<?php } ?>">
                 jQuery(".menu-item-has-children > a").wrapInner("<span class='header-nav-dropdown header-link'></span>");
                 jQuery(".menu-item-has-children > a span").unwrap();
                 jQuery(".header-nav-list > li a").addClass("header-link").wrapInner("<span></span>");
+                jQuery(".header-navTop > li a").addClass("header-link").wrapInner("<span></span>");
                 jQuery(".header-nav-dropdown-list > li a").addClass("header-link").wrapInner("<span></span>");
             </script>
             <ul class="header-nav-list lang">
@@ -178,8 +189,9 @@ if (is_single()) { ?>article-page<?php } ?>">
                     </p>
                     <button id="submit-sign-in-popup-form" class="button button-primary" type="submit">Войти</button>
                 </form>
-                <a style="text-decoration: none;" class="header-loginForm-text" href="<?= wp_lostpassword_url(); ?>">Восстановить пароль</a>
-<!--                <button class="header-loginForm-text header-loginForm-restorePassword">Восстановить пароль</button>-->
+                <a style="text-decoration: none;" class="header-loginForm-text" href="<?= wp_lostpassword_url(); ?>">Восстановить
+                    пароль</a>
+                <!--                <button class="header-loginForm-text header-loginForm-restorePassword">Восстановить пароль</button>-->
             </div>
             <div class="header-loginForm-form" id="register-form">
                 <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
@@ -215,11 +227,13 @@ if (is_single()) { ?>article-page<?php } ?>">
             <h2 class="header-loginForm-title">Забыли пароль?</h2>
             <p class="header-loginForm-text">Введите свой E-mail, чтобы помочь нам идентифицировать вашу
                 личность.</p>
-            <form class="header-loginForm-email" id="pass-recover-popup-form" method="post" action="<?= get_template_directory_uri(); ?>/user-pass-recover.php">
+            <form class="header-loginForm-email" id="pass-recover-popup-form" method="post"
+                  action="<?= get_template_directory_uri(); ?>/user-pass-recover.php">
                 <p><i class="icon-mail"></i>
                     <input type="email" name="email" placeholder="Адрес эл. почты для восстановления">
                 </p>
-                <button id="submit-pass-recover-popup-form" class="button button-primary" type="submit">Отправить</button>
+                <button id="submit-pass-recover-popup-form" class="button button-primary" type="submit">Отправить
+                </button>
             </form>
             <button class="header-loginForm-text header-loginForm-restorePassword-back">Назад</button>
         </div>

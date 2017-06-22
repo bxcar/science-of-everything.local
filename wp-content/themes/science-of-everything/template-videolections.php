@@ -59,7 +59,7 @@ get_header(); ?>
                                 <div class="counters">
                                     <div class="counters-item"><i
                                                 class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                    <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
                                 </div>
                                 <p class="text-p"><?= strip_tags(get_field('description')); ?>
                                 </p>
@@ -74,7 +74,7 @@ get_header(); ?>
                                     <div class="counters">
                                         <div class="counters-item"><i
                                                     class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                        <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
                                     </div>
                                 </a>
                             </li>

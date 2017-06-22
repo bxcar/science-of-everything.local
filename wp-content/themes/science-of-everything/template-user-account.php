@@ -18,7 +18,7 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="aboutAuthor-detail-innerWrap right">
-                        <a class="aboutAuthor-detail-item" href="user-account.html">История публикаций</a>
+                        <a class="aboutAuthor-detail-item" href="<?php the_permalink(); ?>">История публикаций</a>
                         <a class="aboutAuthor-detail-item" href="<?= get_site_url(); ?>/wp-admin/post-new.php?lang=ru">Подать
                             материал</a>
                         <a class="aboutAuthor-detail-item" href="<?= wp_logout_url(home_url()); ?>">Выйти</a>
@@ -54,7 +54,7 @@ get_header(); ?>
                                 class="aboutAuthor-counters-one-icon icon-earth"></i><span
                                 class="aboutAuthor-counters-one-number">147</span>
                         <p class="text-p">Поделились</p></a><a class="aboutAuthor-counters-one blue"
-                                                               href="blog-author.html#author-bookmarks"><i
+                                                               href="<?= get_permalink(); ?>?parm=bookmarks"><i
                                 class="aboutAuthor-counters-one-icon icon-bookmark-o"></i><span
                                 class="aboutAuthor-counters-one-number"><?php the_user_favorites_count(); ?></span>
                         <p class="text-p">Закладок</p></a><a class="aboutAuthor-counters-one red"
@@ -70,64 +70,111 @@ get_header(); ?>
         <section class="l-articles row">
             <div class="column small-12">
                 <div class="section-title-inner">
-                    <h2 class="title-4">История публикаций</h2><a class="sortArticles"><i class="icon-sort"></i><span
-                                class="sortArticles-text">Последние публикации</span></a>
+                    <h2 class="title-4"><?php if (!isset($_GET['parm'])) { echo 'История публикаций'; } else { echo 'Закладки'; }?></h2><a class="sortArticles"><i class="icon-sort"></i><span
+                                class="sortArticles-text"><?php if (!isset($_GET['parm'])) { echo 'Последние публикации'; } else { echo 'Мои закладки'; }?></span></a>
                 </div>
                 <ul class="articlesList-compact row">
                     <?php
-                    $author_args = array(
-                        'post_type' => 'post',
-                        'author' => get_current_user_id(),
-                        'posts_per_page' => 8,
-                        'post_status' => array('publish', 'pending', 'trash')
-                    );
+                    if (!isset($_GET['parm'])) {
+                        $author_args = array(
+                            'post_type' => 'post',
+                            'author' => get_current_user_id(),
+                            'posts_per_page' => 8,
+                            'post_status' => array('publish', 'pending', 'trash')
+                        );
 
-                    $author = new WP_Query($author_args);
-                    if ($author->have_posts()) {
-                        while ($author->have_posts()) {
-                            $author->the_post(); ?>
-                            <li class="columns column-block large-3 medium-4 small-12 edit <?php if (get_post_status() == 'pending') { ?>
+                        $author = new WP_Query($author_args);
+                        if ($author->have_posts()) {
+                            while ($author->have_posts()) {
+                                $author->the_post(); ?>
+                                <li class="columns column-block large-3 medium-4 small-12 edit <?php if (get_post_status() == 'pending') { ?>
                                 label-on-moderate
                             <?php } elseif (get_post_status() == 'trash') { ?>
                                 label-rejected
                             <?php } else { ?>
                                 label-posted
                             <?php } ?>">
-                                <a class="<?php if(get_post_status() == 'trash') { echo 'trash '; }?>articlesList-item-text dark" href="<?php the_permalink(); ?>">
-                                    <figure class="articlesList-item-img-wrap">
-                                        <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
-                                    </figure>
-                                    <div class="articlesList-item-text-content">
-                                        <p class="title-5 white"><?php the_title(); ?></p>
-                                        <div class="counters">
-                                            <div class="counters-item"><i
-                                                        class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
-                                            <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                    <a class="<?php if(get_post_status() == 'trash') { echo 'trash '; }?>articlesList-item-text dark" href="<?php the_permalink(); ?>">
+                                        <figure class="articlesList-item-img-wrap">
+                                            <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+                                        </figure>
+                                        <div class="articlesList-item-text-content">
+                                            <p class="title-5 white"><?php the_title(); ?></p>
+                                            <div class="counters">
+                                                <div class="counters-item"><i
+                                                            class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
+                                                <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                                <?php if (get_post_status() == 'trash') { ?>
-                                    <script>
-                                        jQuery("a.articlesList-item-text.dark.trash").click(function( event ) {
-                                            event.preventDefault();
-                                        }).css('cursor', 'default');
-                                    </script>
-                                <?php } ?>
-                                <div class="articlesList-item-edit">
-                                    <?php if (get_post_status() == 'pending') { ?>
-                                        <a class="articlesList-item-edit-edit" href="<?= get_edit_post_link(); ?>">
-                                            <i class="icon-pencil"></i>
-                                        </a>
+                                    </a>
+                                    <?php if (get_post_status() == 'trash') { ?>
+                                        <script>
+                                            jQuery("a.articlesList-item-text.dark.trash").click(function( event ) {
+                                                event.preventDefault();
+                                            }).css('cursor', 'default');
+                                        </script>
                                     <?php } ?>
-                                    <!--                                    <button class="articlesList-item-edit-delete"><i class="icon-close2"></i></button>-->
-                                </div>
-                            </li>
-                        <?php }
+                                    <div class="articlesList-item-edit">
+                                        <?php if (get_post_status() == 'pending') { ?>
+                                            <a class="articlesList-item-edit-edit" href="<?= get_edit_post_link(); ?>">
+                                                <i class="icon-pencil"></i>
+                                            </a>
+                                        <?php } ?>
+                                    </div>
+                                </li>
+                            <?php }
+                        }
+                        wp_reset_postdata();
+                    } else {
+                        $author_args = array(
+                            'post_type' => array('post','book','event', 'photos', 'topics', 'video-collections', 'videos', 'special'),
+                            'post__in' => get_user_favorites(),
+                            'posts_per_page' => -1,
+                            'post_status' => array('publish', 'pending', 'trash')
+                        );
+
+                        $author = new WP_Query($author_args);
+                        if ($author->have_posts()) {
+                            while ($author->have_posts()) {
+                                $author->the_post(); ?>
+                                <li class="columns column-block large-3 medium-4 small-12 edit">
+                                    <a class="articlesList-item-text dark" href="<?php the_permalink(); ?>">
+                                        <figure class="articlesList-item-img-wrap">
+                                            <img class="articlesList-item-img" <?php if (get_field('book_mini')) { ?>
+                                                style="width: auto; height: 165px; margin-left: auto; margin-right: auto;"
+                                            <?php } else { ?>
+                                                style="width: 255px; height: 165px;"
+                                            <?php } ?>
+                                                    class="articlesList-item-img"
+                                                <?php if (get_field('video_id')) { ?>
+                                                    src="https://img.youtube.com/vi/<?php the_field('video_id'); ?>/0.jpg"
+                                                <?php } elseif (get_field('post_image')) { ?>
+                                                    src="<?php the_field('post_image'); ?>"
+                                                <?php } elseif (get_field('book_mini')) { ?>
+                                                    src="<?php the_field('book_mini'); ?>"
+                                                <?php } elseif (get_field('special_main_page_image')) { ?>
+                                                    src="<?php the_field('special_main_page_image'); ?>"
+                                                <?php } else { ?>
+                                                    src="<?php the_post_thumbnail_url(); ?>"
+                                                <?php } ?> >
+                                        </figure>
+                                        <div class="articlesList-item-text-content">
+                                            <p class="title-5 white"><?php the_title(); ?></p>
+                                            <div class="counters">
+                                                <div class="counters-item">
+                                                    <i class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
+                                                <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php }
+                        }
+                        wp_reset_postdata();
                     }
-                    wp_reset_postdata();
                     ?>
                 </ul>
-                <?php echo do_shortcode('[ajax_load_more id="author_posts" post_type="post" author="' . get_current_user_id() . '" posts_per_page="8" offset="8" pause="true" scroll="false" button_label="' . __('Смотреть больше', 'science-of-everything') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]'); ?>
+                <?php if(!isset($_GET['parm'])) { echo do_shortcode('[ajax_load_more id="author_posts" post_type="post" author="' . get_current_user_id() . '" posts_per_page="8" offset="8" pause="true" scroll="false" button_label="' . __('Смотреть больше', 'science-of-everything') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]'); }?>
             </div>
         </section>
     </div>

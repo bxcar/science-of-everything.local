@@ -9,7 +9,7 @@ if(get_post_type() == 'photos') {?>
                 href="<?php the_field('post_image'); ?>"><?php the_field('post_title'); ?></a>
         <div class="counters">
             <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-            <div class="counters-item"><i class="icon-comment"></i>113</div>
+            <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
         </div>
         <p class="text-p"><?php echo mbCutString(strip_tags(get_field('post_description')), 155); ?>
         </p>
@@ -24,7 +24,7 @@ if(get_post_type() == 'photos') {?>
         <div class="counters">
             <div class="counters-item"><i
                         class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-            <div class="counters-item"><i class="icon-comment"></i>113</div>
+            <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
         </div>
         <p class="text-p"><?= strip_tags(get_field('description')); ?>
         </p>
@@ -157,7 +157,7 @@ if(get_post_type() == 'photos') {?>
                 <p class="title-4"><?php the_title(); ?></p>
                 <div class="counters">
                     <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                    <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
                 </div>
             </div>
         </a>
@@ -173,7 +173,7 @@ if(get_post_type() == 'photos') {?>
             <div class="counters-item"><i class="icon-user"></i><?php the_author(); ?></div>
             <div class="counters-item"><i
                         class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
-            <div class="counters-item"><i class="icon-comment"></i>113</div>
+            <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
         </div>
         <p class="text-p"><?= get_the_excerpt(); ?></p>
     </li>
@@ -194,7 +194,7 @@ if(get_post_type() == 'photos') {?>
                 <div class="counters">
                     <div class="counters-item"><i
                                 class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
-                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                    <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
                 </div>
             </div>
         </a>
@@ -212,6 +212,21 @@ if(get_post_type() == 'photos') {?>
                 </a>
             <?php } ?>
             <!--                                    <button class="articlesList-item-edit-delete"><i class="icon-close2"></i></button>-->
+        </div>
+    </li>
+<?php } elseif(get_post_type() == 'special') { ?>
+    <li class="articlesList-special-item">
+        <a class="articlesList-special-item-img" href="<?php the_permalink(); ?>">
+            <img src="<?php the_field('special_main_page_image'); ?>">
+        </a>
+        <div class="articlesList-special-item-text">
+            <div class="counters counters-item"><i class="icon-date"></i>
+                <span class="nowrap"><?php the_field('special_date'); ?></span>
+            </div>
+            <h3 class="title-3">
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </h3>
+            <p class="text-p"><?php the_field('special_main_page_description'); ?></p>
         </div>
     </li>
 <?php } ?>

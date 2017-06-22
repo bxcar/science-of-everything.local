@@ -10,7 +10,7 @@
                                 class="icon-time"></i><span><?= get_the_date(); ?></span></div>
                     <div class="counters">
                         <div class="counters-item"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
-                        <div class="counters-item"><i class="icon-comment"></i><span>4</span></div>
+                        <div class="counters-item"><i class="icon-comment"></i><span><?= get_comments_number(); ?></span></div>
                     </div>
                 </div>
                 <div class="article-content-text">
@@ -33,66 +33,13 @@
                     $tags = get_the_tags();
                     if ($tags) {
                         foreach ($tags as $tag) {
-                            echo '<a class="tags-one" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+                            echo '<span class="tags-one" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</span>';
                         }
                     }
                     ?>
                 </div>
             </div>
-            <section class="comments">
-                <div class="section-title">
-                    <h2 class="title-4"><i class="icon-comment"></i>комментарии</h2>
-                </div>
-                <div class="comments-posts">
-                    <div class="comments-posts-one">
-                        <figure class="comments-posts-avatar google-plus"><img src="img/comments-avatar-1.png"></figure>
-                        <div class="comments-posts-content">
-                            <p class="title-4">Оликсандор Дроздов</p>
-                            <div class="counters counters-item"><i class="icon-time"></i><span>5 ноября</span></div>
-                            <p class="text-p">Есть специальные генераторы, создающие собственные варианты. Сайтах и
-                                смысловую нагрузку ему нести совсем необязательно распространенных.</p>
-                            <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
-                        </div>
-                    </div>
-                    <div class="comments-posts-one reply">
-                        <figure class="comments-posts-avatar twitter"><img src="img/comments-avatar-2.png"></figure>
-                        <div class="comments-posts-content">
-                            <p class="title-4">Никита Светлый</p>
-                            <div class="counters counters-item"><i class="icon-time"></i><span>7 ноября</span></div>
-                            <p class="text-p">Древнеримскому философу цицерону, ведь именно из его трактата о
-                                пределах.</p>
-                            <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
-                        </div>
-                    </div>
-                    <div class="comments-posts-one reply">
-                        <figure class="comments-posts-avatar fb"><img src="img/comments-avatar-3.png"></figure>
-                        <div class="comments-posts-content">
-                            <p class="title-4">Оксана Рыбина</p>
-                            <div class="counters counters-item"><i class="icon-time"></i><span>8 ноября</span></div>
-                            <p class="text-p">О пределах добра и смысловую нагрузку ему нести совсем. Отсюда
-                                напрашивается вывод, что все.</p>
-                            <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
-                        </div>
-                    </div>
-                    <div class="comments-posts-one">
-                        <figure class="comments-posts-avatar"><img src="img/comments-avatar-4.png"></figure>
-                        <div class="comments-posts-content">
-                            <p class="title-4">Миша Светраков</p>
-                            <div class="counters counters-item"><i class="icon-time"></i><span>11 ноября</span></div>
-                            <p class="text-p">Есть специальные генераторы, создающие собственные варианты. Сайтах и
-                                смысловую нагрузку ему нести совсем необязательно распространенных.</p>
-                            <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="comments-write">
-                    <figure class="comments-posts-avatar"><img src="img/comments-avatar-4.png"></figure>
-                    <form class="comments-write-form">
-                        <textarea name="comment" placeholder="Комментарий" required></textarea>
-                        <button class="button button-primary" type="submit">Отправить</button>
-                    </form>
-                </div>
-            </section>
+            <?php comments_template('/comments.php', true); ?>
         </article>
         <aside class="sidebar-wrap columns large-4">
             <div class="section-title section-title-popular">
@@ -132,7 +79,7 @@
                                 <div class="counters">
                                     <div class="counters-item">
                                         <i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-                                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                    <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
                                 </div>
                             </div>
                         </li>
@@ -214,7 +161,7 @@
                                     <div class="counters">
                                         <div class="counters-item"><i
                                                     class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                        <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
                                     </div>
                                 </div>
                             </a>

@@ -93,7 +93,9 @@
     <?php
     $user = wp_get_current_user();
     if ( in_array( 'administrator', (array) $user->roles ) ) { ?>
-    .mainWrap {
+    .mainWrap,
+    .grey-section-bg,
+    .l-specialTitle{
         margin-top: -32px;
     }
     <?php } ?>
@@ -124,6 +126,35 @@
     .l-footerSubscibe .close:after {
         transform: rotate(-45deg);
     }
+
+    @media screen and (max-width: 1380px) {
+        .header-navTop {
+            display: flex;
+        }
+    }
+    @media screen and (max-width: 1300px) {
+        .header-navTop {
+            display: none;
+        }
+    }
+
+    .header-navTop {
+        justify-content: flex-start;
+        -webkit-justify-content: flex-start;
+    }
+
+    /*.header-menu {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    <?php $user = wp_get_current_user();
+    if ( in_array( 'administrator', (array) $user->roles ) ) { ?>
+    .header-menu {
+        top: 32px;
+    }
+    <?php } ?>*/
 </style>
 <script>
     if (document.cookie.indexOf("subscribe=") >= 0) {

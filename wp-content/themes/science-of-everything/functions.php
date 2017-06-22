@@ -181,6 +181,7 @@ function register_my_custom_menu_page()
     add_submenu_page('custompage', 'Видеоколлекции', 'Видеоколлекции', 8, '/edit.php?post_type=video-collections');
     add_submenu_page('custompage', 'Темы', 'Темы', 8, '/edit.php?post_type=topics');
     add_submenu_page('custompage', 'Книги', 'Книги', 8, '/edit.php?post_type=book');
+    add_submenu_page('custompage', 'Спецпроекты', 'Спецпроекты', 8, '/edit.php?post_type=special');
     remove_submenu_page('custompage', 'custompage');
 }
 
@@ -305,7 +306,7 @@ function change_wp_search_size($query)
     if ($query->is_search) // Make sure it is a search page
         $query->query_vars['posts_per_page'] = -1; // Change 10 to the number of posts you would like to show
 
-    if ($query->is_category && !is_front_page()) {
+    if (($query->is_category && !is_front_page()) || ($query->is_tag && !is_front_page())) {
         $query->query_vars['posts_per_page'] = 9;
         if (($_GET['sort'] == 'popular')) {
             $query->set('meta_key', 'views');
@@ -586,10 +587,170 @@ function my_custom_fonts()
     }
 }
 
-function allow_contributor_uploads() {
+function allow_contributor_uploads()
+{
     $contributor = get_role('contributor');
     $contributor->add_cap('upload_files');
 }
-if ( current_user_can('contributor') && !current_user_can('upload_files') ) {
+
+if (current_user_can('contributor') && !current_user_can('upload_files')) {
     add_action('admin_init', 'allow_contributor_uploads');
+}
+
+/**
+ * Фильтр к стандартной функции WordPress comments_number()
+ * Возвращает строку с количеством комментариев к статье
+ * с правильными окончаниями слова "комментарий" (1 комментарий, 2 комментария, 5 комментариев)
+ */
+function comments_number_ru()
+{
+    global $id;
+    $number = get_comments_number($id);
+
+    if ($number == 0) {
+        $output = __('комментариев нет', 'junona');
+    } else if (($number == 1) && (ICL_LANGUAGE_CODE == 'en')) {
+        $output = '' . $number . ' ' . get_num_ending($number, array('comment'));
+    } else {
+        $output = '' . $number . ' ' . get_num_ending($number, array(__('комментарий', 'junona'), __('комментария', 'junona'), __('комментариев', 'junona')));
+    }
+    echo $output;
+}
+
+add_filter('comments_number', 'comments_number_ru');
+
+
+function get_current_template($echo = false)
+{
+    if (!isset($GLOBALS['current_theme_template']))
+        return false;
+    if ($echo)
+        echo $GLOBALS['current_theme_template'];
+    else
+        return $GLOBALS['current_theme_template'];
+}
+
+
+//c
+function mytheme_comment($comment, $args, $depth)
+{
+    $GLOBALS['comment'] = $comment;
+    //var_dump($comment);
+    if ($comment->comment_parent) {
+        switch ($comment->comment_type) :
+            case '' :
+//                echo $comment->comment_parent;
+                ?>
+                <li <?php comment_class('comment answer'); ?> id="li-comment-<?php comment_ID() ?>">
+                    <div class="comments-posts-one reply" id="comment-<?php comment_ID(); ?>">
+                        <figure class="comments-posts-avatar">
+                            <?php echo get_avatar($comment->comment_author_email, $args['avatar_size']); ?>
+                        </figure>
+                        <div class="comments-posts-content">
+                            <?php printf(__('<p class="title-4">%s</p>'), get_comment_author_link()) ?>
+
+                            <div class="counters counters-item"><i class="icon-time"></i><span><?php printf(__('%1$s'), get_comment_date('d F Y'), '') ?></span></div>
+
+                            <p class="text-p"><?= get_comment_text() ?></p>
+                            <?php //edit_comment_link(__('Редактировать'), ' ');
+                            ?>
+
+                            <?php if(get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'])))) { ?><button class="button-reply"><i class="icon-reply"></i><?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></button><?php } ?>
+
+                            <?php if ($comment->comment_approved == '0') : ?>
+                                <div
+                                        class="comment-awaiting-verification"><?php _e('Your comment is awaiting moderation.') ?></div>
+                                <br/>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </li>
+                <?php
+                break;
+            case 'pingback'  :
+            case 'trackback' :
+                ?>
+                <li class="post pingback">
+                <?php comment_author_link(); ?>
+                <?php edit_comment_link(__('Редактировать'), ' '); ?>
+                <?php
+                break;
+        endswitch;
+    } else {
+        switch ($comment->comment_type) :
+            case '' :
+                ?>
+                <div class="comments-posts-one" id="comment-<?php comment_ID(); ?>">
+                    <figure class="comments-posts-avatar">
+                        <?php echo get_avatar($comment->comment_author_email, $args['avatar_size']); ?>
+                    </figure>
+                    <div class="comments-posts-content">
+                        <?php printf(__('<p class="title-4">%s</p>'), get_comment_author_link()) ?>
+
+                        <div class="counters counters-item"><i class="icon-time"></i><span><?php printf(__('%1$s'), get_comment_date('d F Y'), '') ?></span></div>
+
+                        <p class="text-p"><?= get_comment_text() ?></p>
+                        <?php //edit_comment_link(__('Редактировать'), ' ');
+                        ?>
+
+                <?php if(get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'])))) { ?><button class="button-reply"><i class="icon-reply"></i><?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></button><?php } ?>
+
+                        <?php if ($comment->comment_approved == '0') : ?>
+                            <div
+                                    class="comment-awaiting-verification"><?php _e('Your comment is awaiting moderation.') ?></div>
+                            <br/>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php
+                break;
+            case 'pingback'  :
+            case 'trackback' :
+                ?>
+                <li class="post pingback">
+                <?php comment_author_link(); ?>
+                <?php edit_comment_link(__('Редактировать'), ' '); ?>
+                <?php
+                break;
+        endswitch;
+    }
+}
+
+add_filter('comment_reply_link', 'replace_reply_link_class');
+
+
+//comment form button
+function awesome_comment_form_submit_button($button)
+{
+    $button = "<button name='submit' type='submit' class='button button-primary' id='submit'>" . __('Отправить', 'junona') . "</button>";
+    return $button;
+}
+
+add_filter('comment_form_submit_button', 'awesome_comment_form_submit_button');
+
+
+//move comment textarea to bottom
+function wpb_move_comment_field_to_bottom($fields)
+{
+    $comment_field = $fields['comment'];
+    unset($fields['comment']);
+    $fields['comment'] = $comment_field;
+    return $fields;
+}
+
+add_filter('comment_form_fields', 'wpb_move_comment_field_to_bottom');
+
+function replace_reply_link_class($class)
+{
+    $class = str_replace("class='comment-reply-link", "class='answer - link", $class);
+    return $class;
+}
+
+add_filter('comment_text', 'stefan_wrap_comment_text', 1000);
+
+function stefan_wrap_comment_text($class)
+{
+    $class = str_replace(" < p>", " < div class='text' > ", $class);
+    $class = str_replace("</p > ", "</div > ", $class);
+    return $class;
 }

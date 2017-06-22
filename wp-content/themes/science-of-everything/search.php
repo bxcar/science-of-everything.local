@@ -33,6 +33,8 @@
                                             src="https://img.youtube.com/vi/<?php the_field('video_id'); ?>/0.jpg"
                                         <?php } elseif (get_field('post_image')) { ?>
                                             src="<?php the_field('post_image'); ?>"
+                                        <?php } elseif (get_field('special_main_page_image')) { ?>
+                                            src="<?php the_field('special_main_page_image'); ?>"
                                         <?php } elseif (get_field('book_mini')) { ?>
                                             src="<?php the_field('book_mini'); ?>"
                                         <?php } else { ?>
@@ -43,7 +45,7 @@
                                     <p class="title-5 white"><?= wp_trim_words(get_the_title(), 7); ?></p>
                                     <div class="counters">
                                         <div class="counters-item"><i class="icon-time"></i><?= get_the_date(); ?></div>
-                                        <div class="counters-item"><i class="icon-comment"></i>113</div>
+                                        <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
                                     </div>
                                 </div>
                             </a>
