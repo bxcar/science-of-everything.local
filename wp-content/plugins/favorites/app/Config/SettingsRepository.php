@@ -18,6 +18,17 @@ class SettingsRepository
 	}
 
 	/**
+	* Is Development Mode Enabled
+	* @return boolean
+	* @since 2.1.2
+	*/
+	public function devMode()
+	{
+		$option = get_option('simplefavorites_dev_mode');
+		return ( isset($option) && $option == 'true' ) ? true : false;
+	}
+
+	/**
 	* Anonymous Display Options
 	* @param string option (array key)
 	* @since 1.0
@@ -294,6 +305,18 @@ class SettingsRepository
 		$option = get_option('simplefavorites_display');
 		if ( !isset($option['buttontype']) || $option['buttontype'] == "" ) return 'custom';
 		return $option['buttontype'];
+	}
+
+	/**
+	* Get the button element type
+	* @return string
+	* @since 2.1.2
+	*/
+	public function getButtonHtmlType()
+	{
+		$option = get_option('simplefavorites_display');
+		if ( !isset($option['button_element_type']) || $option['button_element_type'] == "" ) return 'button';
+		return $option['button_element_type'];
 	}
 
 	/**

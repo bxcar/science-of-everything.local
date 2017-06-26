@@ -50,6 +50,18 @@ block content
               include template/sort-button.pug
 
             include template/articles-list-techno.pug
+            
+  section.l-sectionMedia
+    .mainWrap.mainWrap-medium.row
+      .columns.large-12
+        .section-title.section-title-media
+          h2.title-2
+            img(src="img/icon-comp.png")
+            | Медиа
+          - var sortClasses = false
+          include template/sort-button.pug
+          
+        include template/articles-list-media.pug
 
   section.l-sectionPsycho.dark-section-bg2
     .mainWrap.mainWrap-medium.row
@@ -108,27 +120,27 @@ block content
 
       .row
         .column.large-3.photo-small-wrap
-          a.photo-small(href="photo-article.html")
+          a.photo-small.articlesList-item-hover(href="photo-article.html")
             figure
               img(src="img/photo-1.png")
               figcaption Куб цвета: суровые пейзажи французских пригородов
-          a.photo-small(href="photo-article.html")
+          a.photo-small.articlesList-item-hover(href="photo-article.html")
             figure
               img(src="img/photo-2.png")
               figcaption Винтажная Америка
 
         .column.large-6.photo-big-wrap
-          a.photo-big(href="photo-article.html")
+          a.photo-big.articlesList-item-hover(href="photo-article.html")
             figure
               img(src="img/photo-3.png")
               figcaption.title-1.white Регион на вырост: мрачные пейзажи Ланьчжоу
 
         .column.large-3.photo-small-wrap
-          a.photo-small(href="photo-article.html")
+          a.photo-small.articlesList-item-hover(href="photo-article.html")
             figure
               img(src="img/photo-4.png")
               figcaption Салонные фильтры
-          a.photo-small(href="photo-article.html")
+          a.photo-small.articlesList-item-hover(href="photo-article.html")
             figure
               img(src="img/photo-5.png")
               figcaption Куда смотрит Статуя Свободы: окрестности глазами

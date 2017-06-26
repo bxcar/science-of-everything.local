@@ -182,6 +182,7 @@ function register_my_custom_menu_page()
     add_submenu_page('custompage', 'Темы', 'Темы', 8, '/edit.php?post_type=topics');
     add_submenu_page('custompage', 'Книги', 'Книги', 8, '/edit.php?post_type=book');
     add_submenu_page('custompage', 'Спецпроекты', 'Спецпроекты', 8, '/edit.php?post_type=special');
+    add_submenu_page('custompage', 'Интервью', 'Интервью', 8, '/edit.php?post_type=interview');
     remove_submenu_page('custompage', 'custompage');
 }
 

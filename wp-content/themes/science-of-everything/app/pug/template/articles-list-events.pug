@@ -1,12 +1,12 @@
 ul.articlesList-events
   each img in eventsImg
-    li
+    li.articlesList-item-hover
       a.articlesList-events-img(href="event-article.html"): img(src=img)
       .articlesList-events-content
         - var hideTime = true
         include date.pug
         a.title-4(href="event-article.html") Основы продуктовой аналитики для дизайнера
-  li.show-for-medium-only
+  li.articlesList-item-hover.show-for-medium-only
     a.articlesList-events-img(href="event-article.html"): img(src="img/events-img-7.png")
     .articlesList-events-content
       - var hideTime = false

@@ -4,6 +4,7 @@ namespace Favorites\Entities\FavoriteList;
 use Favorites\Entities\User\UserFavorites;
 use Favorites\Config\SettingsRepository;
 use Favorites\Entities\FavoriteList\FavoriteListingPresenter;
+use Favorites\Entities\PostType\PostTypeRepository;
 
 /**
 * Base class for favorite lists
@@ -27,6 +28,11 @@ abstract class FavoriteListTypeBase
 	protected $settings_repo;
 
 	/**
+	* Post Type Repo
+	*/
+	protected $post_type_repo;
+
+	/**
 	* User's Favorites
 	*/
 	protected $favorites;
@@ -39,6 +45,7 @@ abstract class FavoriteListTypeBase
 	public function __construct($list_options)
 	{
 		$this->settings_repo = new SettingsRepository;
+		$this->post_type_repo = new PostTypeRepository;
 		$this->user_favorites = new UserFavorites;
 		$this->listing_presenter = new FavoriteListingPresenter;
 		$this->list_options = $list_options;
@@ -57,7 +64,7 @@ abstract class FavoriteListTypeBase
 			? get_current_blog_id() : $this->list_options->site_id;
 		$this->list_options->user_id = ( is_null($this->list_options->user_id) || $this->list_options->user_id == '' ) 
 			? null : $this->list_options->user_id;
-		$this->list_options->filters= ( is_null($this->list_options->filters) || $this->list_options->filters == '' ) 
+		$this->list_options->filters = ( is_null($this->list_options->filters) || $this->list_options->filters == '' ) 
 			? null : $this->list_options->filters;
 	}
 
@@ -75,7 +82,8 @@ abstract class FavoriteListTypeBase
 	*/
 	protected function setNoFavoritesText()
 	{
-		$this->list_options->no_favorites = $this->settings_repo->noFavoritesText();
+		if ( $this->list_options->no_favorites == '' ) 
+			$this->list_options->no_favorites = $this->settings_repo->noFavoritesText();
 	}
 
 	/**
@@ -83,7 +91,7 @@ abstract class FavoriteListTypeBase
 	*/
 	protected function setPostTypes()
 	{
-		$this->list_options->post_types = 'post';
+		$this->list_options->post_types = implode(',', $this->post_type_repo->getAllPostTypes('names', true));
 		if ( isset($this->list_options->filters['post_type']) )	
 			$this->list_options->post_types = implode(',', $this->list_options->filters['post_type']);
 	}
@@ -93,8 +101,9 @@ abstract class FavoriteListTypeBase
 	*/
 	protected function listOpening()
 	{
+		$css = apply_filters('favorites/list/wrapper/css', $this->list_options->wrapper_css, $this->list_options);
 		$out = '<' . $this->list_options->wrapper_type;
-		$out .= ' class="favorites-list ' . $this->list_options->wrapper_css . '" data-userid="' . $this->list_options->user_id . '" data-siteid="' . $this->list_options->site_id . '" ';
+		$out .= ' class="favorites-list ' . $css . '" data-userid="' . $this->list_options->user_id . '" data-siteid="' . $this->list_options->site_id . '" ';
 		$out .= ( $this->list_options->include_button ) ? 'data-includebuttons="true"' : 'data-includebuttons="false"';
 		$out .= ( $this->list_options->include_links ) ? ' data-includelinks="true"' : ' data-includelinks="false"';
 		$out .= ( $this->list_options->include_thumbnails ) ? ' data-includethumbnails="true"' : ' data-includethumbnails="false"';
@@ -122,7 +131,7 @@ abstract class FavoriteListTypeBase
 		if ( !empty($this->favorites) ) return;
 		$out = $this->listOpening();
 		$out .= '<' . $this->list_options->wrapper_type;
-		$out .= ' data-postid="0" data-nofavorites>' . $this->list_options->no_favorites;
+		$out .= ' data-postid="0" data-nofavorites class="no-favorites">' . $this->list_options->no_favorites;
 		$out .= '</' . $this->list_options->wrapper_type . '>';
 		$out .= $this->listClosing();
 		return $out;

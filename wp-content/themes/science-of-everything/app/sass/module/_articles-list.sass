@@ -6,7 +6,7 @@
   .articlesList-item-banner, .articlesList-item-text
     height: 500px
     position: relative
-    overflow: hidden
+    // overflow: hidden
 
 .articlesList-compact
   list-style: none
@@ -65,13 +65,13 @@
     max-width: 330px
     @include margin(null auto)
 
-  &:hover
-    .articlesList-item-bg
-      img
-        transform: translate(-50%) scale(1.1)
-
-      &::before
-        opacity: .2
+  // &:hover
+  //   .articlesList-item-bg
+  //     img
+  //       transform: translate(-50%) scale(1.1)
+  //
+  //     &::before
+  //       opacity: .2
 
   &.center
     justify-content: center
@@ -163,10 +163,10 @@
   .category-text, .title-3
     margin-bottom: 18px
 
-  &:hover
-    .articlesList-item-img-wrap
-      &::before
-        opacity: .2
+  // &:hover
+  //   .articlesList-item-img-wrap
+  //     &::before
+  //       opacity: .2
 
 .articlesList-item-text.dark
   display: flex
@@ -178,9 +178,9 @@
   .articlesList-item-img-wrap
     margin-bottom: 0
 
-  &:hover
-    .articlesList-item-text-content
-      background-color: #49485e
+  // &:hover
+  //   .articlesList-item-text-content
+  //     background-color: #49485e
 
   .articlesList-item-img
     margin-bottom: 0
@@ -190,7 +190,7 @@
 
   .articlesList-item-text-content
     background-color: #595771
-    @include main-transition
+    // @include main-transition
     padding: 25px
     flex-grow: 1
     display: flex
@@ -201,7 +201,7 @@
 
     .title-5
       flex-grow: 1
-      @include main-transition
+      // @include main-transition
 
 .articlesList-item-text-content
   @include media(1023px)
@@ -233,6 +233,88 @@
   .counters
     margin-bottom: 15px
 
+/* Module.Pages: Articles list - Item hover */
+
+.articlesList-item-hover
+  position: relative
+  &::before
+    content: ""
+    @include position(absolute, 0 0 null null)
+    z-index: -1
+    @include size(100%)
+    transition: .5s $ease-in-out-quart
+    transition-property: width, height, transform, box-shadow
+
+    @include media(640px)
+      display: none
+
+  &:hover
+    >*
+      position: relative
+      z-index: 100
+
+    &::before
+      z-index: 50
+      @include size( calc(100% + 50px) calc(100% + 80px) )
+      transform: translate(25px, -40px)
+      background-color: $white
+      box-shadow: 0 0 84px 30px rgba($black, .04)
+
+      @include media(1190px)
+        @include size( calc(100% + 30px) calc(100% + 60px) )
+        transform: translate(15px, -30px)
+
+[class*="dark-section-bg"]
+  .articlesList-item-hover
+    &:hover
+      &::before
+        background-color: #ada8e2
+        box-shadow: none
+
+      .articlesList-item-text
+        .counters
+          color: $white
+
+.l-sectionAstro
+  .articlesList-item-hover
+    &:hover
+      .articlesList-item-text.dark
+        .articlesList-item-text-content
+          background-color: #ada8e2
+
+          .counters
+            color: $white
+
+.articlesList-compact
+  .articlesList-item-hover
+    &:hover
+      .articlesList-item-text
+        *
+          position: relative
+          z-index: 100
+
+.l-sectionBooks
+  .articlesList-item-hover
+    &:hover
+      &::before
+        @include size( calc(100% + 90px) calc(100% + 120px) )
+        transform: translate(45px, -60px)
+
+        @include media(1235px)
+          @include size( calc(100% + 30px) calc(100% + 60px) )
+          transform: translate(15px, -30px)
+
+.articlesList-events, .l-sectionPhoto, .articlesList-special
+  .articlesList-item-hover
+    &:hover
+      &::before
+        @include size( calc(100% + 80px) )
+        transform: translate(40px, -40px)
+
+        @include media(1190px)
+          @include size( calc( 100% + 60px ) )
+          transform: translate(30px, -30px)
+
 /* Module.Pages: Articles list - Astro list */
 
 // .l-sectionAstro
@@ -242,25 +324,25 @@
 
 /* Module.Pages: Articles list - Techno list */
 
-.articlesList-techno
-  .articlesList-item-text
-    .title-3
-      @include main-transition
+// .articlesList-techno
+//   .articlesList-item-text
+//     .title-3
+//       @include main-transition
 
-    &:hover
-      .title-3
-        color: $light-blue
+    // &:hover
+    //   .title-3
+    //     color: $light-blue
 
 /* Module.Pages: Articles list - Psycho list */
 
 .articlesList-psycho
-  .title-4
-    @include main-transition
-
-  .articlesList-item-text
-    &:hover
-      .title-4
-        color: $pink
+  // .title-4
+  //   @include main-transition
+  //
+  // .articlesList-item-text
+  //   &:hover
+  //     .title-4
+  //       color: $pink
 
   .articlesList-item-text
     @include media(1023px)
@@ -283,9 +365,9 @@
     max-width: 285px
     @include main-transition
 
-  &:hover
-    .title-3
-      color: $green2
+  // &:hover
+  //   .title-3
+  //     color: $green2
 
 .home-page
   .articlesList-item-book
@@ -341,13 +423,13 @@
     @include media(740px)
       width: 100%
 
-    &:hover
-      .articlesList-events-img
-        &::before
-          opacity: .2
-
-      .title-4
-        color: $blue
+    // &:hover
+    //   .articlesList-events-img
+    //     &::before
+    //       opacity: .2
+    //
+    //   .title-4
+    //     color: $blue
 
   img
     @include size(100%)
@@ -393,14 +475,14 @@
   @include media(450px)
     display: none
 
-.events-page
-  .articlesList-item-text
-    .title-3, .title-4
-      @include main-transition
-
-    &:hover
-      .title-3, .title-4
-        color: $blue
+// .events-page
+//   .articlesList-item-text
+//     .title-3, .title-4
+//       @include main-transition
+//
+//     &:hover
+//       .title-3, .title-4
+//         color: $blue
 
 /* Module.Pages: Articles list - Inner pages */
 
@@ -425,23 +507,23 @@
   @include media(350px)
     margin-bottom: 40px
 
-.photo-page
-  .articlesList-item-text
-    .title-3
-      @include main-transition
+// .photo-page
+//   .articlesList-item-text
+//     .title-3
+//       @include main-transition
+//
+//     &:hover
+//       .title-3
+//         color: $orange2
 
-    &:hover
-      .title-3
-        color: $orange2
-
-.video-page
-  .articlesList-item-text
-    .title-3
-      @include main-transition
-
-    &:hover
-      .title-3
-        color: $purple4
+// .video-page
+//   .articlesList-item-text
+//     .title-3
+//       @include main-transition
+//
+//     &:hover
+//       .title-3
+//         color: $purple4
 
 /* Module.Pages: Articles list - Special page */
 
@@ -455,13 +537,13 @@
   @include media(1023px)
     flex-direction: column
 
-  &:hover
-    .articlesList-special-item-img
-      &::before
-        opacity: .2
-
-    .title-3
-      color: $pink2
+  // &:hover
+  //   .articlesList-special-item-img
+  //     &::before
+  //       opacity: .2
+  //
+  //   .title-3
+  //     color: $pink2
 
 .articlesList-special-item-img
   display: block
@@ -521,7 +603,10 @@
 /* Module.Pages: Articles list - Account list */
 
 .articlesList-item-edit
-  @include position(absolute, 0 15px null null)
+  // @include position(absolute, 0 15px null null)
+  position: absolute !important
+  top: 0
+  right: 15px
   z-index: 1000
   display: flex
 
@@ -569,9 +654,9 @@ li.edit
 
 li
   &[class*="label-"]
-    &::before
+    &::after
       @include position(absolute, 0 null null 15px)
-      z-index: 1000
+      z-index: 30
 
       @include size(40px 33px)
       display: flex
@@ -598,7 +683,8 @@ li
         left: 10px
 
     &:hover
-      &::before
+      &::after
+        z-index: 100
         width: 130px
         font-size: 11px
 
@@ -611,7 +697,7 @@ li
           font-size: 9px
 
   &.label-on-moderate
-    &::before
+    &::after
       content: "м"
       background-color: $pink2
 
@@ -619,11 +705,11 @@ li
         content: "на модерации"
 
     &:hover
-      &::before
+      &::after
         content: "на модерации"
 
   &.label-rejected
-    &::before
+    &::after
       content: "о"
       background-color: $red
 
@@ -631,11 +717,11 @@ li
         content: "отклонено"
 
     &:hover
-      &::before
+      &::after
         content: "отклонено"
 
   &.label-posted
-    &::before
+    &::after
       content: "о"
       background-color: $green2
 
@@ -643,5 +729,5 @@ li
         content: "опубликовано"
 
     &:hover
-      &::before
+      &::after
         content: "опубликовано"

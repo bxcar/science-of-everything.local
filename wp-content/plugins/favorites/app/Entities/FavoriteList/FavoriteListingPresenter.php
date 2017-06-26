@@ -53,8 +53,9 @@ class FavoriteListingPresenter
 	*/
 	private function listingOpening()
 	{
+		$css = apply_filters('favorites/list/listing/css', $this->list_options->listing_css, $this->list_options);
 		$this->html = '<' . $this->list_options->listing_type;
-		$this->html .= ' data-postid="' . $this->favorite . '" class="' . $this->list_options->listing_css . '">';
+		$this->html .= ' data-postid="' . $this->favorite . '" class="' . $css . '">';
 	}
 
 	/**
@@ -84,6 +85,8 @@ class FavoriteListingPresenter
 	{
 		$this->html = str_replace('[post_title]', get_the_title($this->favorite), $this->html);
 		$this->html = str_replace('[post_permalink]', get_permalink($this->favorite), $this->html);
+		$this->html = str_replace('[permalink]', '<a href="' . get_permalink($this->favorite) . '">', $this->html);
+		$this->html = str_replace('[/permalink]', '</a>', $this->html);
 		$this->html = str_replace('[post_excerpt]', $this->getPostExcerpt(), $this->html);
 		$this->html = str_replace('[post_content]', get_the_content($this->favorite), $this->html);
 	}

@@ -7,25 +7,46 @@ block content
   .mainWrap.mainWrap-medium.row
     article.l-article.column.large-8.small-12
       section.article-visualContent
-        block visual-content
+        figure.article-visualContent-img
+          block visual-content
+        .article-visualContent-text
+          .article-visualContent-details
+            if rubricArticle
+              .category.category-m.category-technology ТЕХНОЛОГИИ
+            .counters
+              .counters-item
+                i.icon-time
+                span 23.11.2016
+              .counters-item
+                i.icon-comment
+                span 4
+              .counters-item
+                i.icon-view
+                span 124
+              .counters-item
+                i.icon-pencil
+                span Оксана Рыбина
+          .article-visualContent-title
+            block article-title
+              h1.title-0.white= articleTitle
       section.article-content
-        .article-content-counters
-          .article-content-counters-date
-            i.icon-time
-            span 23.11.2016
-          .counters
-            .counters-item
-              i.icon-view
-              span 124
-            .counters-item
-              i.icon-comment
-              span 4
+        //- .article-content-counters
+        //-   .article-content-counters-date
+        //-     i.icon-time
+        //-     span 23.11.2016
+        //-   .counters
+        //-     .counters-item
+        //-       i.icon-view
+        //-       span 124
+        //-     .counters-item
+        //-       i.icon-comment
+        //-       span 4
 
         .article-content-text
-          if rubricArticle
-            .category.category-m.category-technology ТЕХНОЛОГИИ
-          block article-title
-            h1.title-0= articleTitle
+          //- if rubricArticle
+          //-   .category.category-m.category-technology ТЕХНОЛОГИИ
+          //- block article-title
+          //-   h1.title-0= articleTitle
           block article-text
 
       if blogArticle
@@ -49,15 +70,21 @@ block content
           .tags-list
             each tag in tagsList
               button.tags-one= tag
-
+              
+      include article-subscribe.pug
       include comments.pug
 
     include sidebar.pug
 
     if fullLayout
+      .articleSpecial.columns.small-12
+        img(src="img/special-banner-3.png")
+          
       include siblings-article.pug
-
       include other-articles.pug
 
     if rubricArticle
+      .articleSpecial.columns.small-12
+        img(src="img/special-banner-3.png")
+
       include other-articles.pug

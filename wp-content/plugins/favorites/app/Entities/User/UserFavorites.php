@@ -88,9 +88,9 @@ class UserFavorites
 	* @param $thumbnail_size string - thumbnail size to display
 	* @param $include_excerpt boolean - whether to include the post excerpt
 	*/
-	public function getFavoritesList($include_button = false, $include_thumbnails = false, $thumbnail_size = 'thumbnail', $include_excerpt = false)
+	public function getFavoritesList($include_button = false, $include_thumbnails = false, $thumbnail_size = 'thumbnail', $include_excerpt = false, $no_favorites = '')
 	{
-		$list_args = [
+		$list_args = array(
 			'include_button' => $include_button,
 			'include_thumbnails' => $include_thumbnails,
 			'thumbnail_size' => $thumbnail_size,
@@ -98,8 +98,9 @@ class UserFavorites
 			'include_links' => $this->links,
 			'site_id' => $this->site_id,
 			'user_id' => $this->user_id,
-			'filters' => $this->filters
-		];
+			'no_favorites' => $no_favorites,
+			'filters' => $this->filters,
+		);
 		$list = new FavoriteList($list_args);
 		return $list->getList();
 	}
@@ -109,7 +110,10 @@ class UserFavorites
 	*/
 	private function postExists($id)
 	{
+		$allowed_statuses = ( isset($this->filters['status']) && is_array($this->filters['status']) ) ? $this->filters['status'] : array('publish');
 		$status = get_post_status($id);
-		return( !$status || $status !== 'publish') ? false : true;
+		if ( !$status ) return false;
+		if ( !in_array($status, $allowed_statuses) ) return false;
+		return true;
 	}
 }

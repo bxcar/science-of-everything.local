@@ -50,11 +50,11 @@ get_header(); ?>
                     while ($photos->have_posts()) {
                         $photos->the_post(); ?>
                         <?php if ($i >= 2 && $i <= 7) { ?>
-                            <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 articlesList-medium-plus">
+                            <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4 articlesList-medium-plus">
                                 <a class="articlesList-item-img-wrap articlesList-item-video"
                                    href="<?php the_permalink(); ?>"><!--
                                 --><img class="articlesList-item-img" src="https://img.youtube.com/vi/<?php
-                                    the_field('video_id'); ?>/0.jpg"></a><!--
+                                    the_field('video_id'); ?>/maxresdefault.jpg"></a><!--
                                     --><a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 <div class="counters">
                                     <div class="counters-item"><i
@@ -65,11 +65,11 @@ get_header(); ?>
                                 </p>
                             </li>
                         <?php } else { ?>
-                            <li class="columns column-block large-6 medium-12 small-12"><!--
+                            <li class="articlesList-item-hover columns column-block large-6 medium-12 small-12"><!--
                             --><a class="articlesList-item-banner center" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg"><!--
                                     --><img style="top: -60px;" src="https://img.youtube.com/vi/<?php
-                                        the_field('video_id'); ?>/0.jpg"></div>
+                                        the_field('video_id'); ?>/maxresdefault.jpg"></div>
                                     <p class="title-3 white"><?php the_title(); ?></p>
                                     <div class="counters">
                                         <div class="counters-item"><i
@@ -95,32 +95,12 @@ get_header(); ?>
         </section>
     </div>
     <style>
-        li.columns.column-block.large-6.medium-12.small-12 .articlesList-item-banner.center {
-            max-width: 480px;
-            max-height: 250px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .articlesList-detail .articlesList-item-img-wrap {
-            height: 150px;
-        }
-
-        .articlesList-item-img {
-            margin-top: -40px;
-        }
-
-        .articlesList-medium-plus.articlesList-item-text {
-            height: 380px;
+        .articlesList-item-img-wrap.articlesList-item-video {
+            max-height: 195px;
+            overflow: hidden;
         }
 
         @media print, screen and (min-width: 64em) {
-            .large-4 {
-                max-width: 28%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
             .alm-reveal .large-4 {
                 max-width: 33.3333333333333%;
             }
@@ -128,10 +108,6 @@ get_header(); ?>
 
         .alm-reveal li.articlesList-item-text.columns.column-block.medium-6.small-12.large-4.articlesList-medium-plus {
             float: left;
-        }
-
-        .articlesList-item-text.columns.column-block.medium-6.small-12.large-4.articlesList-medium {
-            display: inline-block;
         }
 
         .ajax-load-more-wrap {
@@ -144,8 +120,18 @@ get_header(); ?>
             margin-top: 0;
         }
 
+        .articlesList-compact.articlesList-detail.column.small-12.row + .column.small-12,
+        .ajax-load-more-wrap {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
     </style>
     <script>
+        jQuery('.ajax-load-more-wrap').bind("DOMNodeInserted", function (e) {
+            jQuery('div.alm-reveal').addClass("articlesList-compact articlesList-detail column small-12 row");
+        });
+
         jQuery(document).ready(function () {
             jQuery('div.alm-btn-wrap').addClass('button-more');
             jQuery('div.alm-btn-wrap button').html('<span>Смотреть больше</span><i class=\'icon-squares\'></i>');

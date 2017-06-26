@@ -4,8 +4,7 @@ Donate link: http://favoriteposts.com/
 Tags: favorites, like, bookmark, favorite, likes, bookmarks, favourite, favourites, multisite, wishlist, wish list
 Requires at least: 3.8
 Tested up to: 4.8
-Stable tag: 2.1.0
-
+Stable tag: 2.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +71,26 @@ As of version 1.1.0, Favorites is compatible with multisite installations. By de
 
 
 == Changelog ==
+
+= 2.1.4 =
+* Post favorite counts using the shortcode [favorite_count] or the functions get_favorites_count/the_favorites_count now update without page reload.
+* Adds parameter to the [user_favorites] shortcode for "No Favorites" text. Overrides the plugin setting. [user_favorites no_favorites="Your Custom Text"]
+* Updated code that was breaking in PHP versions less than 5.4. End-of-life PHP version support will be dropped in Favorites v3
+* Bug fix where total favorite count was showing "1" before a user had favorited any posts
+* Adds additional permalink field under the customized listing visual editor
+* Bug fix where nonce was not loading correctly on some sites, resulting in an "Incorrect form field" error
+* Adds status filter to function filter parameters
+
+= 2.1.3 =
+* Bug fix where authentication gate modal was not appearing correctly due to a Javascript error on sites with the cache option disabled.
+* Bug fix where lists were being emptied on page load with the cache option enabled.
+
+= 2.1.2 =
+* Added additional filters for the listing wrapper CSS classes and the listing element CSS classes. See the plugin website for details.
+* Added plugin setting and filter for customizing the button html element type.
+* Added a "Development Mode" setting for logging various data to the browser console in order to help with support and debugging.
+* Reverted default post types in favorites list to display all post types.
+* Updates filters run on authorization gate modal that were conflicting with some themes and plugins.
 
 = 2.1.1 =
 * Fixes bug where Favorites admin javascript was loading outside the plugin settings area, causing preventing some sites from saving posts.

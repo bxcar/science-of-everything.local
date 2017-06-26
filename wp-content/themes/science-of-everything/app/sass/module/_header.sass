@@ -29,7 +29,10 @@
       height: 1230px
 
 .header-menu
+  // @include position(fixed, 0 0 null null)
+  // z-index: 500
   display: flex
+  width: 100%
   height: 100px
   justify-content: space-between
   align-items: center
@@ -39,8 +42,29 @@
   font-weight: $regular
   border-bottom: 1px solid $purple-light-border
 
+  @include fast-transition
+
+  // @include media(1120px)
+    position: static
+    background: transparent
+
   @include media(450px)
     margin-bottom: 30px
+
+  &.is-scrolled
+    @include position(fixed, 0 0 null null)
+    z-index: 500
+    background-color: #221b4b
+    animation: headerMenuAnim .5s $ease-out-quad forwards
+
+  &.is-no-scrolled
+    animation: headerMenuAnim .5s reverse
+
+@keyframes headerMenuAnim
+  0%
+    transform: translateY(-100%)
+  100%
+    transform: none
 
 .home-page
   .header-menu
@@ -64,14 +88,21 @@
   height: 100%
   display: flex
   flex-grow: 1
-  justify-content: flex-end
+  justify-content: flex-start
 
-  @include media(1380px)
+  // @include media(1380px)
+  //   justify-content: flex-start
+
+  @include media(1120px)
     display: none
 
   li
     height: 100%
     position: relative
+
+    // &:nth-child(7), &:nth-child(8), &:nth-child(9)
+    //   @include media(1380px)
+    //     display: none
 
   a, .header-dropdown
     display: flex
@@ -84,6 +115,9 @@
 
     @include media(1550px)
       @include padding(null 17px)
+
+    @include media(1280px)
+      @include padding(null 10px)
 
 .header-link
   @include main-transition
@@ -154,7 +188,7 @@
     color: $white
 
 .header-search
-  display: flex
+  display: none
   justify-content: center
   // align-items: center
   text-align: center
@@ -163,6 +197,9 @@
 
   @include media(1550px)
     margin-right: 1%
+
+  @include media(1440px)
+    display: flex
 
   @include media(1380px)
     margin-right: 40px
@@ -189,18 +226,24 @@
     margin-left: 1%
     width: calc(16.5% + 51px)
 
+  @include media(1440px)
+    display: none
+
   @include media(1380px)
     margin-right: 40px
     margin-left: auto
     width: 325px
 
   input
-    @include size(51px 100%)
+    @include size(100%)
     @include padding(em(15) em(30) em(17) em(30))
     border-radius: 100px
 
     font-size: 14px
     color: $white
+
+    @include media(1440px)
+      width: 51px
 
     @include placeholder
       font-size: 14px
@@ -454,6 +497,9 @@
   display: block
   @include size(280px 80px)
   margin: 65px auto 30px auto
+
+  // @include media(1120px)
+  //   margin-top: 65px
 
   @include media(1023px)
     margin-top: 60px

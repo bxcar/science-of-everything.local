@@ -19,7 +19,7 @@ get_header(); ?>
             if ($special->have_posts()) {
                 while ($special->have_posts()) {
                     $special->the_post(); ?>
-                    <li class="articlesList-special-item">
+                    <li class="articlesList-special-item articlesList-item-hover">
                         <a class="articlesList-special-item-img" href="<?php the_permalink(); ?>">
                             <img src="<?php the_field('special_main_page_image'); ?>">
                         </a>

@@ -5,6 +5,7 @@
 @include font-face('Gotham Pro', '../fonts/GothamPro/GothamProBold/GothamProBold', 700, $file-formats: eot ttf woff)
 @include font-face('Gotham Pro', '../fonts/GothamPro/GothamProBlack/GothamProBlack', 900, $file-formats: eot ttf woff)
 @include font-face('Gotham Pro', '../fonts/GothamPro/GothamProItalic/GothamProItalic', 400, italic, $file-formats: eot ttf woff)
+@include font-face('Gotham Pro', '../fonts/GothamPro/GothamProLightItalic/GothamProLightItalic', 300, italic, $file-formats: eot ttf woff)
 @include font-face('Gotham Pro', '../fonts/GothamPro/GothamProMediumItalic/GothamProMediumItalic', 500, italic, $file-formats: eot ttf woff)
 @include font-face('Gotham Pro', '../fonts/GothamPro/GothamProBlackItalic/GothamProBlackItalic', 900, italic, $file-formats: eot ttf woff)
 
@@ -52,3 +53,7 @@ figure
 textarea
   resize: none
   overflow: auto
+
+.order-medium--1
+  @include media(min-width 640px max-width 1023px)
+    order: -1

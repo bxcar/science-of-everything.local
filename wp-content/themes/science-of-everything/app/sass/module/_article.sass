@@ -1,29 +1,139 @@
 /* Module.Pages: Article - Visual content */
 
 .article-visualContent
+  position: relative
+  overflow: hidden
+
   img
     width: 100%
+    @include media(450px)
+      width: auto
+      height: 240px
 
-  iframe
-    @include size(100% 410px)
+.article-visualContent-img
+  position: relative
+  &::before
+    content: ""
+    @include position(absolute, null null 0 0)
+    z-index: 50
+    @include size(100% 320px)
+    max-height: 100%
+    background-image: linear-gradient(to top, rgba($black, .75) 0%, rgba($black, .05) 90%, rgba($black, 0) 100%)
 
-    @include media(639px)
-      height: 326px
+.article-visualContent-text
+  @include position(absolute, null null 12% 8%)
+  z-index: 100
+  max-width: 80%
 
-    @include media(500px)
-      height: 253px
+  @include media(730px)
+    left: 30px
+    max-width: calc(100% - 60px)
+  @include media(600px)
+    left: 20px
+    max-width: calc(100% - 40px)
 
-    @include media(385px)
-      height: 188px
+.article-visualContent-details
+  margin-bottom: 30px
+  display: flex
+
+  @include media(600px)
+    display: block
+    margin-bottom: 20px
+  @include media(450px)
+    margin-bottom: 10px
+
+  .category
+    margin-right: 30px
+
+    @include media(600px)
+      @include margin(null 0 20px null)
+    @include media(450px)
+      display: inline-flex
+      min-width: 0
+      height: 30px
+      @include padding(null 15px)
+      font-size: 10px
+
+  .counters
+    @include media(450px)
+      flex-wrap: wrap
+      .counters-item
+        margin-bottom: 10px
+
+.article-visualContent-title
+  .title-0
+    @include media(600px)
+      font-size: 20px
+    @include media(450px)
+      font-size: 18px
+
+/* Module.Pages: Article Wide - Visual content */
+
+.articleWide-visualContent
+  position: relative
+
+.articleWide-visualContent-img
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+
+  @include media(600px)
+    height: 350px
+
+  &::before
+    content: ""
+    @include position(absolute, 0 null null 0)
+    z-index: 50
+    @include size(100%)
+    background-image: linear-gradient(to top, rgba($black, .75) 0%, rgba($black, 0) 100%)
+
+  img
+    @include media(600px)
+      height: 100%
+      max-width: none
+
+.articleWide-visualContent-text
+  @include position(absolute, 50% null null 50%)
+  transform: translate(-50%, -50%)
+  width: 660px
+  max-width: 100%
+  @include padding(null 30px)
+  z-index: 100
+  text-align: center
+  @include media(600px)
+    @include padding(null 15px)
+
+  .category
+    @include margin(null auto 30px)
+
+  .title-0
+    margin-bottom: 25px
+
+  .counters
+    justify-content: center
+
+    @include media(600px)
+      flex-wrap: wrap
+      .counters-item
+        margin-bottom: 10px
 
 /* Module.Pages: Article - Main content */
 
 .article-content
-  display: flex
-  margin-top: 25px
+  margin-top: 45px
 
-  @include media(550px)
-    flex-direction: column
+.articleWide-content
+  margin-top: 60px
+  margin-bottom: 70px
+
+  .article-content-text
+    @include margin(null auto)
+    max-width: 790px
+    @include padding(null 30px)
+
+    @include media(639px)
+      padding: 0
 
 /* Module.Pages: Article - Main content.Counters */
 
@@ -34,10 +144,8 @@
   @include media(639px)
     margin-right: 20px
     margin-bottom: 20px
-
   @include media(550px)
     display: flex
-
   @include media(450px)
     margin-bottom: 15px
 
@@ -48,11 +156,9 @@
   flex-direction: column
   justify-content: center
   align-items: center
-
   font-size: 12px
   font-weight: $medium
   color: $white
-
   @include bg-gradient
 
   @include media(550px)
@@ -70,7 +176,6 @@
   i
     font-size: 13px
     margin-bottom: .6em
-
     @include media(550px)
       margin-right: .5em
       margin-bottom: 0
@@ -82,34 +187,65 @@
 
   .counters-item
     margin-right: 0
-
     @include media(550px)
       margin-right: 1em
 
 /* Module.Pages: Article - Main content.Content */
 
-.article-content-text
-  flex-shrink: 200
-  width: calc(100% - 125px)
-  margin-bottom: 30px
+.articleWide-content
+  .article-content-text
+    margin-bottom: 45px
 
-  @include media(639px)
-    width: calc(100% - 115px)
-
-  @include media(550px)
-    width: 100%
-
+.article-content-text, .booksDescriptions
+  margin-bottom: 70px
   @include media(450px)
     margin-bottom: 20px
 
   .category
     margin-bottom: 20px
 
-  h1, h2, h3, h4, p, img, figure, ul, .article-quote
-    margin-bottom: 20px
-
+  h1, h2, h3, h4, p, img, figure, ul, .article-quote, iframe
+    margin-bottom: 35px
+    @include media(639px)
+      margin-bottom: 25px
     @include media(450px)
-      margin-bottom: 10px
+      margin-bottom: 15px
+
+  .title-0
+    margin-top: 35px
+
+  .text-p
+    font-size: 14px
+    overflow: visible
+    @include media(450px)
+      font-size: 13px
+
+  .interview-question
+    margin-bottom: 20px
+    font-size: 16px
+    font-weight: bold
+    color: $grey-text
+    @include media(639px)
+      font-size: 14px
+
+  a
+    text-decoration: underline
+    font-weight: bold
+    color: #5d50be
+    &:hover
+      text-decoration: none
+
+  iframe
+    @include size(100% 410px)
+    @include media(639px)
+      height: 326px
+    @include media(500px)
+      height: 253px
+    @include media(385px)
+      height: 188px
+
+  b
+    color: $dark-text
 
   img
     width: 100%
@@ -123,16 +259,55 @@
     font-style: italic
     color: #a1a1a1
 
-  .article-float-left
-    display: block
-    width: auto
-    max-width: 50%
-    float: left
-    margin-right: 7.4%
+.articleWide-content
+  .section-title-inner.book
+    .title-0
+      margin: 0
 
+.article-float-left
+  float: left
+  margin-right: 40px
+
+  @include media(1023px)
+    margin-right: 20px
+  @include media(639px)
+    margin-right: 0
+
+.article-float-right
+  float: right
+  margin-left: 40px
+
+  @include media(1023px)
+    margin-left: 20px
+  @include media(639px)
+    margin-left: 0
+
+.article-float-left, .article-float-right
+  display: block
+  width: auto
+  max-width: 50%
+  margin-bottom: 40px
+
+  @include media(1023px)
+    margin-bottom: 25px
+  @include media(639px)
+    float: none
+    max-width: 100%
+
+.articleWide-content
+  .artice-img-wide
+    position: relative
+    margin-bottom: 65px
+    width: 100%
     @include media(639px)
-      float: none
-      max-width: 100%
+      margin-bottom: 35px
+
+    figcaption
+      margin-top: 35px
+      text-align: center
+      font-size: 14px
+      font-style: italic
+      color: #b1b1b1
 
 .special-article-page
   .article-content-text
@@ -147,39 +322,29 @@
     .title-0
       @include media(639px)
         font-size: 21px
-
       @include media(380px)
         font-size: 19px
 
-/* Module.Pages: Article - Main content.Book */
-
-.book-article-page
-  .article-content-text
-    width: 100%
-    margin-bottom: 55px
-
-  .article-float-left
-    margin-right: 20px
-    margin-bottom: 0
-
-    img
-      width: auto
-      max-width: 100%
-
 /* Module.Pages: Article - Main content.Elements */
+
+.articleWide-content
+  counter-reset: titlesCounter
+
+.list-counter
+  &::before
+    counter-increment: titlesCounter
+    content: counter(titlesCounter) ". "
 
 .article-quote
   position: relative
   padding-left: 2.5em
-
-  font-size: 14px
+  font-size: 18px
   line-height: 1.64
   font-weight: $medium
   font-style: italic
-  color: $grey-text
-
+  color: $dark-text
   @include media(450px)
-    font-size: 13px
+    font-size: 14px
 
   &::before
     content: "“"
@@ -187,9 +352,54 @@
     font-weight: $extrabold
     color: $light-colored-text
     opacity: .4
-
     @include position(absolute, -40px null null 0)
     z-index: -10
+
+.article-quote-author
+  font-size: 14px
+  font-weight: $light-font
+  color: #b1b1b1
+  @include media(639px)
+    font-size: 12px
+
+  .author-name
+    font-weight: $medium
+    color: $grey-text
+
+.article-quote
+  .article-quote-photo
+    @include size(95px)
+    border-radius: 50%
+    overflow: hidden
+
+    img
+      display: block
+      @include size(100%)
+
+  p
+    margin-bottom: 20px
+
+.articleWide-content
+  .article-quote
+    padding-left: 0
+    @include media(1023px)
+      font-size: 16px
+    @include media(639px)
+      padding-left: 2em
+      font-size: 14px
+
+    &::before
+      left: -32px
+      @include media(639px)
+        left: 0
+
+  .article-quote-photo
+    @include position(absolute, 0 null null -155px)
+    @include media(1120px)
+      left: -115px
+      @include size(75px)
+    @include media(1023px)
+      display: none
 
 .article-inner-list
   padding-left: 20px
@@ -197,13 +407,13 @@
   color: #5b50a6
 
   li:not(:last-child)
-    margin-bottom: .4em
+    margin-bottom: 1em
 
   li
     font-size: 16px
 
   span
-    font-size: 13px
+    font-size: 14px
     color: $grey-text
 
 .article-img-list
@@ -220,12 +430,75 @@
 .l-article
   .shareSocial
     margin-bottom: 60px
-
     @include media(450px)
       margin-bottom: 40px
 
+.article-gallary
+  position: relative
+
+  &:not(:last-child)
+    margin-bottom: 45px
+
+.article-gallary-counters
+  @include position(absolute, 45px null null 40px)
+  z-index: 100
+  font-size: 14px
+  font-weight: $medium
+
+  @include media(639px)
+    left: 25px
+    top: 35px
+  @include media(450px)
+    top: 30px
+
+  >*
+    display: inline-block
+
+  .current
+    color: #c6c6c6
+
+  .number
+    color: #888888
+    &::before
+      content: "/"
+
+.article-gallary-social
+  @include position(absolute, 30px 40px null null)
+  z-index: 100
+  display: flex
+  @include media(639px)
+    top: 20px
+    right: 25px
+
+  .social-button
+    @include size(40px)
+    opacity: .7
+    font-size: 16px
+    color: $white
+    @include fast-transition
+    @include media(450px)
+      @include size(30px)
+      font-size: 12px
+
+    &:not(:last-child)
+      margin-right: 10px
+      @include media(450px)
+        margin-right: 5px
+
+    &.fb
+      background-color: $fb-bg
+    &.tw
+      background-color: $twitter-bg
+    &.vk
+      background-color: $vk-bg
+    &.gp
+      background-color: $gp-bg
+
+    &:hover
+      opacity: 1
+
 .article-gallary-slider
-  figure
+  figure, img
     margin-bottom: 0
 
 .article-gallary-photo
@@ -239,13 +512,11 @@
   @include position(absolute, 50% null null null)
   transform: translateY(-50%)
   z-index: 100
-
   @include size(29px)
   border-radius: 50%
   display: flex
   justify-content: center
   align-items: center
-
   box-shadow: inset 0 0 0 7px $white
   opacity: .6
   cursor: pointer
@@ -256,21 +527,45 @@
 
 .article-gallary-prev
   left: 3.4%
-
 .article-gallary-next
   right: 3.4%
 
+.article-gallary-previews-wrap
+  position: relative
+  z-index: 10
+
+.articleWide-content
+  .article-gallary-previews-wrap
+    max-width: 730px
+    @include margin(null auto)
+
 .article-gallary-previews
+  position: static
+  @include margin(-25px auto null)
+  width: calc(100% - 110px)
   display: flex
   justify-content: space-between
-  margin-top: -10px
 
   @include media(450px)
-    margin-top: 0
+    margin-top: -15px
+    width: calc(100% - 90px)
+  @include media(400px)
+    width: calc(100% - 70px)
+
+  figure
+    margin-bottom: 0
 
 .article-gallary-previews-one
   margin-bottom: 20px
-  border: 2px solid transparent
+  cursor: pointer
+
+  &::before
+    content: ""
+    @include position(absolute, 0 null null 0)
+    z-index: 50
+    @include size(100%)
+    background-color: rgba($black, .4)
+    @include main-transition
 
   img
     width: 100%
@@ -278,8 +573,37 @@
     cursor: pointer
     margin-bottom: 0
 
+  &:hover
+    &::before
+      opacity: 0
+
   &.is-current
     border-color: #5a4db2 !important
+
+.article-gallary-previews-nav
+  >*
+    @include position(absolute, null null 0 null)
+    @include size(55px calc(100% - 25px))
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 24px
+    color: #dbdbdb
+    @include fast-transition
+    cursor: pointer
+
+    @include media(450px)
+      @include size(45px calc(100% - 15px))
+    @include media(400px)
+      width: 35px
+
+    &:hover
+      color: #5949c4
+
+  .prev
+    left: 0
+  .next
+    right: 0
 
 .article-gallary-photo-big
   &.mfp-bg
@@ -288,7 +612,6 @@
 
     &.mfp-ready
       opacity: 0.8
-
     &.mfp-removing
       opacity: 0
 
@@ -299,13 +622,11 @@
 
     &.mfp-ready .mfp-content
       opacity: 1
-
     &.mfp-removing .mfp-content
       opacity: 0
 
 button.mfp-close
   font-size: 50px
-
   @include media(639px)
     font-size: 40px
 
@@ -320,19 +641,63 @@ button.mfp-close
 @keyframes single2
   0%
     transform: rotate(0deg)
-
   100%
     transform: rotate(720deg)
+
+.booksSlider-wrap
+  margin-bottom: 20px
+
+.booksSlider-counters
+  margin-bottom: 25px
+  text-align: center
+  font-size: 14px
+  font-weight: $medium
+
+  .current
+    color: #c6c6c6
+  .number
+    color: #888888
+    &::before
+      content: "/"
+
+.booksSlider-items
+  .articlesList-item-book-img
+    border-width: 2px
+
+    img
+      @include margin(null auto)
+      width: auto
+      opacity: .2
+      @include main-transition
+      cursor: pointer
+
+    &:hover, &.is-readable
+      img
+        opacity: 1
+
+  .article-gallary-previews-nav
+    >*
+      top: 50%
+      transform: translateY(-50%)
+      height: 80px
+
+.booksDescriptions
+  @include margin(null auto)
+  max-width: 790px
+
+.booksDescriptions-item
+  @include padding(null 30px)
+
+  @include media(639px)
+    padding: 0
 
 /* Module.Pages: Article - Author */
 
 .article-author
   @include padding(60px null)
   border-top: 1px solid $light-border
-
   @include media(450px)
     @include padding(40px null)
-
   @include media(380px)
     @include padding(30px null)
 
@@ -358,13 +723,10 @@ button.mfp-close
     display: flex
     justify-content: center
     align-items: center
-
     font-size: 11px
     color: $light-text
-
     border: 1px solid $light-text
     border-radius: 100px
-
     @include main-transition
 
     &:hover
@@ -373,12 +735,52 @@ button.mfp-close
 
 /* Module.Pages: Article - Footer */
 
+.article-subscribe
+  margin-bottom: 60px
+
+  .section-title
+    text-transform: uppercase
+    &::before
+      border-color: $purple3
+
+.article-subscribe-form
+  position: relative
+
+  input
+    display: block
+    @include size(100% 50px)
+    @include padding(null 150px null 32px)
+    border-radius: 100px
+    border: 1px solid $light-border
+
+    @include media(639px)
+      padding-left: 20px
+    @include media(450px)
+      padding-right: 125px
+
+  .button
+    @include position(absolute, 5px 5px null null)
+    @include media(450px)
+      @include padding(null 1.1em)
+      font-size: 13px
+
+.articleSpecial
+  margin-top: -20px
+  margin-bottom: 90px
+
+  @include media(639px)
+    margin-bottom: 60px
+  @include media(450px)
+    margin-bottom: 30px
+
+  img
+    max-width: 100%
+
 .l-siblingsArticle
   a
     display: block
 
 .siblingsArticle-one
-  height: 200px
   @include padding(30px 50px)
   display: flex
   flex-direction: column
@@ -386,13 +788,11 @@ button.mfp-close
   transform: translateZ(-100px)
   position: relative
   overflow: hidden
-
   background: no-repeat center
   background-size: cover
 
   @include media(1023px)
     @include padding(20px 30px)
-
   @include media(639px)
     height: 150px
 
@@ -426,3 +826,12 @@ button.mfp-close
   margin-bottom: 1em
   font-size: 12px
   color: $light-text
+
+/* Module.Pages: Article Wide - Footer */
+
+.articleWide-social
+  @include margin(null auto)
+  max-width: 790px
+  @include padding(null 30px)
+  @include media(639px)
+    padding: 0

@@ -127,34 +127,10 @@
         transform: rotate(-45deg);
     }
 
-    @media screen and (max-width: 1380px) {
-        .header-navTop {
-            display: flex;
-        }
+    form#adduser .form-table,
+    form#adduser h3:first-child {
+        display: none;
     }
-    @media screen and (max-width: 1300px) {
-        .header-navTop {
-            display: none;
-        }
-    }
-
-    .header-navTop {
-        justify-content: flex-start;
-        -webkit-justify-content: flex-start;
-    }
-
-    /*.header-menu {
-        position: fixed;
-        top: 0;
-        width: 100%;
-    }
-
-    <?php $user = wp_get_current_user();
-    if ( in_array( 'administrator', (array) $user->roles ) ) { ?>
-    .header-menu {
-        top: 32px;
-    }
-    <?php } ?>*/
 </style>
 <script>
     if (document.cookie.indexOf("subscribe=") >= 0) {

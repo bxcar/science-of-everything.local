@@ -96,7 +96,7 @@ get_header(); ?>
                     while ($mainArticles->have_posts()) {
                         $mainArticles->the_post();
                         if (($mainArticles_counter == 1) || ($mainArticles_counter == 4) || ($mainArticles_counter == 5)) { ?>
-                            <li class="columns column-block medium-6 small-12">
+                            <li class="articlesList-item-hover columns column-block medium-6 small-12">
                                 <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg">
                                         <img src="<?= get_the_post_thumbnail_url(); ?>">
@@ -119,7 +119,7 @@ get_header(); ?>
                                 </a>
                             </li>
                         <?php } else { ?>
-                            <li class="articlesList-item-text columns column-block medium-6 small-12">
+                            <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12">
                                 <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
                                     <img width="350" height="230" class="articlesList-item-img"
                                          src="<?= get_the_post_thumbnail_url(); ?>">
@@ -223,7 +223,7 @@ get_header(); ?>
                     while ($first_cat->have_posts()) {
                         $first_cat->the_post();
                         if (($first_cat_counter == 1) || ($first_cat_counter == 2)) { ?>
-                            <li class="columns column-block large-6 medium-12 small-12">
+                            <li class="articlesList-item-hover columns column-block large-6 medium-12 small-12">
                                 <a class="articlesList-item-banner center" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg">
                                         <img src="<?= get_the_post_thumbnail_url(); ?>">
@@ -238,7 +238,7 @@ get_header(); ?>
                                 </a>
                             </li>
                         <?php } else { ?>
-                            <li class="columns column-block large-3 medium-4 small-12">
+                            <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
                                 <a class="articlesList-item-text dark" href="<?php the_permalink(); ?>">
                                     <figure class="articlesList-item-img-wrap">
                                         <img class="articlesList-item-img"
@@ -300,7 +300,7 @@ get_header(); ?>
                             while ($second_cat->have_posts()) {
                                 $second_cat->the_post();
                                 if ($second_cat_counter == 2) { ?>
-                                    <li class="columns column-block medium-6 small-12 large-4">
+                                    <li class="articlesList-item-hover columns column-block medium-6 small-12 large-4">
                                         <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
                                             <div class="articlesList-item-bg">
                                                 <img src="<?= get_the_post_thumbnail_url(); ?>">
@@ -315,7 +315,7 @@ get_header(); ?>
                                         </a>
                                     </li>
                                 <?php } else { ?>
-                                    <li class="articlesList-item-text columns column-block medium-6 small-12 large-4">
+                                    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
                                         <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
                                             <img width="350" height="230" class="articlesList-item-img"
                                                  src="<?= get_the_post_thumbnail_url(); ?>">
@@ -342,18 +342,19 @@ get_header(); ?>
         </div>
     </div>
 </div>
-<section class="l-sectionPsycho dark-section-bg2">
+<section class="l-sectionMedia">
     <div class="mainWrap mainWrap-medium row">
         <div class="columns large-12">
-            <div class="section-title section-title-psycho">
-                <h2 class="title-2 white"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-brain.png">
+            <div class="section-title section-title-media">
+                <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-comp.png">
                     <?= get_cat_name(get_field('taxonomy_3')); ?>
                 </h2>
-                <a class="sortArticles white" href="<?= get_category_link(get_field('taxonomy_3')); ?>">
-                    <i class="icon-sort"></i><span class="sortArticles-text">Последние статьи</span>
+                <a class="sortArticles" href="<?= get_category_link(get_field('taxonomy_3')); ?>">
+                    <i class="icon-sort"></i>
+                    <span class="sortArticles-text">Последние статьи</span>
                 </a>
             </div>
-            <ul class="articlesList-compact articlesList-psycho row">
+            <ul class="articlesList-compact row">
                 <?php
                 $third_cat_args = array(
                     'post_type' => 'topics',
@@ -366,8 +367,67 @@ get_header(); ?>
                 if ($third_cat->have_posts()) {
                     while ($third_cat->have_posts()) {
                         $third_cat->the_post();
+                        if (($third_cat_counter == 2) || ($third_cat_counter == 5)) { ?>
+                            <li class="articlesList-item-hover columns column-block large-6 medium-12 small-12 order-medium--1">
+                                <a class="articlesList-item-banner center" href="<?php the_permalink(); ?>">
+                                    <div class="articlesList-item-bg"><img src="<?php the_post_thumbnail_url(); ?>"></div>
+                                    <p class="title-3 white"><?php the_title(); ?></p>
+                                    <div class="counters">
+                                        <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
+                                        <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
+                                    </div>
+                                </a>
+                            </li>
+                        <?php } else { ?>
+                            <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
+                                <a class="articlesList-item-text dark" href="<?php the_permalink(); ?>">
+                                    <figure class="articlesList-item-img-wrap">
+                                        <img class="articlesList-item-img" src="<?php the_post_thumbnail_url(); ?>">
+                                    </figure>
+                                    <div class="articlesList-item-text-content">
+                                        <p class="title-5 white"><?php the_title(); ?></p>
+                                        <div class="counters">
+                                            <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
+                                            <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
+                                        </div>
+                                    </div></a>
+                            </li>
+                        <?php }
+                        $third_cat_counter++;
+                    }
+                }
+                wp_reset_postdata();
+                ?>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="l-sectionPsycho dark-section-bg2">
+    <div class="mainWrap mainWrap-medium row">
+        <div class="columns large-12">
+            <div class="section-title section-title-psycho">
+                <h2 class="title-2 white"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-brain.png">
+                    <?= get_cat_name(get_field('taxonomy_4')); ?>
+                </h2>
+                <a class="sortArticles white" href="<?= get_category_link(get_field('taxonomy_4')); ?>">
+                    <i class="icon-sort"></i><span class="sortArticles-text">Последние статьи</span>
+                </a>
+            </div>
+            <ul class="articlesList-compact articlesList-psycho row">
+                <?php
+                $third_cat_args = array(
+                    'post_type' => 'topics',
+                    'cat' => get_field('taxonomy_4'),
+                    'posts_per_page' => 6,
+                );
+
+                $third_cat = new WP_Query($third_cat_args);
+                $third_cat_counter = 1;
+                if ($third_cat->have_posts()) {
+                    while ($third_cat->have_posts()) {
+                        $third_cat->the_post();
                         if (($third_cat_counter == 1) || ($third_cat_counter == 6)) { ?>
-                            <li class="columns column-block large-6 medium-12 small-12">
+                            <li class="articlesList-item-hover columns column-block large-6 medium-12 small-12">
                                 <a class="articlesList-item-banner center" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg">
                                         <img src="<?= get_the_post_thumbnail_url(); ?>">
@@ -382,7 +442,7 @@ get_header(); ?>
                                 </a>
                             </li>
                         <?php } else { ?>
-                            <li class="columns column-block large-3 medium-4 small-12">
+                            <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
                                 <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
                                     <figure class="articlesList-item-img-wrap">
                                         <img class="articlesList-item-img"
@@ -430,7 +490,7 @@ get_header(); ?>
                 if ($books->have_posts()) {
                     while ($books->have_posts()) {
                         $books->the_post(); ?>
-                        <li class="articlesList-item-book columns medium-6 small-12 large-4">
+                        <li class="articlesList-item-book articlesList-item-hover columns medium-6 small-12 large-4">
                             <a class="articlesList-item-book-img" href="<?php the_permalink(); ?>">
                                 <img src="<?php the_field('book_mini') ?>">
                             </a>
@@ -469,7 +529,7 @@ get_header(); ?>
                     while ($events->have_posts()) {
                         $events->the_post();
                         if (strtotime(get_post_meta($id, '_event_start_date', true)) > time() && $event_counter < 3) { ?>
-                            <li><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
+                            <li class="articlesList-item-hover"><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
                                     <img style="width: 160px; height: 160px;"
                                          src="<?= get_the_post_thumbnail_url(); ?>"></a>
                                 <div class="articlesList-events-content">
@@ -483,7 +543,7 @@ get_header(); ?>
                             </li>
                             <?php $event_counter++;
                         } elseif (strtotime(get_post_meta($id, '_event_start_date', true)) > time() && $event_counter == 3) { ?>
-                            <li class="show-for-medium-only"><a class="articlesList-events-img"
+                            <li class="show-for-medium-only articlesList-item-hover"><a class="articlesList-events-img"
                                                                 href="<?php the_permalink(); ?>">
                                     <img style="width: 160px; height: 160px;"
                                          src="<?= get_the_post_thumbnail_url(); ?>"></a>
@@ -526,7 +586,7 @@ get_header(); ?>
                     while ($events->have_posts()) {
                         $events->the_post();
                         if (!(strtotime(get_post_meta($id, '_event_start_date', true)) > time()) && $event_counter < 3) { ?>
-                            <li><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
+                            <li class="articlesList-item-hover"><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
                                     <img style="width: 160px; height: 160px;"
                                          src="<?= get_the_post_thumbnail_url(); ?>"></a>
                                 <div class="articlesList-events-content">
@@ -540,7 +600,7 @@ get_header(); ?>
                             </li>
                             <?php $event_counter++;
                         } elseif (!(strtotime(get_post_meta($id, '_event_start_date', true)) > time()) && $event_counter == 3) { ?>
-                            <li class="show-for-medium-only"><a class="articlesList-events-img"
+                            <li class="show-for-medium-only articlesList-item-hover"><a class="articlesList-events-img"
                                                                 href="<?php the_permalink(); ?>">
                                     <img style="width: 160px; height: 160px;"
                                          src="<?= get_the_post_thumbnail_url(); ?>"></a>
@@ -588,14 +648,14 @@ get_header(); ?>
                     if ($photos_counter != 2) {
                         if (($photos_counter == 0) || $photos_counter == 3) { ?>
                             <div class="column large-3 photo-small-wrap">
-                            <a class="photo-small" href="<?php the_permalink(); ?>">
+                            <a class="photo-small articlesList-item-hover" href="<?php the_permalink(); ?>">
                                 <figure><img style="width: 255px; height: 165px;"
                                              src="<?php the_field('post_image'); ?>">
                                     <figcaption><?php the_title(); ?></figcaption>
                                 </figure>
                             </a>
                         <?php } else { ?>
-                            <a class="photo-small" href="<?php the_permalink(); ?>">
+                            <a class="photo-small articlesList-item-hover" href="<?php the_permalink(); ?>">
                                 <figure><img style="width: 255px; height: 165px;"
                                              src="<?php the_field('post_image'); ?>">
                                     <figcaption><?php the_title(); ?></figcaption>
@@ -606,7 +666,7 @@ get_header(); ?>
                         $photos_counter++;
                     } else { ?>
                         <div class="column large-6 photo-big-wrap">
-                            <a class="photo-big" href="<?php the_permalink(); ?>">
+                            <a class="photo-big articlesList-item-hover" href="<?php the_permalink(); ?>">
                                 <figure>
                                     <img style="width: 540px; height: 490px;" src="<?php the_field('post_image'); ?>">
                                     <figcaption class="title-1 white"><?php the_title(); ?></figcaption>

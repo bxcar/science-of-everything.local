@@ -36,7 +36,7 @@ get_header(); ?>
                         the_post();
                         if (($i != 1) && ($i != 8)) {
                             ?>
-                            <li class="articlesList-item-text columns column-block medium-6 small-12 large-4">
+                            <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
                                 <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
                                     <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
                                 </a>
@@ -46,7 +46,7 @@ get_header(); ?>
                             </li>
                         <?php } else {
                             ?>
-                            <li class="columns column-block medium-6 small-12 large-4">
+                            <li class="articlesList-item-hover columns column-block medium-6 small-12 large-4 hide-for-small show-for-large">
                                 <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg">
                                         <img src="<?= get_the_post_thumbnail_url(); ?>">

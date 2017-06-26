@@ -16,10 +16,11 @@ use Favorites\Entities\Favorite\ClearFavoritesButton;
 * @param $site_id int, defaults to current blog/site
 * @return html
 */
-function get_favorites_button($post_id = null, $site_id = null)
+function get_favorites_button($post_id = null, $site_id = null, $group_id = null)
 {
 	global $blog_id;
 	if ( !$post_id ) $post_id = get_the_id();
+	if ( !$group_id ) $group_id = 1;
 	$site_id = ( is_multisite() && is_null($site_id) ) ? $blog_id : $site_id;
 	if ( !is_multisite() ) $site_id = 1;
 	$button = new FavoriteButton($post_id, $site_id);
@@ -33,9 +34,9 @@ function get_favorites_button($post_id = null, $site_id = null)
 * @param $site_id int, defaults to current blog/site
 * @return html
 */
-function the_favorites_button($post_id = null, $site_id = null)
+function the_favorites_button($post_id = null, $site_id = null, $group_id = null)
 {	
-	echo get_favorites_button($post_id, $site_id);
+	echo get_favorites_button($post_id, $site_id, $group_id);
 }
 
 
@@ -43,13 +44,21 @@ function the_favorites_button($post_id = null, $site_id = null)
 * Get the Favorite Total Count for a Post
 * @param $post_id int, defaults to current post
 * @param $site_id int, defaults to current blog/site
+* @param $html bool, whether to return html (returns simple integer if false)
 * @return html
 */
-function get_favorites_count($post_id = null, $site_id = null)
+function get_favorites_count($post_id = null, $site_id = null, $html = true)
 {
+	global $blog_id;
+	$site_id = ( is_multisite() && is_null($site_id) ) ? $blog_id : $site_id;
 	if ( !$post_id ) $post_id = get_the_id();
 	$count = new FavoriteCount();
-	return $count->getCount($post_id, $site_id);
+	$count = $count->getCount($post_id, $site_id);
+	$out = "";
+	if ( $html ) $out .= '<span data-favorites-post-count-id="' . $post_id . '" data-siteid="' . $site_id . '">';
+	$out .= $count;
+	if ( $html ) $out .= '</span>';
+	return $out;
 }
 
 
@@ -59,9 +68,9 @@ function get_favorites_count($post_id = null, $site_id = null)
 * @param $site_id int, defaults to current blog/site
 * @return html
 */
-function the_favorites_count($post_id = null, $site_id = null)
+function the_favorites_count($post_id = null, $site_id = null, $html = true)
 {
-	echo get_favorites_count($post_id, $site_id);
+	echo get_favorites_count($post_id, $site_id, $html);
 }
 
 
@@ -132,10 +141,11 @@ function get_user_favorites_count($user_id = null, $site_id = null, $filters = n
 {
 	$favorites = get_user_favorites($user_id, $site_id, $filters);
 	$posttypes = ( isset($filters['post_type']) ) ? implode(',', $filters['post_type']) : 'all';
+	$count = ( isset($favorites[0]['site_id']) ) ? count($favorites[0]['posts']) : count($favorites);
 	$out = "";
 	if ( !$site_id ) $site_id = 1;
 	if ( $html ) $out .= '<span class="simplefavorites-user-count" data-posttypes="' . $posttypes . '" data-siteid="' . $site_id . '">';
-	$out .= count($favorites);
+	$out .= $count;
 	if ( $html ) $out .= '</span>';
 	return $out;
 }
@@ -246,5 +256,20 @@ function get_total_favorites_count($site_id = null)
 function the_total_favorites_count($site_id = null)
 {
 	echo get_total_favorites_count($site_id);
+}
+
+/**
+* Custom content filter
+* Allows the use of the_content filters, while preventing favorite buttons from appearing in auth modals
+*/
+function _favorites_content($content)
+{
+	$content = wptexturize($content);
+	$content = convert_smilies($content);
+	$content = convert_chars($content);
+	$content = wpautop($content);
+	$content = shortcode_unautop($content);
+	$content = prepend_attachment($content);
+	return $content;
 }
 

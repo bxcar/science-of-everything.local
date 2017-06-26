@@ -94,14 +94,16 @@ class Dependencies
 	public function frontendScripts()
 	{
 		if ( !$this->settings_repo->outputDependency('js') ) return;
+		$file = ( $this->settings_repo->devMode() ) ? 'favorites.js' : 'favorites.min.js';
 		wp_enqueue_script(
 			'favorites', 
-			$this->plugin_dir . '/assets/js/favorites.min.js', 
+			$this->plugin_dir . '/assets/js/' . $file, 
 			array('jquery'), 
 			$this->plugin_version
 		);
 		$localized_data = array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			'nonce' => wp_create_nonce('simple_favorites_nonce'),
 			'favorite' => $this->settings_repo->buttonText(),
 			'favorited' => $this->settings_repo->buttonTextFavorited(),
 			'includecount' => $this->settings_repo->includeCountInButton(),
@@ -112,7 +114,8 @@ class Dependencies
 			'loading_image_preload' => $this->settings_repo->includeLoadingIndicatorPreload(),
 			'cache_enabled' => $this->settings_repo->cacheEnabled(),
 			'button_options' => $this->settings_repo->formattedButtonOptions(),
-			'authentication_modal_content' => apply_filters('the_content', $this->settings_repo->authenticationModalContent(), 'favorites-modal')
+			'authentication_modal_content' => _favorites_content($this->settings_repo->authenticationModalContent()),
+			'dev_mode' => $this->settings_repo->devMode()
 		);
 		if ( !$this->settings_repo->cacheEnabled() ) $localized_data['nonce'] = wp_create_nonce('simple_favorites_nonce');
 		wp_localize_script(

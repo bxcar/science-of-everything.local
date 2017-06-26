@@ -17,17 +17,31 @@ block article-text
   p.text-p
     | И даже с языками, использующими латинский алфавит, могут возникнуть небольшие проблемы: в различных языках те или иные буквы встречаются с разной частотой, имеется разница в длине наиболее распространенных слов. Отсюда напрашивается вывод, что все же лучше использовать в качестве «рыбы» текст на том языке, который планируется использовать при запуске проекта. Сегодня существует несколько вариантов Lorem ipsum, кроме того, есть специальные генераторы, создающие собственные варианты текста на основе оригинального трактата, благодаря чему появляется возможность получить более длинный неповторяющийся набор слов.
   .article-gallary
+    .article-gallary-labels
+      .article-gallary-counters
+        span.current
+        span.number
+      .article-gallary-social
+        button.social-button.fb
+          i.icon-fb
+        button.social-button.tw
+          i.icon-twitter
+        button.social-button.vk
+          i.icon-vk
+        button.social-button.gp
+          i.icon-google-plus
     .article-gallary-slider.owl-carousel
       - i = 1
-      while i < 7
+      while i < 6
         figure.article-gallary-photo(data-mfp-src="img/article-gallary-photo-" + i + ".png")
           img(src="img/article-gallary-slider-" + i++ + ".png")
-    .article-gallary-previews.owl-carousel
-      - j = 1
-      while j < 7
-        if j == 1
-          figure.article-gallary-previews-one.is-current
-            img(src="img/article-gallary-preview-" + j++ + ".png")
-        else
-          figure.article-gallary-previews-one
-            img(src="img/article-gallary-preview-" + j++ + ".png")
+    .article-gallary-previews-wrap
+      .article-gallary-previews.owl-carousel
+        - j = 1
+        while j < 6
+          if j == 1
+            figure.article-gallary-previews-one.is-current
+              img(src="img/article-gallary-preview-" + j++ + ".png")
+          else
+            figure.article-gallary-previews-one
+              img(src="img/article-gallary-preview-" + j++ + ".png")

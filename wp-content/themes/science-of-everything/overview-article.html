@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <title>Наука всего</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/libs.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body class="article-page">
+    <div class="l-preloader"><img src="img/preloader.gif"></div>
+    <div class="l-header">
+      <div class="header-bg"></div>
+      <div class="header-menu">
+        <button class="header-hamburger"><i class="icon-menu"></i></button>
+        <ul class="header-navTop">
+          <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Технологии</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Медиа</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
+          <li><a class="header-link" href="books.html"><span>Книги</span></a></li>
+          <li><a class="header-link" href="rubric.html"><span>Будущее</span></a></li>
+          <li><a class="header-link" href="interview.html"><span>Интервью</span></a></li>
+        </ul>
+        <div class="header-login"><i class="icon-user"></i>
+          <!-- Title when user is guest--><span>Войти  / Регистрация</span>
+          <!-- Title when user is login--><span class="is-hidden">Личный кабинет</span>
+        </div>
+        <button class="header-search button-round-outline"><i class="icon-search"></i></button>
+        <form class="header-searchForm">
+          <input type="text" placeholder="Поиск">
+          <button class="header-searchForm-button" type="submit"><i class="icon-search"></i></button>
+        </form>
+      </div>
+      <div class="header-nav-wrap is-hidden">
+        <nav class="header-nav">
+          <button class="header-nav-close"><i class="icon-close"></i></button><a class="header-nav-logo" href="index.html"><img src="img/colored-logo.png"></a>
+          <ul class="header-nav-list">
+            <li><a class="header-link" href="index.html"><span>Главная</span></a></li>
+            <li><span class="header-nav-dropdown header-link">Темы</span>
+              <ul class="header-nav-dropdown-list">
+                <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Технологии</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Медиа</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Искусство</span></a></li>
+                <li><a class="header-link" href="rubric.html"><span>Будущее</span></a></li>
+                <li><a class="header-link" href="books.html"><span>Книги</span></a></li>
+                <li><a class="header-link" href="special.html"><span>Спецпроект</span></a></li>
+              </ul>
+            </li>
+            <li><a class="header-link" href="events.html"><span>События</span></a></li>
+            <li><a class="header-link" href="photo.html"><span>Фотогалерея</span></a></li>
+            <li><a class="header-link" href="video.html"><span>Видео</span></a></li>
+            <li><a class="header-link" href="blog.html"><span>Блог</span></a></li>
+            <li><a class="header-link" href="videolections.html"><span>Видеолекции</span></a></li>
+            <li><a class="header-link" href="interview.html"><span>Интервью</span></a></li>
+          </ul>
+          <ul class="header-nav-list header-nav-list-secondary">
+            <li><a class="header-link" href="advertising.html"><span>Размещение рекламы</span></a></li>
+            <li><a class="header-link" href="therms-of-use.html"><span>Пользовательское соглашение</span></a></li>
+            <li><a class="header-link" href="partners.html"><span>Партнерам</span></a></li>
+            <li><a class="header-link" href="contacts.html"><span>Контакты</span></a></li>
+            <li><a class="header-link" href="about.html"><span>О проекте</span></a></li>
+          </ul>
+          <ul class="header-nav-list lang">
+            <li class="is-active"><a class="header-link" href="#"><span>Рус</span></a></li>
+            <li><a class="header-link" href="#"><span>Англ</span></a></li>
+          </ul>
+          <ul class="header-nav-list modile">
+            <li>
+              <button class="header-nav-login"><i class="icon-user"></i><span>Войти  / Регистрация</span></button>
+            </li>
+            <li>
+              <form class="header-nav-search">
+                <input type="text" name="search" placeholder="Поиск">
+                <button type="submit"><i class="icon-search"></i></button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-loginForm-wrap is-hidden">
+        <button class="header-loginForm-close button-round-outline"><i class="icon-close"></i></button>
+        <div class="header-loginForm">
+          <h2 class="header-loginForm-title">Форма входа</h2>
+          <ul class="header-loginForm-method">
+            <li><a href="#login-form">Войти</a></li>
+            <li><a href="#register-form">Регистрация</a></li>
+          </ul>
+          <div class="header-loginForm-form" id="login-form">
+            <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
+            <div class="header-loginForm-social">
+              <button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+              <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
+              <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
+              <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
+            </div>
+            <p class="header-loginForm-text decoration">или</p>
+            <form class="header-loginForm-email">
+              <p><i class="icon-mail"></i>
+                <input type="email" name="email" placeholder="Эл.почта">
+              </p>
+              <p><i class="icon-key"></i>
+                <input type="password" name="password" placeholder="Пароль">
+              </p>
+              <button class="button button-primary" type="submit">Войти</button>
+            </form>
+            <button class="header-loginForm-text header-loginForm-restorePassword">Восстановить пароль</button>
+          </div>
+          <div class="header-loginForm-form" id="register-form">
+            <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
+            <div class="header-loginForm-social">
+              <button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+              <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
+              <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
+              <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
+            </div>
+            <p class="header-loginForm-text decoration">или</p>
+            <form class="header-loginForm-email">
+              <p><i class="icon-user"></i>
+                <input type="text" name="name" placeholder="Имя">
+              </p>
+              <p><i class="icon-mail"></i>
+                <input type="email" name="email" placeholder="Эл.почта">
+              </p>
+              <p><i class="icon-key"></i>
+                <input type="password" name="password" placeholder="Пароль">
+              </p>
+              <button class="button button-primary" type="submit">Зарегистрироваться</button>
+              <p class="header-loginForm-text small">Нажимая на кнопку «Зарегистрироваться», вы подтверждаете свое согласие с условиями предоставления услуг (<a href="therms-of-use.html">пользовательское соглашение</a>)</p>
+            </form>
+          </div>
+        </div>
+        <div class="header-restorePassword">
+          <h2 class="header-loginForm-title">Забыли пароль?</h2>
+          <p class="header-loginForm-text">Введите свой E-mail, чтобы помочь нам идентифицировать вашу личность.</p>
+          <form class="header-loginForm-email">
+            <p><i class="icon-mail"></i>
+              <input type="email" name="email" placeholder="Адрес эл. почты для восстановления">
+            </p>
+            <button class="button button-primary" type="submit">Войти</button>
+          </form>
+          <button class="header-loginForm-text header-loginForm-restorePassword-back">Назад</button>
+        </div>
+      </div><a class="header-logo" href="index.html"><img src="img/white-logo.png"></a>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="interview.html">Интервью</a></li>
+        <li>Статья</li>
+      </ul>
+    </div>
+    <div class="mainWrap mainWrap-medium row">
+      <article class="l-article column small-12">
+        <section class="articleWide-visualContent">
+          <figure class="articleWide-visualContent-img"><img src="img/article-visual-9.png"></figure>
+          <div class="articleWide-visualContent-text">
+            <div class="category category-m category-overview">Обзор</div>
+            <div class="article-visualContent-title">
+              <h1 class="title-0 white">Xiaomi Mi Band 2 — продвинутая версия популярного фитнес-трекера</h1>
+            </div>
+            <div class="counters">
+              <div class="counters-item"><i class="icon-time"></i><span>23.11.2016</span></div>
+              <div class="counters-item"><i class="icon-comment"></i><span>4</span></div>
+              <div class="counters-item"><i class="icon-view"></i><span>124</span></div>
+              <div class="counters-item"><i class="icon-pencil"></i><span>Оксана Рыбина</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="articleWide-content">
+          <div class="article-content-text">
+            <p class="text-sub">Обновлённый трекер активности от Xiaomi понравится многим и наверняка потеснит прочие устройства на рынке. Ведь теперь у Mi Band есть экран, кнопка, увеличенный аккумулятор и поддержка жестов. Читайте самый подробный обзор возможностей нового короля носимой электроники.</p>
+            <p class="text-p">Видимо, Xiaomi решила раз в полгода обновлять свои фитнес-устройства. Каждое из них производит фурор, и с каждым разом компания только увеличивает свои продажи. В прошлом году Mi Band стал самым продаваемым умным фитнес-аксессуаром. Мы писали и о <a href="#">первом Xiaomi Mi Band</a>, и об <a href="#">обновлённой версии с пульсометром</a>. Настала очередь рассказать свои впечатления от работы устройства второго поколения — Mi Band 2.</p>
+            <h2 class="title-0">Характеристики Xiaomi Mi Band 2</h2>
+            <ul class="article-inner-list">
+              <li><span>Материалы капсулы: поликарбонат, пластик.</span></li>
+              <li><span>Материалы браслета: термопластичный силиконовый вулканизат.</span></li>
+              <li><span>Класс защиты корпуса: IP67.</span></li>
+              <li><span>Функции: измерение ЧСС, шагомер, подсчёт дистанции и потраченных калорий, мониторинг сна, умный будильник, уведомления о звонках, разблокировка планшета/смартфона.</span></li>
+              <li><span>Датчики: трёхосевой акселерометр, оптический пульсометр.</span></li>
+              <li><span>Индикация: монохромный OLED-дисплей с диагональю 0,42 дюйма, вибромотор.</span></li>
+              <li><span>Аккумулятор: встроенный литий-полимерный ёмкостью 70 мА·ч.</span></li>
+              <li><span>Автономная работа: до 20 дней.</span></li>
+              <li><span>Беспроводная связь: Bluetooth 4.0 LE.</span></li>
+              <li><span>Рабочая температура: от –20 до +70 °C.</span></li>
+              <li><span>Размеры: 40,3 × 15,7 × 10,5 мм.</span></li>
+              <li><span>Вес: 7 г.</span></li>
+              <li><span>Совместимость: iOS 7 / Android 4.3.</span></li>
+              <li><span>Комплект поставки: модуль, браслет, зарядный кабель.</span></li>
+            </ul>
+            <p class="text-p">От других фитнес-браслетов Xiaomi новинка отличается наличием OLED-экрана и сенсорной кнопки. Браслет состоит из двух частей — пластиковой капсулы и ремешка. Модуль стал крупнее. Вес также увеличился, хотя это не ощущается. Базовая функциональность, не связанная с экраном, практически не изменилась, как и требования к смартфону, с которым устройство будет работать в дуэте.</p>
+          </div>
+          <div class="article-gallary">
+            <div class="article-gallary-labels">
+              <div class="article-gallary-counters"><span class="current"></span><span class="number"></span></div>
+              <div class="article-gallary-social">
+                <button class="social-button fb"><i class="icon-fb"></i></button>
+                <button class="social-button tw"><i class="icon-twitter"></i></button>
+                <button class="social-button vk"><i class="icon-vk"></i></button>
+                <button class="social-button gp"><i class="icon-google-plus"></i></button>
+              </div>
+            </div>
+            <div class="article-gallary-slider owl-carousel">
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-15.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-16.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-17.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-18.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-19.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-20.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-21.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-22.png"></figure>
+            </div>
+            <div class="article-gallary-previews-wrap">
+              <div class="article-gallary-previews owl-carousel">
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-15.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-16.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-17.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-18.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-19.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-20.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-21.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-22.png"></figure>
+              </div>
+            </div>
+          </div>
+          <div class="article-content-text">
+            <h2 class="title-0">Внешний вид и комплект поставки</h2>
+            <p class="text-p">В традиционной для линейки картонной коробке размещается модуль Mi Band 2, браслет, инструкция на китайском и зарядное устройство.</p>
+          </div>
+          <figure class="article-float-left"><img src="img/article-img-13.png"></figure>
+          <div class="article-content-text">
+            <p class="text-p">Основной модуль претерпел значительные изменения. Верхнюю панель теперь занимает <a href="#">OLED-дисплей</a> и чувствительная к прикосновению кнопка. Изображение на экране за счёт использованной матрицы прекрасно читается на солнце и не слепит в темноте. Значительную часть времени дисплей тёмный и включается только при необходимости: при нажатии кнопки, приходящем оповещении или необходимости взглянуть на часы (как это сделать, не прикасаясь к устройству, читайте ниже). Кнопка ёмкостная, не реагирует на сторонние предметы. Вся панель теперь плоская.</p>
+            <p class="text-p">Кроме появления экрана и врезанной в него кнопки, есть и другие внешние изменения. Так, <span class="bold">Xiaomi Mi Band 2</span> использует новый пульсометр — это можно увидеть при ближайшем рассмотрении. Света от датчиков стало меньше, светодиоды расположены иначе. Но самое главное, теперь окошко пульсометра находится в обтекателе, который возвышается над модулем почти на 1,5 мм.</p>
+          </div>
+          <figure class="article-float-right"><img src="img/article-img-14.png"></figure>
+          <div class="article-content-text">
+            <p class="text-p">Изменился и ремешок. Теперь он регулируется в пределах 155–210 мм, а общая длина составляет 235 мм. <span class="bold">Модуль первой версии</span> вставлялся с внешней стороны и периодически выпадал. В новой конструкции функциональную капсулу можно вставить только с внутренней стороны (со стороны руки). Кроме того, капсула не выступает, напротив, края выемки в браслете возвышаются над ней, защищая экран. Это исправляет два наиболее серьёзных недостатка конструкции — долой царапины и потери!</p>
+            <p class="text-p">Поскольку обновлённый девайс существенно крупнее первой модели, появляются определённые проблемы при использовании. Например, ребёнку его уже не надеть. На миниатюрной женской руке браслет <a href="#">Mi Band 2</a> смотрится громоздко и может быть велик. Из-за увеличившихся габаритов устройство часто может за что-то задевать. Спасает только прочный браслет.</p>
+            <p class="text-p">Вслед за изменившимися габаритами капсулы изменилось и зарядное устройство. Оно стало глубже и шире, пины зарядки стали длиннее. Старое зарядное устройство не подойдёт. Установить Mi Band 1 или 1s в гнездо для второй модели более реально, но только с использованием каких-либо прокладок для обеспечения соприкосновения контактов зарядки и модуля.</p>
+            <h2 class="title-0">Функциональность</h2>
+            <p class="text-p">В отличие от предыдущих версий, новинка способна работать в автономном режиме или через приложение. При этом общий набор функций практически не изменился.</p>
+            <p class="text-p">Браслет всё так же умеет следить за активностью, частотой сердечных сокращений, считать калории, шаги, расстояние, а также отслеживать фазы сна. Шагомер у новинки усовершенствованный и, по словам производителя, более точный. Разница показаний Mi Band 1s и Mi Band 2 достигает 10–15%. На простые взмахи рукой устройство уже не реагирует.</p>
+            <p class="text-p">Поскольку обновление коснулось и пульсометра, здесь тоже можно ждать повышения точности. Погрешность при тестировании не превышала 5%.</p>
+          </div>
+          <figure class="artice-img-wide">
+            <div class="article-gallary-social">
+              <button class="social-button fb"><i class="icon-fb"></i></button>
+              <button class="social-button tw"><i class="icon-twitter"></i></button>
+              <button class="social-button vk"><i class="icon-vk"></i></button>
+              <button class="social-button gp"><i class="icon-google-plus"></i></button>
+            </div><img src="img/article-img-15.png">
+            <figcaption>Владимир Смирнов, креативный директор в диджитал- агентстве Aimbulance. </figcaption>
+          </figure>
+          <div class="article-content-text">
+            <p class="text-p">Все данные обновляются при помощи встроенных датчиков. Устройству требуется синхронизация со смартфоном только в том случае, если произошла разрядка аккумулятора. Если заряжать Mi Band 2 вовремя, смартфоном и приложением можно пользоваться очень редко и то только для просмотра статистики.</p>
+            <p class="text-p">Очень удобно реализована функция отображения времени. Чтобы узнать его, достаточно резко повернуть руку — экран пробуждается и показывает время вне зависимости от последнего типа просмотренных данных. Работает это даже при печатании на клавиатуре, когда рука находится на столе. Отрывать её от поверхности не требуется, срабатывает всегда.</p>
+            <h2 class="title-0">Приложения и совместимость</h2>
+            <p class="text-p">Как и прежде, функциональность устройства зависит от выбранного приложения. Шагомер, пройденное расстояние, отслеживание сна и подробная статистика присутствуют в версиях программы для любых устройств и рынков.</p>
+          </div>
+          <div class="article-gallary">
+            <div class="article-gallary-labels">
+              <div class="article-gallary-counters"><span class="current"></span><span class="number"></span></div>
+              <div class="article-gallary-social">
+                <button class="social-button fb"><i class="icon-fb"></i></button>
+                <button class="social-button tw"><i class="icon-twitter"></i></button>
+                <button class="social-button vk"><i class="icon-vk"></i></button>
+                <button class="social-button gp"><i class="icon-google-plus"></i></button>
+              </div>
+            </div>
+            <div class="article-gallary-slider owl-carousel">
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-15.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-16.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-17.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-18.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-19.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-20.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-21.png"></figure>
+              <figure class="article-gallary-photo"><img src="img/article-gallary-slider-22.png"></figure>
+            </div>
+            <div class="article-gallary-previews-wrap">
+              <div class="article-gallary-previews owl-carousel">
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-15.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-16.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-17.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-18.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-19.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-20.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-21.png"></figure>
+                <figure class="article-gallary-previews-one"><img src="img/article-gallary-preview-22.png"></figure>
+              </div>
+            </div>
+          </div>
+          <div class="article-content-text">
+            <p class="text-p">Тестирование iOS-приложения не проводилось. А вот с версиями для Android всё обстоит не лучшим образом. Сейчас официальное приложение в Google Play работает с любыми Mi Band, умными весами и двумя типами кроссовок, как и китайское приложение. Есть и разблокировка смартфона при помощи браслета. Когда он находится рядом и связан с телефоном по Bluetooth, вводить пароль не требуется. Однако функции бега в нём нет, зато есть синхронизация с MyFitnessPal и Google Fit.</p>
+            <blockquote class="article-quote">Есть отличия в каких-то процедурах, согласованиях, но это не важно. Всегда работаешь не с компанией или корпорацией, а с конкретными людьми...</blockquote>
+            <p class="text-p">Официальная китайская версия приложения, распространяющаяся через фирменный для MIUI OS магазин, не умеет синхронизироваться с другими приложениями. Зато есть режим бега, активизирующийся специальной кнопкой, а также голосовой помощник для режима бега (в любительской сборке он переведён). И, по некоторым данным, есть возможность строить трек прогулки или пробежки (этот момент не проверен).</p>
+            <h2 class="title-0">Тестирование в агрессивных условиях</h2>
+          </div>
+          <figure class="article-float-left"><img src="img/article-img-16.png"></figure>
+          <div class="article-content-text">
+            <p class="text-p">Несмотря на заявленную производителем защиту от воды и пыли по стандарту IP67, пользователи довольно часто жаловались на Mi Band 1 и 1s из-за протечек. Тестовый экземпляр прекрасно пережил горячий и холодный душ и даже попытки утопить его под прямой струёй воды в течение часа. Правда, было выявлено, что первое касание струи горячей воды активизирует кнопку. Если поток не прерывается из-за перемещений или выключения воды, повторных срабатываний не наблюдается</p>
+            <p class="text-p">Кнопка работает и у замороженного до −18 °C браслета. Причём как после извлечения из морозилки, так и прямо в ней. На холодные и мокрые пальцы реагирует.</p>
+            <p class="text-p">Несмотря на заявленную производителем защиту от воды и пыли по стандарту IP67, пользователи довольно часто жаловались на Mi Band 1 и 1s из-за протечек. Тестовый экземпляр прекрасно пережил горячий и холодный душ и даже попытки утопить его под прямой струёй воды.</p>
+            <h2 class="title-0">Итоги</h2>
+            <p class="text-p">Все пользователи Mi Band сходились в том, что устройству нужен экран. Инженеры Xiaomi сделали именно то, что у них просили. Теперь Mi Band — это не привлекающий к себе внимание браслет, который при необходимости превращается в фитнес-гаджет. Брать или не брать? Обязательно брать.</p>
+            <p class="text-p">Сейчас стоимость Xiaomi Mi Band 2 (там, где он действительно есть в наличии) достигает 60 долларов. Явление это временное, рассчитанное на фанатов, желающих скорее получить долгожданный гаджет. В течение лета его стоимость наверняка снизится.</p>
+            <p class="text-p">Напомним, что официальные продажи нового Mi Band стартовали 30 июня. Через пару недель после этого устройства появятся на складах магазинов, доступных для российского покупателя.</p>
+          </div>
+        </section>
+        <section class="articleWide-social">
+          <div class="shareSocial">
+            <button class="shareSocial-bookmark"><i class="icon-bookmark"></i><span>Довавить в закладку</span></button>
+            <button class="shareSocial-social fb"><i class="icon-fb"></i><span>35</span></button>
+            <button class="shareSocial-social tw"><i class="icon-twitter"></i><span>35</span></button>
+            <button class="shareSocial-social vk"><i class="icon-vk"></i><span>18</span></button>
+            <button class="shareSocial-social gp"><i class="icon-google-plus"></i><span>25</span></button>
+            <button class="shareSocial-more"><i class="icon-plus"></i></button>
+            <div class="shareSocial-counters"><i class="icon-view"></i><span>124</span></div>
+          </div>
+          <div class="tags">
+            <p class="text-sub">Теги:</p>
+            <div class="tags-list">
+              <button class="tags-one">Xiaomi</button>
+              <button class="tags-one">Xiaomi Mi Band 2</button>
+              <button class="tags-one">Гаджеты</button>
+              <button class="tags-one">Фитнес-трекер</button>
+            </div>
+          </div>
+          <section class="article-subscribe">
+            <div class="section-title">
+              <h2 class="title-4"><img src="img/icon-plane.svg">Подписаться на рассылку</h2>
+            </div>
+            <div class="article-subscribe-form">
+              <input type="text" placeholder="Ваш Email">
+              <button class="button button-primary" type="submit">Подписаться</button>
+            </div>
+          </section>
+          <section class="comments">
+            <div class="section-title">
+              <h2 class="title-4"><i class="icon-comment"></i>комментарии</h2>
+            </div>
+            <div class="comments-posts">
+              <div class="comments-posts-one">
+                <figure class="comments-posts-avatar google-plus"><img src="img/comments-avatar-1.png"></figure>
+                <div class="comments-posts-content">
+                  <p class="title-4">Оликсандор Дроздов</p>
+                  <div class="counters counters-item"><i class="icon-time"></i><span>5 ноября</span></div>
+                  <p class="text-p">Есть специальные генераторы, создающие собственные варианты. Сайтах и смысловую нагрузку ему нести совсем необязательно распространенных.</p>
+                  <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
+                </div>
+              </div>
+              <div class="comments-posts-one reply">
+                <figure class="comments-posts-avatar twitter"><img src="img/comments-avatar-2.png"></figure>
+                <div class="comments-posts-content">
+                  <p class="title-4">Никита Светлый</p>
+                  <div class="counters counters-item"><i class="icon-time"></i><span>7 ноября</span></div>
+                  <p class="text-p">Древнеримскому философу цицерону, ведь именно из его трактата о пределах.</p>
+                  <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
+                </div>
+              </div>
+              <div class="comments-posts-one reply">
+                <figure class="comments-posts-avatar fb"><img src="img/comments-avatar-3.png"></figure>
+                <div class="comments-posts-content">
+                  <p class="title-4">Оксана Рыбина</p>
+                  <div class="counters counters-item"><i class="icon-time"></i><span>8 ноября</span></div>
+                  <p class="text-p">О пределах добра и смысловую нагрузку ему нести совсем. Отсюда напрашивается вывод, что все.</p>
+                  <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
+                </div>
+              </div>
+              <div class="comments-posts-one">
+                <figure class="comments-posts-avatar"><img src="img/comments-avatar-4.png"></figure>
+                <div class="comments-posts-content">
+                  <p class="title-4">Миша Светраков</p>
+                  <div class="counters counters-item"><i class="icon-time"></i><span>11 ноября</span></div>
+                  <p class="text-p">Есть специальные генераторы, создающие собственные варианты. Сайтах и смысловую нагрузку ему нести совсем необязательно распространенных.</p>
+                  <button class="button-reply"><i class="icon-reply"></i>Ответить</button>
+                </div>
+              </div>
+            </div>
+            <div class="comments-write">
+              <figure class="comments-posts-avatar"><img src="img/comments-avatar-4.png"></figure>
+              <form class="comments-write-form">
+                <textarea name="comment" placeholder="Комментарий" required></textarea>
+                <button class="button button-primary" type="submit">Отправить</button>
+              </form>
+            </div>
+          </section>
+        </section>
+      </article>
+      <section class="articleWide-footer">
+        <div class="articleSpecial columns small-12"><img src="img/special-banner-3.png"></div>
+        <section class="l-siblingsArticle column small-12 row"><a class="column medium-6 small-12">
+            <div class="siblingsArticle-one prev"><img class="siblingsArticle-one-bg" src="img/siblings-article-1.png">
+              <p class="siblingsArticle-one-move">Предыдущая статья</p>
+              <p class="title-4 white">Google Glass превратили в тренажер кода Морзе</p>
+            </div></a><a class="column medium-6 small-12">
+            <div class="siblingsArticle-one next"><img class="siblingsArticle-one-bg" src="img/siblings-article-2.png">
+              <p class="siblingsArticle-one-move">Следующая статья</p>
+              <p class="title-4 white">Американцы показали уникальное складное крыло</p>
+            </div></a></section>
+        <section class="l-otherArticles column small-12 row">
+          <div class="column small-12">
+            <div class="section-title-inner">
+              <div class="title-4">Лучшие материалы</div>
+            </div>
+          </div>
+          <ul class="articlesList-compact column small-12 row">
+            <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text" href="rubric-article.html">
+                <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img" src="img/articles-list-item-img-33.png"></figure>
+                <div class="articlesList-item-text-content">
+                  <p class="category-text category-text-technology">ТЕХНОЛОГИИ</p>
+                  <p class="title-4">Хакерам потребовалось менее минуты, чтобы взломать флагман Google</p>
+                  <div class="counters">
+                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
+                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                  </div>
+                </div></a>
+            </li>
+            <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text" href="rubric-article.html">
+                <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img" src="img/articles-list-item-img-5.png"></figure>
+                <div class="articlesList-item-text-content">
+                  <p class="category-text category-text-astro">АСТРОФИЗИКА</p>
+                  <p class="title-4">Глобальное потепление</p>
+                  <div class="counters">
+                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
+                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                  </div>
+                </div></a>
+            </li>
+            <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12"><a class="articlesList-item-text" href="rubric-article.html">
+                <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img" src="img/articles-list-item-img-11.png"></figure>
+                <div class="articlesList-item-text-content">
+                  <p class="category-text category-text-psycho">ПСИХОЛОГИЯ</p>
+                  <p class="title-4">Поверхностную оценку сексуальности связали с одобрением насилия</p>
+                  <div class="counters">
+                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
+                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                  </div>
+                </div></a>
+            </li>
+            <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12 hide-for-medium-only"><a class="articlesList-item-text" href="rubric-article.html">
+                <figure class="articlesList-item-img-wrap"><img class="articlesList-item-img" src="img/articles-list-item-img-34.png"></figure>
+                <div class="articlesList-item-text-content">
+                  <p class="category-text category-text-medtech">МедТех</p>
+                  <p class="title-4">Апофения: увидеть незримое и поверить в заговор</p>
+                  <div class="counters">
+                    <div class="counters-item"><i class="icon-time"></i>2 часа</div>
+                    <div class="counters-item"><i class="icon-comment"></i>113</div>
+                  </div>
+                </div></a>
+            </li>
+          </ul>
+          <div class="column small-12"><a class="button-more-light" href="#"><span>СМОТРЕТЬ БОЛЬШЕ</span><i class="icon-squares"></i></a></div>
+        </section>
+      </section>
+    </div>
+    <div class="l-footerSubscibe">
+      <h2 class="footerSubscribe-title">Подписаться на рассылку</h2>
+      <form class="footerSubscribe-form">
+        <input type="email" name="email" placeholder="Ваш Email">
+        <button type="submit"><i class="icon-angle-right"></i></button>
+      </form>
+    </div>
+    <footer class="l-footer"><a class="footer-logo" href="index.html"><img src="img/colored-logo.png"></a>
+      <ul class="footer-links">
+        <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
+        <li><a class="header-link" href="rubric.html"><span>Технологии</span></a></li>
+        <li><a class="header-link" href="rubric.html"><span>Медиа</span></a></li>
+        <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
+        <li><a class="header-link" href="books.html"><span>Книги</span></a></li>
+        <li><a class="header-link" href="rubric.html"><span>Медтех</span></a></li>
+        <li><a class="header-link" href="rubric.html"><span>Будущее</span></a></li>
+        <li><a class="header-link" href="photo.html"><span>Фото дня</span></a></li>
+        <li><a class="header-link" href="video.html"><span>Видео</span></a></li>
+        <li><a class="header-link" href="interview.html"><span>Интервью</span></a></li>
+      </ul>
+      <ul class="footer-links">
+        <li><a class="header-link" href="about.html"><span>О нас</span></a></li>
+        <li><a class="header-link" href="advertising.html"><span>Реклама на сайте</span></a></li>
+        <li><a class="header-link" href="contacts.html"><span>Связаться с нами</span></a></li>
+        <li><a class="header-link" href="partners.html"><span>Конфиденциальность</span></a></li>
+      </ul>
+      <ul class="footer-social">
+        <li><a href="#"><i class="icon-fb"></i></a></li>
+        <li><a href="#"><i class="icon-twitter"></i></a></li>
+        <li><a href="#"><i class="icon-vk"></i></a></li>
+        <li><a href="#"><i class="icon-google-plus"></i></a></li>
+      </ul>
+      <div class="footer-mistake"><img src="img/icon-keyboard.svg"><b>Ctrl + Enter</b> - если нашли ошибку</div>
+      <div class="footer-copyright">
+        <p class="nowrap bold">© 2016, Science of everything. 
+          <wbr>Все права защищены.
+        </p>
+        <p>Полное или частичное копирование материалов без согласия с редакцией запрещено</p>
+        <p>Сделано в <a href="http://dizz.in.ua/ru">Dizz Agency</a></p>
+      </div>
+      <button class="up-button"><i class="icon-angle-up"></i></button>
+    </footer>
+  </body>
+</html>

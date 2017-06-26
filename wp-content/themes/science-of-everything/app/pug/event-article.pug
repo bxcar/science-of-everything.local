@@ -11,15 +11,36 @@ block content
   .mainWrap.mainWrap-medium.row
     article.l-article.column.large-8.small-12
       section.article-visualContent
-        img(src="img/article-visual-6.png")
+        figure.article-visualContent-img
+          img(src="img/article-visual-6.png")
+        .article-visualContent-text
+          .article-visualContent-details
+            if rubricArticle
+              .category.category-m.category-technology ТЕХНОЛОГИИ
+            .counters
+              .counters-item
+                i.icon-time
+                span 23.11.2016
+              .counters-item
+                i.icon-comment
+                span 4
+              .counters-item
+                i.icon-view
+                span 124
+              .counters-item
+                i.icon-pencil
+                span Оксана Рыбина
+          .article-visualContent-title
+            block article-title
+              h1.title-0.white Лекция «Кризис реальности и мифология массмедиа»
       section.article-content
-        .article-content-counters
-          .article-content-counters-date
-            i.icon-time
-            span 23.11.2016
+        //- .article-content-counters
+        //-   .article-content-counters-date
+        //-     i.icon-time
+        //-     span 23.11.2016
 
         .article-content-text
-          h1.title-0 Лекция «Кризис реальности и мифология массмедиа»
+          //- h1.title-0 Лекция «Кризис реальности и мифология массмедиа»
           p.text-p
             | тремительное развитие телекоммуникационных технологий во второй половине XX века превратило средства массовой информации в мощнейший проводник и даже источник властных отношений. К концу века СМИ стали играть в жизни общества примерно ту же роль, которую играет в становлении человека его способность к саморефлексии. Однако такое понимание СМИ предполагает вопрос: «Можно ли наблюдать за наблюдателем, или критиковать критика?» Именно эту функцию — роль наблюдателей второго порядка взяли на себя представители французского постструктурализма, развернув в своих работах масштабную философскую критику структуры, целей и методов средств массовой информации.
           p.text-p
@@ -33,8 +54,12 @@ block content
           each tag in tagsList
             button.tags-one= tag
 
+      include template/article-subscribe.pug
       include template/comments.pug
 
     include template/events-sidebar.pug
+
+    .articleSpecial.columns.small-12
+      img(src="img/special-banner-3.png")
 
     include template/other-articles.pug

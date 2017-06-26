@@ -46,7 +46,7 @@ get_header(); ?>
                         $photos->the_post(); ?>
                         <?php if ($i) {
                             $i = false; ?>
-                            <li class="columns column-block large-8 small-12 articlesList-medium"><a
+                            <li class="articlesList-item-hover columns column-block large-8 small-12 articlesList-medium"><a
                                         class="articlesList-item-banner twoThirds" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg"><img src="<?php the_field('post_image'); ?>">
                                     </div>
@@ -60,7 +60,7 @@ get_header(); ?>
                                 </a>
                             </li>
                         <?php } else { ?>
-                            <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 articlesList-medium">
+                            <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4 articlesList-medium">
                                 <a
                                         class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>"><img
                                             class="articlesList-item-img" src="<?php the_field('post_image'); ?>"></a><a
@@ -89,10 +89,10 @@ get_header(); ?>
                 echo do_shortcode('[ajax_load_more post_type="photos" posts_per_page="6" offset="8" pause="true" scroll="false" button_label="' . get_field('load_more_posts') . '" button_loading_label="' . __('Загрузка', 'science-of-everything') . '"]');
             }?>
             <style>
-                .articlesList-item-text.columns.column-block.medium-6.small-12.large-4.articlesList-medium {
+                /*.articlesList-item-text.columns.column-block.medium-6.small-12.large-4.articlesList-medium {
                     display: inline-block;
                     float: left;
-                }
+                }*/
 
                 .ajax-load-more-wrap {
                     width: 100%;
@@ -103,6 +103,10 @@ get_header(); ?>
                 }
             </style>
             <script>
+                jQuery('.ajax-load-more-wrap').bind("DOMNodeInserted", function (e) {
+                    jQuery('div.alm-reveal').addClass("articlesList articlesList-detail column small-12 row");
+                });
+
                 jQuery(document).ready(function () {
                     jQuery('div.alm-btn-wrap').addClass('button-more');
                     jQuery('div.alm-btn-wrap button').html('<span>Смотреть больше</span><i class=\'icon-squares\'></i>');

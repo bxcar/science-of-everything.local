@@ -65,6 +65,22 @@ $button_type_selected = $this->settings_repo->getButtonType();
 <div class="simple-favorites-display-settings">
 	<div class="row">
 		<div class="description">
+			<h5><?php _e('Button HTML Element', 'favorites'); ?></h5>
+			<p><?php _e('By default, the button is displayed in an HTML button element.', 'favorites'); ?></p>
+		</div>
+		<div class="field">
+			<label class="block"><?php _e('Button HTML Element', 'favorites'); ?></label>
+			<select name="simplefavorites_display[button_element_type]">
+				<?php $button_type = $this->settings_repo->getButtonHtmlType(); ?>
+				<option value="button" <?php if ( $button_type == 'button' ) echo 'selected';?>><?php _e('Button', 'favorites'); ?></option>
+				<option value="a" <?php if ( $button_type == 'a' ) echo 'selected';?>><?php _e('a (link)', 'favorites'); ?></option>
+				<option value="div" <?php if ( $button_type == 'div' ) echo 'selected';?>><?php _e('Div', 'favorites'); ?></option>
+				<option value="span" <?php if ( $button_type == 'span' ) echo 'selected';?>><?php _e('Span', 'favorites'); ?></option>
+			</select>
+		</div>
+	</div><!-- .row -->
+	<div class="row">
+		<div class="description">
 			<h5><?php _e('Button Type', 'favorites'); ?></h5>
 			<p><?php _e('Use a predefined button or add your own markup.', 'favorites'); ?></p>
 		</div>
@@ -286,7 +302,8 @@ $button_type_selected = $this->settings_repo->getButtonType();
 								<select>
 									<option value="[post_title]"><?php _e('Post Title', 'favorites'); ?></option>
 									<option value="[post_excerpt]"><?php _e('Excerpt', 'favorites'); ?></option>
-									<option value="[post_permalink]"><?php _e('Permalink', 'favorites'); ?></option>
+									<option value="[post_permalink]"><?php _e('Permalink (raw link)', 'favorites'); ?></option>
+									<option value="[permalink][/permalink]"><?php _e('Permalink (as link)', 'favorites'); ?></option>
 									<?php
 									$thumbnail_sizes = get_intermediate_image_sizes();
 									foreach ( $thumbnail_sizes as $size ){

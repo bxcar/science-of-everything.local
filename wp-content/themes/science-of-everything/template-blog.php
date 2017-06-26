@@ -53,7 +53,7 @@ get_header(); ?>
                     while ($photos->have_posts()) {
                         $photos->the_post();
                         if ($i == 0) { ?>
-                            <li class="columns column-block large-8 small-12 articlesList-medium">
+                            <li class="articlesList-item-hover columns column-block large-8 small-12 articlesList-medium">
                                 <a class="articlesList-item-banner twoThirds" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg"><img src="<?php the_post_thumbnail_url(); ?>">
                                     </div>
@@ -67,7 +67,7 @@ get_header(); ?>
                                 </a>
                             </li>
                         <?php } elseif (($i == 3) || ($i == 4)) { ?>
-                            <li class="columns column-block medium-6 small-12 large-4 center">
+                            <li class="articlesList-item-hover columns column-block medium-6 small-12 large-4 center">
                                 <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg"><img src="<?php the_post_thumbnail_url(); ?>">
                                     </div>
@@ -89,7 +89,7 @@ get_header(); ?>
                                 </li>
                             <?php } ?>
                         <?php } else { ?>
-                            <li class="articlesList-item-text columns column-block medium-6 small-12 large-4<?php if ($i == 1) {
+                            <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4<?php if ($i == 1) {
                                 echo ' articlesList-medium';
                             } ?>">
                                 <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">

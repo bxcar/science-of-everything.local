@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(get_post_type() == 'photos') {?>
-    <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 articlesList-medium">
+    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4 articlesList-medium">
         <a
                 class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>"><img
                     class="articlesList-item-img" src="<?php the_field('post_image'); ?>"></a><a
@@ -15,22 +15,22 @@ if(get_post_type() == 'photos') {?>
         </p>
     </li>
 <?php } elseif ((get_post_type() == 'videos') || (get_post_type() == 'video-collections')) { ?>
-    <li class="articlesList-item-text columns column-block medium-6 small-12 large-4 articlesList-medium-plus">
+    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4 articlesList-medium-plus">
         <a class="articlesList-item-img-wrap articlesList-item-video"
            href="<?php the_permalink(); ?>"><!--
                                 --><img class="articlesList-item-img" src="https://img.youtube.com/vi/<?php
-            the_field('video_id'); ?>/0.jpg""></a><!--
+            the_field('video_id'); ?>/maxresdefault.jpg""></a><!--
                                     --><a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         <div class="counters">
             <div class="counters-item"><i
                         class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
             <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
         </div>
-        <p class="text-p"><?= strip_tags(get_field('description')); ?>
+        <p class="text-p"><?= wp_trim_words(strip_tags(get_field('description')), 25); ?>
         </p>
     </li>
 <?php } elseif (get_post_type() == 'book') { ?>
-    <li class="articlesList-item-book columns medium-6 small-12 large-3">
+    <li class="articlesList-item-book articlesList-item-hover columns medium-6 small-12 large-3">
         <a class="articlesList-item-book-img" href="<?php the_permalink(); ?>">
             <img src="<?php the_field('book_mini'); ?>"></a>
         <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -61,7 +61,7 @@ if(get_post_type() == 'photos') {?>
                 </li>
                 <?php
             } else { ?>
-                <li><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
+                <li class="articlesList-item-hover"><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
                         <img style="width: 160px; height: 160px;"
                              src="<?= get_the_post_thumbnail_url(); ?>"></a>
                     <div class="articlesList-events-content">
@@ -108,7 +108,7 @@ if(get_post_type() == 'photos') {?>
                 </li>
                 <?php
             } else { ?>
-                <li><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
+                <li class="articlesList-item-hover"><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
                         <img style="width: 160px; height: 160px;"
                              src="<?= get_the_post_thumbnail_url(); ?>"></a>
                     <div class="articlesList-events-content">
@@ -131,7 +131,7 @@ if(get_post_type() == 'photos') {?>
         }
     }
 } elseif ((get_post_type() == 'topics') && $_SESSION['category']) { ?>
-    <li class="articlesList-item-text columns column-block medium-6 small-12 large-4">
+    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
         <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
             <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
         </a>
@@ -163,7 +163,7 @@ if(get_post_type() == 'photos') {?>
         </a>
     </li>
 <?php } elseif((get_post_type() == 'post') && ($_SESSION['blog'] == true)) { ?>
-    <li class="articlesList-item-text columns column-block medium-6 small-12 large-4<?php if ($i == 1) {
+    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4<?php if ($i == 1) {
         echo ' articlesList-medium';
     } ?>">
         <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
@@ -215,7 +215,7 @@ if(get_post_type() == 'photos') {?>
         </div>
     </li>
 <?php } elseif(get_post_type() == 'special') { ?>
-    <li class="articlesList-special-item">
+    <li class="articlesList-special-item articlesList-item-hover">
         <a class="articlesList-special-item-img" href="<?php the_permalink(); ?>">
             <img src="<?php the_field('special_main_page_image'); ?>">
         </a>

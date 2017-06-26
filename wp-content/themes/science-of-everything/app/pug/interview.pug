@@ -1,0 +1,49 @@
+extends template/section-layout.pug
+
+block prepend body
+  - var breadcrumbsCurrent = 'Интервью'
+
+block prepend content
+  - var sectionTitle = 'Интервью'
+  - var sortSelect = true
+
+block section-content
+  ul.articlesList.articlesList-detail.column.small-12.row
+    - var link = 'interview-article.html'
+    - var bannerClasses = 'articlesList-medium'
+    - var bgSrc = 'img/slider-img-1.png'
+    - var articleTitle = 'Владимир Смирнов, креативный директор диджитал-агентства Aimbulance'
+    - var autorCounter = true
+    include template/articlesItem-twoThirds.pug
+
+    - var otherClasses = 'large-4 articlesList-medium'
+    - var detailItem = true
+    - var mediumItem = true
+    - var imgSrc = 'img/articles-list-item-img-26.png'
+    - var title = 'Google Glass превратили в тренажер кода Морзе'
+    include template/articlesItem-text.pug
+
+    - otherClasses = 'large-4'
+    - mediumItem = false
+    - var bigItem = true
+    - imgSrc = 'img/articles-list-item-img-20.png'
+    include template/articlesItem-text.pug
+
+    - otherClasses = 'large-4 center'
+    - var innerBanner = true
+    - bgSrc = 'img/articles-list-item-bg-11.png'
+    - title = 'Апофения: увидеть незримое и поверить в заговор'
+    include template/articlesItem-banner.pug
+
+    li.columns.column-block.large-4.medium-6.small-12.hide-for-small.show-for-large
+      img(src="img/special-banner-2.png")
+
+    - bgSrc = 'img/articles-list-item-bg-12.png'
+    include template/articlesItem-banner.pug
+
+    - otherClasses = 'large-4'
+    - imgSrc = 'img/articles-list-item-img-22.png'
+    include template/articlesItem-text.pug
+
+    - imgSrc = 'img/articles-list-item-img-19.png'
+    include template/articlesItem-text.pug

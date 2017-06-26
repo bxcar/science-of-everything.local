@@ -195,6 +195,14 @@ get_header(); ?>
         #ajax-load-more {
             width: 100%;
         }
+
+        @media screen and (max-width: 639px) {
+            .articlesList-item-img-wrap img {
+                width: 100% !important;
+                height: auto; !important;
+            }
+        }
+
     </style>
     <script>
         jQuery('.ajax-load-more-wrap').bind("DOMNodeInserted", function (e) {

@@ -68,10 +68,16 @@
 .l-sectionPsycho
   padding-top: 50px
   padding-bottom: 80px
-  transform: translateZ(-100px)
+  position: relative
+  z-index: -1
+  // transform: translateZ(-100px)
 
   @include media(639px)
     padding-bottom: 30px
+
+.l-sectionMedia
+  padding-top: 60px
+  padding-bottom: 70px
 
 .l-sectionBooks
   @include padding(50px null 80px null)
