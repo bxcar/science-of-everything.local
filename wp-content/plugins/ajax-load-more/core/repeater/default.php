@@ -229,4 +229,19 @@ if(get_post_type() == 'photos') {?>
             <p class="text-p"><?php the_field('special_main_page_description'); ?></p>
         </div>
     </li>
+<?php } elseif(get_post_type() == 'interview') { ?>
+    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4<?php if ($i == 1) {
+        echo ' articlesList-medium';
+    } ?>">
+        <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
+            <img class="articlesList-item-img" style="width: 350px; height: 230px;" src="<?php the_field('main-image'); ?>"></a><a
+                class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <div class="counters">
+            <div class="counters-item"><i class="icon-user"></i><?php the_author(); ?></div>
+            <div class="counters-item"><i
+                        class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
+            <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
+        </div>
+        <p class="text-p"><?php the_field('short-desc'); ?></p>
+    </li>
 <?php } ?>

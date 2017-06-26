@@ -30,6 +30,15 @@
         'container' => 'false'
     ));
     ?>
+
+    <?php
+    echo wp_nav_menu(array(
+        'echo' => false,
+        'theme_location' => 'menu-3-footer-2',
+        'items_wrap' => '<ul class="footer-links">%3$s</ul>',
+        'container' => 'false'
+    ));
+    ?>
     <script>
         jQuery(".footer-links > li a").addClass("header-link").wrapInner("<span></span>");
     </script>

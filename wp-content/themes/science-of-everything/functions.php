@@ -48,6 +48,7 @@ if (!function_exists('science_of_everything_setup')) :
             'menu-1' => esc_html__('Primary-sidebar', 'science-of-everything'),
             'menu-2-sidebar' => esc_html__('sidebar-2', 'science-of-everything'),
             'menu-3-footer' => esc_html__('footer', 'science-of-everything'),
+            'menu-3-footer-2' => esc_html__('footer-2', 'science-of-everything'),
             'menu-4-top' => esc_html__('top', 'science-of-everything'),
         ));
 
