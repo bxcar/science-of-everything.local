@@ -55,7 +55,7 @@ get_header(); ?>
                         if ($i == 0) { ?>
                             <li class="articlesList-item-hover columns column-block large-8 small-12 articlesList-medium">
                                 <a class="articlesList-item-banner twoThirds" href="<?php the_permalink(); ?>">
-                                    <div class="articlesList-item-bg"><img src="<?php the_post_thumbnail_url(); ?>">
+                                    <div class="articlesList-item-bg"><img class="obj-fit height-inh" src="<?php the_post_thumbnail_url(); ?>">
                                     </div>
                                     <p class="title-1 white"><?php the_title(); ?></p>
                                     <div class="counters">
@@ -69,7 +69,7 @@ get_header(); ?>
                         <?php } elseif (($i == 3) || ($i == 4)) { ?>
                             <li class="articlesList-item-hover columns column-block medium-6 small-12 large-4 center">
                                 <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
-                                    <div class="articlesList-item-bg"><img src="<?php the_post_thumbnail_url(); ?>">
+                                    <div class="articlesList-item-bg"><img class="obj-fit height-inh" src="<?php the_post_thumbnail_url(); ?>">
                                     </div>
                                     <p class="title-3 white"><?php the_title(); ?></p>
                                     <div class="counters">
@@ -84,7 +84,7 @@ get_header(); ?>
                                 <li class="columns column-block large-4 medium-6 small-12 hide-for-small show-for-large">
                                     <a target="_blank"
                                        href="<?php the_field('ads2_link', get_option('page_on_front')); ?>">
-                                        <img src="<?php the_field('ads2_image', get_option('page_on_front')); ?>">
+                                        <img class="obj-fit height-inh" src="<?php the_field('ads2_image', get_option('page_on_front')); ?>">
                                     </a>
                                 </li>
                             <?php } ?>
@@ -93,7 +93,7 @@ get_header(); ?>
                                 echo ' articlesList-medium';
                             } ?>">
                                 <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
-                                    <img class="articlesList-item-img" style="width: 350px; height: 230px;" src="<?php the_post_thumbnail_url(); ?>"></a><a
+                                    <img class="articlesList-item-img obj-fit height-inh" style="width: 350px; height: 230px;" src="<?php the_post_thumbnail_url(); ?>"></a><a
                                         class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 <div class="counters">
                                     <div class="counters-item"><i class="icon-user"></i><?php the_author(); ?></div>

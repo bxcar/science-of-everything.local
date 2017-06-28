@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Super Socializer
-Plugin URI: http://super-socializer-wordpress.heateor.com
+Plugin URI: https://super-socializer-wordpress.heateor.com
 Description: A complete 360 degree solution to provide all the social features like Social Login, Social Commenting, Social Sharing and more.
-Version: 7.9.1
+Version: 7.9.2
 Author: Team Heateor
 Author URI: https://www.heateor.com
 Text Domain: Super-Socializer
@@ -11,7 +11,7 @@ Domain Path: /languages
 License: GPL2+
 */
 defined('ABSPATH') or die("Cheating........Uh!!");
-define('THE_CHAMP_SS_VERSION', '7.9.1');
+define('THE_CHAMP_SS_VERSION', '7.9.2');
 
 require 'helper.php';
 

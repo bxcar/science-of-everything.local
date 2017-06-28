@@ -39,7 +39,7 @@
                 if ($photos->have_posts()) {
                     while ($photos->have_posts()) {
                         $photos->the_post(); ?>
-                        <li class="articlesList-item-book columns medium-6 small-12 large-3">
+                        <li class="articlesList-item-book articlesList-item-hover columns medium-6 small-12 large-3">
                             <a class="articlesList-item-book-img" href="<?php the_permalink(); ?>">
                                 <img src="<?php the_field('book_mini'); ?>"></a>
                             <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -85,6 +85,5 @@
                 max-width: 24.6%;
             }
         }
-
     </style>
 <?php get_footer(); ?>

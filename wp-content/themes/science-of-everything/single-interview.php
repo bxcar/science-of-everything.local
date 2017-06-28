@@ -9,10 +9,11 @@
                         <h1 class="title-0 white"><?php the_title(); ?></h1>
                     </div>
                     <div class="counters">
-                        <div class="counters-item"><i class="icon-time"></i><span><?= get_the_date();?></span></div>
-                        <div class="counters-item"><i class="icon-comment"></i><span><?= get_comments_number(); ?></span></div>
+                        <div class="counters-item"><i class="icon-time"></i><span><?= get_the_date(); ?></span></div>
+                        <div class="counters-item"><i
+                                    class="icon-comment"></i><span><?= get_comments_number(); ?></span></div>
                         <div class="counters-item"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
-<!--                        <div class="counters-item"><i class="icon-pencil"></i><span>Оксана Рыбина</span></div>-->
+                        <!--                        <div class="counters-item"><i class="icon-pencil"></i><span>Оксана Рыбина</span></div>-->
                     </div>
                 </div>
             </section>
@@ -56,7 +57,7 @@
                 <div class="article-content-text">
                     <?php the_field('text-2'); ?>
                 </div>
-                <figure class="article-float-left"><img src="<?php the_field('left-image-1')?>"></figure>
+                <figure class="article-float-left"><img src="<?php the_field('left-image-1') ?>"></figure>
                 <div class="article-content-text">
                     <?php the_field('right-text-1'); ?>
                 </div>
@@ -90,7 +91,7 @@
             <section class="articleWide-social">
                 <div class="shareSocial">
                     <?php the_favorites_button(); ?>
-                <?php echo do_shortcode('[TheChamp-Sharing count="1"]') ?>
+                    <?php echo do_shortcode('[TheChamp-Sharing count="1"]') ?>
                     <div class="shareSocial-counters"><i class="icon-view"></i><span><?php the_views() ?></span></div>
                 </div>
                 <div class="tags">
@@ -108,7 +109,8 @@
                 </div>
                 <section class="article-subscribe">
                     <div class="section-title">
-                        <h2 class="title-4"><img src="<?= get_template_directory_uri(); ?>/app/img/icon-plane.svg">Подписаться на рассылку</h2>
+                        <h2 class="title-4"><img src="<?= get_template_directory_uri(); ?>/app/img/icon-plane.svg">Подписаться
+                            на рассылку</h2>
                     </div>
                     <?php echo do_shortcode('[contact-form-7 id="9" title="Подписка на рассылку" html_class="article-subscribe-form"]'); ?>
                     <script>
@@ -118,13 +120,15 @@
                 <?php comments_template('/comments.php', true); ?>
         </article>
         <section class="articleWide-footer">
-            <a style="display: block;" target="_blank" href="<?php the_field('adv-link'); ?>" class="articleSpecial columns small-12">
-                <img src="<?php the_field('adv-image')?>">
+            <a style="display: block;" target="_blank" href="<?php the_field('adv-link'); ?>"
+               class="articleSpecial columns small-12">
+                <img src="<?php the_field('adv-image') ?>">
             </a>
             <section class="l-siblingsArticle column small-12 row"><?php
                 if (get_permalink(get_adjacent_post(false, '', true)) != get_the_permalink()) {
                     ?>
-                    <a href="<?= get_permalink(get_adjacent_post(false, '', true)); ?>" class="column medium-6 small-12">
+                    <a href="<?= get_permalink(get_adjacent_post(false, '', true)); ?>"
+                       class="column medium-6 small-12">
                         <div class="siblingsArticle-one prev"><?php
                             ?><img class="siblingsArticle-one-bg" src="<?php the_field('main-image'); ?>">
                             <p class="siblingsArticle-one-move">Предыдущая статья</p>
@@ -168,10 +172,11 @@
                     if ($popular_posts->have_posts()) {
                         while ($popular_posts->have_posts()) {
                             $popular_posts->the_post(); ?>
-                            <li class="columns column-block large-3 medium-4 small-12">
+                            <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
                                 <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
                                     <figure class="articlesList-item-img-wrap">
-                                        <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+                                        <img style="width: 255px; height: 165px;" class="articlesList-item-img"
+                                             src="<?= get_the_post_thumbnail_url(); ?>">
                                     </figure>
                                     <div class="articlesList-item-text-content">
                                         <?php
@@ -184,8 +189,11 @@
                                         ?>
                                         <p class="title-4"><?php the_title(); ?></p>
                                         <div class="counters">
-                                            <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?></div>
-                                            <div class="counters-item"><i class="icon-comment"></i><?= get_comments_number(); ?></div>
+                                            <div class="counters-item"><i
+                                                        class="icon-time"></i><?php wp_days_ago_v3(0, 31536000); ?>
+                                            </div>
+                                            <div class="counters-item"><i
+                                                        class="icon-comment"></i><?= get_comments_number(); ?></div>
                                         </div>
                                     </div>
                                 </a>
@@ -200,32 +208,32 @@
             </section>
         </section>
     </div>
-<style>
-    strong {
-        color: #333;
-    }
+    <style>
+        strong {
+            color: #333;
+        }
 
-    .article-quote-author strong {
-        font-weight: 500;
-        color: #656565;
-    }
+        .article-quote-author strong {
+            font-weight: 500;
+            color: #656565;
+        }
 
-    #ajax-load-more {
-        width: 100%;
-    }
-</style>
-<script>
-    jQuery('.article-content-text > p').addClass('text-p');
-    jQuery('.article-content-text > h2').addClass('title-0');
-    jQuery('.article-content-text > h3').addClass('interview-question');
-    jQuery('.article-content-text > blockquote').addClass('article-quote');
+        #ajax-load-more {
+            width: 100%;
+        }
+    </style>
+    <script>
+        jQuery('.article-content-text > p').addClass('text-p');
+        jQuery('.article-content-text > h2').addClass('title-0');
+        jQuery('.article-content-text > h3').addClass('interview-question');
+        jQuery('.article-content-text > blockquote').addClass('article-quote');
 
-    jQuery('.ajax-load-more-wrap').bind("DOMNodeInserted", function (e) {
-        jQuery('div.alm-reveal').addClass("articlesList-compact column small-12 row");
-    });
-    jQuery( document ).ready(function() {
-        jQuery('div.alm-btn-wrap button').addClass("button-more-light").wrap("<div class='column small-12'></div>");
-        jQuery('div.alm-btn-wrap button.button-more-light').append("<i class='icon-squares'></i>");
-    });
-</script>
+        jQuery('.ajax-load-more-wrap').bind("DOMNodeInserted", function (e) {
+            jQuery('div.alm-reveal').addClass("articlesList-compact column small-12 row");
+        });
+        jQuery(document).ready(function () {
+            jQuery('div.alm-btn-wrap button').addClass("button-more-light").wrap("<div class='column small-12'></div>");
+            jQuery('div.alm-btn-wrap button.button-more-light').append("<i class='icon-squares'></i>");
+        });
+    </script>
 <?php get_footer(); ?>

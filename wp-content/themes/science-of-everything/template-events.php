@@ -196,8 +196,12 @@ get_header(); ?>
     </aside>
 </div>
 <script>
+    jQuery('.ajax-load-more-wrap').bind("DOMNodeInserted", function (e) {
+        jQuery('div.alm-reveal').addClass("articlesList articlesList-detail row");
+    });
+
     jQuery(document).ready(function () {
-        jQuery('table.em-calendar tbody').append('<tr> <th>Пн</th> <th>Вт</th> <th>Ср</th> <th>Чт</th> <th>Пт</th> <th>Сб</th> <th>Вс</th> </tr>');
+        jQuery('table.em-calendar tbody').prepend('<tr class="days-names"> <th>П</th> <th>В</th> <th>С</th> <th>Ч</th> <th>П</th> <th>С</th> <th>В</th> </tr>');
     });
     jQuery("#ajax-load-more").click(function (e) {
         var jqxhr = jQuery.get('<?= get_template_directory_uri(); ?>/event-set-session-vars.php?data=upcoming');
@@ -252,9 +256,11 @@ get_header(); ?>
     table.em-calendar th,
     table.em-calendar td {
         vertical-align: middle;
+        text-align: center;
+        padding: 5px;
     }
 
-    tr.days-names td {
+    tr.days-names th {
         font-weight: 700;
     }
 

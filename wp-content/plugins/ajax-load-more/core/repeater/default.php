@@ -140,7 +140,7 @@ if(get_post_type() == 'photos') {?>
         <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 35); ?></p>
     </li>
 <?php } elseif(get_post_type() == 'topics') { ?>
-    <li class="columns column-block large-3 medium-4 small-12">
+    <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
         <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
             <figure class="articlesList-item-img-wrap">
                 <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">

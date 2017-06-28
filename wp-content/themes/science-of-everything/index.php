@@ -38,7 +38,7 @@ get_header(); ?>
                     $top_slider_cats->the_post(); ?>
                     <a href="<?php the_permalink(); ?>">
                         <div class="banners-slideOne">
-                            <img width="730" height="432" src="<?php the_field('730x432_image'); ?>">
+                            <img class="obj-fit" width="730" height="432" src="<?php the_field('730x432_image'); ?>">
                             <div class="banners-slideOne-content">
                                 <div class="category category-technology"><?= $cat_name ?></div>
                                 <h1 class="title-1 white"><?php the_title(); ?></h1>
@@ -60,7 +60,7 @@ get_header(); ?>
         <div class="banners-aside columns large-4">
             <div class="banners-aside-advertising">
                 <a target="_blank" href="<?php the_field('ads1_link'); ?>">
-                    <img src="<?php the_field('ads1_image'); ?>">
+                    <img class="obj-fit" src="<?php the_field('ads1_image'); ?>">
                 </a>
             </div>
             <div class="banners-aside-social">
@@ -79,7 +79,7 @@ get_header(); ?>
         <div class="articlesList-wrap columns large-8">
             <div class="section-title section-title-news">
                 <h2 class="title-2">
-                    <img src="<?php bloginfo('template_url'); ?>/app/img/icon-book-open.png">
+                    <img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-book-open.png">
                     <?php the_field('section_header_1'); ?>
                 </h2>
             </div>
@@ -99,7 +99,7 @@ get_header(); ?>
                             <li class="articlesList-item-hover columns column-block medium-6 small-12">
                                 <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg">
-                                        <img src="<?= get_the_post_thumbnail_url(); ?>">
+                                        <img class="obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>">
                                     </div>
                                     <?php
                                     $categories = get_the_category();
@@ -121,7 +121,7 @@ get_header(); ?>
                         <?php } else { ?>
                             <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12">
                                 <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
-                                    <img width="350" height="230" class="articlesList-item-img"
+                                    <img width="350" height="230" class="articlesList-item-img obj-fit height-inh"
                                          src="<?= get_the_post_thumbnail_url(); ?>">
                                 </a>
                                 <?php
@@ -146,7 +146,7 @@ get_header(); ?>
         <aside class="sidebar-wrap columns large-4">
             <div class="section-title section-title-popular">
                 <h2 class="title-2">
-                    <img src="<?php bloginfo('template_url'); ?>/app/img/icon-newspaper.png">
+                    <img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-newspaper.png">
                     <?php the_field('section_header_2'); ?>
                 </h2>
             </div>
@@ -165,7 +165,7 @@ get_header(); ?>
                     while ($sidebar_populars->have_posts()) {
                         $sidebar_populars->the_post(); ?>
                         <li><a class="sidebar-list-img" href="<?php the_permalink(); ?>">
-                                <img width="130" height="100" src="<?= get_the_post_thumbnail_url(); ?>"></a>
+                                <img class="obj-fit" width="130" height="100" src="<?= get_the_post_thumbnail_url(); ?>"></a>
                             <div class="sidebar-item-content">
                                 <?php
                                 $categories = get_the_category();
@@ -191,7 +191,7 @@ get_header(); ?>
             </ul>
             <div class="sidebar-advertising">
                 <a target="_blank" href="<?php the_field('ads2_link'); ?>">
-                    <img src="<?php the_field('ads2_image'); ?>">
+                    <img class="obj-fit" src="<?php the_field('ads2_image'); ?>">
                 </a>
             </div>
         </aside>
@@ -201,7 +201,7 @@ get_header(); ?>
     <div class="mainWrap mainWrap-medium row">
         <div class="articlesList-wrap columns large-12">
             <div class="section-title section-title-astro">
-                <h2 class="title-2 white"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-planet.png">
+                <h2 class="title-2 white"><img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-planet.png">
                     <?= get_cat_name(get_field('taxonomy_1')); ?>
                 </h2>
                 <a class="sortArticles white" href="<?= get_category_link(get_field('taxonomy_1')); ?>"><i
@@ -226,7 +226,7 @@ get_header(); ?>
                             <li class="articlesList-item-hover columns column-block large-6 medium-12 small-12">
                                 <a class="articlesList-item-banner center" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg">
-                                        <img src="<?= get_the_post_thumbnail_url(); ?>">
+                                        <img class="obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>">
                                     </div>
                                     <p class="title-3 white"><?php the_title(); ?></p>
                                     <div class="counters">
@@ -241,7 +241,7 @@ get_header(); ?>
                             <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
                                 <a class="articlesList-item-text dark" href="<?php the_permalink(); ?>">
                                     <figure class="articlesList-item-img-wrap">
-                                        <img class="articlesList-item-img"
+                                        <img class="articlesList-item-img obj-fit height-inh"
                                              src="<?= get_the_post_thumbnail_url(); ?>">
                                     </figure>
                                     <div class="articlesList-item-text-content">
@@ -270,7 +270,7 @@ get_header(); ?>
         <div class="sectionPsycho-banner row">
             <div class="columns">
                 <a target="_blank" href="<?php the_field('ads3_link'); ?>">
-                    <img src="<?php the_field('ads3_image'); ?>">
+                    <img class="obj-fit" src="<?php the_field('ads3_image'); ?>">
                 </a>
             </div>
         </div>
@@ -278,7 +278,7 @@ get_header(); ?>
             <section class="l-sectionTechno row">
                 <div class="columns large-12">
                     <div class="section-title section-title-technology">
-                        <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-techno.png">
+                        <h2 class="title-2"><img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-techno.png">
                             <?= get_cat_name(get_field('taxonomy_2')); ?>
                         </h2>
                         <a class="sortArticles" href="<?= get_category_link(get_field('taxonomy_2')); ?>">
@@ -303,7 +303,7 @@ get_header(); ?>
                                     <li class="articlesList-item-hover columns column-block medium-6 small-12 large-4">
                                         <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
                                             <div class="articlesList-item-bg">
-                                                <img src="<?= get_the_post_thumbnail_url(); ?>">
+                                                <img class="obj-fit" src="<?= get_the_post_thumbnail_url(); ?>">
                                             </div>
                                             <p class="title-3 white"><?php the_title(); ?></p>
                                             <div class="counters">
@@ -317,7 +317,7 @@ get_header(); ?>
                                 <?php } else { ?>
                                     <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
                                         <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
-                                            <img width="350" height="230" class="articlesList-item-img"
+                                            <img width="350" height="230" class="articlesList-item-img obj-fit"
                                                  src="<?= get_the_post_thumbnail_url(); ?>">
                                         </a>
                                         <a class="title-3"
@@ -346,7 +346,7 @@ get_header(); ?>
     <div class="mainWrap mainWrap-medium row">
         <div class="columns large-12">
             <div class="section-title section-title-media">
-                <h2 class="title-2"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-comp.png">
+                <h2 class="title-2"><img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-comp.png">
                     <?= get_cat_name(get_field('taxonomy_3')); ?>
                 </h2>
                 <a class="sortArticles" href="<?= get_category_link(get_field('taxonomy_3')); ?>">
@@ -370,7 +370,7 @@ get_header(); ?>
                         if (($third_cat_counter == 2) || ($third_cat_counter == 5)) { ?>
                             <li class="articlesList-item-hover columns column-block large-6 medium-12 small-12 order-medium--1">
                                 <a class="articlesList-item-banner center" href="<?php the_permalink(); ?>">
-                                    <div class="articlesList-item-bg"><img src="<?php the_post_thumbnail_url(); ?>"></div>
+                                    <div class="articlesList-item-bg"><img class="obj-fit" src="<?php the_post_thumbnail_url(); ?>"></div>
                                     <p class="title-3 white"><?php the_title(); ?></p>
                                     <div class="counters">
                                         <div class="counters-item"><i class="icon-time"></i><?php wp_days_ago_v3(0, 86400); ?></div>
@@ -382,7 +382,7 @@ get_header(); ?>
                             <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
                                 <a class="articlesList-item-text dark" href="<?php the_permalink(); ?>">
                                     <figure class="articlesList-item-img-wrap">
-                                        <img class="articlesList-item-img" src="<?php the_post_thumbnail_url(); ?>">
+                                        <img class="articlesList-item-img obj-fit" src="<?php the_post_thumbnail_url(); ?>">
                                     </figure>
                                     <div class="articlesList-item-text-content">
                                         <p class="title-5 white"><?php the_title(); ?></p>
@@ -406,7 +406,7 @@ get_header(); ?>
     <div class="mainWrap mainWrap-medium row">
         <div class="columns large-12">
             <div class="section-title section-title-psycho">
-                <h2 class="title-2 white"><img src="<?php bloginfo('template_url'); ?>/app/img/icon-brain.png">
+                <h2 class="title-2 white"><img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-brain.png">
                     <?= get_cat_name(get_field('taxonomy_4')); ?>
                 </h2>
                 <a class="sortArticles white" href="<?= get_category_link(get_field('taxonomy_4')); ?>">
@@ -430,7 +430,7 @@ get_header(); ?>
                             <li class="articlesList-item-hover columns column-block large-6 medium-12 small-12">
                                 <a class="articlesList-item-banner center" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg">
-                                        <img src="<?= get_the_post_thumbnail_url(); ?>">
+                                        <img class="obj-fit" src="<?= get_the_post_thumbnail_url(); ?>">
                                     </div>
                                     <p class="title-3 white"><?php the_title(); ?></p>
                                     <div class="counters">
@@ -445,7 +445,7 @@ get_header(); ?>
                             <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
                                 <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
                                     <figure class="articlesList-item-img-wrap">
-                                        <img class="articlesList-item-img"
+                                        <img class="articlesList-item-img obj-fit"
                                              src="<?= get_the_post_thumbnail_url(); ?>">
                                     </figure>
                                     <div class="articlesList-item-text-content">
@@ -474,7 +474,7 @@ get_header(); ?>
         <div class="columns large-12">
             <div class="section-title section-title-books">
                 <h2 class="title-2">
-                    <img src="<?php bloginfo('template_url'); ?>/app/img/icon-book.png">
+                    <img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-book.png">
                     <?php the_field('section_header_3'); ?>
                 </h2>
                 <div class="sortArticles"><?php icl_link_to_element(379, 'page', 'Все книги'); ?></div>
@@ -492,7 +492,7 @@ get_header(); ?>
                         $books->the_post(); ?>
                         <li class="articlesList-item-book articlesList-item-hover columns medium-6 small-12 large-4">
                             <a class="articlesList-item-book-img" href="<?php the_permalink(); ?>">
-                                <img src="<?php the_field('book_mini') ?>">
+                                <img class="obj-fit" src="<?php the_field('book_mini') ?>">
                             </a>
                             <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             <p class="text-p"><?= wp_trim_words(get_the_excerpt(), 10); ?></p>
@@ -510,7 +510,7 @@ get_header(); ?>
         <div class="sectionEvents-item column large-6 small-12">
             <div class="section-title section-title-events">
                 <h2 class="title-2">
-                    <img src="<?php bloginfo('template_url'); ?>/app/img/icon-calendar-blue.png">
+                    <img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-calendar-blue.png">
                     <?php the_field('section_header_4'); ?></h2>
             </div>
             <ul class="articlesList-events">
@@ -530,7 +530,7 @@ get_header(); ?>
                         $events->the_post();
                         if (strtotime(get_post_meta($id, '_event_start_date', true)) > time() && $event_counter < 3) { ?>
                             <li class="articlesList-item-hover"><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
-                                    <img style="width: 160px; height: 160px;"
+                                    <img class="obj-fit" style="width: 160px; height: 160px;"
                                          src="<?= get_the_post_thumbnail_url(); ?>"></a>
                                 <div class="articlesList-events-content">
                                     <div class="counters counters-item"><i class="icon-date"></i>
@@ -545,7 +545,7 @@ get_header(); ?>
                         } elseif (strtotime(get_post_meta($id, '_event_start_date', true)) > time() && $event_counter == 3) { ?>
                             <li class="show-for-medium-only articlesList-item-hover"><a class="articlesList-events-img"
                                                                 href="<?php the_permalink(); ?>">
-                                    <img style="width: 160px; height: 160px;"
+                                    <img class="obj-fit" style="width: 160px; height: 160px;"
                                          src="<?= get_the_post_thumbnail_url(); ?>"></a>
                                 <div class="articlesList-events-content">
                                     <div class="counters counters-item"><i class="icon-date"></i>
@@ -568,7 +568,7 @@ get_header(); ?>
         <div class="sectionEvents-item column large-6 small-12">
             <div class="section-title section-title-past">
                 <h2 class="title-2">
-                    <img src="<?php bloginfo('template_url'); ?>/app/img/icon-calendar-grey.png">
+                    <img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-calendar-grey.png">
                     <?php the_field('section_header_5'); ?>
                 </h2>
             </div>
@@ -587,7 +587,7 @@ get_header(); ?>
                         $events->the_post();
                         if (!(strtotime(get_post_meta($id, '_event_start_date', true)) > time()) && $event_counter < 3) { ?>
                             <li class="articlesList-item-hover"><a class="articlesList-events-img" href="<?php the_permalink(); ?>">
-                                    <img style="width: 160px; height: 160px;"
+                                    <img class="obj-fit" style="width: 160px; height: 160px;"
                                          src="<?= get_the_post_thumbnail_url(); ?>"></a>
                                 <div class="articlesList-events-content">
                                     <div class="counters counters-item"><i class="icon-date"></i>
@@ -602,7 +602,7 @@ get_header(); ?>
                         } elseif (!(strtotime(get_post_meta($id, '_event_start_date', true)) > time()) && $event_counter == 3) { ?>
                             <li class="show-for-medium-only articlesList-item-hover"><a class="articlesList-events-img"
                                                                 href="<?php the_permalink(); ?>">
-                                    <img style="width: 160px; height: 160px;"
+                                    <img class="obj-fit" style="width: 160px; height: 160px;"
                                          src="<?= get_the_post_thumbnail_url(); ?>"></a>
                                 <div class="articlesList-events-content">
                                     <div class="counters counters-item"><i class="icon-date"></i>
@@ -628,7 +628,7 @@ get_header(); ?>
     <div class="mainWrap sliderWrap-small">
         <div class="section-title-photo">
             <h2 class="title-2 white">
-                <img src="<?php bloginfo('template_url'); ?>/app/img/icon-photo.png">
+                <img class="obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/icon-photo.png">
                 <?php the_field('section_header_6'); ?>
             </h2>
         </div>
@@ -649,14 +649,14 @@ get_header(); ?>
                         if (($photos_counter == 0) || $photos_counter == 3) { ?>
                             <div class="column large-3 photo-small-wrap">
                             <a class="photo-small articlesList-item-hover" href="<?php the_permalink(); ?>">
-                                <figure><img style="width: 255px; height: 165px;"
+                                <figure><img class="obj-fit" style="width: 255px; height: 165px;"
                                              src="<?php the_field('post_image'); ?>">
                                     <figcaption><?php the_title(); ?></figcaption>
                                 </figure>
                             </a>
                         <?php } else { ?>
                             <a class="photo-small articlesList-item-hover" href="<?php the_permalink(); ?>">
-                                <figure><img style="width: 255px; height: 165px;"
+                                <figure><img class="obj-fit" style="width: 255px; height: 165px;"
                                              src="<?php the_field('post_image'); ?>">
                                     <figcaption><?php the_title(); ?></figcaption>
                                 </figure>
@@ -668,7 +668,7 @@ get_header(); ?>
                         <div class="column large-6 photo-big-wrap">
                             <a class="photo-big articlesList-item-hover" href="<?php the_permalink(); ?>">
                                 <figure>
-                                    <img style="width: 540px; height: 490px;" src="<?php the_field('post_image'); ?>">
+                                    <img class="obj-fit" style="width: 540px; height: 490px;" src="<?php the_field('post_image'); ?>">
                                     <figcaption class="title-1 white"><?php the_title(); ?></figcaption>
                                 </figure>
                             </a>
@@ -687,7 +687,7 @@ get_header(); ?>
     <div class="subscribePopUp-wrap">
         <div class="subscribePopUp-content">
             <button class="subscribePopUp-close"><i class="icon-close"></i></button>
-            <img class="subscribePopUp-img" src="<?php bloginfo('template_url'); ?>/app/img/colored-logo.png">
+            <img class="subscribePopUp-img obj-fit" src="<?php bloginfo('template_url'); ?>/app/img/colored-logo.png">
             <p class="subscribePopUp-description">Science of everything - Используется он веб-дизайнерами для
                 вставки на руку при запуске проекта кириллице.</p>
             <div class="subscribePopUp-social">

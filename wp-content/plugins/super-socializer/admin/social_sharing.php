@@ -1744,7 +1744,7 @@
 						<tr class="the_champ_help_content" id="the_champ_share_count_cache_help_cont">
 							<td colspan="2">
 							<div>
-							<?php _e( 'Frequent cache refreshing results in slower loading of pages with share counts enabled', 'Super-Socializer' ) ?>
+							<?php echo sprintf(__('Frequent cache refreshing results in slower loading of pages with share counts enabled. Leave empty to disable cache. More info <a href="%s" target="_blank">here</a>', 'Super-Socializer'), 'http://support.heateor.com/why-is-share-count-not-getting-updated'); ?>
 							</div>
 							</td>
 						</tr>
@@ -1938,11 +1938,10 @@
 					<h3><label><?php _e('FAQ', 'Super-Socializer' ) ?></label></h3>
 					<div class="inside faq">
 						<p><?php _e('<strong>Note:</strong> Plugin will not work on local server. You should have an online website for the plugin to function properly.', 'Super-Socializer'); ?></p>
-						<p><a href="javascript:void(0)" target="_blank"><?php _e( 'Share icons broke after saving logo color', 'Super-Socializer' ) ?></a></p>
-						<p><?php _e( 'It happens when plugin is not able to update the CSS files. To fix the icons, you need to re-install the plugin. Just do not forget to keep "Delete all the options on plugin deletion" option disabled in "Miscellaneous" section to preserve the plugin configuration, before deleting the plugin.', 'Super-Socializer' ); ?></p>
 						<p><a href="http://support.heateor.com/place-title-social-share-icons-row/" target="_blank"><?php _e('How to Place Title and Social Share Icons in the Same Row?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="https://www.heateor.com/recover-social-share-counts/" target="_blank"><?php _e('How to restore Social Share counts lost after moving my website to SSL/Https?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/browser-blocking-social-features/" target="_blank"><?php _e('Why is my browser blocking some features of the plugin?', 'Super-Socializer' ) ?></a></p>
+						<p><a href="http://support.heateor.com/color-share-icons-not-being-updated" target="_blank"><?php _e('Why the color of share icons is not being updated?', 'Super-Socializer') ?></a></p>
 						<p><a href="http://support.heateor.com/why-is-sharer-not-showing-the-correct-image-title-and-other-meta-tags-content" target="_blank"><?php _e('Why is sharer not showing the correct image, title and other meta tags content?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/browser-blocking-social-features/" target="_blank"><?php _e('Why Facebook share counts are not appearing?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/how-can-i-show-share-counts-of-my-website-rather-than-of-individual-pagepost/" target="_blank"><?php _e('How can I show share counts of my website rather than of individual pages/posts?', 'Super-Socializer' ) ?></a></p>
@@ -1954,7 +1953,7 @@
 						<p><a href="http://support.heateor.com/how-to-customize-the-look-of-individual-share-counts" target="_blank"><?php _e('How to customize the look of individual share counts?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/how-to-show-whatsapp-icon-only-on-mobile-devices" target="_blank"><?php _e('How to show Whatsapp icon only on mobile devices?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/how-to-hide-arrow-after-floating-sharing-bar" target="_blank"><?php _e( 'How to hide arrow after floating sharing bar?', 'Super-Socializer' ) ?></a></p>
-						<p><a href="http://support.heateor.com/why-are-share-counts-not-updating" target="_blank"><?php _e( 'Why are Share Counts Not Updating?', 'Super-Socializer' ) ?></a></p>
+						<p><a href="http://support.heateor.com/why-is-share-count-not-getting-updated" target="_blank"><?php _e( 'Why is share count not getting updated?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/why-is-there-so-much-space-between-like-buttons" target="_blank"><?php _e( 'Why is there so much space between like buttons?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/why-is-floating-share-like-button-not-appearing-at-homepage" target="_blank"><?php _e( 'Why are floating sharing/like buttons not appearing at homepage?', 'Super-Socializer' ) ?></a></p>
 					</div>

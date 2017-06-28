@@ -55,7 +55,7 @@ function theChampMoreSharingPopup(elem, postUrl, postTitle, twitterTitle){
 	  Facebook_Messenger: {
 		title: "Facebook Messenger",
 		locale: "en-US",
-		redirect_url: "https://www.facebook.com/dialog/send?app_id=1904103319867886&display=popup&link="+postUrl+"&redirect_uri="+postUrl
+		redirect_url: "https://www.facebook.com/dialog/send?app_id=595489497242932&display=popup&link="+postUrl+"&redirect_uri="+postUrl
 	  },
 	  Google_Classroom: {
 		title: "Google Classroom",

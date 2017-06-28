@@ -13,18 +13,23 @@ query_posts($query_string. '&post_status=trash');?>
 
 <div class="mainWrap mainWrap-medium row">
     <article class="l-article column large-8 small-12">
-        <section class="article-visualContent"><img src="<?= get_the_post_thumbnail_url(); ?>">
-        </section>
-        <section class="article-content">
-            <div class="article-content-counters">
-                <div class="article-content-counters-date"><i class="icon-time"></i><span><?= get_the_date(); ?></span></div>
-                <div class="counters">
-                    <div class="counters-item"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
-                    <div class="counters-item"><i class="icon-comment"></i><span><?= get_comments_number(); ?></span></div>
+        <section class="article-visualContent">
+            <figure class="article-visualContent-img"><img class="obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>"></figure>
+            <div class="article-visualContent-text">
+                <div class="article-visualContent-details">
+                    <div class="counters">
+                        <div class="counters-item"><i class="icon-time"></i><span><?= get_the_date(); ?></span></div>
+                        <div class="counters-item"><i class="icon-comment"></i><span><?= get_comments_number(); ?></span></div>
+                        <div class="counters-item"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
+                    </div>
+                </div>
+                <div class="article-visualContent-title">
+                    <h1 class="title-0 white"><?php the_title(); ?></h1>
                 </div>
             </div>
+        </section>
+        <section class="article-content">
             <div class="article-content-text">
-                <h1 class="title-0"><?php the_title(); ?></h1>
                 <?php the_content(); ?>
             </div>
         </section>
@@ -56,11 +61,20 @@ query_posts($query_string. '&post_status=trash');?>
                 ?>
             </div>
         </div>
+        <section class="article-subscribe">
+            <div class="section-title">
+                <h2 class="title-4"><img class="obj-fit height-inh" src="<?= get_template_directory_uri(); ?>/app/img/icon-plane.svg">Подписаться на рассылку</h2>
+            </div>
+            <?php echo do_shortcode('[contact-form-7 id="9" title="Подписка на рассылку" html_class="article-subscribe-form"]'); ?>
+            <script>
+                jQuery('form.article-subscribe-form input[type="submit"]').replaceWith('<button class="button button-primary" type="submit">Подписаться</button>');
+            </script>
+        </section>
         <?php comments_template('/comments.php', true); ?>
     </article>
     <aside class="sidebar-wrap columns large-4">
         <div class="section-title section-title-popular">
-            <h2 class="title-2"><img src="<?= get_template_directory_uri(); ?>/app/img/icon-newspaper.png">ПОПУЛЯРНЫЕ СТАТЬИ</h2>
+            <h2 class="title-2"><img class="obj-fit height-inh" src="<?= get_template_directory_uri(); ?>/app/img/icon-newspaper.png">ПОПУЛЯРНЫЕ СТАТЬИ</h2>
         </div>
         <ul class="sidebar-list">
             <?php
@@ -78,7 +92,7 @@ query_posts($query_string. '&post_status=trash');?>
                     $popular_posts->the_post(); ?>
                     <li>
                         <a class="sidebar-list-img" href="<?php the_permalink(); ?>">
-                            <img style="width: 130px; height: 100px;" src="<?= get_the_post_thumbnail_url(); ?>">
+                            <img class="obj-fit height-inh" style="width: 130px; height: 100px;" src="<?= get_the_post_thumbnail_url(); ?>">
                         </a>
                         <div class="sidebar-item-content">
                             <?php
@@ -105,7 +119,7 @@ query_posts($query_string. '&post_status=trash');?>
         </ul>
         <div class="sidebar-advertising">
             <a target="_blank" href="<?php the_field('ads2_link', get_option( 'page_on_front' )); ?>">
-                <img src="<?php the_field('ads2_image', get_option( 'page_on_front' )); ?>">
+                <img class="obj-fit height-inh" src="<?php the_field('ads2_image', get_option( 'page_on_front' )); ?>">
             </a>
         </div>
     </aside>
@@ -114,7 +128,7 @@ query_posts($query_string. '&post_status=trash');?>
             ?>
             <a href="<?= get_permalink(get_adjacent_post(false, '', true)); ?>" class="column medium-6 small-12">
                 <div class="siblingsArticle-one prev"><?php
-                    ?><img class="siblingsArticle-one-bg" src="<?= get_the_post_thumbnail_url(); ?>">
+                    ?><img class="siblingsArticle-one-bg obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>">
                     <p class="siblingsArticle-one-move">Предыдущая статья</p>
                     <p class="title-4 white"><?= get_the_title(get_adjacent_post(false, '', true)); ?></p>
                 </div>
@@ -127,7 +141,7 @@ query_posts($query_string. '&post_status=trash');?>
             <a style="" href="<?= get_permalink(get_adjacent_post(false, '', false)); ?>"
                class="column medium-6 small-12">
                 <div class="siblingsArticle-one next"><?php
-                    ?><img class="siblingsArticle-one-bg"
+                    ?><img class="siblingsArticle-one-bg obj-fit height-inh"
                            src="<?= get_the_post_thumbnail_url(); ?>">
                     <p class="siblingsArticle-one-move">Следующая статья</p>
                     <p class="title-4 white"><?= get_the_title(get_adjacent_post(false, '', false)); ?></p>
@@ -159,7 +173,7 @@ query_posts($query_string. '&post_status=trash');?>
                     <li class="columns column-block large-3 medium-4 small-12">
                         <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
                             <figure class="articlesList-item-img-wrap">
-                                <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+                                <img class="articlesList-item-img obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>">
                             </figure>
                             <div class="articlesList-item-text-content">
                                 <?php
@@ -202,10 +216,6 @@ query_posts($query_string. '&post_status=trash');?>
         color: #333333;
     }
 
-    /*.mainWrap-medium > .l-article:first-child {
-        padding-top: 0;
-    }*/
-
     .siblingsArticle-one-bg {
         top: -85px;
     }
@@ -219,6 +229,18 @@ query_posts($query_string. '&post_status=trash');?>
 
     #ajax-load-more {
         width: 100%;
+    }
+
+    .articlesList-compact .articlesList-item-img-wrap img {
+        width: 255px;
+        height: 165px;
+    }
+
+    @media screen and (max-width: 639px) {
+        .articlesList-compact .articlesList-item-img-wrap img {
+            width: 100%;
+            height: auto;
+        }
     }
 </style>
     <script>

@@ -1,16 +1,27 @@
 <?php get_header(); ?>
     <div class="mainWrap mainWrap-medium row">
         <article class="l-article column large-8 small-12">
-            <section class="article-visualContent"><?php the_post_thumbnail(); ?></section>
-            <section class="article-content">
-                <div class="article-content-counters">
-                    <div class="article-content-counters-date"><i class="icon-time"></i><span><?= gmdate("d.m.Y", strtotime(get_post_meta($id, '_event_start_date', true))); ?></span></div>
+            <section class="article-visualContent">
+                <figure class="article-visualContent-img"><img src="<?php the_post_thumbnail_url(); ?>"></figure>
+                <div class="article-visualContent-text">
+                    <div class="article-visualContent-details">
+                        <div class="counters">
+                            <div class="counters-item"><i class="icon-time"></i><span><?= gmdate("d.m.Y", strtotime(get_post_meta($id, '_event_start_date', true))); ?></span></div>
+                            <div class="counters-item"><i class="icon-comment"></i><span><?= get_comments_number(); ?></span></div>
+                            <div class="counters-item"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
+                        </div>
+                    </div>
+                    <div class="article-visualContent-title">
+                        <h1 class="title-0 white"><?php the_title(); ?></h1>
+                    </div>
                 </div>
+            </section>
+            <section class="article-content">
                 <div class="article-content-text">
-                    <h1 class="title-0"><?php the_title(); ?></h1>
                     <?php echo do_shortcode('[event]#_EVENTNOTES[/event]'); ?>
                 </div>
             </section>
+<!--            -->
             <div class="shareSocial">
                 <?php the_favorites_button(); ?>
                 <?php echo do_shortcode('[TheChamp-Sharing count="1"]') ?>
@@ -29,6 +40,15 @@
                     );
                 }).trigger("click");
             </script>
+            <section class="article-subscribe">
+                <div class="section-title">
+                    <h2 class="title-4"><img src="<?= get_template_directory_uri(); ?>/app/img/icon-plane.svg">Подписаться на рассылку</h2>
+                </div>
+                <?php echo do_shortcode('[contact-form-7 id="9" title="Подписка на рассылку" html_class="article-subscribe-form"]'); ?>
+                <script>
+                    jQuery('form.article-subscribe-form input[type="submit"]').replaceWith('<button class="button button-primary" type="submit">Подписаться</button>');
+                </script>
+            </section>
             <?php comments_template('/comments.php', true); ?>
         </article>
         <aside class="sidebar-wrap inner column large-4">

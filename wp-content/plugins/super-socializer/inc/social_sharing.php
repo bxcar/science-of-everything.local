@@ -865,29 +865,30 @@ function the_champ_sharing_count(){
 		$ajaxResponse['facebook'] = 1;
 	}
 	$multiplier = 60;
-	switch ( $theChampSharingOptions['share_count_cache_refresh_unit'] ) {
-		case 'seconds':
-			$multiplier = 1;
-			break;
+	if ( $theChampSharingOptions['share_count_cache_refresh_count'] != '' ) {
+		switch ( $theChampSharingOptions['share_count_cache_refresh_unit'] ) {
+			case 'seconds':
+				$multiplier = 1;
+				break;
 
-		case 'minutes':
-			$multiplier = 60;
-			break;
-		
-		case 'hours':
-			$multiplier = 3600;
-			break;
+			case 'minutes':
+				$multiplier = 60;
+				break;
+			
+			case 'hours':
+				$multiplier = 3600;
+				break;
 
-		case 'days':
-			$multiplier = 3600*24;
-			break;
+			case 'days':
+				$multiplier = 3600*24;
+				break;
 
-		default:
-			$multiplier = 60;
-			break;
+			default:
+				$multiplier = 60;
+				break;
+		}
+		$transientExpirationTime = $multiplier * $theChampSharingOptions['share_count_cache_refresh_count'];
 	}
-	$transientExpirationTime = $multiplier * $theChampSharingOptions['share_count_cache_refresh_count'];
-
 	$targetUrlsArray = array();
 	$targetUrlsArray[] = $targetUrls;
 	$targetUrlsArray = apply_filters('heateor_ss_target_share_urls', $targetUrlsArray);
@@ -1023,7 +1024,9 @@ function the_champ_sharing_count(){
 			}
 		}
 		$responseData[$targetUrlsArray[0][$i]] = $finalShareCountTransient;
-		set_transient('heateor_ss_share_count_' . heateor_ss_get_share_count_transient_id($targetUrlsArray[0][$i]), $finalShareCountTransient, $transientExpirationTime);
+		if ( $theChampSharingOptions['share_count_cache_refresh_count'] != '' ) {
+			set_transient('heateor_ss_share_count_' . heateor_ss_get_share_count_transient_id($targetUrlsArray[0][$i]), $finalShareCountTransient, $transientExpirationTime);
+		}
 	}
 
 	do_action('heateor_ss_share_count_ajax_hook', $responseData);
@@ -1053,35 +1056,38 @@ function the_champ_save_facebook_shares(){
 	global $theChampSharingOptions;
 
 	$multiplier = 60;
-	switch ( $theChampSharingOptions['share_count_cache_refresh_unit'] ) {
-		case 'seconds':
-			$multiplier = 1;
-			break;
+	if ( $theChampSharingOptions['share_count_cache_refresh_count'] != '' ) {
+		switch ( $theChampSharingOptions['share_count_cache_refresh_unit'] ) {
+			case 'seconds':
+				$multiplier = 1;
+				break;
 
-		case 'minutes':
-			$multiplier = 60;
-			break;
-		
-		case 'hours':
-			$multiplier = 3600;
-			break;
+			case 'minutes':
+				$multiplier = 60;
+				break;
+			
+			case 'hours':
+				$multiplier = 3600;
+				break;
 
-		case 'days':
-			$multiplier = 3600*24;
-			break;
+			case 'days':
+				$multiplier = 3600*24;
+				break;
 
-		default:
-			$multiplier = 60;
-			break;
+			default:
+				$multiplier = 60;
+				break;
+		}
+		$transientExpirationTime = $multiplier * $theChampSharingOptions['share_count_cache_refresh_count'];
 	}
-	$transientExpirationTime = $multiplier * $theChampSharingOptions['share_count_cache_refresh_count'];
-	
 	foreach($targetUrls as $key => $value){
 		$transientId = heateor_ss_get_share_count_transient_id($key);
 		$shareCountTransient = get_transient('heateor_ss_share_count_' . $transientId);
 		if($shareCountTransient !== false){
 			$shareCountTransient['facebook'] = $value;
-			set_transient('heateor_ss_share_count_' . $transientId, $shareCountTransient, $transientExpirationTime);
+			if ( $theChampSharingOptions['share_count_cache_refresh_count'] != '' ) {
+				set_transient('heateor_ss_share_count_' . $transientId, $shareCountTransient, $transientExpirationTime);
+			}
 		}
 	}
 	die;

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Super Socializer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-20 09:26+0530\n"
-"PO-Revision-Date: 2017-06-20 09:26+0530\n"
+"POT-Creation-Date: 2017-06-24 13:13+0530\n"
+"PO-Revision-Date: 2017-06-24 13:13+0530\n"
 "Last-Translator: The Champ <lordofthechamps@gmail.com>\n"
 "Language-Team: Heateor <hello@heateor.com>\n"
 "Language: en_IN\n"
@@ -245,7 +245,7 @@ msgid "Large Avatar"
 msgstr ""
 
 #: ../helper.php:935 ../admin/general_options.php:128
-#: ../admin/social_sharing.php:1970 ../admin/social_commenting.php:487
+#: ../admin/social_sharing.php:1969 ../admin/social_commenting.php:487
 #: ../admin/social_login.php:938 ../admin/like_buttons.php:822
 msgid "Save Changes"
 msgstr ""
@@ -308,13 +308,13 @@ msgstr ""
 msgid "You can specify any additional CSS rules (without &lt;style&gt; tag)"
 msgstr ""
 
-#: ../admin/general_options.php:139 ../admin/social_sharing.php:1975
+#: ../admin/general_options.php:139 ../admin/social_sharing.php:1974
 #: ../admin/social_commenting.php:492 ../admin/social_login.php:943
 #: ../admin/like_buttons.php:827
 msgid "Instagram Shoutout"
 msgstr ""
 
-#: ../admin/general_options.php:141 ../admin/social_sharing.php:1977
+#: ../admin/general_options.php:141 ../admin/social_sharing.php:1976
 #: ../admin/social_commenting.php:494 ../admin/social_login.php:945
 #: ../admin/like_buttons.php:829
 msgid ""
@@ -323,7 +323,7 @@ msgid ""
 "hashtags and people to mention in the Instagram post."
 msgstr ""
 
-#: ../admin/general_options.php:142 ../admin/social_sharing.php:1978
+#: ../admin/general_options.php:142 ../admin/social_sharing.php:1977
 #: ../admin/social_commenting.php:495 ../admin/social_login.php:946
 #: ../admin/like_buttons.php:830
 msgid ""
@@ -334,7 +334,7 @@ msgid ""
 "time."
 msgstr ""
 
-#: ../admin/general_options.php:143 ../admin/social_sharing.php:1979
+#: ../admin/general_options.php:143 ../admin/social_sharing.php:1978
 #: ../admin/social_commenting.php:496 ../admin/social_login.php:947
 #: ../admin/like_buttons.php:831
 msgid ""
@@ -421,8 +421,8 @@ msgstr ""
 
 #: ../admin/help.php:77
 msgid ""
-"You can send us testimonial at <a href=\"mailto:hello@heateor.com"
-"\">hello@heateor.com</a>"
+"You can send us testimonial at <a href=\"mailto:testimonials@heateor.com"
+"\">testimonials@heateor.com</a>"
 msgstr ""
 
 #: ../admin/help.php:82
@@ -1102,9 +1102,11 @@ msgid "Day(s)"
 msgstr ""
 
 #: ../admin/social_sharing.php:1747
+#, php-format
 msgid ""
 "Frequent cache refreshing results in slower loading of pages with share "
-"counts enabled"
+"counts enabled. Leave empty to disable cache. More info <a href=\"%s\" "
+"target=\"_blank\">here</a>"
 msgstr ""
 
 #: ../admin/social_sharing.php:1755
@@ -1191,90 +1193,81 @@ msgid ""
 "an online website for the plugin to function properly."
 msgstr ""
 
-#: ../admin/social_sharing.php:1941
-msgid "Share icons broke after saving logo color"
+#: ../admin/social_sharing.php:1941 ../admin/like_buttons.php:810
+msgid "How to Place Title and Social Share Icons in the Same Row?"
 msgstr ""
 
 #: ../admin/social_sharing.php:1942
 msgid ""
-"It happens when plugin is not able to update the CSS files. To fix the "
-"icons, you need to re-install the plugin. Just do not forget to keep "
-"\"Delete all the options on plugin deletion\" option disabled in "
-"\"Miscellaneous\" section to preserve the plugin configuration, before "
-"deleting the plugin."
-msgstr ""
-
-#: ../admin/social_sharing.php:1943 ../admin/like_buttons.php:810
-msgid "How to Place Title and Social Share Icons in the Same Row?"
-msgstr ""
-
-#: ../admin/social_sharing.php:1944
-msgid ""
 "How to restore Social Share counts lost after moving my website to SSL/Https?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1945 ../admin/social_commenting.php:476
+#: ../admin/social_sharing.php:1943 ../admin/social_commenting.php:476
 #: ../admin/social_login.php:927
 msgid "Why is my browser blocking some features of the plugin?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1946
+#: ../admin/social_sharing.php:1944
+msgid "Why the color of share icons is not being updated?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1945
 msgid ""
 "Why is sharer not showing the correct image, title and other meta tags "
 "content?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1947
+#: ../admin/social_sharing.php:1946
 msgid "Why Facebook share counts are not appearing?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1948
+#: ../admin/social_sharing.php:1947
 msgid ""
 "How can I show share counts of my website rather than of individual pages/"
 "posts?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1949
+#: ../admin/social_sharing.php:1948
 msgid "How can I disable sharing on particular page/post?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1950
+#: ../admin/social_sharing.php:1949
 msgid "How can I specify minimum sharing count for sharing networks?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1951
+#: ../admin/social_sharing.php:1950
 msgid "How to share specific page?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1952
+#: ../admin/social_sharing.php:1951
 msgid "How to integrate Google Analytics with sharing?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1953
+#: ../admin/social_sharing.php:1952
 msgid "How to customize the look of total share counts?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1954
+#: ../admin/social_sharing.php:1953
 msgid "How to customize the look of individual share counts?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1955
+#: ../admin/social_sharing.php:1954
 msgid "How to show Whatsapp icon only on mobile devices?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1956
+#: ../admin/social_sharing.php:1955
 msgid "How to hide arrow after floating sharing bar?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1957
-msgid "Why are Share Counts Not Updating?"
+#: ../admin/social_sharing.php:1956
+msgid "Why is share cunt not getting updated?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1958 ../admin/like_buttons.php:808
+#: ../admin/social_sharing.php:1957 ../admin/like_buttons.php:808
 msgid "Why is there so much space between like buttons?"
 msgstr ""
 
-#: ../admin/social_sharing.php:1959 ../admin/like_buttons.php:809
+#: ../admin/social_sharing.php:1958 ../admin/like_buttons.php:809
 msgid "Why are floating sharing/like buttons not appearing at homepage?"
 msgstr ""
 
@@ -2210,7 +2203,7 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: ../inc/social_sharing.php:839 ../inc/social_sharing.php:1050
+#: ../inc/social_sharing.php:839 ../inc/social_sharing.php:1053
 msgid "Invalid request"
 msgstr ""
 

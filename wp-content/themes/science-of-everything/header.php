@@ -107,7 +107,7 @@ if ((get_post_type() == 'special') || is_post_type_archive('special')) { ?> spec
                class="<?php if (!is_user_logged_in()) { ?>is-hidden<?php } ?>"><?php the_field('signature_authorized_user', 'option'); ?></a>
         </div>
         <button class="header-search button-round-outline"><i class="icon-search"></i></button>
-        <form class="header-searchForm is-hidden searchform" name="searchform" role="search" method="get"
+        <form class="header-searchForm searchform" name="searchform" role="search" method="get"
               id="searchform" action="<?php echo home_url('/') ?>">
             <input name="s" id="s" type="text" placeholder="Поиск">
             <button class="header-searchForm-button" id="searchsubmit" type="submit"><i class="icon-search"></i>

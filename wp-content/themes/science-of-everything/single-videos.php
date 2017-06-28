@@ -2,22 +2,29 @@
     <div class="mainWrap mainWrap-medium row">
         <article class="l-article column large-8 small-12">
             <section class="article-visualContent">
-                <?php the_field('video'); ?>
-            </section>
-            <section class="article-content">
-                <div class="article-content-counters">
-                    <div class="article-content-counters-date"><i
-                                class="icon-time"></i><span><?= get_the_date(); ?></span></div>
-                    <div class="counters">
-                        <div class="counters-item"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
-                        <div class="counters-item"><i class="icon-comment"></i><span><?= get_comments_number(); ?></span></div>
+                <figure class="article-visualContent-img"><img src="<?php the_field('main-image')?>">
+                </figure>
+                <div class="article-visualContent-text">
+                    <div class="article-visualContent-details">
+                        <div class="counters">
+                            <div class="counters-item"><i class="icon-time"></i><span><?= get_the_date(); ?></span></div>
+                            <div class="counters-item"><i class="icon-comment"></i><span><?= get_comments_number(); ?></span></div>
+                            <div class="counters-item"><i class="icon-view"></i><span><?php the_views(); ?></span></div>
+                        </div>
+                    </div>
+                    <div class="article-visualContent-title">
+                        <h1 class="title-0 white"><?php the_title(); ?></h1>
                     </div>
                 </div>
+            </section>
+            <section class="article-content">
                 <div class="article-content-text">
-                    <h1 class="title-0"><?php the_title(); ?></h1>
+                    <p class="text-sub"><?php the_field('main-desc')?></p>
+                    <?php the_field('video'); ?>
                     <?php the_field('description'); ?>
                     <script>
                         jQuery('.article-content-text p').addClass("text-p");
+                        jQuery('.article-content-text p.text-sub').removeClass("text-p");
                     </script>
                 </div>
             </section>
@@ -39,6 +46,15 @@
                     ?>
                 </div>
             </div>
+            <section class="article-subscribe">
+                <div class="section-title">
+                    <h2 class="title-4"><img src="<?= get_template_directory_uri(); ?>/app/img/icon-plane.svg">Подписаться на рассылку</h2>
+                </div>
+                <?php echo do_shortcode('[contact-form-7 id="9" title="Подписка на рассылку" html_class="article-subscribe-form"]'); ?>
+                <script>
+                    jQuery('form.article-subscribe-form input[type="submit"]').replaceWith('<button class="button button-primary" type="submit">Подписаться</button>');
+                </script>
+            </section>
             <?php comments_template('/comments.php', true); ?>
         </article>
         <aside class="sidebar-wrap columns large-4">

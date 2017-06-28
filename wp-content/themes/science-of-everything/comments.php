@@ -21,12 +21,11 @@ if (post_password_required()) {
 ?>
 
 <section class="comments">
-
+    <div class="section-title"><h2 class="title-4"><i class="icon-comment"></i>комментарии</h2></div>
     <?php
     // You can start editing here -- including this comment!
     if (have_comments()) : ?>
 
-        <div class="section-title"><h2 class="title-4"><i class="icon-comment"></i>комментарии</h2></div>
         <!-- .comments-title -->
 
         <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // Are there comments to navigate through? ?>

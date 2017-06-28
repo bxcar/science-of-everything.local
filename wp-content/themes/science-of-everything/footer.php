@@ -18,7 +18,7 @@
         jQuery('form.footerSubscribe-form input[type="submit"]').replaceWith('<button type="submit"><i class="icon-angle-right"></i></button>');
         jQuery('<span class="ajax-loader"></span>').insertAfter('button[type="submit"]');
     </script>
-    <span class="close"></span>
+<!--    <span class="close"></span>-->
 </div>
 <footer class="l-footer"><a class="footer-logo" href="<?php echo home_url(); ?>"><img
                 src="<?php the_field('footer_logo', 'option'); ?>"></a>
@@ -52,8 +52,15 @@
             margin-top: 10px;
         }
 
-        div.wpcf7-validation-errors {
+        /*div.wpcf7-validation-errors {
             margin-top: -20px;
+        }*/
+        .ajax-loader {
+            position: absolute;
+        }
+
+        .wpcf7-form.article-subscribe-form p {
+            height: 50px;
         }
     </style>
     <ul class="footer-social">
@@ -72,19 +79,21 @@
         }
         ?>
     </ul>
+    <div class="footer-mistake"><img src="<?= get_template_directory_uri(); ?>/app/img/icon-keyboard.svg"><b>Ctrl + Enter</b> - если нашли ошибку</div>
     <div class="footer-copyright">
         <p class="nowrap"><?php the_field('footer_copyright', 'option'); ?></p>
+        <p><?php the_field('footer_copyright-2', 'option'); ?></p>
         <p>Сделано в <a href="http://dizz.in.ua/ru">Dizz Agency</a></p>
     </div>
     <button class="up-button"><i class="icon-angle-up"></i></button>
 </footer>
 <style>
-    div.l-footerSubscibe {
+    /*div.l-footerSubscibe {
         position: fixed;
         width: 100%;
         bottom: 0;
         z-index: 9999;
-    }
+    }*/
 
     .the_champ_sharing_container ul.the_champ_sharing_ul li:last-child i {
         width: 60px !important;
@@ -139,6 +148,17 @@
     form#adduser .form-table,
     form#adduser h3:first-child {
         display: none;
+    }
+
+    div.wpcf7-validation-errors {
+        margin: 0;
+    }
+    .obj-fit {
+        object-fit: cover;
+    }
+
+    .height-inh {
+        height: inherit;
     }
 </style>
 <script>
