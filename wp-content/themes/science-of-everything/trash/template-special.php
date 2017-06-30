@@ -1,10 +1,6 @@
-<?php
-/**
- * Template Name: special
- */
-get_header(); ?>
+<?php get_header(); ?>
 <div class="l-specialTitle">
-    <h2><?php the_title(); ?></h2>
+    <h2><?= get_the_title(icl_object_id(565, 'page', true, ICL_LANGUAGE_CODE)); ?></h2>
 </div>
 <div class="mainWrap mainWrap-medium">
     <section class="l-articles row">
@@ -19,7 +15,7 @@ get_header(); ?>
             if ($special->have_posts()) {
                 while ($special->have_posts()) {
                     $special->the_post(); ?>
-                    <li class="articlesList-special-item articlesList-item-hover">
+                    <li class="articlesList-special-item">
                         <a class="articlesList-special-item-img" href="<?php the_permalink(); ?>">
                             <img src="<?php the_field('special_main_page_image'); ?>">
                         </a>
@@ -58,3 +54,4 @@ get_header(); ?>
     });
 </script>
 <?php get_footer(); ?>
+

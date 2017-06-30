@@ -96,7 +96,7 @@ get_header(); ?>
                             <?php } ?>">
                                     <a class="<?php if(get_post_status() == 'trash') { echo 'trash '; }?>articlesList-item-text dark" href="<?php the_permalink(); ?>">
                                         <figure class="articlesList-item-img-wrap">
-                                            <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+                                            <img style="width: 255px; height: 165px;" class="articlesList-item-img obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>">
                                         </figure>
                                         <div class="articlesList-item-text-content">
                                             <p class="title-5 white"><?php the_title(); ?></p>
@@ -140,12 +140,12 @@ get_header(); ?>
                                 <li class="columns column-block large-3 medium-4 small-12 edit">
                                     <a class="articlesList-item-text dark" href="<?php the_permalink(); ?>">
                                         <figure class="articlesList-item-img-wrap">
-                                            <img class="articlesList-item-img" <?php if (get_field('book_mini')) { ?>
+                                            <img class="articlesList-item-img obj-fit height-inh" <?php if (get_field('book_mini')) { ?>
                                                 style="width: auto; height: 165px; margin-left: auto; margin-right: auto;"
                                             <?php } else { ?>
                                                 style="width: 255px; height: 165px;"
                                             <?php } ?>
-                                                    class="articlesList-item-img"
+                                                    class="articlesList-item-img obj-fit height-inh"
                                                 <?php if (get_field('video_id')) { ?>
                                                     src="https://img.youtube.com/vi/<?php the_field('video_id'); ?>/0.jpg"
                                                 <?php } elseif (get_field('post_image')) { ?>

@@ -38,7 +38,7 @@ get_header(); ?>
                             ?>
                             <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
                                 <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
-                                    <img class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+                                    <img style="width: 350px; height: 230px;" class="obj-fit height-inh articlesList-item-img " src="<?= get_the_post_thumbnail_url(); ?>">
                                 </a>
                                 <p class="category-text category-text-technology"><?php single_cat_title(); ?></p>
                                 <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -49,7 +49,7 @@ get_header(); ?>
                             <li class="articlesList-item-hover columns column-block medium-6 small-12 large-4 hide-for-small show-for-large">
                                 <a class="articlesList-item-banner" href="<?php the_permalink(); ?>">
                                     <div class="articlesList-item-bg">
-                                        <img src="<?= get_the_post_thumbnail_url(); ?>">
+                                        <img class="obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>">
                                     </div>
                                     <div class="category category-technology"><?php single_cat_title(); ?></div>
                                     <p class="title-3 white"><?php the_title(); ?></p>
@@ -79,13 +79,19 @@ get_header(); ?>
         </section>
     </div>
     <style>
-        .articlesList-item-bg img {
+        /*.articlesList-item-bg img {
             height: 100%;
-        }
+        }*/
 
-        .articlesList-item-img {
+        /*.articlesList-item-img {
             width: 350px;
             height: 230px;
+        }*/
+
+        @media screen and (max-width: 639px) {
+            .articlesList-item-img-wrap img {
+                width: 100% !important;
+            }
         }
     </style>
     <script>

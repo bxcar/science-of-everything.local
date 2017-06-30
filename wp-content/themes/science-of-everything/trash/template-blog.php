@@ -1,7 +1,4 @@
 <?php
-/**
- * Template Name: blog
- */
 session_start();
 $_SESSION['ix_past'] = false;
 $_SESSION['ix_upcoming'] = false;

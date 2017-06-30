@@ -2,7 +2,7 @@
     <div class="mainWrap mainWrap-medium row">
         <article class="l-article column small-12">
             <section class="articleWide-visualContent">
-                <figure class="articleWide-visualContent-img"><img src="<?php the_field('main-image'); ?>"></figure>
+                <figure class="articleWide-visualContent-img"><img class="obj-fit height-inh" src="<?php the_field('main-image'); ?>"></figure>
                 <div class="articleWide-visualContent-text">
                     <div class="category category-m category-interview">Интервью</div>
                     <div class="article-visualContent-title">
@@ -20,7 +20,7 @@
             <section class="articleWide-content">
                 <div class="article-content-text">
                     <blockquote class="article-quote">
-                        <figure class="article-quote-photo"><img src="<?php the_field('blockquote-image'); ?>"></figure>
+                        <figure class="article-quote-photo"><img class="obj-fit height-inh" src="<?php the_field('blockquote-image'); ?>"></figure>
                         <p><?php the_field('blockquote-text'); ?></p>
                         <div class="article-quote-author"><?php the_field('blockquote-signature'); ?></div>
                     </blockquote>
@@ -39,7 +39,7 @@
                         <?php
                         $gallery = get_field('gallery');
                         foreach ($gallery as $photo) { ?>
-                            <figure class="article-gallary-photo"><img
+                            <figure class="article-gallary-photo"><img class="obj-fit height-inh"
                                         src="<?= $photo['url']; ?>" alt="<?= $photo['alt']; ?>"></figure>
                         <?php } ?>
                     </div>
@@ -48,7 +48,7 @@
                             <?php
                             $gallery = get_field('gallery');
                             foreach ($gallery as $photo) { ?>
-                                <figure class="article-gallary-previews-one"><img
+                                <figure class="article-gallary-previews-one"><img class="obj-fit height-inh"
                                             src="<?= $photo['url']; ?>" alt="<?= $photo['alt']; ?>"></figure>
                             <?php } ?>
                         </div>
@@ -57,7 +57,7 @@
                 <div class="article-content-text">
                     <?php the_field('text-2'); ?>
                 </div>
-                <figure class="article-float-left"><img src="<?php the_field('left-image-1') ?>"></figure>
+                <figure class="article-float-left"><img class="obj-fit height-inh" src="<?php the_field('left-image-1') ?>"></figure>
                 <div class="article-content-text">
                     <?php the_field('right-text-1'); ?>
                 </div>
@@ -68,13 +68,13 @@
                         <button class="social-button vk"><i class="icon-vk"></i></button>
                         <button class="social-button gp"><i class="icon-google-plus"></i></button>
                     </div>-->
-                    <img src="<?php the_field('big-image-1'); ?>">
+                    <img class="obj-fit height-inh" src="<?php the_field('big-image-1'); ?>">
                     <figcaption><?php the_field('big-image-1-desc'); ?></figcaption>
                 </figure>
                 <div class="article-content-text">
                     <?php the_field('text-3'); ?>
                 </div>
-                <figure class="article-float-right"><img src="<?php the_field('right-image-1'); ?>"></figure>
+                <figure class="article-float-right"><img class="obj-fit height-inh" src="<?php the_field('right-image-1'); ?>"></figure>
                 <div class="article-content-text">
                     <?php the_field('left-text-1'); ?>
                 </div>
@@ -85,7 +85,7 @@
                         <button class="social-button vk"><i class="icon-vk"></i></button>
                         <button class="social-button gp"><i class="icon-google-plus"></i></button>
                     </div>-->
-                    <img src="<?php the_field('big-image-2'); ?>">
+                    <img class="obj-fit height-inh" src="<?php the_field('big-image-2'); ?>">
                 </figure>
             </section>
             <section class="articleWide-social">
@@ -122,7 +122,7 @@
         <section class="articleWide-footer">
             <a style="display: block;" target="_blank" href="<?php the_field('adv-link'); ?>"
                class="articleSpecial columns small-12">
-                <img src="<?php the_field('adv-image') ?>">
+                <img class="obj-fit height-inh" src="<?php the_field('adv-image') ?>">
             </a>
             <section class="l-siblingsArticle column small-12 row"><?php
                 if (get_permalink(get_adjacent_post(false, '', true)) != get_the_permalink()) {
@@ -130,7 +130,7 @@
                     <a href="<?= get_permalink(get_adjacent_post(false, '', true)); ?>"
                        class="column medium-6 small-12">
                         <div class="siblingsArticle-one prev"><?php
-                            ?><img class="siblingsArticle-one-bg" src="<?php the_field('main-image'); ?>">
+                            ?><img class="siblingsArticle-one-bg obj-fit height-inh" src="<?php the_field('main-image'); ?>">
                             <p class="siblingsArticle-one-move">Предыдущая статья</p>
                             <p class="title-4 white"><?= get_the_title(get_adjacent_post(false, '', true)); ?></p>
                         </div>
@@ -143,7 +143,7 @@
                     <a style="" href="<?= get_permalink(get_adjacent_post(false, '', false)); ?>"
                        class="column medium-6 small-12">
                         <div class="siblingsArticle-one next"><?php
-                            ?><img class="siblingsArticle-one-bg"
+                            ?><img class="siblingsArticle-one-bg obj-fit height-inh"
                                    src="<?php the_field('main-image'); ?>">
                             <p class="siblingsArticle-one-move">Следующая статья</p>
                             <p class="title-4 white"><?= get_the_title(get_adjacent_post(false, '', false)); ?></p>
@@ -175,7 +175,7 @@
                             <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
                                 <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
                                     <figure class="articlesList-item-img-wrap">
-                                        <img style="width: 255px; height: 165px;" class="articlesList-item-img"
+                                        <img style="width: 255px; height: 165px;" class="articlesList-item-img obj-fit height-inh"
                                              src="<?= get_the_post_thumbnail_url(); ?>">
                                     </figure>
                                     <div class="articlesList-item-text-content">

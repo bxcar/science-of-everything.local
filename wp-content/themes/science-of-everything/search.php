@@ -19,7 +19,7 @@
                 <ul class="articlesList-compact row">
                     <?php while (have_posts()) {
                         the_post(); ?>
-                        <li class="columns column-block large-3 medium-4 small-12">
+                        <li class="articlesList-item-hover columns column-block large-3 medium-4 small-12">
                             <a class="articlesList-item-text dark" href="<?php the_permalink(); ?>">
                                 <figure style="width: auto; height: 165px; margin-left: auto; margin-right: auto;"
                                         class="articlesList-item-img-wrap">
@@ -28,11 +28,13 @@
                                     <?php } else { ?>
                                         style="width: 255px; height: 165px;"
                                     <?php } ?>
-                                            class="articlesList-item-img"
+                                            class="articlesList-item-img obj-fit height-inh"
                                         <?php if (get_field('video_id')) { ?>
-                                            src="https://img.youtube.com/vi/<?php the_field('video_id'); ?>/0.jpg"
+                                            src="https://img.youtube.com/vi/<?php the_field('video_id'); ?>/maxresdefault.jpg"
                                         <?php } elseif (get_field('post_image')) { ?>
                                             src="<?php the_field('post_image'); ?>"
+                                        <?php } elseif (get_field('main-image')) { ?>
+                                            src="<?php the_field('main-image'); ?>"
                                         <?php } elseif (get_field('special_main_page_image')) { ?>
                                             src="<?php the_field('special_main_page_image'); ?>"
                                         <?php } elseif (get_field('book_mini')) { ?>
@@ -64,4 +66,12 @@
             <!--            <button class="button-more-light">Загрузить больше результатов поиска</button>-->
         </div>
     </div>
+<style>
+    @media screen and (max-width: 639px) {
+        .articlesList-item-img-wrap img {
+            width: 100% !important;
+         }
+    }
+
+</style>
 <?php get_footer(); ?>

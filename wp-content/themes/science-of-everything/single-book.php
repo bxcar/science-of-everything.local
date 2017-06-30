@@ -2,7 +2,7 @@
     <div class="mainWrap mainWrap-medium row">
         <article class="l-article column large-8 small-12">
             <section class="article-content-text">
-                <figure class="article-float-left"><?= get_the_post_thumbnail(); ?></figure>
+                <figure class="article-float-left"><img class="obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>"></figure>
                 <h1 class="title-0"><?php the_title(); ?></h1>
                 <?php the_content(); ?>
             </section>
@@ -28,7 +28,7 @@
                 if ($books->have_posts()) {
                     while ($books->have_posts()) {
                         $books->the_post(); ?>
-                        <li><a class="sidebar-img-books" href="<?php the_permalink(); ?>"><img style="width: 77px; height: 100px;" src="<?php the_field('book_mini'); ?>"></a>
+                        <li><a class="sidebar-img-books" href="<?php the_permalink(); ?>"><img class="obj-fit height-inh" style="width: 77px; height: 100px;" src="<?php the_field('book_mini'); ?>"></a>
                             <div class="sidebar-item-content books">
                                 <a class="title-sm" href="<?php the_permalink(); ?>"><?= wp_trim_words(get_the_title(), 8); ?></a>
                                 <div class="counters">
@@ -43,7 +43,7 @@
                 wp_reset_postdata();
                 ?>
             </ul>
-            <a href="<?php the_field('adv_link'); ?>" target="_blank" class="sidebar-advertising"><img src="<?php the_field('adv_image'); ?>"></a>
+            <a href="<?php the_field('adv_link'); ?>" target="_blank" class="sidebar-advertising"><img class="obj-fit height-inh" src="<?php the_field('adv_image'); ?>"></a>
         </aside>
     </div>
 <script>

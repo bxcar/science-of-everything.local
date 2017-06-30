@@ -1,8 +1,4 @@
-<?php
-/**
- * Template Name: books
- */
-get_header(); ?>
+<?php get_header(); ?>
     <div class="mainWrap mainWrap-medium">
         <section class="l-articles row">
             <div class="column small-12">

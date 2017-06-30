@@ -2,7 +2,7 @@
     <div class="mainWrap mainWrap-medium row">
         <article class="l-article column large-8 small-12">
             <section class="article-visualContent">
-                <figure class="article-visualContent-img"><img src="<?php the_field('main-image')?>">
+                <figure class="article-visualContent-img"><img class="obj-fit height-inh" src="<?php the_field('main-image')?>">
                 </figure>
                 <div class="article-visualContent-text">
                     <div class="article-visualContent-details">
@@ -77,7 +77,7 @@
                         $popular_posts->the_post(); ?>
                         <li>
                             <a class="sidebar-list-img" href="<?php the_permalink(); ?>">
-                                <img style="width: 130px; height: 100px;" src="<?= get_the_post_thumbnail_url(); ?>">
+                                <img class="obj-fit height-inh" style="width: 130px; height: 100px;" src="<?= get_the_post_thumbnail_url(); ?>">
                             </a>
                             <div class="sidebar-item-content">
                                 <?php
@@ -103,7 +103,7 @@
                 ?>
             </ul>
             <a href="<?php the_field('ad_link'); ?>" target="_blank">
-                <div class="sidebar-advertising"><img src="<?php the_field('ad_image') ?>"></div>
+                <div class="sidebar-advertising"><img class="obj-fit height-inh" src="<?php the_field('ad_image') ?>"></div>
             </a>
         </aside>
         <section class="l-siblingsArticle column small-12 row"><?php
@@ -111,8 +111,8 @@
                 ?>
                 <a href="<?= get_permalink(get_adjacent_post(false, '', true)); ?>" class="column medium-6 small-12">
                     <div class="siblingsArticle-one prev"><?php
-                        ?><img class="siblingsArticle-one-bg" src="https://img.youtube.com/vi/<?php
-                        the_field('video_id', get_adjacent_post(false, '', true)); ?>/0.jpg">
+                        ?><img class="siblingsArticle-one-bg obj-fit height-inh" src="https://img.youtube.com/vi/<?php
+                        the_field('video_id', get_adjacent_post(false, '', true)); ?>/maxresdefault.jpg">
                         <p class="siblingsArticle-one-move">Предыдущее видео</p>
                         <p class="title-4 white"><?= get_the_title(get_adjacent_post(false, '', true)); ?></p>
                     </div>
@@ -125,9 +125,9 @@
                 <a style="" href="<?= get_permalink(get_adjacent_post(false, '', false)); ?>"
                    class="column medium-6 small-12">
                     <div class="siblingsArticle-one next"><?php
-                        ?><img class="siblingsArticle-one-bg"
+                        ?><img class="siblingsArticle-one-bg obj-fit height-inh"
                                src="https://img.youtube.com/vi/<?php
-                               the_field('video_id', get_adjacent_post(false, '', false)); ?>/0.jpg">
+                               the_field('video_id', get_adjacent_post(false, '', false)); ?>/maxresdefault.jpg">
                         <p class="siblingsArticle-one-move">Следующее видео</p>
                         <p class="title-4 white"><?= get_the_title(get_adjacent_post(false, '', false)); ?></p>
                     </div>
@@ -158,7 +158,7 @@
                         <li class="columns column-block large-3 medium-4 small-12">
                             <a class="articlesList-item-text" href="<?php the_permalink(); ?>">
                                 <figure class="articlesList-item-img-wrap">
-                                    <img style="width: 255px; height: 165px;" class="articlesList-item-img" src="<?= get_the_post_thumbnail_url(); ?>">
+                                    <img style="width: 255px; height: 165px;" class="articlesList-item-img obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>">
                                 </figure>
                                 <div class="articlesList-item-text-content">
                                     <?php

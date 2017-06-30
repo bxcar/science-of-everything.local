@@ -2,7 +2,8 @@
     <div class="mainWrap mainWrap-medium row">
         <article class="l-article column large-8 small-12">
             <section class="article-visualContent">
-                <figure class="article-visualContent-img"><img src="<?php the_field('post_image') ?>">
+                <figure class="article-visualContent-img"><img class="obj-fit height-inh"
+                                                               src="<?php the_field('post_image') ?>">
                 </figure>
                 <div class="article-visualContent-text">
                     <div class="article-visualContent-details">
@@ -41,9 +42,10 @@
                             <?php
                             $gallery = get_field('post_photo_gallery');
                             foreach ($gallery as $photo) { ?>
-                                <figure class="article-gallary-photo" data-mfp-src="<?= $photo['url']; ?>"><img
-                                            src="<?= $photo['sizes']['thumb-gallery-slider']; ?>"
-                                            alt="<?= $photo['alt']; ?>"></figure>
+                                <figure class="article-gallary-photo" data-mfp-src="<?= $photo['url']; ?>">
+                                    <img class="obj-fit height-inh"
+                                         src="<?= $photo['sizes']['thumb-gallery-slider']; ?>"
+                                         alt="<?= $photo['alt']; ?>"></figure>
                             <?php } ?>
                         </div>
                         <div class="article-gallary-previews-wrap">
@@ -51,9 +53,10 @@
                                 <?php
                                 $gallery = get_field('post_photo_gallery');
                                 foreach ($gallery as $photo) { ?>
-                                    <figure class="article-gallary-previews-one is-current"><img
-                                                src="<?= $photo['sizes']['thumb-gallery']; ?>"
-                                                alt="<?= $photo['alt']; ?>"></figure>
+                                    <figure class="article-gallary-previews-one is-current">
+                                        <img class="obj-fit height-inh"
+                                             src="<?= $photo['sizes']['thumb-gallery']; ?>"
+                                             alt="<?= $photo['alt']; ?>"></figure>
                                 <?php } ?>
                             </div>
                         </div>
@@ -72,7 +75,9 @@
             </div>
             <section class="article-subscribe">
                 <div class="section-title">
-                    <h2 class="title-4"><img src="<?= get_template_directory_uri(); ?>/app/img/icon-plane.svg">Подписаться на рассылку</h2>
+                    <h2 class="title-4"><img class="obj-fit height-inh"
+                                             src="<?= get_template_directory_uri(); ?>/app/img/icon-plane.svg">Подписаться
+                        на рассылку</h2>
                 </div>
                 <?php echo do_shortcode('[contact-form-7 id="9" title="Подписка на рассылку" html_class="article-subscribe-form"]'); ?>
                 <script>
@@ -83,8 +88,9 @@
         </article>
         <aside class="sidebar-wrap columns large-4">
             <div class="section-title section-title-popular">
-                <h2 class="title-2"><img
-                            src="<?= get_template_directory_uri(); ?>/app/img/icon-newspaper.png"><?php _e('Популярные статьи', 'science-of-everything'); ?>
+                <h2 class="title-2">
+                    <img class="obj-fit height-inh"
+                         src="<?= get_template_directory_uri(); ?>/app/img/icon-newspaper.png"><?php _e('Популярные статьи', 'science-of-everything'); ?>
                 </h2>
             </div>
             <ul class="sidebar-list">
@@ -103,7 +109,7 @@
                         $popular_posts->the_post(); ?>
                         <li>
                             <a class="sidebar-list-img" href="<?php the_permalink(); ?>">
-                                <img style="width: 130px; height: 100px;" src="<?= get_the_post_thumbnail_url(); ?>">
+                                <img class="obj-fit height-inh" style="width: 130px; height: 100px;" src="<?= get_the_post_thumbnail_url(); ?>">
                             </a>
                             <div class="sidebar-item-content">
                                 <?php
@@ -130,7 +136,7 @@
                 wp_reset_postdata();
                 ?>
             </ul>
-            <div class="sidebar-advertising"><a target="_blank" href="<?php the_field('adv_link'); ?>"><img
+            <div class="sidebar-advertising"><a target="_blank" href="<?php the_field('adv_link'); ?>"><img class="obj-fit height-inh"
                             src="<?php the_field('adv_image'); ?>"></a></div>
         </aside>
     </div>
