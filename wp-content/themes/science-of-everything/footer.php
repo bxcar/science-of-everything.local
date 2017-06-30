@@ -113,7 +113,8 @@
     if ( in_array( 'administrator', (array) $user->roles ) ) { ?>
     .mainWrap,
     .grey-section-bg,
-    .l-specialTitle{
+    .l-specialTitle,
+    .l-changeProfile {
         margin-top: -32px;
     }
     <?php } ?>
