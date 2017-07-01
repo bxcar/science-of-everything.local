@@ -1,0 +1,1 @@
+cÙWY<?php exit; ?>a:1:{s:7:"content";a:1:{s:4:"data";a:3:{s:32:"6e9accb242f0c478ccd34428e96c782b";a:2:{i:0;s:17:"Language Selector";i:1;N;}s:32:"ebd83288b1b4ca950ca2986099e93777";a:2:{i:0;s:35:"Multilingual arbitrary text or HTML";i:1;N;}s:32:"79a2f2031003f676ae69711f7dfc6ac5";a:2:{i:0;s:17:"Multilingual Text";i:1;N;}}}}

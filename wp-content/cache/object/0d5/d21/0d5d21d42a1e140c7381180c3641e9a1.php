@@ -1,0 +1,1 @@
+cÙWY<?php exit; ?>a:1:{s:7:"content";a:1:{s:4:"data";a:4:{s:30:"[wpseo_social]og_default_image";a:2:{i:0;s:0:"";i:1;N;}s:32:"[wpseo_social]og_frontpage_title";a:2:{i:0;s:0:"";i:1;N;}s:31:"[wpseo_social]og_frontpage_desc";a:2:{i:0;s:0:"";i:1;N;}s:32:"[wpseo_social]og_frontpage_image";a:2:{i:0;s:0:"";i:1;N;}}}}

@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <title>Наука всего</title>
+
+<link rel="stylesheet" href="http://science-of-everything.com/wp-content/plugins/sitepress-multilingual-cms/res/css/language-selector.css?v=3.4.1" type="text/css" media="all" />
+    <link rel="shortcut icon" href="http://science-of-everything.com/wp-content/themes/science-of-everything/app/img/favicon.png" type="image/png">
+    <title>Технологии Archives - Science of everything</title>
+
+<link rel="stylesheet" href="http://science-of-everything.com/wp-content/plugins/sitepress-multilingual-cms/res/css/language-selector.css?v=3.4.1" type="text/css" media="all" />
+	<script>function theChampLoadEvent(e){var t=window.onload;if(typeof window.onload!="function"){window.onload=e}else{window.onload=function(){t();e()}}}</script>
+		<script type="text/javascript">var theChampCloseIconPath = 'http://science-of-everything.com/wp-content/plugins/super-socializer/images/close.png';var heateorSsSDKBlockedMsg = `Your browser is blocking some features of this website. Please follow the instructions at <a href=\'http://support.heateor.com/browser-blocking-social-features/\' target=\'_blank\' style=\'color:#33a9d8\'>http://support.heateor.com/browser-blocking-social-features/</a> to unblock these.`</script>
+		<script> var theChampSiteUrl = 'http://science-of-everything.com', theChampVerified = 0, theChampEmailPopup = 0; </script>
+			<script> var theChampLoadingImgPath = 'http://science-of-everything.com/wp-content/plugins/super-socializer/images/ajax_loader.gif'; var theChampAjaxUrl = 'http://science-of-everything.com/wp-admin/admin-ajax.php'; var theChampRedirectionUrl = 'http://science-of-everything.com/category/tehnologii/'; var theChampRegRedirectionUrl = 'http://science-of-everything.com/category/tehnologii/'; </script>
+				<script> var theChampFacebookScope = 'public_profile,email', theChampFBKey = '262527864221385', theChampVerified = 0; var theChampAjaxUrl = 'http://science-of-everything.com/wp-admin/admin-ajax.php'; var theChampPopupTitle = ''; var theChampEmailPopup = 0; var theChampEmailAjaxUrl = 'http://science-of-everything.com/wp-admin/admin-ajax.php'; var theChampEmailPopupTitle = ''; var theChampEmailPopupErrorMsg = ''; var theChampEmailPopupUniqueId = ''; var theChampEmailPopupVerifyMessage = ''; var theChampLJLoginUsernameString = 'Введите ваше имя пользователя LiveJournal'; var theChampLJAuthUrl = 'http://science-of-everything.com/category/tehnologii/?SuperSocializerAuth=LiveJournal'; var theChampSteamAuthUrl = ""; var theChampTwitterRedirect = 'http%3A%2F%2Fscience-of-everything.com%2Fcategory%2Ftehnologii%2F';  var heateorMSEnabled = 0; var theChampTwitterAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Twitter&super_socializer_redirect_to=" + theChampTwitterRedirect; var theChampTwitchAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Twitch"; var theChampXingAuthUrl = theChampSiteUrl + "?SuperSocializerAuth=Xing&super_socializer_redirect_to=" + theChampTwitterRedirect;</script>
+				<script>var theChampGoogleKey = '26457517619-0q9lkb5napns2qmobpho0s3uv7uqg6eq.apps.googleusercontent.com'; var theChampGoogleErrorMessage = 'Выполните шаги 11 и 12 на странице конфигурации приложения GooglePlus, чтобы открыть' </script>
+				<script> var theChampVkKey = '6071565' </script>
+				<script> var theChampFBKey = '262527864221385', theChampFBLang = 'ru_RU', theChampFbLikeMycred = 0, theChampSsga = 0, theChampCommentNotification = 0, theChampHeateorFcmRecentComments = 0, theChampFbIosLogin = 0; </script>
+				<script> var theChampSharingAjaxUrl = 'http://science-of-everything.com/wp-admin/admin-ajax.php', heateorSsUrlCountFetched = [], heateorSsSharesText = 'Поделились', heateorSsShareText = 'Поделиться', theChampPluginIconPath = 'http://science-of-everything.com/wp-content/plugins/super-socializer/images/logo.png', theChampHorizontalSharingCountEnable = 1, theChampVerticalSharingCountEnable = 0, theChampSharingOffset = -10, theChampCounterOffset = -10, theChampMobileStickySharingEnabled = 0;var heateorSsCopyLinkMessage = "Link copied.";
+		var theChampReduceHorizontalSvgWidth = true;		</script>
+			<style type="text/css">
+	.the_champ_horizontal_sharing .theChampSharing{
+					color: #fff;
+				border-width: 0px;
+		border-style: solid;
+		border-color: transparent;
+	}
+		.the_champ_horizontal_sharing .theChampTCBackground{
+		color:#666;
+	}
+		.the_champ_horizontal_sharing .theChampSharing:hover{
+				border-color: transparent;
+	}
+	.the_champ_vertical_sharing .theChampSharing{
+					color: #fff;
+				border-width: 0px;
+		border-style: solid;
+		border-color: transparent;
+	}
+		.the_champ_vertical_sharing .theChampTCBackground{
+		color:#666;
+	}
+		.the_champ_vertical_sharing .theChampSharing:hover{
+				border-color: transparent;
+	}
+				div.the_champ_horizontal_sharing .theChampSharingSvg{width:50%;margin:auto;}div.the_champ_horizontal_sharing .the_champ_square_count{float:left;width:50%;line-height:40px;}
+			@media screen and (max-width:783px){.the_champ_vertical_sharing{display:none!important}}	</style>
+	<link rel="alternate" hreflang="ru" href="http://science-of-everything.com/category/tehnologii/" />
+
+<!-- This site is optimized with the Yoast SEO plugin v4.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://science-of-everything.com/category/tehnologii/" />
+<link rel="next" href="http://science-of-everything.com/category/tehnologii/page/2/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="object" />
+<meta property="og:title" content="Технологии Archives - Science of everything" />
+<meta property="og:url" content="http://science-of-everything.com/category/tehnologii/" />
+<meta property="og:site_name" content="Science of everything" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Технологии Archives - Science of everything" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Science of everything &raquo; Лента" href="http://science-of-everything.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Science of everything &raquo; Лента комментариев" href="http://science-of-everything.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Science of everything &raquo; Лента рубрики Технологии" href="http://science-of-everything.com/category/tehnologii/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/science-of-everything.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+
+		<style type="text/css">
+			.mistape-test, .mistape_mistake_inner {color: #E42029 !important;}
+			#mistape_dialog h2::before, #mistape_dialog .mistape_action, .mistape-letter-back {background-color: #E42029 !important; }
+			#mistape_reported_text:before, #mistape_reported_text:after {border-color: #E42029 !important;}
+            .mistape-letter-front .front-left {border-left-color: #E42029 !important;}
+            .mistape-letter-front .front-right {border-right-color: #E42029 !important;}
+            .mistape-letter-front .front-bottom, .mistape-letter-back > .mistape-letter-back-top, .mistape-letter-top {border-bottom-color: #E42029 !important;}
+            .mistape-logo svg {fill: #E42029 !important;}
+		</style>
+		<link rel='stylesheet' id='contact-form-7-css'  href='http://science-of-everything.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='events-manager-css'  href='http://science-of-everything.com/wp-content/plugins/events-manager/includes/css/events_manager.css?ver=5.7' type='text/css' media='all' />
+<link rel='stylesheet' id='simple-favorites-css'  href='http://science-of-everything.com/wp-content/plugins/favorites/assets/css/favorites.css?ver=2.1.4' type='text/css' media='all' />
+<link rel='stylesheet' id='mistape-front-css'  href='http://science-of-everything.com/wp-content/plugins/mistape/assets/css/mistape-front.css?ver=1.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='libs.min-css'  href='http://science-of-everything.com/wp-content/themes/science-of-everything/app/css/libs.min.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='main-css'  href='http://science-of-everything.com/wp-content/themes/science-of-everything/app/css/main.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='science-of-everything-style-css'  href='http://science-of-everything.com/wp-content/themes/science-of-everything/style.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='http://science-of-everything.com/wp-includes/css/dashicons.min.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='thickbox-css'  href='http://science-of-everything.com/wp-includes/js/thickbox/thickbox.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='the_champ_frontend_css-css'  href='http://science-of-everything.com/wp-content/plugins/super-socializer/css/front.css?ver=7.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='the_champ_sharing_default_svg-css'  href='http://science-of-everything.com/wp-content/plugins/super-socializer/css/share-svg.css?ver=7.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bfa-font-awesome-css'  href='//cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/sortable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c","currentText":"\u0421\u0435\u0433\u043e\u0434\u043d\u044f","monthNames":["\u042f\u043d\u0432\u0430\u0440\u044c","\u0424\u0435\u0432\u0440\u0430\u043b\u044c","\u041c\u0430\u0440\u0442","\u0410\u043f\u0440\u0435\u043b\u044c","\u041c\u0430\u0439","\u0418\u044e\u043d\u044c","\u0418\u044e\u043b\u044c","\u0410\u0432\u0433\u0443\u0441\u0442","\u0421\u0435\u043d\u0442\u044f\u0431\u0440\u044c","\u041e\u043a\u0442\u044f\u0431\u0440\u044c","\u041d\u043e\u044f\u0431\u0440\u044c","\u0414\u0435\u043a\u0430\u0431\u0440\u044c"],"monthNamesShort":["\u042f\u043d\u0432","\u0424\u0435\u0432","\u041c\u0430\u0440","\u0410\u043f\u0440","\u041c\u0430\u0439","\u0418\u044e\u043d","\u0418\u044e\u043b","\u0410\u0432\u0433","\u0421\u0435\u043d","\u041e\u043a\u0442","\u041d\u043e\u044f","\u0414\u0435\u043a"],"nextText":"\u0414\u0430\u043b\u0435\u0435","prevText":"\u041d\u0430\u0437\u0430\u0434","dayNames":["\u0412\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u044c\u0435","\u041f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a","\u0412\u0442\u043e\u0440\u043d\u0438\u043a","\u0421\u0440\u0435\u0434\u0430","\u0427\u0435\u0442\u0432\u0435\u0440\u0433","\u041f\u044f\u0442\u043d\u0438\u0446\u0430","\u0421\u0443\u0431\u0431\u043e\u0442\u0430"],"dayNamesShort":["\u0412\u0441","\u041f\u043d","\u0412\u0442","\u0421\u0440","\u0427\u0442","\u041f\u0442","\u0421\u0431"],"dayNamesMin":["\u0412\u0441","\u041f\u043d","\u0412\u0442","\u0421\u0440","\u0427\u0442","\u041f\u0442","\u0421\u0431"],"dateFormat":"dd.mm.yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/menu.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/wp-a11y.min.js?ver=4.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e.","oneResult":"\u041d\u0430\u0439\u0434\u0435\u043d 1 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442. \u0414\u043b\u044f \u043f\u0435\u0440\u0435\u043c\u0435\u0449\u0435\u043d\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u043a\u043b\u0430\u0432\u0438\u0448\u0438 \u0432\u0432\u0435\u0440\u0445\/\u0432\u043d\u0438\u0437.","manyResults":"\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432: %d. \u0414\u043b\u044f \u043f\u0435\u0440\u0435\u043c\u0435\u0449\u0435\u043d\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u043a\u043b\u0430\u0432\u0438\u0448\u0438 \u0432\u0432\u0435\u0440\u0445\/\u0432\u043d\u0438\u0437.","itemSelected":"\u041e\u0431\u044a\u0435\u043a\u0442 \u0432\u044b\u0431\u0440\u0430\u043d."};
+var uiAutocompleteL10n = {"noResults":"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e.","oneResult":"\u041d\u0430\u0439\u0434\u0435\u043d 1 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442. \u0414\u043b\u044f \u043f\u0435\u0440\u0435\u043c\u0435\u0449\u0435\u043d\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u043a\u043b\u0430\u0432\u0438\u0448\u0438 \u0432\u0432\u0435\u0440\u0445\/\u0432\u043d\u0438\u0437.","manyResults":"\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432: %d. \u0414\u043b\u044f \u043f\u0435\u0440\u0435\u043c\u0435\u0449\u0435\u043d\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 \u043a\u043b\u0430\u0432\u0438\u0448\u0438 \u0432\u0432\u0435\u0440\u0445\/\u0432\u043d\u0438\u0437.","itemSelected":"\u041e\u0431\u044a\u0435\u043a\u0442 \u0432\u044b\u0431\u0440\u0430\u043d."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/resizable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/draggable.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/jquery/ui/dialog.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var EM = {"ajaxurl":"http:\/\/science-of-everything.com\/wp-admin\/admin-ajax.php?em_lang=ru_RU&lang=ru","locationajaxurl":"http:\/\/science-of-everything.com\/wp-admin\/admin-ajax.php?action=locations_search&em_lang=ru_RU&lang=ru","firstDay":"1","locale":"ru","dateFormat":"dd\/mm\/yy","ui_css":"http:\/\/science-of-everything.com\/wp-content\/plugins\/events-manager\/includes\/css\/jquery-ui.min.css","show24hours":"1","is_ssl":"","txt_search":"\u041f\u043e\u0438\u0441\u043a","txt_searching":"\u0418\u0434\u0435\u0442 \u043f\u043e\u0438\u0441\u043a ...","txt_loading":"\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430 ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/events-manager/includes/js/events-manager.js?ver=5.7'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var favorites_data = {"ajaxurl":"http:\/\/science-of-everything.com\/wp-admin\/admin-ajax.php","nonce":"bc357e6a60","favorite":"Favorite <i class=\"sf-icon-star-empty\"><\/i>","favorited":"Favorited <i class=\"sf-icon-star-full\"><\/i>","includecount":"","indicate_loading":"1","loading_text":"Loading","loading_image":"<span class=\"sf-icon-spinner-wrapper\"><i class=\"sf-icon-spinner\"><\/i><\/span>","loading_image_active":"<span class=\"sf-icon-spinner-wrapper active\"><i class=\"sf-icon-spinner active\"><\/i><\/span>","loading_image_preload":"","cache_enabled":"1","button_options":{"button_type":{"label":"Bookmark","icon":"<i class=\"sf-icon-bookmark\"><\/i>","icon_class":"sf-icon-bookmark","state_default":"Bookmark","state_active":"Bookmarked"},"custom_colors":true,"box_shadow":false,"include_count":false,"default":{"background_default":"#ffffff","border_default":"#ffffff","text_default":"#656565","icon_default":"#5848ca","count_default":false},"active":{"background_active":"#ffffff","border_active":"#ffffff","text_active":"#656565","icon_active":"#656565","count_active":false}},"authentication_modal_content":"<p>Please login to add favorites.<\/p>\n<p><a href=\"#\" data-favorites-modal-close>Dismiss this notice<\/a><\/p>\n","dev_mode":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/favorites/assets/js/favorites.min.js?ver=2.1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wp_days_ago_script = {"ajaxurl":"http:\/\/science-of-everything.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/wp-days-ago//wp_days_ago.js?ver=3.2'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/themes/science-of-everything/app/js/libs.min.js?ver=4.8'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/themes/science-of-everything/app/js/script.js?ver=4.8'></script>
+<link rel='https://api.w.org/' href='http://science-of-everything.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://science-of-everything.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://science-of-everything.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.8" />
+<meta name="generator" content="WPML ver:3.4.1 stt:1,46;" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		    <style>
+        .header-bg {
+            background-image: url('http://science-of-everything.com/wp-content/uploads/2017/04/header-bg.png');
+        }
+
+        .home-page .header-bg {
+            background-image: url('http://science-of-everything.com/wp-content/uploads/2017/04/header-bg-home.png');
+        }
+
+        .contact-page .header-bg {
+            background-image: url('http://science-of-everything.com/wp-content/uploads/2017/04/header-bg-contacts.png');
+        }
+    </style>
+    <script>
+    jQuery(document).ready(function () {
+        // this is the id of the form
+
+        jQuery("#register-popup-form").submit(function (e) {
+
+            jQuery("#submit-register-popup-form").html("").css(
+                {
+                    "background-image": "url(http://science-of-everything.com/wp-content/themes/science-of-everything/app/img/loader-form.gif)",
+                    "background-size": "15%",
+                    "background-repeat": "no-repeat",
+                    "background-position-y": "50%",
+                    "background-position-x": "50%"
+                }
+            );
+            var url = "http://science-of-everything.com/wp-content/themes/science-of-everything/user-ajax-register.php"; // the script where you handle the form input.
+
+            var form = jQuery('#register-popup-form')[0]; // You need to use standart javascript object here
+            var formData = new FormData(form);
+
+            jQuery.ajax({
+                url: url,
+                data: formData,
+                async: true,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'POST',
+                success: function (data) {
+                    if (data == 1) {
+                        jQuery("#submit-register-popup-form").html("Регистрация прошла успешно, теперь вы можете войти в свой аккаунт").css(
+                            {"background-image": "none"}
+                        );
+
+                        jQuery('#register-popup-form')[0].reset();
+
+                        setTimeout(func, 20000);
+
+                        function func() {
+                            jQuery("#submit-register-popup-form").html("Зарегистрироваться").css(
+                                {"background-image": "none"}
+                            );
+                        }
+                    } else if (data == 2) {
+                        jQuery("#submit-register-popup-form").html("Поле \"Логин\" обязательно").css(
+                            {"background-image": "none"}
+                        );
+
+                        setTimeout(func, 3000);
+
+                        function func() {
+                            jQuery("#submit-register-popup-form").html("Зарегистрироваться").css(
+                                {"background-image": "none"}
+                            );
+                        }
+                    } else if (data == 3) {
+                        jQuery("#submit-register-popup-form").html("Данный логин уже зарегистрирован").css(
+                            {"background-image": "none"}
+                        );
+
+                        setTimeout(func, 3000);
+
+                        function func() {
+                            jQuery("#submit-register-popup-form").html("Зарегистрироваться").css(
+                                {"background-image": "none"}
+                            );
+                        }
+                    } else if (data == 4) {
+                        jQuery("#submit-register-popup-form").html("Данный email уже зарегистрирован").css(
+                            {"background-image": "none"}
+                        );
+
+                        setTimeout(func, 3000);
+
+                        function func() {
+                            jQuery("#submit-register-popup-form").html("Зарегистрироваться").css(
+                                {"background-image": "none"}
+                            );
+                        }
+                    } else {
+                        jQuery("#submit-register-popup-form").html("Произошла ошибка").css(
+                            {"background-image": "none"}
+                        );
+
+                        setTimeout(func, 3000);
+
+                        function func() {
+                            jQuery("#submit-register-popup-form").html("Зарегистрироваться").css(
+                                {"background-image": "none"}
+                            );
+                        }
+                    }
+//                                            alert(data);
+                },
+
+                error: function (data) {
+                    jQuery("#submit-register-popup-form").html("Произошла ошибка").css(
+                        {"background-image": "none"}
+                    );
+
+                    setTimeout(func, 3000);
+
+                    function func() {
+                        jQuery("#submit-register-popup-form").html("Зарегистрироваться").css(
+                            {"background-image": "none"}
+                        );
+                    }
+                }
+            });
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+        });
+    });
+</script>    <script>
+    jQuery(document).ready(function () {
+        // this is the id of the form
+
+        jQuery("#sign-in-popup-form").submit(function (e) {
+
+            jQuery("#submit-sign-in-popup-form").html("").css(
+                {
+                    "background-image": "url(http://science-of-everything.com/wp-content/themes/science-of-everything/app/img/loader-form.gif)",
+                    "background-size": "15%",
+                    "background-repeat": "no-repeat",
+                    "background-position-y": "50%",
+                    "background-position-x": "50%"
+                }
+            );
+            var url = "http://science-of-everything.com/wp-content/themes/science-of-everything/user-sign-in-ajax.php"; // the script where you handle the form input.
+
+            var form = jQuery('#sign-in-popup-form')[0]; // You need to use standart javascript object here
+            var formData = new FormData(form);
+
+            jQuery.ajax({
+                url: url,
+                data: formData,
+                async: true,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'POST',
+                success: function (data) {
+                    if (data == 1) {
+                        jQuery("#submit-sign-in-popup-form").html("Вход выполнен").css(
+                            {"background-image": "none"}
+                        );
+
+                        jQuery('#sign-in-popup-form')[0].reset();
+
+                        setTimeout(func, 50);
+
+                        function func() {
+                            jQuery("#submit-sign-in-popup-form").css(
+                                {"background-image": "none"}
+                            );
+                            location.reload();
+                        }
+                    } else {
+                        jQuery("#submit-sign-in-popup-form").html("Указаны некорректные данные").css(
+                            {"background-image": "none"}
+                        );
+
+                        setTimeout(func, 5500);
+
+                        function func() {
+                            jQuery("#submit-sign-in-popup-form").html("Войти").css(
+                                {"background-image": "none"}
+                            );
+                        }
+                    }
+//                                            alert(data);
+                },
+
+                error: function (data) {
+                    jQuery("#submit-sign-in-popup-form").html("Произошла ошибка__").css(
+                        {"background-image": "none"}
+                    );
+
+                    setTimeout(func, 3000);
+
+                    function func() {
+                        jQuery("#submit-sign-in-popup-form").html("Зарегистрироваться__").css(
+                            {"background-image": "none"}
+                        );
+                    }
+                }
+            });
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+        });
+    });
+</script>    <!--    --></head>
+<body class="">
+
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '262527864221385',
+            cookie: true,
+            xfbml: true,
+            version: 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="l-preloader"><img src="http://science-of-everything.com/wp-content/themes/science-of-everything/app/img/preloader.gif"></div>
+<div class="l-header">
+    <div class="header-bg"></div>
+    <div class="header-menu">
+        <button class="header-hamburger"><i class="icon-menu"></i></button>
+        <ul class="header-navTop"><li id="menu-item-582" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-582"><a href="http://science-of-everything.com/category/tehnologii/">Технологии</a></li>
+<li id="menu-item-583" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-583"><a href="http://science-of-everything.com/category/psihologiya/">Психология</a></li>
+<li id="menu-item-584" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-584"><a href="http://science-of-everything.com/category/astrofizika/">Астрофизика</a></li>
+<li id="menu-item-585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-585"><a href="http://science-of-everything.com/books/">Книги</a></li>
+<li id="menu-item-588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-588"><a href="http://science-of-everything.com/blog/">Блог</a></li>
+<li id="menu-item-589" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-589"><a href="http://science-of-everything.com/video/">Видео</a></li>
+<li id="menu-item-587" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-587"><a href="http://science-of-everything.com/specials/">Спецпроекты</a></li>
+</ul>        <!--<ul class="header-navTop">
+            <li><a class="header-link" href="rubric.html"><span>Астрофизика</span></a></li>
+            <li><a class="header-link" href="rubrbooksic.html"><span>Технологии</span></a></li>
+            <li><a class="header-link" href="rubric.html"><span>Психология</span></a></li>
+            <li><a class="header-link" href=".html"><span>Книги</span></a></li>
+            <li><a class="header-link" href="rubric.html"><span>Медтех</span></a></li>
+            <li><a class="header-link" href="rubric.html"><span>Будущее</span></a></li>
+            <li><a class="header-link" href="events.html"><span>События</span></a></li>
+            <li><a class="header-link" href="blog.html"><span>Блог</span></a></li>
+            <li>
+                <div class="header-dropdown header-link"><span>Спецпроект</span></div>
+                <ul class="header-dropdown-list">
+                    <li><a class="header-link" href="special.html">Классика в моде</a></li>
+                    <li><a class="header-link" href="special.html">25 шедевров в украине</a></li>
+                    <li><a class="header-link" href="special.html">Научный подход</a></li>
+                    <li><a class="header-link" href="special.html">Culture matters</a></li>
+                </ul>
+            </li>
+        </ul>-->
+        <div class="header-login"><i class="icon-user"></i>
+            <!-- Title when user is guest-->
+            <span class="">Войти  / Регистрация</span>
+            <!-- Title when user is login-->
+            <a href="http://science-of-everything.com/account/"
+               class="is-hidden">Личный кабинет</a>
+        </div>
+        <button class="header-search button-round-outline"><i class="icon-search"></i></button>
+        <form class="header-searchForm searchform" name="searchform" role="search" method="get"
+              id="searchform" action="http://science-of-everything.com/">
+            <input name="s" id="s" type="text" placeholder="Поиск">
+            <button class="header-searchForm-button" id="searchsubmit" type="submit"><i class="icon-search"></i>
+            </button>
+        </form>
+    </div>
+    <div class="header-nav-wrap is-hidden">
+        <nav class="header-nav">
+            <button class="header-nav-close"><i class="icon-close"></i></button>
+            <a class="header-nav-logo" href="http://science-of-everything.com"><img
+                        src="http://science-of-everything.com/wp-content/uploads/2017/04/colored-logo.png"></a>
+            <ul class="header-nav-list"><li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-80"><a href="http://science-of-everything.com/">Главная</a></li>
+<li id="menu-item-456" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-456"><a href="http://#">Темы</a>
+<ul  class="header-nav-dropdown-list">
+	<li id="menu-item-459" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-459"><a href="http://science-of-everything.com/category/astrofizika/">Астрофизика</a></li>
+	<li id="menu-item-457" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-457"><a href="http://science-of-everything.com/category/tehnologii/">Технологии</a></li>
+	<li id="menu-item-458" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-458"><a href="http://science-of-everything.com/category/psihologiya/">Психология</a></li>
+	<li id="menu-item-460" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-460"><a href="http://science-of-everything.com/category/iskusstvo/">Искусство</a></li>
+	<li id="menu-item-580" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-580"><a href="http://science-of-everything.com/specials/">Спецпроекты</a></li>
+</ul>
+</li>
+<li id="menu-item-579" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-579"><a href="http://science-of-everything.com/events-list/">События</a></li>
+<li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://science-of-everything.com/photo-gallery/">Фотогалерея</a></li>
+<li id="menu-item-454" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-454"><a href="http://science-of-everything.com/video/">Видео</a></li>
+<li id="menu-item-581" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-581"><a href="http://science-of-everything.com/blog/">Блог</a></li>
+<li id="menu-item-455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-455"><a href="http://science-of-everything.com/videocollections/">Видеоколлекции</a></li>
+</ul><ul class="header-nav-list header-nav-list-secondary"><li id="menu-item-465" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-465"><a href="http://science-of-everything.com/advertising/">Размещение рекламы</a></li>
+<li id="menu-item-464" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-464"><a href="http://science-of-everything.com/terms-of-use/">Пользовательское соглашение</a></li>
+<li id="menu-item-463" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-463"><a href="http://science-of-everything.com/partners/">Партнерам</a></li>
+<li id="menu-item-462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-462"><a href="http://science-of-everything.com/contacts/">Контакты</a></li>
+<li id="menu-item-461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461"><a href="http://science-of-everything.com/about/">О проекте</a></li>
+</ul>            <script>
+                jQuery(".menu-item-has-children > a").wrapInner("<span class='header-nav-dropdown header-link'></span>");
+                jQuery(".menu-item-has-children > a span").unwrap();
+                jQuery(".header-nav-list > li a").addClass("header-link").wrapInner("<span></span>");
+                jQuery(".header-navTop > li a").addClass("header-link").wrapInner("<span></span>");
+                jQuery(".header-nav-dropdown-list > li a").addClass("header-link").wrapInner("<span></span>");
+            </script>
+            <ul class="header-nav-list lang">
+                <!--<li class="is-active"><a class="header-link" href="#"><span>Рус</span></a></li>
+                <li><a class="header-link" href="#"><span>Англ</span></a></li>-->
+                <li class="is-active"><a class="header-link" href="http://science-of-everything.com/category/tehnologii/"><span>Рус</span></a></li><li><a class="header-link" href="http://science-of-everything.com/en/"><span>Англ</span></a></li>            </ul>
+            <ul class="header-nav-list modile">
+                <li>
+                    <button class="header-nav-login"><i
+                                class="icon-user"></i><span>Войти  / Регистрация</span>
+                    </button>
+                </li>
+                <li>
+                    <form class="header-nav-search searchform" name="searchform" role="search" method="get"
+                          id="searchform" action="http://science-of-everything.com/">
+                        <input name="s" id="s" type="text" placeholder="Поиск">
+                        <button id="searchsubmit" type="submit"><i class="icon-search"></i></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="header-loginForm-wrap is-hidden">
+        <button class="header-loginForm-close button-round-outline"><i class="icon-close"></i></button>
+        <div class="header-loginForm">
+            <h2 class="header-loginForm-title">Форма входа</h2>
+            <ul class="header-loginForm-method">
+                <li><a href="#login-form">Войти</a></li>
+                <li><a href="#register-form">Регистрация</a></li>
+            </ul>
+            <div class="header-loginForm-form" id="login-form">
+                <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
+                <div class="header-loginForm-social">
+                    <div style="float: left;background-color:transparent;"><div class="the_champ_login_container"><ul class="the_champ_login_ul"><li><i class="theChampLogin theChampFacebookBackground theChampFacebookLogin" alt="Login with Facebook" title="Login with Facebook" onclick="theChampInitiateLogin(this)" ><ss style="display:block" class="theChampLoginSvg theChampFacebookLoginSvg"></ss></i></li><li><i class="theChampLogin theChampTwitterBackground theChampTwitterLogin" alt="Login with Twitter" title="Login with Twitter" onclick="theChampInitiateLogin(this)" ><ss style="display:block" class="theChampLoginSvg theChampTwitterLoginSvg"></ss></i></li><li><i id="theChampGoogleButton" class="theChampLogin theChampGoogleBackground theChampGoogleLogin" alt="Login with Google" title="Login with Google" onclick="theChampInitiateLogin(this)" ><ss style="display:block" class="theChampLoginSvg theChampGoogleLoginSvg"></ss></i></li><li><i class="theChampLogin theChampVkontakteBackground theChampVkontakteLogin" alt="Login with Vkontakte" title="Login with Vkontakte" onclick="theChampInitiateLogin(this)" ><ss style="display:block" class="theChampLoginSvg theChampVkontakteLoginSvg"></ss></i></li></ul></div></div><div style="clear:both"></div>                    <!--<button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+                    <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
+                    <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
+                    <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>-->
+                </div>
+                <p class="header-loginForm-text decoration">или</p>
+                <form class="header-loginForm-email" method="post" id="sign-in-popup-form">
+                    <p><i class="icon-user"></i>
+                        <input type="text" name="login" placeholder="Логин">
+                    </p>
+                    <p><i class="icon-key"></i>
+                        <input type="password" name="password" placeholder="Пароль">
+                    </p>
+                    <button id="submit-sign-in-popup-form" class="button button-primary" type="submit">Войти</button>
+                </form>
+                <a style="text-decoration: none;" class="header-loginForm-text" href="http://science-of-everything.com/wp-login.php?action=lostpassword">Восстановить
+                    пароль</a>
+                <!--                <button class="header-loginForm-text header-loginForm-restorePassword">Восстановить пароль</button>-->
+            </div>
+            <div class="header-loginForm-form" id="register-form">
+                <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
+                <div class="header-loginForm-social">
+                    <div style="float: left;background-color:transparent;"><div class="the_champ_login_container"><ul class="the_champ_login_ul"><li><i class="theChampLogin theChampFacebookBackground theChampFacebookLogin" alt="Login with Facebook" title="Login with Facebook" onclick="theChampInitiateLogin(this)" ><ss style="display:block" class="theChampLoginSvg theChampFacebookLoginSvg"></ss></i></li><li><i class="theChampLogin theChampTwitterBackground theChampTwitterLogin" alt="Login with Twitter" title="Login with Twitter" onclick="theChampInitiateLogin(this)" ><ss style="display:block" class="theChampLoginSvg theChampTwitterLoginSvg"></ss></i></li><li><i id="theChampGoogleButton" class="theChampLogin theChampGoogleBackground theChampGoogleLogin" alt="Login with Google" title="Login with Google" onclick="theChampInitiateLogin(this)" ><ss style="display:block" class="theChampLoginSvg theChampGoogleLoginSvg"></ss></i></li><li><i class="theChampLogin theChampVkontakteBackground theChampVkontakteLogin" alt="Login with Vkontakte" title="Login with Vkontakte" onclick="theChampInitiateLogin(this)" ><ss style="display:block" class="theChampLoginSvg theChampVkontakteLoginSvg"></ss></i></li></ul></div></div><div style="clear:both"></div>                    <!--<button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+                    <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
+                    <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
+                    <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>-->
+                </div>
+                <p class="header-loginForm-text decoration">или</p>
+                <form class="header-loginForm-email" id="register-popup-form" method="post">
+                    <!--action="/user-ajax-register.php"-->
+                    <p><i class="icon-user"></i>
+                        <input type="text" name="login" placeholder="Логин" required>
+                    </p>
+                    <p><i class="icon-mail"></i>
+                        <input type="email" name="email" placeholder="Эл.почта" required>
+                    </p>
+                    <p><i class="icon-key"></i>
+                        <input type="password" name="password" placeholder="Пароль" required>
+                    </p>
+                    <!--                    <input value="Зарегистрироваться" id="submit-register-popup-form" class="button button-primary" type="submit">-->
+                    <button id="submit-register-popup-form" class="button button-primary" type="submit">
+                        Зарегистрироваться
+                    </button>
+                    <p class="header-loginForm-text small">Нажимая на кнопку «Зарегистрироваться», вы подтверждаете свое согласие с условиями предоставления услуг (<a
+                                href="http://science-of-everything.com/terms-of-use/">пользовательское
+                            соглашение</a>)</p>
+                </form>
+            </div>
+        </div>
+        <div class="header-restorePassword">
+            <h2 class="header-loginForm-title">Забыли пароль?</h2>
+            <p class="header-loginForm-text">Введите свой E-mail, чтобы помочь нам идентифицировать вашу
+                личность.</p>
+            <form class="header-loginForm-email" id="pass-recover-popup-form" method="post"
+                  action="http://science-of-everything.com/wp-content/themes/science-of-everything/user-pass-recover.php">
+                <p><i class="icon-mail"></i>
+                    <input type="email" name="email" placeholder="Адрес эл. почты для восстановления">
+                </p>
+                <button id="submit-pass-recover-popup-form" class="button button-primary" type="submit">Отправить
+                </button>
+            </form>
+            <button class="header-loginForm-text header-loginForm-restorePassword-back">Назад</button>
+        </div>
+    </div>
+    <a class="header-logo" href="http://science-of-everything.com"><img src="http://science-of-everything.com/wp-content/uploads/2017/04/white-logo.png"></a>
+            <ul class="breadcrumbs"><span xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="http://science-of-everything.com/" rel="v:url" property="v:title">Главная</a> / <span class="breadcrumb_last">Технологии</span></span></span></ul>    <script>
+        jQuery(".breadcrumbs > span > span").click(function () {
+            jQuery(this).replaceWith(
+                jQuery('<li>' + this.innerHTML + '</li>')
+            );
+        }).trigger("click");
+    </script>
+    <style>
+        .header-loginForm-social-button ss {
+            display: none !important;
+        }
+
+        .header-loginForm-social-button .theChampFacebookBackground,
+        .header-loginForm-social-button .theChampTwitterBackground,
+        .header-loginForm-social-button .theChampGoogleBackground,
+        .header-loginForm-social-button .theChampVkontakteBackground {
+            background-color: transparent !important;
+        }
+
+        .theChampLogin {
+            padding-left: 25px !important;
+            padding-right: 25px !important;
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            width: auto !important;
+            height: auto !important;
+        }
+    </style>
+    <script>
+        //social-buttons
+        jQuery('.the_champ_login_ul li:nth-child(1)').each(function () {
+            jQuery(this).replaceWith( "<button class=\"header-loginForm-social-button fb\">" + jQuery(this).html() + "</button>" );
+        });
+        jQuery('.the_champ_login_ul li:nth-child(2)').each(function () {
+            jQuery(this).replaceWith( "<button class=\"header-loginForm-social-button twitter\">" + jQuery(this).html() + "</button>" );
+        });
+        jQuery('.the_champ_login_ul li:nth-child(3)').each(function () {
+            jQuery(this).replaceWith( "<button class=\"header-loginForm-social-button gp\">" + jQuery(this).html() + "</button>" );
+        });
+        jQuery('.the_champ_login_ul li:nth-child(4)').each(function () {
+            jQuery(this).replaceWith( "<button class=\"header-loginForm-social-button vk\">" + jQuery(this).html() + "</button>" );
+        });
+
+
+        jQuery('.the_champ_login_ul button:nth-child(1) i').each(function () {
+            jQuery(this).addClass( "icon-fb" );
+        });
+        jQuery('.the_champ_login_ul button:nth-child(2) i').each(function () {
+            jQuery(this).addClass( "icon-twitter" );
+        });
+        jQuery('.the_champ_login_ul button:nth-child(3) i').each(function () {
+            jQuery(this).addClass( "icon-google-plus " );
+        });
+        jQuery('.the_champ_login_ul button:nth-child(4) i').each(function () {
+            jQuery(this).addClass( "icon-vk" );
+        });
+
+
+        jQuery('ul.the_champ_login_ul').each(function () {
+            jQuery(this).replaceWith( "<div class=\"header-loginForm-social\">" + jQuery(this).html() + "</div>" );
+        });
+
+        jQuery('div.header-loginForm-social div.header-loginForm-social').unwrap().unwrap().unwrap();
+        ///social-buttons
+    </script>
+</div>    <div class="mainWrap mainWrap-medium">
+        <section class="l-articles row">
+            <div class="column small-12">
+                <div class="section-title-inner">
+                    <h2 class="title-4">Технологии</h2>
+                    <select class="sortArticles-select">
+                                                    <option selected
+                                    value="http://science-of-everything.com/category/tehnologii/?sort=date">По последним</option>
+                            <option value="http://science-of-everything.com/category/tehnologii/?sort=popular">По популярным</option>
+                                            </select>
+                </div>
+            </div>
+            <ul class="articlesList column small-12 row">
+                                            <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
+                                <a class="articlesList-item-img-wrap" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-4/">
+                                    <img style="width: 350px; height: 230px;" class="obj-fit height-inh articlesList-item-img " src="http://science-of-everything.com/wp-content/uploads/2017/05/article-visual-5.png">
+                                </a>
+                                <p class="category-text category-text-technology">Технологии</p>
+                                <a class="title-3" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-4/">Органические цифровые Скульптуры Jon Noorlander  Copy</a>
+                                <p class="text-p">Le graphiste др realisateur suedois Джон Noorlander IMAGINE ипе serie де скульптуры numeriques abstraites, realisees a Partir де Logiciels де modelisation 3D Гудини и др Nuke. КЕС FORMES Organiques, Libres ET evanescentes flottent Dans ле Airs ан differentes направления вариации ET. Elles semblent себе dissoudre, еп подвеской, Comme де-ла-Poudre. И даже с языками, использующими латинский [&hellip;]</p>
+                            </li>
+                                                    <li class="articlesList-item-hover columns column-block medium-6 small-12 large-4 hide-for-small show-for-large">
+                                <a class="articlesList-item-banner" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-3/">
+                                    <div class="articlesList-item-bg">
+                                        <img class="obj-fit height-inh" src="http://science-of-everything.com/wp-content/uploads/2017/06/digital-media.jpg">
+                                    </div>
+                                    <div class="category category-technology">Технологии</div>
+                                    <p class="title-3 white">Органические цифровые Скульптуры Jon Noorlander  Copy</p>
+                                    <div class="counters">
+                                        <div class="counters-item">
+                                            <i class="icon-time"></i>19 дней назад                                        </div>
+                                        <div class="counters-item"><i class="icon-comment"></i>0</div>
+                                    </div>
+                                </a>
+                            </li>
+                                                    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
+                                <a class="articlesList-item-img-wrap" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3-copy-copy-copy/">
+                                    <img style="width: 350px; height: 230px;" class="obj-fit height-inh articlesList-item-img " src="http://science-of-everything.com/wp-content/uploads/2017/05/articles-list-item-bg-8.png">
+                                </a>
+                                <p class="category-text category-text-technology">Технологии</p>
+                                <a class="title-3" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3-copy-copy-copy/">Органические цифровые Скульптуры Jon Noorlander  4</a>
+                                <p class="text-p">Le graphiste др realisateur suedois Джон Noorlander IMAGINE ипе serie де скульптуры numeriques abstraites, realisees a Partir де Logiciels де modelisation 3D Гудини и др Nuke. КЕС FORMES Organiques, Libres ET evanescentes flottent Dans ле Airs ан differentes направления вариации ET. Elles semblent себе dissoudre, еп подвеской, Comme де-ла-Poudre. И даже с языками, использующими латинский [&hellip;]</p>
+                            </li>
+                                                    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
+                                <a class="articlesList-item-img-wrap" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3-copy-copy-copy-copy/">
+                                    <img style="width: 350px; height: 230px;" class="obj-fit height-inh articlesList-item-img " src="http://science-of-everything.com/wp-content/uploads/2017/05/article-visual-5.png">
+                                </a>
+                                <p class="category-text category-text-technology">Технологии</p>
+                                <a class="title-3" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3-copy-copy-copy-copy/">Органические цифровые Скульптуры Jon Noorlander  3</a>
+                                <p class="text-p">Le graphiste др realisateur suedois Джон Noorlander IMAGINE ипе serie де скульптуры numeriques abstraites, realisees a Partir де Logiciels де modelisation 3D Гудини и др Nuke. КЕС FORMES Organiques, Libres ET evanescentes flottent Dans ле Airs ан differentes направления вариации ET. Elles semblent себе dissoudre, еп подвеской, Comme де-ла-Poudre. И даже с языками, использующими латинский [&hellip;]</p>
+                            </li>
+                                                    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
+                                <a class="articlesList-item-img-wrap" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3-copy-copy/">
+                                    <img style="width: 350px; height: 230px;" class="obj-fit height-inh articlesList-item-img " src="http://science-of-everything.com/wp-content/uploads/2017/05/article-visual-5.png">
+                                </a>
+                                <p class="category-text category-text-technology">Технологии</p>
+                                <a class="title-3" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3-copy-copy/">Органические цифровые Скульптуры Jon Noorlander  5</a>
+                                <p class="text-p">Le graphiste др realisateur suedois Джон Noorlander IMAGINE ипе serie де скульптуры numeriques abstraites, realisees a Partir де Logiciels де modelisation 3D Гудини и др Nuke. КЕС FORMES Organiques, Libres ET evanescentes flottent Dans ле Airs ан differentes направления вариации ET. Elles semblent себе dissoudre, еп подвеской, Comme де-ла-Poudre. И даже с языками, использующими латинский [&hellip;]</p>
+                            </li>
+                                                    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
+                                <a class="articlesList-item-img-wrap" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3-copy/">
+                                    <img style="width: 350px; height: 230px;" class="obj-fit height-inh articlesList-item-img " src="http://science-of-everything.com/wp-content/uploads/2017/05/articles-list-item-bg-8.png">
+                                </a>
+                                <p class="category-text category-text-technology">Технологии</p>
+                                <a class="title-3" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3-copy/">Органические цифровые Скульптуры Jon Noorlander  6</a>
+                                <p class="text-p">Le graphiste др realisateur suedois Джон Noorlander IMAGINE ипе serie де скульптуры numeriques abstraites, realisees a Partir де Logiciels де modelisation 3D Гудини и др Nuke. КЕС FORMES Organiques, Libres ET evanescentes flottent Dans ле Airs ан differentes направления вариации ET. Elles semblent себе dissoudre, еп подвеской, Comme де-ла-Poudre. И даже с языками, использующими латинский [&hellip;]</p>
+                            </li>
+                                                    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
+                                <a class="articlesList-item-img-wrap" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3/">
+                                    <img style="width: 350px; height: 230px;" class="obj-fit height-inh articlesList-item-img " src="http://science-of-everything.com/wp-content/uploads/2017/05/articles-list-item-bg-8.png">
+                                </a>
+                                <p class="category-text category-text-technology">Технологии</p>
+                                <a class="title-3" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-3/">Органические цифровые Скульптуры Jon Noorlander  7</a>
+                                <p class="text-p">Le graphiste др realisateur suedois Джон Noorlander IMAGINE ипе serie де скульптуры numeriques abstraites, realisees a Partir де Logiciels де modelisation 3D Гудини и др Nuke. КЕС FORMES Organiques, Libres ET evanescentes flottent Dans ле Airs ан differentes направления вариации ET. Elles semblent себе dissoudre, еп подвеской, Comme де-ла-Poudre. И даже с языками, использующими латинский [&hellip;]</p>
+                            </li>
+                                                    <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
+                                <a class="articlesList-item-img-wrap" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-2/">
+                                    <img style="width: 350px; height: 230px;" class="obj-fit height-inh articlesList-item-img " src="http://science-of-everything.com/wp-content/uploads/2017/05/article-visual-5.png">
+                                </a>
+                                <p class="category-text category-text-technology">Технологии</p>
+                                <a class="title-3" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy-2/">Органические цифровые Скульптуры Jon Noorlander  8</a>
+                                <p class="text-p">Le graphiste др realisateur suedois Джон Noorlander IMAGINE ипе serie де скульптуры numeriques abstraites, realisees a Partir де Logiciels де modelisation 3D Гудини и др Nuke. КЕС FORMES Organiques, Libres ET evanescentes flottent Dans ле Airs ан differentes направления вариации ET. Elles semblent себе dissoudre, еп подвеской, Comme де-ла-Poudre. И даже с языками, использующими латинский [&hellip;]</p>
+                            </li>
+                                                    <li class="articlesList-item-hover columns column-block medium-6 small-12 large-4 hide-for-small show-for-large">
+                                <a class="articlesList-item-banner" href="http://science-of-everything.com/topics/organicheskie-tsifrovye-skulptury-jon-noorlander-copy-2-copy/">
+                                    <div class="articlesList-item-bg">
+                                        <img class="obj-fit height-inh" src="http://science-of-everything.com/wp-content/uploads/2017/05/article-visual-5.png">
+                                    </div>
+                                    <div class="category category-technology">Технологии</div>
+                                    <p class="title-3 white">Органические цифровые Скульптуры Jon Noorlander  9</p>
+                                    <div class="counters">
+                                        <div class="counters-item">
+                                            <i class="icon-time"></i>1 месяц, 3 дней назад                                        </div>
+                                        <div class="counters-item"><i class="icon-comment"></i>0</div>
+                                    </div>
+                                </a>
+                            </li>
+                                    </ul>
+            <div class="column small-12">
+                <!--                <div class="button-more"><span>СМОТРЕТЬ БОЛЬШЕ</span><i class="icon-squares"></i></div>-->
+                <div id="ajax-load-more" class="ajax-load-more-wrap default"  data-alm-id="" data-canonical-url="http://science-of-everything.com/category/tehnologii/" data-slug="tehnologii" data-post-id="13" ><ul class="alm-listing alm-ajax  articlesList articlesList-detail column small-12 row " data-repeater="default" data-post-type="topics" data-sticky-posts="" data-post-format="" data-category="tehnologii" data-category-not-in="" data-tag="" data-tag-not-in="" data-taxonomy="" data-taxonomy-terms="" data-taxonomy-operator="" data-taxonomy-relation="" data-meta-key="" data-meta-value="" data-meta-compare="" data-meta-relation="" data-meta-type="" data-year="" data-month="" data-day="" data-author="" data-post-in="" data-post-not-in="" data-exclude="" data-search="" data-custom-args="" data-post-status="" data-order="DESC" data-orderby="date" data-offset="9" data-posts-per-page="9" data-lang="ru" data-scroll="false" data-scroll-distance="150" data-max-pages="0" data-pause-override="false" data-pause="true" data-button-label="Смотреть больше" data-button-loading-label="Загрузка" data-button-class="button-more" data-destroy-after="" data-transition="slide" data-images-loaded="false"></ul></div>            </div>
+        </section>
+    </div>
+    <style>
+        /*.articlesList-item-bg img {
+            height: 100%;
+        }*/
+
+        /*.articlesList-item-img {
+            width: 350px;
+            height: 230px;
+        }*/
+
+        @media screen and (max-width: 639px) {
+            .articlesList-item-img-wrap img {
+                width: 100% !important;
+            }
+        }
+    </style>
+    <script>
+        jQuery('.ajax-load-more-wrap').bind("DOMNodeInserted", function (e) {
+            jQuery('div.alm-reveal').addClass("articlesList column small-12 row");
+        });
+
+        window.onload = function () {
+            jQuery('.ui-selectmenu-menu.sortArticles-select-menu ul').remove();
+            jQuery('.ui-selectmenu-menu.sortArticles-select-menu').html('<ul aria-hidden="false" aria-labelledby="ui-id-3-button" id="ui-id-3-menu" role="listbox" tabindex="0" class="ui-menu ui-corner-bottom ui-widget ui-widget-content" aria-activedescendant="ui-id-4" aria-disabled="false" style="width: 194px;"><a href="http://science-of-everything.com/category/tehnologii/?sort=date"><li class="ui-menu-item"><div id="ui-id-4" tabindex="-1" role="option" class="ui-menu-item-wrapper ui-state-active">По последним</div></li></a><a href="http://science-of-everything.com/category/tehnologii/?sort=popular"><li class="ui-menu-item"><div id="ui-id-5" tabindex="-1" role="option" class="ui-menu-item-wrapper">По популярным</div></li></a></ul>');
+        }
+    </script>
+
+<div class="l-footerSubscibe">
+    <h2 class="footerSubscribe-title">Подписаться на рассылку</h2>
+    <div role="form" class="wpcf7" id="wpcf7-f9-o1" lang="ru-RU" dir="ltr">
+<div class="screen-reader-response"></div>
+<form action="/category/tehnologii/#wpcf7-f9-o1" method="post" class="wpcf7-form footerSubscribe-form" novalidate="novalidate">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="9" />
+<input type="hidden" name="_wpcf7_version" value="4.8" />
+<input type="hidden" name="_wpcf7_locale" value="ru_RU" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f9-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_nonce" value="3a7acf7cea" />
+</div>
+<p><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Ваш Email" /></span><br />
+<input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit" /></p>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form></div>    <script>
+        jQuery('form.footerSubscribe-form input[type="submit"]').replaceWith('<button type="submit"><i class="icon-angle-right"></i></button>');
+        jQuery('<span class="ajax-loader"></span>').insertAfter('button[type="submit"]');
+    </script>
+<!--    <span class="close"></span>-->
+</div>
+<footer class="l-footer"><a class="footer-logo" href="http://science-of-everything.com"><img
+                src="http://science-of-everything.com/wp-content/uploads/2017/04/colored-logo.png"></a>
+    <ul class="footer-links"><li id="menu-item-606" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-606"><a href="http://science-of-everything.com/category/astrofizika/">Астрофизика</a></li>
+<li id="menu-item-604" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-604"><a href="http://science-of-everything.com/category/tehnologii/">Технологии</a></li>
+<li id="menu-item-607" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-607"><a href="http://science-of-everything.com/category/media/">Медиа</a></li>
+<li id="menu-item-605" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-605"><a href="http://science-of-everything.com/category/psihologiya/">Психология</a></li>
+<li id="menu-item-608" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-608"><a href="http://science-of-everything.com/books/">Книги</a></li>
+<li id="menu-item-669" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-669"><a href="http://science-of-everything.com/category/iskusstvo/">Искусство</a></li>
+<li id="menu-item-674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-674"><a href="http://science-of-everything.com/blog/">Блог</a></li>
+<li id="menu-item-610" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-610"><a href="http://science-of-everything.com/photo-gallery/">Фотогалерея</a></li>
+<li id="menu-item-609" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-609"><a href="http://science-of-everything.com/video/">Видео</a></li>
+<li id="menu-item-668" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-668"><a href="http://science-of-everything.com/interviews/">Интервью</a></li>
+</ul>
+    <ul class="footer-links"><li id="menu-item-670" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-670"><a href="http://science-of-everything.com/about/">О проекте</a></li>
+<li id="menu-item-673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-673"><a href="http://science-of-everything.com/advertising/">Размещение рекламы</a></li>
+<li id="menu-item-671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-671"><a href="http://science-of-everything.com/contacts/">Контакты</a></li>
+<li id="menu-item-672" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-672"><a href="http://science-of-everything.com/partners/">Партнерам</a></li>
+</ul>    <script>
+        jQuery(".footer-links > li a").addClass("header-link").wrapInner("<span></span>");
+    </script>
+    <style>
+        .footerSubscribe-form button {
+            height: 52px;
+        }
+
+        span.wpcf7-not-valid-tip,
+        div.wpcf7-mail-sent-ok {
+            margin-top: 10px;
+        }
+
+        /*div.wpcf7-validation-errors {
+            margin-top: -20px;
+        }*/
+        .ajax-loader {
+            position: absolute;
+        }
+
+        .wpcf7-form.article-subscribe-form p {
+            height: 50px;
+        }
+    </style>
+    <ul class="footer-social">
+                        <li>
+                    <a target="_blank" href="http://facebook.com">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                                <li>
+                    <a target="_blank" href="http://twitter.com">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                                <li>
+                    <a target="_blank" href="http://vk.com">
+                        <i class="fa fa-vk" aria-hidden="true"></i>
+                    </a>
+                </li>
+                                <li>
+                    <a target="_blank" href="http://plus.google.com">
+                        <i class="fa fa-google-plus" aria-hidden="true"></i>
+                    </a>
+                </li>
+                    </ul>
+    <div class="footer-mistake"><img src="http://science-of-everything.com/wp-content/themes/science-of-everything/app/img/icon-keyboard.svg"><b>Ctrl + Enter</b> - если нашли ошибку</div>
+    <div class="footer-copyright">
+        <p class="nowrap">© 2016, Science of everything. Все права защищены.</p>
+        <p>Полное или частичное копирование материалов без согласия с редакцией запрещено</p>
+        <p>Сделано в <a href="http://dizz.in.ua/ru">Dizz Agency</a></p>
+    </div>
+    <button class="up-button"><i class="icon-angle-up"></i></button>
+</footer>
+<style>
+    /*div.l-footerSubscibe {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        z-index: 9999;
+    }*/
+
+    .the_champ_sharing_container ul.the_champ_sharing_ul li:last-child i {
+        width: 60px !important;
+        background-image: linear-gradient(127deg, #5b529c 0%, #5b529c 100%);
+    }
+
+    .the_champ_square_count {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 40px;
+        font-family: "Gotham Pro", sans-serif;
+        outline: none;
+    }
+
+    
+    .l-footerSubscibe .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 32px;
+        height: 32px;
+        opacity: 0.3;
+    }
+    .l-footerSubscibe .close:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    .l-footerSubscibe .close:before, .l-footerSubscibe .close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 23px;
+        width: 2px;
+        background-color: #fff;
+    }
+    .l-footerSubscibe .close:before {
+        transform: rotate(45deg);
+    }
+    .l-footerSubscibe .close:after {
+        transform: rotate(-45deg);
+    }
+
+    form#adduser .form-table,
+    form#adduser h3:first-child {
+        display: none;
+    }
+
+    div.wpcf7-validation-errors {
+        margin: 0;
+    }
+    .obj-fit {
+        object-fit: cover;
+    }
+
+    .height-inh {
+        height: inherit;
+    }
+</style>
+<script>
+    if (document.cookie.indexOf("subscribe=") >= 0) {
+        jQuery(".l-footerSubscibe").css({"display": "none"});
+    }
+    function subscribeCloseCF7() {
+        setTimeout(subscribeClose, 12000);
+    }
+    function subscribeClose() {
+        jQuery(".l-footerSubscibe").css({
+            "-webkit-transition": "opacity 3s ease-in-out",
+            "-moz-transition": "opacity 3s ease-in-out",
+            "-ms-transition": "opacity 3s ease-in-out",
+            "-o-transition": "opacity 3s ease-in-out",
+            "opacity": "0"
+        });
+    }
+    function subscribeDisplayNoneCF7() {
+        setTimeout(subscribeDisplayNone, 15000);
+    }
+    function subscribeDisplayNone() {
+        jQuery(".l-footerSubscibe").css({"display": "none"});
+    }
+
+    jQuery( ".l-footerSubscibe .close" ).click(function() {
+        subscribeDisplayNone();
+    });
+</script>
+	<div id="fb-root"></div>
+	<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/science-of-everything.com\/wp-json\/","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435, \u0447\u0442\u043e \u0432\u044b \u043d\u0435 \u0440\u043e\u0431\u043e\u0442."}},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.8'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/mistape/assets/js/modernizr.custom.js?ver=1.3.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var decoMistape = {"ajaxurl":"http:\/\/science-of-everything.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/mistape/assets/js/mistape-front.js?ver=1.3.3'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/super-socializer/js/front/social_login/general.js?ver=7.9.2'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/super-socializer/js/front/social_login/common.js?ver=7.9.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"\u0414\u0430\u043b\u0435\u0435 \u2192","prev":"\u2190 \u041d\u0430\u0437\u0430\u0434","image":"\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435","of":"\u0438\u0437","close":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c","noiframes":"\u042d\u0442\u0430 \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u043f\u043b\u0430\u0432\u0430\u044e\u0449\u0438\u0445 \u0444\u0440\u0435\u0439\u043c\u043e\u0432. \u0423 \u0432\u0430\u0441 \u043e\u0442\u043a\u043b\u044e\u0447\u0435\u043d\u044b \u0442\u0435\u0433\u0438 iframe, \u043b\u0438\u0431\u043e \u0432\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440 \u0438\u0445 \u043d\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442.","loadingAnimation":"http:\/\/science-of-everything.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+var thickboxL10n = {"next":"\u0414\u0430\u043b\u0435\u0435 \u2192","prev":"\u2190 \u041d\u0430\u0437\u0430\u0434","image":"\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435","of":"\u0438\u0437","close":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c","noiframes":"\u042d\u0442\u0430 \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438 \u043f\u043b\u0430\u0432\u0430\u044e\u0449\u0438\u0445 \u0444\u0440\u0435\u0439\u043c\u043e\u0432. \u0423 \u0432\u0430\u0441 \u043e\u0442\u043a\u043b\u044e\u0447\u0435\u043d\u044b \u0442\u0435\u0433\u0438 iframe, \u043b\u0438\u0431\u043e \u0432\u0430\u0448 \u0431\u0440\u0430\u0443\u0437\u0435\u0440 \u0438\u0445 \u043d\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442.","loadingAnimation":"http:\/\/science-of-everything.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/super-socializer/js/front/social_login/google.js?ver=7.9.2'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/super-socializer/js/front/social_login/vkontakte.js?ver=7.9.2'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/super-socializer/js/front/facebook/sdk.js?ver=7.9.2'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/super-socializer/js/front/social_login/facebook.js?ver=7.9.2'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/super-socializer/js/front/sharing/sharing.js?ver=7.9.2'></script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-includes/js/wp-embed.min.js?ver=4.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var icl_vars = {"current_language":"ru","icl_home":"http:\/\/science-of-everything.com\/","ajax_url":"http:\/\/science-of-everything.com\/wp-admin\/admin-ajax.php","url_type":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/sitepress-multilingual-cms/res/js/sitepress.js?ver=4.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var alm_localize = {"ajaxurl":"http:\/\/science-of-everything.com\/wp-admin\/admin-ajax.php","alm_nonce":"d0cd9cd10d","pluginurl":"http:\/\/science-of-everything.com\/wp-content\/plugins\/ajax-load-more","scrolltop":"false","ajax_object":{"is_single":true,"is_singular":true}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/ajax-load-more/core/dist/js/ajax-load-more.min.js?ver=3.1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"science-of-everything"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://science-of-everything.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.8'></script>
+<div id="mistape_dialog" data-mode="confirm" data-dry-run="0">
+			           <div class="dialog__overlay"></div><div class="dialog__content without-comment"><div id="mistape_confirm_dialog" class="mistape_dialog_screen">
+					<div class="dialog-wrap">
+						<div class="dialog-wrap-top">
+							<h2>Сообщить об опечатке</h2>
+							 <div class="mistape_dialog_block">
+								<h3>Текст, который будет отправлен нашим редакторам:</h3>
+								<div id="mistape_reported_text"></div>
+							 </div>
+							 </div>
+						<div class="dialog-wrap-bottom"><div class="pos-relative">
+						</div>
+					</div>
+			    </div>
+			    <div class="mistape_dialog_block">
+					<a class="mistape_action" data-action="send" data-id="363" role="button">Отправить</a>
+					<a class="mistape_action" data-dialog-close role="button" style="display:none">Отмена</a>
+				</div>
+				<div class="mistape-letter-front letter-part">
+				    <div class="front-left"></div>
+				    <div class="front-right"></div>
+				    <div class="front-bottom"></div>
+				</div>
+				<div class="mistape-letter-back letter-part">
+					<div class="mistape-letter-back-top"></div>
+				</div>
+				<div class="mistape-letter-top letter-part"></div>
+			</div></div></div></body>
+</html>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Page Caching using disk: enhanced
+Database Caching 250/298 queries in 0.153 seconds using disk
+
+ Served from: science-of-everything.com @ 2017-07-01 19:21:39 by W3 Total Cache -->

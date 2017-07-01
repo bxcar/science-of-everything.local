@@ -1,0 +1,1 @@
+’ÓWY<?php exit; ?>a:1:{s:7:"content";s:69:"http://science-of-everything.com/wp-includes/images/media/default.png";}

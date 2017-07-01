@@ -1,0 +1,1 @@
+cÙWY<?php exit; ?>a:1:{s:7:"content";a:1:{s:4:"data";a:2:{s:20:"[wpseo_rss]rssbefore";a:2:{i:0;s:0:"";i:1;N;}s:19:"[wpseo_rss]rssafter";a:2:{i:0;s:53:"The post %%POSTLINK%% appeared first on %%BLOGLINK%%.";i:1;N;}}}}

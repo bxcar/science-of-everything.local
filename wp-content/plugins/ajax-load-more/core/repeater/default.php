@@ -133,7 +133,7 @@ if(get_post_type() == 'photos') {?>
 } elseif ((get_post_type() == 'topics') && $_SESSION['category']) { ?>
     <li class="articlesList-item-text articlesList-item-hover columns column-block medium-6 small-12 large-4">
         <a class="articlesList-item-img-wrap" href="<?php the_permalink(); ?>">
-            <img class="articlesList-item-img obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>">
+            <img style="width: 350px; height: 230px;" class="articlesList-item-img obj-fit height-inh" src="<?= get_the_post_thumbnail_url(); ?>">
         </a>
         <p class="category-text category-text-technology"><?php single_cat_title(); ?></p>
         <a class="title-3" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
