@@ -38,9 +38,11 @@ query_posts($query_string. '&post_status=trash');?>
             <p class="title-4"><?php the_author_meta('first_name', get_current_user_id());
                 echo ' ';
                 the_author_meta('last_name', get_current_user_id()); ?></p>
-            <div class="article-author-links"><a class="fb" href="#"><i class="icon-fb"></i></a><a class="tw"
-                                                                                                   href="#"><i
-                            class="icon-twitter"></i></a><a class="in" href="#"><i class="icon-linkedin"></i></a></div>
+            <!--<div class="article-author-links">
+                <a class="fb" href="#"><i class="icon-fb"></i></a>
+                <a class="tw" href="#"><i class="icon-twitter"></i></a>
+                <a class="in" href="#"><i class="icon-linkedin"></i></a>
+            </div>-->
         </div>
         <div class="shareSocial">
             <?php the_favorites_button(); ?>

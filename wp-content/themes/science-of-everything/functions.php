@@ -652,13 +652,18 @@ function mytheme_comment($comment, $args, $depth)
                         <div class="comments-posts-content">
                             <?php printf(__('<p class="title-4">%s</p>'), get_comment_author_link()) ?>
 
-                            <div class="counters counters-item"><i class="icon-time"></i><span><?php printf(__('%1$s'), get_comment_date('d F Y'), '') ?></span></div>
+                            <div class="counters counters-item"><i
+                                        class="icon-time"></i><span><?php printf(__('%1$s'), get_comment_date('d F Y'), '') ?></span>
+                            </div>
 
                             <p class="text-p"><?= get_comment_text() ?></p>
                             <?php //edit_comment_link(__('Редактировать'), ' ');
                             ?>
 
-                            <?php if(get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'])))) { ?><button class="button-reply"><i class="icon-reply"></i><?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></button><?php } ?>
+                            <?php if (get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'])))) { ?>
+                                <button class="button-reply"><i
+                                        class="icon-reply"></i><?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                                </button><?php } ?>
 
                             <?php if ($comment->comment_approved == '0') : ?>
                                 <div
@@ -690,13 +695,18 @@ function mytheme_comment($comment, $args, $depth)
                     <div class="comments-posts-content">
                         <?php printf(__('<p class="title-4">%s</p>'), get_comment_author_link()) ?>
 
-                        <div class="counters counters-item"><i class="icon-time"></i><span><?php printf(__('%1$s'), get_comment_date('d F Y'), '') ?></span></div>
+                        <div class="counters counters-item"><i
+                                    class="icon-time"></i><span><?php printf(__('%1$s'), get_comment_date('d F Y'), '') ?></span>
+                        </div>
 
                         <p class="text-p"><?= get_comment_text() ?></p>
                         <?php //edit_comment_link(__('Редактировать'), ' ');
                         ?>
 
-                <?php if(get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'])))) { ?><button class="button-reply"><i class="icon-reply"></i><?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></button><?php } ?>
+                        <?php if (get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'])))) { ?>
+                            <button class="button-reply"><i
+                                    class="icon-reply"></i><?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                            </button><?php } ?>
 
                         <?php if ($comment->comment_approved == '0') : ?>
                             <div
@@ -756,4 +766,30 @@ function stefan_wrap_comment_text($class)
     $class = str_replace(" < p>", " < div class='text' > ", $class);
     $class = str_replace("</p > ", "</div > ", $class);
     return $class;
+}
+
+
+function language_selector()
+{
+    $languages = icl_get_languages('skip_missing=0'); /*&orderby=code*/
+    if (!empty($languages)) {
+        foreach ($languages as $l) {
+            if ($l['language_code'] == 'uk') {
+                $l['language_code'] = 'Укр';
+            }
+            if ($l['language_code'] == 'en') {
+                $l['language_code'] = 'Англ';
+            }
+            if ($l['language_code'] == 'ru') {
+                $l['language_code'] = 'Рус';
+            }
+
+            if ($l['active']) {
+                echo '<li class="is-active"><a class="header-link" href="' . $l['url'] . '"><span>' . strtoupper($l['language_code']) . '</span></a></li>';
+
+            } else {
+                echo '<li><a class="header-link" href="' . $l['url'] . '"><span>' . strtoupper($l['language_code']) . '</span></a></li>';
+            }
+        }
+    }
 }

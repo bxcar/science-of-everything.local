@@ -144,8 +144,9 @@ if ((get_post_type() == 'special') || is_post_type_archive('special')) { ?> spec
                 jQuery(".header-nav-dropdown-list > li a").addClass("header-link").wrapInner("<span></span>");
             </script>
             <ul class="header-nav-list lang">
-                <li class="is-active"><a class="header-link" href="#"><span>Рус</span></a></li>
-                <li><a class="header-link" href="#"><span>Англ</span></a></li>
+                <!--<li class="is-active"><a class="header-link" href="#"><span>Рус</span></a></li>
+                <li><a class="header-link" href="#"><span>Англ</span></a></li>-->
+                <?php language_selector(); ?>
             </ul>
             <ul class="header-nav-list modile">
                 <li>
@@ -174,10 +175,11 @@ if ((get_post_type() == 'special') || is_post_type_archive('special')) { ?> spec
             <div class="header-loginForm-form" id="login-form">
                 <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
                 <div class="header-loginForm-social">
-                    <button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+                    <?php echo do_shortcode('[TheChamp-Login style="background-color:transparent;"]') ?>
+                    <!--<button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
                     <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
                     <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
-                    <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
+                    <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>-->
                 </div>
                 <p class="header-loginForm-text decoration">или</p>
                 <form class="header-loginForm-email" method="post" id="sign-in-popup-form">
@@ -196,10 +198,11 @@ if ((get_post_type() == 'special') || is_post_type_archive('special')) { ?> spec
             <div class="header-loginForm-form" id="register-form">
                 <p class="header-loginForm-text">с помощью аккаунта в соц. сетях</p>
                 <div class="header-loginForm-social">
-                    <button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
+                    <?php echo do_shortcode('[TheChamp-Login style="background-color:transparent;"]') ?>
+                    <!--<button class="header-loginForm-social-button fb"><i class="icon-fb"></i></button>
                     <button class="header-loginForm-social-button twitter"><i class="icon-twitter"></i></button>
                     <button class="header-loginForm-social-button vk"><i class="icon-vk"></i></button>
-                    <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>
+                    <button class="header-loginForm-social-button gp"><i class="icon-google-plus"></i></button>-->
                 </div>
                 <p class="header-loginForm-text decoration">или</p>
                 <form class="header-loginForm-email" id="register-popup-form" method="post">
@@ -252,5 +255,63 @@ if ((get_post_type() == 'special') || is_post_type_archive('special')) { ?> spec
                 jQuery('<li>' + this.innerHTML + '</li>')
             );
         }).trigger("click");
+    </script>
+    <style>
+        .header-loginForm-social-button ss {
+            display: none !important;
+        }
+
+        .header-loginForm-social-button .theChampFacebookBackground,
+        .header-loginForm-social-button .theChampTwitterBackground,
+        .header-loginForm-social-button .theChampGoogleBackground,
+        .header-loginForm-social-button .theChampVkontakteBackground {
+            background-color: transparent !important;
+        }
+
+        .theChampLogin {
+            padding-left: 25px !important;
+            padding-right: 25px !important;
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            width: auto !important;
+            height: auto !important;
+        }
+    </style>
+    <script>
+        //social-buttons
+        jQuery('.the_champ_login_ul li:nth-child(1)').each(function () {
+            jQuery(this).replaceWith( "<button class=\"header-loginForm-social-button fb\">" + jQuery(this).html() + "</button>" );
+        });
+        jQuery('.the_champ_login_ul li:nth-child(2)').each(function () {
+            jQuery(this).replaceWith( "<button class=\"header-loginForm-social-button twitter\">" + jQuery(this).html() + "</button>" );
+        });
+        jQuery('.the_champ_login_ul li:nth-child(3)').each(function () {
+            jQuery(this).replaceWith( "<button class=\"header-loginForm-social-button gp\">" + jQuery(this).html() + "</button>" );
+        });
+        jQuery('.the_champ_login_ul li:nth-child(4)').each(function () {
+            jQuery(this).replaceWith( "<button class=\"header-loginForm-social-button vk\">" + jQuery(this).html() + "</button>" );
+        });
+
+
+        jQuery('.the_champ_login_ul button:nth-child(1) i').each(function () {
+            jQuery(this).addClass( "icon-fb" );
+        });
+        jQuery('.the_champ_login_ul button:nth-child(2) i').each(function () {
+            jQuery(this).addClass( "icon-twitter" );
+        });
+        jQuery('.the_champ_login_ul button:nth-child(3) i').each(function () {
+            jQuery(this).addClass( "icon-google-plus " );
+        });
+        jQuery('.the_champ_login_ul button:nth-child(4) i').each(function () {
+            jQuery(this).addClass( "icon-vk" );
+        });
+
+
+        jQuery('ul.the_champ_login_ul').each(function () {
+            jQuery(this).replaceWith( "<div class=\"header-loginForm-social\">" + jQuery(this).html() + "</div>" );
+        });
+
+        jQuery('div.header-loginForm-social div.header-loginForm-social').unwrap().unwrap().unwrap();
+        ///social-buttons
     </script>
 </div>

@@ -86,7 +86,7 @@ get_header(); ?>
                         //action hook for plugin and extra fields
                         do_action('edit_user_profile', $current_user);
                         ?>
-                        <p class="generalForm-sub column small-12">Социальные сети</p>
+                        <!--<p class="generalForm-sub column small-12">Социальные сети</p>
                         <p class="generalForm-hint column small-12">Нажмите на соответствующую иконку соц. сети, чтобы
                             связать
                             ее с
@@ -114,7 +114,7 @@ get_header(); ?>
                         <div class="changeProfile-form-social inst column small-12 medium-6 large-4 column-block">
                             <input type="text" placeholder="Instagram" readonly>
                             <button class="changeProfile-form-social-button"><i class="icon-instagram"></i></button>
-                        </div>
+                        </div>-->
                         <!-- Display when change profile was success-->
                         <div class="changeProfile-form-complete column small-12 large-5"><i class="icon-check"></i>
                             <p><b>Изменения сохранены</b>. <br> Ваш профиль был успешно обновлен.</p>
